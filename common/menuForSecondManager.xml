@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Tree>
+  <TreeNode Text="岗位责任书管理" SingleClickExpand="true">
+    <TreeNode Text="制作岗位责任书" NavigateUrl="~/Pages/PostBookManagement/MakePostBook.aspx" >
+    </TreeNode>
+  </TreeNode>
+  <TreeNode Text="考核表管理" SingleClickExpand="true">
+    <TreeNode Text="制作考核表" NavigateUrl="~/Pages/EvaluateTableManagement/MakeEvaluateTable.aspx" >
+    </TreeNode>
+  </TreeNode>
+  <TreeNode Text="考评人管理" SingleClickExpand="true">
+    <TreeNode Text="上传备选考评人名单" NavigateUrl="~/Pages/EvaluatorManagement/UploadSelectableEvaluator.aspx" >
+    </TreeNode>
+    <TreeNode Text="制作考评人名单" NavigateUrl="~/Pages/EvaluatorManagement/MakeEvaluator.aspx" >
+    </TreeNode>
+  </TreeNode>
+  <TreeNode Text="考评管理" SingleClickExpand="true">
+    <TreeNode Text="结束考评" NavigateUrl="~/Pages/EvaluationManagement/StopEvaluation.aspx" >
+    </TreeNode>
+  </TreeNode>
+  <TreeNode Text="账户管理" SingleClickExpand="true">
+    <TreeNode Text="更改密码" NavigateUrl="~/Pages/AccountManagement/ChangePassword.aspx" >
+    </TreeNode>
+  </TreeNode>
+</Tree>
