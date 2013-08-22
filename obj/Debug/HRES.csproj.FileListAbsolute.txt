@@ -1,0 +1,16 @@
+D:\cntimothy\privatestuff\HRES\HRES\bin\HRES.dll
+D:\cntimothy\privatestuff\HRES\HRES\bin\HRES.pdb
+D:\cntimothy\privatestuff\HRES\HRES\bin\Controls.dll
+D:\cntimothy\privatestuff\HRES\HRES\bin\DataStructure.dll
+D:\cntimothy\privatestuff\HRES\HRES\bin\FineUI.dll
+D:\cntimothy\privatestuff\HRES\HRES\bin\Newtonsoft.Json.dll
+D:\cntimothy\privatestuff\HRES\HRES\bin\NPOI.dll
+D:\cntimothy\privatestuff\HRES\HRES\bin\Ionic.Zip.dll
+D:\cntimothy\privatestuff\HRES\HRES\bin\Controls.pdb
+D:\cntimothy\privatestuff\HRES\HRES\bin\DataStructure.pdb
+D:\cntimothy\privatestuff\HRES\HRES\bin\FineUI.xml
+D:\cntimothy\privatestuff\HRES\HRES\bin\Newtonsoft.Json.xml
+D:\cntimothy\privatestuff\HRES\HRES\bin\NPOI.xml
+D:\cntimothy\privatestuff\HRES\HRES\obj\Debug\ResolveAssemblyReference.cache
+D:\cntimothy\privatestuff\HRES\HRES\obj\Debug\HRES.dll
+D:\cntimothy\privatestuff\HRES\HRES\obj\Debug\HRES.pdb

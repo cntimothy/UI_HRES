@@ -9,7 +9,7 @@
     <form id="form1" runat="server">
     <x:PageManager ID="PageManager1" runat="server" AutoSizePanelID="Panel1" />
     <x:Panel ID="Panel1" runat="server" BodyPadding="0px" ShowBorder="false" ShowHeader="false"
-        Title="Panel1" AutoScroll="true" >
+        Title="Panel1" AutoScroll="true">
         <Items>
             <x:Toolbar ID="Toolbar1" runat="server" CssStyle="width:99.7%">
                 <Items>
@@ -23,7 +23,8 @@
                     <x:Grid ID="Grid1" runat="server" Title="被考评人名单" Width="730px" PageSize="20" ShowBorder="true"
                         ShowHeader="true" Height="500px" AllowPaging="true" OnPageIndexChange="Grid1_PageIndexChange"
                         EnableRowClickEvent="true" EnableRowClick="true" OnRowClick="Grid1_RowClick"
-                        EnableRowNumber="True" AutoPostBack="true" DataKeyNames="ID, Date, Name, Sex, Depart, Job, IDNo, Birthday, Fund, Character, Company, StartTime, StopTime, Status, Comment">
+                        EnableRowNumber="True" AutoPostBack="true" DataKeyNames="ID, Date, Name, Sex, Depart, Job, IDNo, Birthday, Fund, Character, Company, StartTime, StopTime, Status, Comment"
+                        AllowSorting="true" SortColumnIndex="13" SortDirection="ASC" OnSort="Grid1_Sort">
                         <Columns>
                             <x:BoundField Width="100px" DataField="ID" DataFormatString="{0}" HeaderText="用户名"
                                 Hidden="true" />
@@ -47,7 +48,7 @@
                                 Hidden="true" />
                             <x:BoundField Width="100px" DataField="StopTime" DataFormatString="{0}" HeaderText="考评结束时间"
                                 Hidden="true" />
-                            <x:TemplateField Width="50px" HeaderText="状态">
+                            <x:TemplateField SortField="Status" Width="50px" HeaderText="状态">
                                 <ItemTemplate>
                                     <asp:Label ID="Status" runat="server" Text='<%# GetDocStatus(Eval("Status")) %>'></asp:Label>
                                 </ItemTemplate>
@@ -99,7 +100,7 @@
     <x:Window ID="Window_MakePostBook" Title="弹出窗体" Popup="false" EnableIFrame="true"
         IFrameUrl="about:blank" EnableMaximize="true" Target="Top" EnableResize="true"
         runat="server" OnClose="Window_MakePostBook_Close" IsModal="true" CssStyle="width:80%"
-        EnableConfirmOnClose="true" Height="550px" EnableClose="true" >
+        EnableConfirmOnClose="true" Height="550px" EnableClose="true">
     </x:Window>
     </form>
 </body>

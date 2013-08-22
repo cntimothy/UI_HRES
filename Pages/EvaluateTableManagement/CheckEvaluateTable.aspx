@@ -33,7 +33,7 @@
                         ShowHeader="true" Height="500px" AllowPaging="true" OnPageIndexChange="Grid1_PageIndexChange"
                         EnableRowClickEvent="true" EnableRowClick="true" OnRowClick="Grid1_RowClick"
                         EnableRowNumber="True" AutoPostBack="true" DataKeyNames="ID, Date, Name, Sex, Depart, Job, IDNo, Birthday, Fund, Character, Company, StartTime, StopTime, Status, Comment"
-                        OnPreRowDataBound="Grid1_PreRowDataBound">
+                        OnPreRowDataBound="Grid1_PreRowDataBound" AllowSorting="true" SortColumnIndex="13" SortDirection="ASC" OnSort="Grid1_Sort">
                         <Columns>
                             <x:BoundField Width="100px" DataField="ID" DataFormatString="{0}" HeaderText="用户名"
                                 Hidden="true" />
@@ -57,7 +57,7 @@
                                 Hidden="true" />
                             <x:BoundField Width="100px" DataField="StopTime" DataFormatString="{0}" HeaderText="考评结束时间"
                                 Hidden="true" />
-                            <x:TemplateField Width="50px" HeaderText="状态">
+                            <x:TemplateField SortField="Status" Width="50px" HeaderText="状态">
                                 <ItemTemplate>
                                     <asp:Label ID="Status" runat="server" Text='<%# GetDocStatusForCheck(Eval("Status")) %>'></asp:Label>
                                 </ItemTemplate>

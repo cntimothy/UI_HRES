@@ -68,6 +68,13 @@ namespace HRES.Pages.EvaluatorManagement
                 windowField_Check.Enabled = true;
             }
         }
+
+        protected void Grid1_Sort(object sender, FineUI.GridSortEventArgs e)
+        {
+            Grid1.SortDirection = e.SortDirection;
+            Grid1.SortColumnIndex = e.ColumnIndex;
+            bindEvaluatedToGrid();
+        }
         #endregion
 
         #region Private Method
@@ -96,8 +103,8 @@ namespace HRES.Pages.EvaluatorManagement
             {
                 if (EvaluatorManagementCtrl.GetAll(ref table, ref exception))
                 {
-                    string sortField = "Status";
-                    string sortDirection = "ASC";
+                    string sortField = Grid1.SortField;
+                    string sortDirection = Grid1.SortDirection;
                     DataView dv = table.DefaultView;
                     dv.Sort = String.Format("{0} {1}", sortField, sortDirection);
                     Grid1.DataSource = dv;

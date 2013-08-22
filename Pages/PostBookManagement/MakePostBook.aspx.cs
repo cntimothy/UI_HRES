@@ -20,7 +20,7 @@ namespace HRES.Pages.PostBookManagement
             checkSession();
             if (!IsPostBack)
             {
-                BindEvaluatedToGrid();
+                bindEvaluatedToGrid();
             }
 
         }
@@ -29,7 +29,7 @@ namespace HRES.Pages.PostBookManagement
         #region Event
         protected void Refresh_Click(object sender, EventArgs e)
         {
-            BindEvaluatedToGrid();
+            bindEvaluatedToGrid();
         }
 
         protected void Grid1_PageIndexChange(object sender, FineUI.GridPageEventArgs e)
@@ -40,27 +40,33 @@ namespace HRES.Pages.PostBookManagement
         protected void Grid1_RowClick(object sender, FineUI.GridRowClickEventArgs e)
         {
             object[] keys = Grid1.DataKeys[e.RowIndex];         
-            SetSimpleForm(keys);
+            setSimpleForm(keys);
         }
 
         protected void Window_MakePostBook_Close(object sender, FineUI.WindowCloseEventArgs e)
         {
-            BindEvaluatedToGrid();
+            bindEvaluatedToGrid();
         }
 
+        protected void Grid1_Sort(object sender, FineUI.GridSortEventArgs e)
+        {
+            Grid1.SortDirection = e.SortDirection;
+            Grid1.SortColumnIndex = e.ColumnIndex;
+            bindEvaluatedToGrid();
+        }
         #endregion
 
         #region Private Method
 
-        private void BindEvaluatedToGrid()
+        private void bindEvaluatedToGrid()
         {
             string exception = "";
             string depart = (string)Session["Depart"];
             DataTable table = new DataTable();
             if(PostBookManagementCtrl.GetAllByDepart(ref table, depart, ref exception))
             {
-                string sortField = "Status";
-                string sortDirection = "ASC";
+                string sortField = Grid1.SortField;
+                string sortDirection = Grid1.SortDirection;
                 DataView dv = table.DefaultView;
                 dv.Sort = String.Format("{0} {1}", sortField, sortDirection);
                 Grid1.DataSource = dv;
@@ -68,7 +74,7 @@ namespace HRES.Pages.PostBookManagement
             }
         }
 
-        private void SetSimpleForm(object[] keys)
+        private void setSimpleForm(object[] keys)
         {
             LabID.Text = (string)keys[0];
             LabDate.Text = (string)keys[1];

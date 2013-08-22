@@ -33,7 +33,8 @@
                         ShowHeader="true" Height="500px" AllowPaging="true" OnPageIndexChange="Grid1_PageIndexChange"
                         EnableRowClickEvent="true" EnableRowClick="true" OnRowClick="Grid1_RowClick"
                         EnableRowNumber="True" DataKeyNames="ID, Date, Name, Sex, Depart, Job, IDNo, Birthday, Fund, Character, Company, StartTime, StopTime, Status, Comment"
-                        OnPreRowDataBound="Grid1_PreRowDataBound">
+                        OnPreRowDataBound="Grid1_PreRowDataBound" AllowSorting="true" SortColumnIndex="13"
+                        SortDirection="ASC" OnSort="Grid1_Sort">
                         <Columns>
                             <x:BoundField Width="100px" DataField="ID" DataFormatString="{0}" HeaderText="用户名"
                                 Hidden="true" />
@@ -57,15 +58,15 @@
                                 Hidden="true" />
                             <x:BoundField Width="100px" DataField="StopTime" DataFormatString="{0}" HeaderText="考评结束时间"
                                 Hidden="true" />
-                            <x:TemplateField Width="50px" HeaderText="状态">
+                            <x:TemplateField SortField="Status" Width="50px" HeaderText="状态">
                                 <ItemTemplate>
                                     <asp:Label ID="Status" runat="server" Text='<%# GetDocStatusForCheck(Eval("Status")) %>'></asp:Label>
                                 </ItemTemplate>
                             </x:TemplateField>
                             <x:BoundField Width="200px" DataField="Comment" DataFormatString="{0}" HeaderText="审核意见" />
-                            <x:WindowField ColumnID="WindowField_Check" ID = "test" TextAlign="Center" Width="80px" WindowID="Window_MakePostBook"
-                                Text="审核" ToolTip="审核岗位责任书" Title="审核" IFrameUrl="iframe_MakePostBook.aspx" DataIFrameUrlFields="ID,Name,Status"
-                                DataIFrameUrlFormatString="iframe_MakePostBook.aspx?id={0}&name={1}&status={2}" />
+                            <x:WindowField ColumnID="WindowField_Check" ID="test" TextAlign="Center" Width="80px"
+                                WindowID="Window_MakePostBook" Text="审核" ToolTip="审核岗位责任书" Title="审核" IFrameUrl="iframe_MakePostBook.aspx"
+                                DataIFrameUrlFields="ID,Name,Status" DataIFrameUrlFormatString="iframe_MakePostBook.aspx?id={0}&name={1}&status={2}" />
                         </Columns>
                     </x:Grid>
                     <x:SimpleForm ID="SimpleForm1" runat="server" BodyPadding="5px" Title="详细信息" Width="300px">
