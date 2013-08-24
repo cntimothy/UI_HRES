@@ -9,10 +9,10 @@
 <body>
     <form id="form1" runat="server">
     <x:PageManager ID="PageManager1" runat="server" AutoSizePanelID="Panel1" />
-    <x:Panel ID="Panel1" runat="server" BodyPadding="0px" ShowBorder="false" ShowHeader="false"
+    <x:Panel ID="Panel1" runat="server" BodyPadding="0px" ShowBorder="true" ShowHeader="true"
         Title="Panel" Layout="Fit">
         <Items>
-            <x:Panel ID="Panel2" runat="server" BodyPadding="0px" ShowBorder="true" ShowHeader="true"
+            <x:Panel ID="Panel2" runat="server" BodyPadding="0px" ShowBorder="false" ShowHeader="false"
                 Title="考评表" AutoScroll="true">
                 <Items>
                     <x:Toolbar ID="Toolbar1" runat="server">

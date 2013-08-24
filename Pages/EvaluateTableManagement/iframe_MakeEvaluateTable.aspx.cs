@@ -171,6 +171,7 @@ namespace HRES.Pages.EvaluateTableManagement
         private void loadEvaluateTable()
         {
             string evaluatedID = Request.QueryString["id"];
+            Panel1.Title = Request.QueryString["name"] + "的考核表";
             EvaluateTable evaluateTable = new EvaluateTable();
             string exception = "";
             if (EvaluateTableManagementCtrl.GetEvaluateTable(evaluatedID, ref evaluateTable, ref exception))

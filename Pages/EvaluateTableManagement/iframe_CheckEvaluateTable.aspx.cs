@@ -78,6 +78,8 @@ namespace HRES.Pages.EvaluateTableManagement
         {
             string exception = "";
             string evaluatedID = Request.QueryString["id"];
+            string name = Request.QueryString["name"];
+            Panel1.Title = name + "的考核表";
             EvaluateTable evaluateTable = new EvaluateTable();
             if (EvaluateTableManagementCtrl.GetEvaluateTable(evaluatedID, ref evaluateTable, ref exception))
             {

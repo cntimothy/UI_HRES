@@ -29,6 +29,8 @@ namespace HRES.Pages.EvaluatorManagement
                 SetSubmitted();         //将已提交的名单显示在页面上
                 Label_Comment.Text = Request.QueryString["Comment"];
                 DocStatus status = (DocStatus)Enum.Parse(typeof(DocStatus), Request.QueryString["status"]);
+                Panel1.Title = Request.QueryString["name"] + "的考评人名单";
+
                 if (status == DocStatus.submitted || status == DocStatus.passed)
                 {
                     Button_Submit.Enabled = false;

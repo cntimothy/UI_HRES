@@ -31,7 +31,7 @@
                                 Hidden="true" />
                             <x:BoundField Width="100px" DataField="Date" DataFormatString="{0}" HeaderText="入职时间"
                                 Hidden="true" />
-                            <x:BoundField Width="50px" DataField="Name" DataFormatString="{0}" HeaderText="姓名" />
+                            <x:BoundField Width="100px" DataField="Name" DataFormatString="{0}" HeaderText="姓名" />
                             <x:BoundField Width="40px" DataField="Sex" DataFormatString="{0}" HeaderText="性别" />
                             <x:BoundField Width="80px" DataField="Depart" DataFormatString="{0}" HeaderText="工作单位" />
                             <x:BoundField Width="100px" DataField="Job" DataFormatString="{0}" HeaderText="岗位（职务）" />
@@ -54,7 +54,7 @@
                                     <asp:Label ID="Status" runat="server" Text='<%# GetDocStatus(Eval("Status")) %>'></asp:Label>
                                 </ItemTemplate>
                             </x:TemplateField>
-                            <x:BoundField Width="200px" DataField="Comment" DataFormatString="{0}" HeaderText="审核意见" />
+                            <x:BoundField ExpandUnusedSpace="true" Width="200px" DataField="Comment" DataFormatString="{0}" HeaderText="审核意见" />
                             <x:WindowField TextAlign="Center" Width="80px" WindowID="Window_MakeEvaluateTable"
                                 Text="制作" ToolTip="制作考核表" Title="制作" IFrameUrl="iframe_MakeEvaluateTable.aspx"
                                 DataIFrameUrlFields="ID,Name,Status,StartTime,StopTime" DataIFrameUrlFormatString="iframe_MakeEvaluateTable.aspx?id={0}&name={1}&status={2}&starttime={3}&stoptime={4}" />

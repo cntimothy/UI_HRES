@@ -180,6 +180,7 @@ namespace HRES.Pages.PostBookManagement
             string exception = "";
             string evaluatedID = Request.QueryString["id"];
             string name = Request.QueryString["name"];
+            Panel1.Title = name + "的岗位责任书";
             PostBook pb = new PostBook();
             if (PostBookManagementCtrl.GetPostBook(ref pb, evaluatedID, ref exception))
             {
@@ -192,7 +193,6 @@ namespace HRES.Pages.PostBookManagement
                     }
                 }
                 string evaluatedName = Request.QueryString["name"];
-                Panel1.Title = evaluatedName + "的" + Panel1.Title;
                 Label_Comment.Text = pb.Comment;
 
                 Radio_Employer.SelectedValue = pb.Employer;
