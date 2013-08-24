@@ -33,7 +33,7 @@
                         ShowHeader="true" Height="500px" AllowPaging="true" OnPageIndexChange="Grid1_PageIndexChange"
                         EnableRowClickEvent="true" EnableRowClick="true" OnRowClick="Grid1_RowClick"
                         EnableRowNumber="True" AutoPostBack="true" DataKeyNames="ID, Date, Name, Sex, Depart, Job, IDNo, Birthday, Fund, Character, Company, StartTime, StopTime, Status, Comment"
-                        OnPreRowDataBound="Grid1_PreRowDataBound" AllowSorting="true" SortColumnIndex="13" SortDirection="ASC" OnSort="Grid1_Sort">
+                        OnPreRowDataBound="Grid1_PreRowDataBound" AllowSorting="true" SortColumnIndex="13" SortDirection="DESC" OnSort="Grid1_Sort">
                         <Columns>
                             <x:BoundField Width="100px" DataField="ID" DataFormatString="{0}" HeaderText="用户名"
                                 Hidden="true" />
