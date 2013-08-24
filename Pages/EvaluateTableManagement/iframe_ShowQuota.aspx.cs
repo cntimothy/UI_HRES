@@ -28,6 +28,18 @@ namespace HRES.Pages.EvaluateTableManagement
             DropDownList2.Items.Clear();
             TextArea1.Text = "";
             bindLevel2ToDropDownList();
+            TextArea1.Text = "";
+            string level1 = DropDownList1.SelectedValue;
+            string level2 = DropDownList2.SelectedValue;
+            string exception = "";
+            List<string> quota = new List<string>();
+            if (EvaluateTableManagementCtrl.GetQuota(ref quota, level1, level2, ref exception))
+            {
+                TextArea1.Text = quota[0];
+                TextArea2.Text = quota[1];
+                TextArea3.Text = quota[2];
+                TextArea4.Text = quota[3];
+            }
         }
 
         protected void DropDownList2_SelectedChange(object sender, EventArgs e)

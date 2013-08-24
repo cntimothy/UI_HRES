@@ -27,7 +27,7 @@ namespace HRES.Pages.EvaluateTableManagement
         protected void DropDownList1_SelectedChange(object sender, EventArgs e)
         {
             Dictionary<string, string> WCRDic = (new JavaScriptSerializer()).Deserialize<Dictionary<string, string>>((string)(ViewState["WCRDic"]));
-            TextArea1.Text = WCRDic[DropDownList1.SelectedValue];
+            TextArea1.Text = WCRDic[DropDownList1.SelectedValue].Replace("\n", "");
         }
 
         protected void Button_Submit_Click(object sender, EventArgs e)
