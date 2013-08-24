@@ -39,7 +39,7 @@
                                     </x:TemplateField>
                                     <x:TemplateField Width="80px" HeaderText="状态">
                                         <ItemTemplate>
-                                            <asp:Label ID="Status" runat="server" Text='<%# GetEvaluationStatus(Eval("Status")) %>'></asp:Label>
+                                            <asp:Label ID="Status" runat="server" Text='<%# GetEvaluationStatusForEvaluator(Eval("Status")) %>'></asp:Label>
                                         </ItemTemplate>
                                     </x:TemplateField>
                                     <x:WindowField TextAlign="Center" Width="80px" WindowID="Window1" Text="开始考评"

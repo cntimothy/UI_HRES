@@ -28,14 +28,14 @@ namespace HRES.Pages.EvaluationManagement
             LinkButtonField linkButtonField_Operation = Grid1.FindColumn("LinkButtonField_Operation") as LinkButtonField;
             DataRowView row = e.DataItem as DataRowView;
             string strStatus = row["Status"].ToString();
-            EvaluationStatus status = (EvaluationStatus)Enum.Parse(typeof(EvaluationStatus), strStatus);
-            if (status == EvaluationStatus.unstart || status == EvaluationStatus.stopped)
+            EvaluationStatusForEvaluated status = (EvaluationStatusForEvaluated)Enum.Parse(typeof(EvaluationStatusForEvaluated), strStatus);
+            if (status == EvaluationStatusForEvaluated.started)
             {
-                linkButtonField_Operation.Enabled = false;
+                linkButtonField_Operation.Enabled = true;
             }
             else
             {
-                linkButtonField_Operation.Enabled = true;
+                linkButtonField_Operation.Enabled = false;
             }
         }
 

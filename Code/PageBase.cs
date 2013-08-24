@@ -935,17 +935,64 @@ namespace HRES
             string returnValue = "";
             switch ((EvaluationStatus)Enum.Parse(typeof(EvaluationStatus), (string)status))
             {
-                case EvaluationStatus.unstart:
+                case EvaluationStatus.uninitial:
+                    returnValue = "未初始化";
+                    break;
+                case EvaluationStatus.unstarted:
                     returnValue = "未开始";
                     break;
                 case EvaluationStatus.started:
                     returnValue = "已开始";
                     break;
-                case EvaluationStatus.finished:
+                default:
+                    returnValue = "未定义状态";
+                    break;
+            }
+            return returnValue;
+        }
+
+        /// <summary>
+        /// 获取针对被考评人的考评状态字面值
+        /// </summary>
+        /// <param name="status"></param>
+        /// <returns></returns>
+        protected string GetEvaluationStatueForEvaluated(object status)
+        {
+            string returnValue = "";
+            switch ((EvaluationStatusForEvaluated)Enum.Parse(typeof(EvaluationStatusForEvaluated), (string)status))
+            { 
+                case EvaluationStatusForEvaluated.uninitial:
+                    returnValue = "未初始化";
+                    break;
+                case EvaluationStatusForEvaluated.unstarted:
+                    returnValue = "未开始";
+                    break;
+                case EvaluationStatusForEvaluated.started:
+                    returnValue = "已开始";
+                    break;
+                case EvaluationStatusForEvaluated.stopped:
+                    returnValue = "已结束";
+                    break;
+                default:
+                    returnValue = "未定义状态";
+                    break;
+            }
+            return returnValue;
+        }
+
+        protected string GetEvaluationStatusForEvaluator(object status)
+        {
+            string returnValue = "";
+            switch ((EvaluationStatusForEvaluator)Enum.Parse(typeof(EvaluationStatusForEvaluator), (string)status))
+            { 
+                case EvaluationStatusForEvaluator.unfinished:
+                    returnValue = "未完成";
+                    break;
+                case EvaluationStatusForEvaluator.finished:
                     returnValue = "已完成";
                     break;
-                case EvaluationStatus.stopped:
-                    returnValue = "已结束";
+                default:
+                    returnValue = "";
                     break;
             }
             return returnValue;
