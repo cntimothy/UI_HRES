@@ -45,6 +45,7 @@ namespace HRES.Pages.EvaluationManagement
             if (EvaluationManagementCtrl.StartEvaluation(ref exception))
             {
                 Alert.ShowInTop("设置成功！", MessageBoxIcon.Information);
+                bindEvaluatedToGrid();
             }
             else
             {
