@@ -291,6 +291,7 @@ namespace HRES.Pages.EvaluateTableManagement
             {
                 Label_EvaluatedName.Text = Request.QueryString["name"];
                 Label_Period.Text = Request.QueryString["starttime"] + " ~ " + Request.QueryString["stoptime"];
+                TextArea_Reject1.Text = "累计旷工3天以上的；\n严重失职，营私舞弊，给本单位造成3000元以上经济损失或者其它严重后果的；\n同时与其他用人单位建立劳动关系，对完成本单位工作任务造成严重影响，或者经本单位提出，拒不改正的；\n违背职业道德，行贿、受贿价值超过3000元以上的；\n被依法追究刑事责任的；";
             }
         }
 
