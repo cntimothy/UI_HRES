@@ -38,7 +38,7 @@ namespace HRES.Pages.Common
                 if (PostBookManagementCtrl.SetRejected(Request.QueryString["id"], ref exception) &&
                     PostBookManagementCtrl.UpdateComment(TextArea_Comment.Text, Request.QueryString["id"], ref exception))
                 {
-                    Alert.ShowInTop("设置成功！", MessageBoxIcon.Information);
+                    Alert.ShowInTop("设置成功！\n窗口即将关闭", MessageBoxIcon.Information);
                     PageContext.RegisterStartupScript(ActiveWindow.GetHideReference());
                 }
                 else
@@ -51,7 +51,7 @@ namespace HRES.Pages.Common
                 if (EvaluatorManagementCtrl.SetRejected(Request.QueryString["id"], ref exception) &&
                     EvaluatorManagementCtrl.UpdateComment(TextArea_Comment.Text, Request.QueryString["id"], ref exception))
                 {
-                    Alert.ShowInTop("设置成功！", MessageBoxIcon.Information);
+                    Alert.ShowInTop("设置成功！\n窗口即将关闭", MessageBoxIcon.Information);
                     PageContext.RegisterStartupScript(ActiveWindow.GetHideReference());
                 }
                 else
@@ -64,7 +64,7 @@ namespace HRES.Pages.Common
                 if (EvaluateTableManagementCtrl.SetRejected(Request.QueryString["id"], ref exception) &&
                     EvaluateTableManagementCtrl.UpdateComment(TextArea_Comment.Text, Request.QueryString["id"], ref exception))
                 {
-                    Alert.ShowInTop("设置成功！", MessageBoxIcon.Information);
+                    Alert.ShowInTop("设置成功！\n窗口即将关闭", MessageBoxIcon.Information);
                     PageContext.RegisterStartupScript(ActiveWindow.GetHideReference());
                 }
                 else

@@ -41,7 +41,8 @@ namespace HRES.Pages.EvaluateTableManagement
             string exception = "";
             if (EvaluateTableManagementCtrl.SetPass(evaluatedID, ref exception))
             {
-                Alert.ShowInTop("设置成功！", MessageBoxIcon.Information);
+                Alert.ShowInTop("设置成功！\n窗口即将关闭", MessageBoxIcon.Information);
+                PageContext.RegisterStartupScript(ActiveWindow.GetHideRefreshReference());
             }
             else
             {

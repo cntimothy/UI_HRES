@@ -99,7 +99,6 @@ namespace HRES.Pages.EvaluatorManagement
                 Alert.ShowInTop("提交失败！\n原因："+exception, MessageBoxIcon.Error);
                 return;
             }
-            bindEvaluatorToGrid();
         }
 
         protected void Button_Clear_Click(object sender, EventArgs e)

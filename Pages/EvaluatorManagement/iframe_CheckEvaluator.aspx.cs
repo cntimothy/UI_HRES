@@ -52,14 +52,14 @@ namespace HRES.Pages.EvaluatorManagement
             List<string> evaluators = (new JavaScriptSerializer()).Deserialize<List<string>>(hfSelectedIDS.Text.Trim());
             if (EvaluatorManagementCtrl.SetEvaluator(evaluatedID, evaluators, ref exception))
             {
-                Alert.ShowInTop("设置成功！", MessageBoxIcon.Information);
+                Alert.ShowInTop("设置成功！\n窗口即将关闭", MessageBoxIcon.Information);
+                PageContext.RegisterStartupScript(ActiveWindow.GetHideRefreshReference());
             }
             else
             {
                 Alert.ShowInTop("设置失败！\n原因：" + exception, MessageBoxIcon.Error);
                 return;
             }
-            bindEvaluatorToGrid();
         }
 
         protected void Button_Clear_Click(object sender, EventArgs e)

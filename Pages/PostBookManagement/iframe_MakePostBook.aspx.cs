@@ -80,7 +80,7 @@ namespace HRES.Pages.PostBookManagement
             if (PostBookManagementCtrl.UpdatePostBook(pb, ref exception))
             {
                 Alert.ShowInTop("提交成功！\n窗口即将关闭", MessageBoxIcon.Information);
-                PageContext.RegisterStartupScript(ActiveWindow.GetConfirmHideRefreshReference());
+                PageContext.RegisterStartupScript(ActiveWindow.GetHideRefreshReference());
             }
             else
             {
@@ -138,7 +138,8 @@ namespace HRES.Pages.PostBookManagement
             string evaluatedID = Request.QueryString["id"];
             if (PostBookManagementCtrl.SetPass(evaluatedID, ref exception))
             {
-                Alert.ShowInTop("设置成功！", MessageBoxIcon.Information);
+                Alert.ShowInTop("设置成功！\n窗口即将关闭", MessageBoxIcon.Information);
+                PageContext.RegisterStartupScript(ActiveWindow.GetHideRefreshReference());
             }
             else
             {

@@ -158,7 +158,7 @@ namespace HRES.Pages.EvaluateTableManagement
             if (EvaluateTableManagementCtrl.UpdateEvaluateTable(evaluatedID, evaluateTable, nextStatus, ref exception))
             {
                 Alert.ShowInTop("提交成功！\n窗口即将关闭", MessageBoxIcon.Information);
-                PageContext.RegisterStartupScript(ActiveWindow.GetConfirmHideRefreshReference());
+                PageContext.RegisterStartupScript(ActiveWindow.GetHideRefreshReference());
             }
             else
             {
