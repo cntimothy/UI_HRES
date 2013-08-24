@@ -147,11 +147,21 @@ namespace HRES.Pages.EvaluatedManagement
                     Grid1.DataSource = table;
                     Grid1.DataBind();
                 }
+                else
+                {
+                    Grid1.DataSource = table;
+                    Grid1.DataBind();
+                }
             }
             else
             {
                 string depart = DropDownList_Depart.SelectedValue;
                 if (EvaluatedManagementCtrl.GetAllByDepart(ref table, depart, ref exception))
+                {
+                    Grid1.DataSource = table;
+                    Grid1.DataBind();
+                }
+                else
                 {
                     Grid1.DataSource = table;
                     Grid1.DataBind();
