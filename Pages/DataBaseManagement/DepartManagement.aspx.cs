@@ -11,11 +11,12 @@ using System.Data;
 
 namespace HRES.Pages.DataBaseManagement
 {
-    public partial class DepartManagement : System.Web.UI.Page
+    public partial class DepartManagement : PageBase
     {
         #region Page Init
         protected void Page_Load(object sender, EventArgs e)
         {
+            checkSession();
             if (!IsPostBack)
             {
                 bindDepartsToGrid();

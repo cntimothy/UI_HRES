@@ -1888,6 +1888,7 @@
     <Content Include="lib\Newtonsoft.Json.dll" />
     <Content Include="Pages\AccountManagement\ChangePassword.aspx" />
     <Content Include="Pages\Common\iframe_Comment.aspx" />
+    <Content Include="Pages\DataBaseManagement\ClearData.aspx" />
     <Content Include="Pages\DataBaseManagement\DepartManagement.aspx" />
     <Content Include="Pages\ErrorPage\Error.aspx" />
     <Content Include="Pages\EvaluatedManagement\MakeEvaluated.aspx" />
@@ -1960,6 +1961,13 @@
     </Compile>
     <Compile Include="Pages\Common\iframe_Comment.aspx.designer.cs">
       <DependentUpon>iframe_Comment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\DataBaseManagement\ClearData.aspx.cs">
+      <DependentUpon>ClearData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\DataBaseManagement\ClearData.aspx.designer.cs">
+      <DependentUpon>ClearData.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\DataBaseManagement\DepartManagement.aspx.cs">
       <DependentUpon>DepartManagement.aspx</DependentUpon>
