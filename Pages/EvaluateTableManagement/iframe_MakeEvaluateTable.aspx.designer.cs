@@ -1435,6 +1435,24 @@ namespace HRES.Pages.EvaluateTableManagement {
         protected global::FineUI.Button Button_Submit_Shadow;
         
         /// <summary>
+        /// ToolbarSeparator6 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.ToolbarSeparator ToolbarSeparator6;
+        
+        /// <summary>
+        /// Button_Clear_Shadow 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.Button Button_Clear_Shadow;
+        
+        /// <summary>
         /// Window_ShowQuota 控件。
         /// </summary>
         /// <remarks>

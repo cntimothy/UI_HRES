@@ -500,13 +500,18 @@
                             </x:Button>
                             <x:ToolbarSeparator ID="ToolbarSeparator3" runat="server">
                             </x:ToolbarSeparator>
-                            <x:Button ID="Button_Save_Shadow" runat="server" Text="保存" OnClick="Button_Save_Click" ConfirmTitle="提示"
-                                ConfirmText="确定保存？">
+                            <x:Button ID="Button_Save_Shadow" runat="server" Text="保存" OnClick="Button_Save_Click"
+                                ConfirmTitle="提示" ConfirmText="确定保存？">
                             </x:Button>
                             <x:ToolbarSeparator ID="ToolbarSeparator4" runat="server">
                             </x:ToolbarSeparator>
                             <x:Button ID="Button_Submit_Shadow" runat="server" Text="提交" OnClick="Button_Submit_Click"
                                 ConfirmTitle="提示" ConfirmText="确定提交？">
+                            </x:Button>
+                            <x:ToolbarSeparator ID="ToolbarSeparator6" runat="server">
+                            </x:ToolbarSeparator>
+                            <x:Button ID="Button_Clear_Shadow" runat="server" Text="清空" OnClick="Button_Clear_Click" ConfirmTitle="提示"
+                                ConfirmText="确定清空？">
                             </x:Button>
                         </Items>
                     </x:Toolbar>

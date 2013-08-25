@@ -108,8 +108,10 @@ namespace HRES.Pages.EvaluateTableManagement
                 {
                     Button_Save.Enabled = false;
                     Button_Submit.Enabled = false;
+                    Button_Clear.Enabled = false;
                     Button_Save_Shadow.Enabled = false;
                     Button_Submit_Shadow.Enabled = false;
+                    Button_Clear_Shadow.Enabled = false;
                 }
 
                 loadEvaluateTable();
@@ -124,8 +126,8 @@ namespace HRES.Pages.EvaluateTableManagement
         }
 
         protected void Button_Clear_Click(object sender, EventArgs e)
-        { 
-            
+        {
+            clearAll();
         }
 
         protected void Button_Save_Click(object sender, EventArgs e)
