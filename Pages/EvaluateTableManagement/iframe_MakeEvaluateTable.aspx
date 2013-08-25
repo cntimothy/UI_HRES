@@ -21,11 +21,13 @@
                             </x:Button>
                             <x:ToolbarSeparator ID="ToolbarSeparator1" runat="server">
                             </x:ToolbarSeparator>
-                            <x:Button ID="Button_Save" runat="server" Text="保存" OnClick="Button_Save_Click" ConfirmTitle="提示" ConfirmText="确定保存？">
+                            <x:Button ID="Button_Save" runat="server" Text="保存" OnClick="Button_Save_Click" ConfirmTitle="提示"
+                                ConfirmText="确定保存？">
                             </x:Button>
                             <x:ToolbarSeparator ID="ToolbarSeparator2" runat="server">
                             </x:ToolbarSeparator>
-                            <x:Button ID="Button_Submit" runat="server" Text="提交" OnClick="Button_Submit_Click" ConfirmTitle="提示" ConfirmText="确定提交？">
+                            <x:Button ID="Button_Submit" runat="server" Text="提交" OnClick="Button_Submit_Click"
+                                ConfirmTitle="提示" ConfirmText="确定提交？">
                             </x:Button>
                             <x:ToolbarFill ID="ToolbarFill1" runat="server">
                             </x:ToolbarFill>
@@ -70,6 +72,8 @@
                                     <x:TextArea ID="TextArea_KeyResponse_1" runat="server" Height="50px" Label="内容" Text=""
                                         Enabled="false">
                                     </x:TextArea>
+                                    <x:HiddenField ID="HiddenField_KeyResponse_1" runat="server">
+                                    </x:HiddenField>
                                 </Items>
                             </x:SimpleForm>
                             <x:SimpleForm ID="SimpleForm2" runat="server" BodyPadding="5px" Title="2)" Collapsed="false"
@@ -81,6 +85,8 @@
                                     <x:TextArea ID="TextArea_KeyResponse_2" runat="server" Height="50px" Label="内容" Text=""
                                         Enabled="false">
                                     </x:TextArea>
+                                    <x:HiddenField ID="HiddenField_KeyResponse_2" runat="server">
+                                    </x:HiddenField>
                                 </Items>
                             </x:SimpleForm>
                             <x:SimpleForm ID="SimpleForm3" runat="server" BodyPadding="5px" Title="3)" Collapsed="true"
@@ -92,6 +98,8 @@
                                     <x:TextArea ID="TextArea_KeyResponse_3" runat="server" Height="50px" Label="内容" Text=""
                                         Enabled="false">
                                     </x:TextArea>
+                                    <x:HiddenField ID="HiddenField_KeyResponse_3" runat="server">
+                                    </x:HiddenField>
                                 </Items>
                             </x:SimpleForm>
                             <x:SimpleForm ID="SimpleForm4" runat="server" BodyPadding="5px" Title="4)" Collapsed="true"
@@ -103,6 +111,8 @@
                                     <x:TextArea ID="TextArea_KeyResponse_4" runat="server" Height="50px" Label="内容" Text=""
                                         Enabled="false">
                                     </x:TextArea>
+                                    <x:HiddenField ID="HiddenField_KeyResponse_4" runat="server">
+                                    </x:HiddenField>
                                 </Items>
                             </x:SimpleForm>
                             <x:SimpleForm ID="SimpleForm5" runat="server" BodyPadding="5px" Title="5)" Collapsed="true"
@@ -114,6 +124,8 @@
                                     <x:TextArea ID="TextArea_KeyResponse_5" runat="server" Height="50px" Label="内容" Text=""
                                         Enabled="false">
                                     </x:TextArea>
+                                    <x:HiddenField ID="HiddenField_KeyResponse_5" runat="server">
+                                    </x:HiddenField>
                                 </Items>
                             </x:SimpleForm>
                         </Items>
@@ -270,6 +282,8 @@
                                     <x:TextArea ID="TextArea_Response_1" runat="server" Height="50px" Label="内容" Text=""
                                         Enabled="false">
                                     </x:TextArea>
+                                    <x:HiddenField ID="HiddenField_Response_1" runat="server">
+                                    </x:HiddenField>
                                 </Items>
                             </x:SimpleForm>
                             <x:SimpleForm ID="SimpleForm17" runat="server" BodyPadding="5px" Title="2)" Collapsed="false"
@@ -281,6 +295,8 @@
                                     <x:TextArea ID="TextArea_Response_2" runat="server" Height="50px" Label="内容" Text=""
                                         Enabled="false">
                                     </x:TextArea>
+                                    <x:HiddenField ID="HiddenField_Response_2" runat="server">
+                                    </x:HiddenField>
                                 </Items>
                             </x:SimpleForm>
                             <x:SimpleForm ID="SimpleForm18" runat="server" BodyPadding="5px" Title="3)" Collapsed="true"
@@ -292,6 +308,8 @@
                                     <x:TextArea ID="TextArea_Response_3" runat="server" Height="50px" Label="内容" Text=""
                                         Enabled="false">
                                     </x:TextArea>
+                                    <x:HiddenField ID="HiddenField_Response_3" runat="server">
+                                    </x:HiddenField>
                                 </Items>
                             </x:SimpleForm>
                             <x:SimpleForm ID="SimpleForm19" runat="server" BodyPadding="5px" Title="4)" Collapsed="true"
@@ -303,6 +321,8 @@
                                     <x:TextArea ID="TextArea_Response_4" runat="server" Height="50px" Label="内容" Text=""
                                         Enabled="false">
                                     </x:TextArea>
+                                    <x:HiddenField ID="HiddenField_Response_4" runat="server">
+                                    </x:HiddenField>
                                 </Items>
                             </x:SimpleForm>
                             <x:SimpleForm ID="SimpleForm20" runat="server" BodyPadding="5px" Title="5)" Collapsed="true"
@@ -314,6 +334,8 @@
                                     <x:TextArea ID="TextArea_Response_5" runat="server" Height="50px" Label="内容" Text=""
                                         Enabled="false">
                                     </x:TextArea>
+                                    <x:HiddenField ID="HiddenField_Response_5" runat="server">
+                                    </x:HiddenField>
                                 </Items>
                             </x:SimpleForm>
                         </Items>

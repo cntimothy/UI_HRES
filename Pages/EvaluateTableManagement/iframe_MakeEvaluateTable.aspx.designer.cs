@@ -238,6 +238,15 @@ namespace HRES.Pages.EvaluateTableManagement {
         protected global::FineUI.TextArea TextArea_KeyResponse_1;
         
         /// <summary>
+        /// HiddenField_KeyResponse_1 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.HiddenField HiddenField_KeyResponse_1;
+        
+        /// <summary>
         /// SimpleForm2 控件。
         /// </summary>
         /// <remarks>
@@ -263,6 +272,15 @@ namespace HRES.Pages.EvaluateTableManagement {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::FineUI.TextArea TextArea_KeyResponse_2;
+        
+        /// <summary>
+        /// HiddenField_KeyResponse_2 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.HiddenField HiddenField_KeyResponse_2;
         
         /// <summary>
         /// SimpleForm3 控件。
@@ -292,6 +310,15 @@ namespace HRES.Pages.EvaluateTableManagement {
         protected global::FineUI.TextArea TextArea_KeyResponse_3;
         
         /// <summary>
+        /// HiddenField_KeyResponse_3 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.HiddenField HiddenField_KeyResponse_3;
+        
+        /// <summary>
         /// SimpleForm4 控件。
         /// </summary>
         /// <remarks>
@@ -319,6 +346,15 @@ namespace HRES.Pages.EvaluateTableManagement {
         protected global::FineUI.TextArea TextArea_KeyResponse_4;
         
         /// <summary>
+        /// HiddenField_KeyResponse_4 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.HiddenField HiddenField_KeyResponse_4;
+        
+        /// <summary>
         /// SimpleForm5 控件。
         /// </summary>
         /// <remarks>
@@ -344,6 +380,15 @@ namespace HRES.Pages.EvaluateTableManagement {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::FineUI.TextArea TextArea_KeyResponse_5;
+        
+        /// <summary>
+        /// HiddenField_KeyResponse_5 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.HiddenField HiddenField_KeyResponse_5;
         
         /// <summary>
         /// Panel4 控件。
@@ -760,6 +805,15 @@ namespace HRES.Pages.EvaluateTableManagement {
         protected global::FineUI.TextArea TextArea_Response_1;
         
         /// <summary>
+        /// HiddenField_Response_1 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.HiddenField HiddenField_Response_1;
+        
+        /// <summary>
         /// SimpleForm17 控件。
         /// </summary>
         /// <remarks>
@@ -785,6 +839,15 @@ namespace HRES.Pages.EvaluateTableManagement {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::FineUI.TextArea TextArea_Response_2;
+        
+        /// <summary>
+        /// HiddenField_Response_2 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.HiddenField HiddenField_Response_2;
         
         /// <summary>
         /// SimpleForm18 控件。
@@ -814,6 +877,15 @@ namespace HRES.Pages.EvaluateTableManagement {
         protected global::FineUI.TextArea TextArea_Response_3;
         
         /// <summary>
+        /// HiddenField_Response_3 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.HiddenField HiddenField_Response_3;
+        
+        /// <summary>
         /// SimpleForm19 控件。
         /// </summary>
         /// <remarks>
@@ -841,6 +913,15 @@ namespace HRES.Pages.EvaluateTableManagement {
         protected global::FineUI.TextArea TextArea_Response_4;
         
         /// <summary>
+        /// HiddenField_Response_4 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.HiddenField HiddenField_Response_4;
+        
+        /// <summary>
         /// SimpleForm20 控件。
         /// </summary>
         /// <remarks>
@@ -866,6 +947,15 @@ namespace HRES.Pages.EvaluateTableManagement {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::FineUI.TextArea TextArea_Response_5;
+        
+        /// <summary>
+        /// HiddenField_Response_5 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.HiddenField HiddenField_Response_5;
         
         /// <summary>
         /// Panel7 控件。
