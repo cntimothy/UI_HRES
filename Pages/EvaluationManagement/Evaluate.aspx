@@ -52,7 +52,7 @@
             </x:Panel>
         </Items>
     </x:Panel>
-    <x:Window ID="Window1" runat="server" BodyPadding="5px" Height="550px" CssStyle="width:95%"
+    <x:Window ID="Window1" runat="server" BodyPadding="5px" Height="550px" CssStyle="width:80%"
         IsModal="true" Popup="false" Title="考评" EnableConfirmOnClose="true" EnableIFrame="true">
     </x:Window>
     </form>

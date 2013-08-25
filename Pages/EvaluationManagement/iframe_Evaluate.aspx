@@ -72,9 +72,9 @@
                     <x:Grid ID="Grid1" runat="server" Title="关键岗位职责指标（优：91～100良：71～90中：41～70差：0～40）"
                         ShowHeader="true">
                         <Columns>
-                            <x:BoundField Width="100px" ExpandUnusedSpace="true" DataField="Title" DataFormatString="{0}"
+                            <x:BoundField Width="100px" DataField="Title" DataFormatString="{0}"
                                 HeaderText="标题" />
-                            <x:BoundField Width="800px" DataField="Quota" DataFormatString="{0}" HeaderText="内容" />
+                            <x:BoundField Width="600px" DataField="Quota" DataFormatString="{0}" HeaderText="内容" />
                             <x:TemplateField HeaderText="得分" Width="100px">
                                 <ItemTemplate>
                                     <asp:TextBox ID="TextBox_Score1" runat="server" Width="80px" Text=""></asp:TextBox>
@@ -84,12 +84,12 @@
                     </x:Grid>
                     <x:Grid ID="Grid2" runat="server" Title="关键岗位胜任能力指标" ShowHeader="true">
                         <Columns>
-                            <x:BoundField Width="100px" ExpandUnusedSpace="true" DataField="Title" DataFormatString="{0}"
+                            <x:BoundField Width="100px" DataField="Title" DataFormatString="{0}"
                                 HeaderText="标题" />
-                            <x:BoundField Width="200px" DataField="Quota1" DataFormatString="{0}" HeaderText="优(91~100)" />
-                            <x:BoundField Width="200px" DataField="Quota2" DataFormatString="{0}" HeaderText="良(71~90)" />
-                            <x:BoundField Width="200px" DataField="Quota3" DataFormatString="{0}" HeaderText="中(41~70)" />
-                            <x:BoundField Width="200px" DataField="Quota4" DataFormatString="{0}" HeaderText="差(0~40)" />
+                            <x:BoundField Width="150px" DataField="Quota1" DataFormatString="{0}" HeaderText="优(91~100)" />
+                            <x:BoundField Width="150px" DataField="Quota2" DataFormatString="{0}" HeaderText="良(71~90)" />
+                            <x:BoundField Width="150px" DataField="Quota3" DataFormatString="{0}" HeaderText="中(41~70)" />
+                            <x:BoundField Width="150px" DataField="Quota4" DataFormatString="{0}" HeaderText="差(0~40)" />
                             <x:TemplateField HeaderText="得分" Width="100px">
                                 <ItemTemplate>
                                     <asp:TextBox ID="TextBox_Score2" runat="server" Width="80px" Text=""></asp:TextBox>
@@ -99,12 +99,12 @@
                     </x:Grid>
                     <x:Grid ID="Grid3" runat="server" Title="关键工作态度指标" ShowHeader="true">
                         <Columns>
-                            <x:BoundField Width="100px" ExpandUnusedSpace="true" DataField="Title" DataFormatString="{0}"
+                            <x:BoundField Width="100px" DataField="Title" DataFormatString="{0}"
                                 HeaderText="标题" />
-                            <x:BoundField Width="200px" DataField="Quota1" DataFormatString="{0}" HeaderText="优(91~100)" />
-                            <x:BoundField Width="200px" DataField="Quota2" DataFormatString="{0}" HeaderText="良(71~90)" />
-                            <x:BoundField Width="200px" DataField="Quota3" DataFormatString="{0}" HeaderText="中(41~70)" />
-                            <x:BoundField Width="200px" DataField="Quota4" DataFormatString="{0}" HeaderText="差(0~40)" />
+                            <x:BoundField Width="150px" DataField="Quota1" DataFormatString="{0}" HeaderText="优(91~100)" />
+                            <x:BoundField Width="150px" DataField="Quota2" DataFormatString="{0}" HeaderText="良(71~90)" />
+                            <x:BoundField Width="150px" DataField="Quota3" DataFormatString="{0}" HeaderText="中(41~70)" />
+                            <x:BoundField Width="150px" DataField="Quota4" DataFormatString="{0}" HeaderText="差(0~40)" />
                             <x:TemplateField HeaderText="得分" Width="100px">
                                 <ItemTemplate>
                                     <asp:TextBox ID="TextBox_Score3" runat="server" Width="80px" Text=""></asp:TextBox>
@@ -114,9 +114,9 @@
                     </x:Grid>
                     <x:Grid ID="Grid4" runat="server" Title="岗位职责指标（优：91～100良：71～90中：41～70差：0～40）" ShowHeader="true">
                         <Columns>
-                            <x:BoundField Width="100px" ExpandUnusedSpace="true" DataField="Title" DataFormatString="{0}"
+                            <x:BoundField Width="100px" DataField="Title" DataFormatString="{0}"
                                 HeaderText="标题" />
-                            <x:BoundField Width="800px" DataField="Quota" DataFormatString="{0}" HeaderText="内容" />
+                            <x:BoundField Width="600px" DataField="Quota" DataFormatString="{0}" HeaderText="内容" />
                             <x:TemplateField HeaderText="得分" Width="100px">
                                 <ItemTemplate>
                                     <asp:TextBox ID="TextBox_Score4" runat="server" Width="80px" Text=""></asp:TextBox>
@@ -126,12 +126,12 @@
                     </x:Grid>
                     <x:Grid ID="Grid5" runat="server" Title="岗位胜任能力指标" ShowHeader="true">
                         <Columns>
-                            <x:BoundField Width="100px" ExpandUnusedSpace="true" DataField="Title" DataFormatString="{0}"
+                            <x:BoundField Width="100px" DataField="Title" DataFormatString="{0}"
                                 HeaderText="标题" />
-                            <x:BoundField Width="200px" DataField="Quota1" DataFormatString="{0}" HeaderText="优(91~100)" />
-                            <x:BoundField Width="200px" DataField="Quota2" DataFormatString="{0}" HeaderText="良(71~90)" />
-                            <x:BoundField Width="200px" DataField="Quota3" DataFormatString="{0}" HeaderText="中(41~70)" />
-                            <x:BoundField Width="200px" DataField="Quota4" DataFormatString="{0}" HeaderText="差(0~40)" />
+                            <x:BoundField Width="150px" DataField="Quota1" DataFormatString="{0}" HeaderText="优(91~100)" />
+                            <x:BoundField Width="150px" DataField="Quota2" DataFormatString="{0}" HeaderText="良(71~90)" />
+                            <x:BoundField Width="150px" DataField="Quota3" DataFormatString="{0}" HeaderText="中(41~70)" />
+                            <x:BoundField Width="150px" DataField="Quota4" DataFormatString="{0}" HeaderText="差(0~40)" />
                             <x:TemplateField HeaderText="得分" Width="100px">
                                 <ItemTemplate>
                                     <asp:TextBox ID="TextBox_Score5" runat="server" Width="80px" Text=""></asp:TextBox>
@@ -141,12 +141,12 @@
                     </x:Grid>
                     <x:Grid ID="Grid6" runat="server" Title="工作态度指标" ShowHeader="true">
                         <Columns>
-                            <x:BoundField Width="100px" ExpandUnusedSpace="true" DataField="Title" DataFormatString="{0}"
+                            <x:BoundField Width="100px" DataField="Title" DataFormatString="{0}"
                                 HeaderText="标题" />
-                            <x:BoundField Width="200px" DataField="Quota1" DataFormatString="{0}" HeaderText="优(91~100)" />
-                            <x:BoundField Width="200px" DataField="Quota2" DataFormatString="{0}" HeaderText="良(71~90)" />
-                            <x:BoundField Width="200px" DataField="Quota3" DataFormatString="{0}" HeaderText="中(41~70)" />
-                            <x:BoundField Width="200px" DataField="Quota4" DataFormatString="{0}" HeaderText="差(0~40)" />
+                            <x:BoundField Width="150px" DataField="Quota1" DataFormatString="{0}" HeaderText="优(91~100)" />
+                            <x:BoundField Width="150px" DataField="Quota2" DataFormatString="{0}" HeaderText="良(71~90)" />
+                            <x:BoundField Width="150px" DataField="Quota3" DataFormatString="{0}" HeaderText="中(41~70)" />
+                            <x:BoundField Width="150px" DataField="Quota4" DataFormatString="{0}" HeaderText="差(0~40)" />
                             <x:TemplateField HeaderText="得分" Width="100px">
                                 <ItemTemplate>
                                     <asp:TextBox ID="TextBox_Score6" runat="server" Width="80px" Text=""></asp:TextBox>
@@ -156,9 +156,9 @@
                     </x:Grid>
                     <x:Grid ID="Grid7" runat="server" Title="否决指标" ShowHeader="true">
                         <Columns>
-                            <x:BoundField Width="100px" ExpandUnusedSpace="true" DataField="Title" DataFormatString="{0}"
+                            <x:BoundField Width="100px" DataField="Title" DataFormatString="{0}"
                                 HeaderText="标题" />
-                            <x:BoundField Width="800px" DataField="Quota" DataFormatString="{0}" HeaderText="内容" />
+                            <x:BoundField Width="600px" DataField="Quota" DataFormatString="{0}" HeaderText="内容" />
                             <x:TemplateField Width="60px" HeaderText="得分">
                                 <ItemTemplate>
                                     <asp:DropDownList runat="server" ID="DropDownList1">
