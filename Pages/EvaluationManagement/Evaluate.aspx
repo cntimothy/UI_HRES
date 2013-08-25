@@ -24,7 +24,7 @@
                         Title="Panel" Width="800px">
                         <Items>
                             <x:Grid ID="Grid1" runat="server" Title="被考评人名单" AllowPaging="true" PageSize="20"
-                                DataKeyNames="ID,Relation,Status" EnableRowNumber="true" Width="760px">
+                                DataKeyNames="ID,Relation,Status" EnableRowNumber="true" Width="760px" OnPreRowDataBound="Grid1_PreRowDataBound">
                                 <Columns>
                                     <x:BoundField Width="100px" DataField="ID" DataFormatString="{0}" HeaderText="用户名"
                                         Hidden="true" />
@@ -42,9 +42,8 @@
                                             <asp:Label ID="Status" runat="server" Text='<%# GetEvaluationStatusForEvaluator(Eval("Status")) %>'></asp:Label>
                                         </ItemTemplate>
                                     </x:TemplateField>
-                                    <x:WindowField TextAlign="Center" Width="80px" WindowID="Window1" Text="开始考评"
-                                Title="考评" IFrameUrl="iframe_Evaluate.aspx" DataIFrameUrlFields="ID,Relation"
-                                DataIFrameUrlFormatString="iframe_Evaluate.aspx?id={0}&relation={1}" />
+                                    <x:WindowField ColumnID="WindowField_Evaluate" TextAlign="Center" Width="80px" WindowID="Window1" Text="开始考评" Title="考评"
+                                        IFrameUrl="iframe_Evaluate.aspx" DataIFrameUrlFields="ID,Relation" DataIFrameUrlFormatString="iframe_Evaluate.aspx?id={0}&relation={1}" />
                                 </Columns>
                             </x:Grid>
                         </Items>
@@ -53,8 +52,8 @@
             </x:Panel>
         </Items>
     </x:Panel>
-    <x:Window ID="Window1" runat="server" BodyPadding="5px" Height="550px" CssStyle="width:95%" IsModal="true"
-        Popup="false" Title="考评" EnableConfirmOnClose="true" EnableIFrame="true" >
+    <x:Window ID="Window1" runat="server" BodyPadding="5px" Height="550px" CssStyle="width:95%"
+        IsModal="true" Popup="false" Title="考评" EnableConfirmOnClose="true" EnableIFrame="true">
     </x:Window>
     </form>
 </body>
