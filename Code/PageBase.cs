@@ -983,8 +983,7 @@ namespace HRES
         protected string GetEvaluationStatusForEvaluator(object status)
         {
             string returnValue = "";
-            int intStatus = (bool)status ? 1 : 0;
-            switch ((EvaluationStatusForEvaluator)Enum.Parse(typeof(EvaluationStatusForEvaluator), intStatus.ToString()))
+            switch ((EvaluationStatusForEvaluator)Enum.Parse(typeof(EvaluationStatusForEvaluator), status.ToString()))
             { 
                 case EvaluationStatusForEvaluator.unfinished:
                     returnValue = "未完成";

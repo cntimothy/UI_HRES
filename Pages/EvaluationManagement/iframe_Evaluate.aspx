@@ -169,6 +169,17 @@
                             </x:TemplateField>
                         </Columns>
                     </x:Grid>
+                    <x:Toolbar ID="Toolbar2" runat="server">
+                        <Items>
+                            <x:Button ID="Button_Close_Shadow" runat="server" Text="关闭">
+                            </x:Button>
+                            <x:ToolbarSeparator ID="ToolbarSeparator2" runat="server">
+                            </x:ToolbarSeparator>
+                            <x:Button ID="Button_Submit_Shadow" runat="server" Text="提交" OnClick="Button_Submit_Click"
+                                ConfirmTitle="提示" ConfirmText="确认提交？提交后不可修改">
+                            </x:Button>
+                        </Items>
+                    </x:Toolbar>
                 </Items>
             </x:Panel>
         </Items>

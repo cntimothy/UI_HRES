@@ -21,6 +21,7 @@ namespace HRES.Pages.EvaluationManagement
             if (!IsPostBack)
             {
                 Button_Close.OnClientClick = ActiveWindow.GetConfirmHideRefreshReference();
+                Button_Close_Shadow.OnClientClick = ActiveWindow.GetConfirmHideRefreshReference();
                 Relation relation = (Relation)Enum.Parse(typeof(Relation), Request.QueryString["relation"]);
                 if (relation != Relation.leader)
                 {
@@ -34,59 +35,95 @@ namespace HRES.Pages.EvaluationManagement
         protected void Button_Submit_Click(object sender, EventArgs e)
         {
             List<string> scores = new List<string>();
+            int sumScore = 0;
+            int tempSumScore = 0;
+            int tempWeight = 0;
             for (int i = 0; i < Grid1.Rows.Count; i++)
             {
                 GridRow row = Grid1.Rows[i];
                 System.Web.UI.WebControls.TextBox tb = row.FindControl("TextBox_Score1") as System.Web.UI.WebControls.TextBox;
-                scores.Add(tb.Text);
+                tempSumScore += Convert.ToInt32(tb.Text.Trim());
             }
 
             for (int i = 0; i < Grid2.Rows.Count; i++)
             {
                 GridRow row = Grid2.Rows[i];
                 System.Web.UI.WebControls.TextBox tb = row.FindControl("TextBox_Score2") as System.Web.UI.WebControls.TextBox;
-                scores.Add(tb.Text);
+                tempSumScore += Convert.ToInt32(tb.Text.Trim());
             }
 
             for (int i = 0; i < Grid3.Rows.Count; i++)
             {
                 GridRow row = Grid3.Rows[i];
                 System.Web.UI.WebControls.TextBox tb = row.FindControl("TextBox_Score3") as System.Web.UI.WebControls.TextBox;
-                scores.Add(tb.Text);
+                tempSumScore += Convert.ToInt32(tb.Text.Trim());
             }
+
+            //计算关键指标的平均分
+            tempWeight = Convert.ToInt32(ViewState["KeyWeight"].ToString());
+            tempSumScore = (int)(tempSumScore / (Grid1.Rows.Count + Grid2.Rows.Count + Grid3.Rows.Count) * tempWeight / 100);
+            sumScore += tempSumScore;
+            scores.Add(tempSumScore.ToString());
+            tempSumScore = 0;
 
             for (int i = 0; i < Grid4.Rows.Count; i++)
             {
                 GridRow row = Grid4.Rows[i];
                 System.Web.UI.WebControls.TextBox tb = row.FindControl("TextBox_Score4") as System.Web.UI.WebControls.TextBox;
-                scores.Add(tb.Text);
+                tempSumScore += Convert.ToInt32(tb.Text.Trim());
             }
 
+            //计算岗位职责指标的平均分
+            tempWeight = Convert.ToInt32(ViewState["QualifyWeight"].ToString());
+            tempSumScore = (int)(tempSumScore / (Grid4.Rows.Count) * tempWeight / 100);
+            sumScore += tempSumScore;
+            scores.Add(tempSumScore.ToString());
+            tempSumScore = 0;
 
             for (int i = 0; i < Grid5.Rows.Count; i++)
             {
                 GridRow row = Grid5.Rows[i];
                 System.Web.UI.WebControls.TextBox tb = row.FindControl("TextBox_Score5") as System.Web.UI.WebControls.TextBox;
-                scores.Add(tb.Text);
+                tempSumScore += Convert.ToInt32(tb.Text.Trim());
             }
 
+            //计算岗位胜任能力指标的平均分
+            tempWeight = Convert.ToInt32(ViewState["QualifyWeight"].ToString());
+            tempSumScore = (int)(tempSumScore / (Grid5.Rows.Count) * tempWeight / 100);
+            sumScore += tempSumScore;
+            scores.Add(tempSumScore.ToString());
+            tempSumScore = 0;
 
             for (int i = 0; i < Grid6.Rows.Count; i++)
             {
                 GridRow row = Grid6.Rows[i];
                 System.Web.UI.WebControls.TextBox tb = row.FindControl("TextBox_Score6") as System.Web.UI.WebControls.TextBox;
-                scores.Add(tb.Text);
+                tempSumScore += Convert.ToInt32(tb.Text.Trim());
             }
+
+            //计算工作态度指标的平均分
+            tempWeight = Convert.ToInt32(ViewState["AttitudeWeight"].ToString());
+            tempSumScore = (int)(tempSumScore / (Grid5.Rows.Count) * tempWeight / 100);
+            sumScore += tempSumScore;
+            scores.Add(tempSumScore.ToString());
+            tempSumScore = 0;
 
             if (Grid7.Rows.Count != 0)
             {
                 GridRow gridRow = Grid7.Rows[0];
                 System.Web.UI.WebControls.DropDownList ddl = gridRow.FindControl("DropDownList1") as System.Web.UI.WebControls.DropDownList;
-                scores.Add(ddl.SelectedValue);
+                tempSumScore += Convert.ToInt32(ddl.SelectedValue);
             }
+
+            //计算否决指标的得分
+            scores.Add(tempSumScore.ToString());
+            sumScore -= (int)tempSumScore;
+
+            scores.Add(sumScore.ToString());
+
             string[] scoreArray = scores.ToArray();
 
-            if (CheckNull(scoreArray) && isNumber(scoreArray) && isProperty(scoreArray))
+            if (CheckScores()) //检查分数是否合格
             {
                 string exception = "";
                 string evaluatedID = Request.QueryString["id"];
@@ -116,6 +153,12 @@ namespace HRES.Pages.EvaluationManagement
             string evaluatedID = Request.QueryString["id"];
             if (EvaluationManagementCtrl.GetEvaluateTable(evaluatedID, ref evaluateTable, ref exception))
             {
+                ViewState["KeyWeight"] = evaluateTable.KeyWeight;
+                ViewState["ResponseWeight"] = evaluateTable.KeyWeight;
+                ViewState["QualifyWeight"] = evaluateTable.QualifyWeitht;
+                ViewState["AttitudeWeight"] = evaluateTable.AttitudeWeight;
+                ViewState["RejectWeight"] = evaluateTable.RejectWeight;
+
                 Label_EvaluatedName.Text = evaluateTable.EvaluatedName;
                 Label_PostName.Text = evaluateTable.PostName;
                 Label_LaborDep.Text = evaluateTable.LaborDep;
@@ -248,6 +291,66 @@ namespace HRES.Pages.EvaluationManagement
                 }
             }
             return true;
+        }
+
+        /// <summary>
+        /// 检查分数是否合格,合格返回true，否则返回false
+        /// </summary>
+        /// <returns></returns>
+        private bool CheckScores()
+        {
+            List<string> tempScores = new List<string>();
+            for (int i = 0; i < Grid1.Rows.Count; i++)
+            {
+                GridRow row = Grid1.Rows[i];
+                System.Web.UI.WebControls.TextBox tb = row.FindControl("TextBox_Score1") as System.Web.UI.WebControls.TextBox;
+                tempScores.Add(tb.Text.Trim());
+            }
+
+            for (int i = 0; i < Grid2.Rows.Count; i++)
+            {
+                GridRow row = Grid2.Rows[i];
+                System.Web.UI.WebControls.TextBox tb = row.FindControl("TextBox_Score2") as System.Web.UI.WebControls.TextBox;
+                tempScores.Add(tb.Text.Trim());
+            }
+
+            for (int i = 0; i < Grid3.Rows.Count; i++)
+            {
+                GridRow row = Grid3.Rows[i];
+                System.Web.UI.WebControls.TextBox tb = row.FindControl("TextBox_Score3") as System.Web.UI.WebControls.TextBox;
+                tempScores.Add(tb.Text.Trim());
+            }
+
+            for (int i = 0; i < Grid4.Rows.Count; i++)
+            {
+                GridRow row = Grid4.Rows[i];
+                System.Web.UI.WebControls.TextBox tb = row.FindControl("TextBox_Score4") as System.Web.UI.WebControls.TextBox;
+                tempScores.Add(tb.Text.Trim());
+            }
+
+            for (int i = 0; i < Grid5.Rows.Count; i++)
+            {
+                GridRow row = Grid5.Rows[i];
+                System.Web.UI.WebControls.TextBox tb = row.FindControl("TextBox_Score5") as System.Web.UI.WebControls.TextBox;
+                tempScores.Add(tb.Text.Trim());
+            }
+
+            for (int i = 0; i < Grid6.Rows.Count; i++)
+            {
+                GridRow row = Grid6.Rows[i];
+                System.Web.UI.WebControls.TextBox tb = row.FindControl("TextBox_Score6") as System.Web.UI.WebControls.TextBox;
+                tempScores.Add(tb.Text.Trim());
+            }
+
+            string[] tempScoreArray = tempScores.ToArray();
+            if (CheckNull(tempScoreArray) && isNumber(tempScoreArray) && isProperty(tempScoreArray))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
         #endregion
     }
