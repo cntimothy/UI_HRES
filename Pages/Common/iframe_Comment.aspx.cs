@@ -62,7 +62,7 @@ namespace HRES.Pages.Common
             else if(Request.QueryString["parent"] == "checkevaluatetable")
             {
                 if (EvaluateTableManagementCtrl.SetRejected(Request.QueryString["id"], ref exception) &&
-                    EvaluateTableManagementCtrl.UpdateComment(TextArea_Comment.Text, Request.QueryString["id"], ref exception))
+                    EvaluateTableManagementCtrl.UpdateComment(Request.QueryString["id"],TextArea_Comment.Text,  ref exception))
                 {
                     Alert.ShowInTop("设置成功！\n窗口即将关闭", MessageBoxIcon.Information);
                     PageContext.RegisterStartupScript(ActiveWindow.GetHideReference());

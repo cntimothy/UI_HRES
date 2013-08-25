@@ -956,7 +956,7 @@ namespace HRES
         /// </summary>
         /// <param name="status"></param>
         /// <returns></returns>
-        protected string GetEvaluationStatueForEvaluated(object status)
+        protected string GetEvaluationStatusForEvaluated(object status)
         {
             string returnValue = "";
             switch ((EvaluationStatusForEvaluated)Enum.Parse(typeof(EvaluationStatusForEvaluated), status.ToString()))
@@ -983,7 +983,8 @@ namespace HRES
         protected string GetEvaluationStatusForEvaluator(object status)
         {
             string returnValue = "";
-            switch ((EvaluationStatusForEvaluator)Enum.Parse(typeof(EvaluationStatusForEvaluator), status.ToString()))
+            int intStatus = (bool)status ? 1 : 0;
+            switch ((EvaluationStatusForEvaluator)Enum.Parse(typeof(EvaluationStatusForEvaluator), intStatus.ToString()))
             { 
                 case EvaluationStatusForEvaluator.unfinished:
                     returnValue = "未完成";
