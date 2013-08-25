@@ -62,7 +62,9 @@
     <Content Include="common\menu.xml" />
     <Content Include="common\menuForEvaluator.xml" />
     <Content Include="common\menuForFirstManager.xml" />
-    <Content Include="common\menuForSecondManager.xml" />
+    <Content Include="common\menuForSecondManager.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="common\menuForSuper.xml" />
     <Content Include="css\default.css" />
     <Content Include="css\main.css" />
@@ -1886,6 +1888,7 @@
     <Content Include="lib\Newtonsoft.Json.dll" />
     <Content Include="Pages\AccountManagement\ChangePassword.aspx" />
     <Content Include="Pages\Common\iframe_Comment.aspx" />
+    <Content Include="Pages\DataBaseManagement\DepartManagement.aspx" />
     <Content Include="Pages\ErrorPage\Error.aspx" />
     <Content Include="Pages\EvaluatedManagement\MakeEvaluated.aspx" />
     <Content Include="Pages\EvaluateTableManagement\CheckEvaluateTable.aspx" />
@@ -1957,6 +1960,13 @@
     </Compile>
     <Compile Include="Pages\Common\iframe_Comment.aspx.designer.cs">
       <DependentUpon>iframe_Comment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\DataBaseManagement\DepartManagement.aspx.cs">
+      <DependentUpon>DepartManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\DataBaseManagement\DepartManagement.aspx.designer.cs">
+      <DependentUpon>DepartManagement.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\ErrorPage\Error.aspx.cs">
       <DependentUpon>Error.aspx</DependentUpon>

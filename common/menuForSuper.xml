@@ -16,6 +16,10 @@
     <TreeNode Text="人事处管理员密码重置" NavigateUrl="~/Pages/FirstManagement/ResetFirst.aspx" >
     </TreeNode>
   </TreeNode>
+  <TreeNode Text="数据库管理" SingleClickExpand="true">
+    <TreeNode Text="部门管理" NavigateUrl="~/Pages/DataBaseManagement/DepartManagement.aspx" >
+    </TreeNode>
+  </TreeNode>
   <TreeNode Text="系统管理" SingleClickExpand="true">
     <TreeNode Text="系统初始化" NavigateUrl="~/Pages/SystemManagement/SystemInit.aspx" >
     </TreeNode>
