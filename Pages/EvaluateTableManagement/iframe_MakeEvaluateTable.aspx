@@ -29,6 +29,11 @@
                             <x:Button ID="Button_Submit" runat="server" Text="提交" OnClick="Button_Submit_Click"
                                 ConfirmTitle="提示" ConfirmText="确定提交？">
                             </x:Button>
+                            <x:ToolbarSeparator ID="ToolbarSeparator5" runat="server">
+                            </x:ToolbarSeparator>
+                            <x:Button ID="Button_Clear" runat="server" Text="清空" OnClick="Button_Clear_Click"
+                                ConfirmTitle="提示" ConfirmText="确定清空？">
+                            </x:Button>
                             <x:ToolbarFill ID="ToolbarFill1" runat="server">
                             </x:ToolbarFill>
                             <x:Label ID="Label1" runat="server" Label="Label" Text="审核意见:">

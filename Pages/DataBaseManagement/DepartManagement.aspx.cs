@@ -37,6 +37,7 @@ namespace HRES.Pages.DataBaseManagement
                 return;
             }
             string exception = "";
+
             if (DataBaseManagementCtrl.AddDepart(newDepart, ref exception))
             {
                 Alert.ShowInTop("设置成功！", MessageBoxIcon.Information);

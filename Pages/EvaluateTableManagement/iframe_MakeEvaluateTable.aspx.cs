@@ -123,6 +123,11 @@ namespace HRES.Pages.EvaluateTableManagement
 
         }
 
+        protected void Button_Clear_Click(object sender, EventArgs e)
+        { 
+            
+        }
+
         protected void Button_Save_Click(object sender, EventArgs e)
         {
             DocStatus curStatus = (DocStatus)Enum.Parse(typeof(DocStatus), Request.QueryString["status"]);
@@ -171,6 +176,9 @@ namespace HRES.Pages.EvaluateTableManagement
         #endregion
 
         #region Private Method
+        /// <summary>
+        /// 载入考核表
+        /// </summary>
         private void loadEvaluateTable()
         {
             string evaluatedID = Request.QueryString["id"];
@@ -302,6 +310,10 @@ namespace HRES.Pages.EvaluateTableManagement
             }
         }
 
+        /// <summary>
+        /// 获取当前页面中的考核表
+        /// </summary>
+        /// <returns></returns>
         private EvaluateTable getNewEvaluateTable()
         {
             EvaluateTable evaluateTable = new EvaluateTable();
@@ -444,6 +456,86 @@ namespace HRES.Pages.EvaluateTableManagement
             {
                 return true;
             }
+        }
+
+        /// <summary>
+        /// 清空所有项目
+        /// </summary>
+        private void clearAll()
+        {
+            TextBox_PostName.Text = "";
+            TextBox_LaborUnit.Text = "";
+            TextBox_LaborDep.Text = "";
+            Label_Period.Text = "";
+
+            foreach (ControlBase cb in Panel3.Items)
+            {
+                SimpleForm sf = cb as SimpleForm;
+                TriggerBox tb = sf.Items[0] as TriggerBox;
+                TextArea ta = sf.Items[1] as TextArea;
+                FineUI.HiddenField hf = sf.Items[2] as FineUI.HiddenField;
+                tb.Text = "";
+                ta.Text = "";
+                hf.Text = "";
+            }
+
+            foreach (ControlBase cb in Panel4.Items)
+            {
+                SimpleForm sf = cb as SimpleForm;
+                TriggerBox tb = sf.Items[0] as TriggerBox;
+                TextArea ta = sf.Items[1] as TextArea;
+                FineUI.HiddenField hf = sf.Items[2] as FineUI.HiddenField;
+                tb.Text = "";
+                ta.Text = "";
+                hf.Text = "";
+            }
+
+            foreach (ControlBase cb in Panel5.Items)
+            {
+                SimpleForm sf = cb as SimpleForm;
+                TriggerBox tb = sf.Items[0] as TriggerBox;
+                TextArea ta = sf.Items[1] as TextArea;
+                FineUI.HiddenField hf = sf.Items[2] as FineUI.HiddenField;
+                tb.Text = "";
+                ta.Text = "";
+                hf.Text = "";
+            }
+
+            foreach (ControlBase cb in Panel6.Items)
+            {
+                SimpleForm sf = cb as SimpleForm;
+                TriggerBox tb = sf.Items[0] as TriggerBox;
+                TextArea ta = sf.Items[1] as TextArea;
+                FineUI.HiddenField hf = sf.Items[2] as FineUI.HiddenField;
+                tb.Text = "";
+                ta.Text = "";
+                hf.Text = "";
+            }
+
+            foreach (ControlBase cb in Panel7.Items)
+            {
+                SimpleForm sf = cb as SimpleForm;
+                TriggerBox tb = sf.Items[0] as TriggerBox;
+                TextArea ta = sf.Items[1] as TextArea;
+                FineUI.HiddenField hf = sf.Items[2] as FineUI.HiddenField;
+                tb.Text = "";
+                ta.Text = "";
+                hf.Text = "";
+            }
+
+            foreach (ControlBase cb in Panel8.Items)
+            {
+                SimpleForm sf = cb as SimpleForm;
+                TriggerBox tb = sf.Items[0] as TriggerBox;
+                TextArea ta = sf.Items[1] as TextArea;
+                FineUI.HiddenField hf = sf.Items[2] as FineUI.HiddenField;
+                tb.Text = "";
+                ta.Text = "";
+                hf.Text = "";
+            }
+
+            TextArea_Reject1.Text = "累计旷工3天以上的；\n严重失职，营私舞弊，给本单位造成3000元以上经济损失或者其它严重后果的；\n同时与其他用人单位建立劳动关系，对完成本单位工作任务造成严重影响，或者经本单位提出，拒不改正的；\n违背职业道德，行贿、受贿价值超过3000元以上的；\n被依法追究刑事责任的；";
+            TextArea_Reject2.Text = "";
         }
         #endregion
     }
