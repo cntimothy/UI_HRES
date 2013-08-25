@@ -408,6 +408,8 @@ namespace HRES.Pages.PostBookManagement
                 Button_Save_Shadow.Enabled = false;
                 Button_Submit.Enabled = false;
                 Button_Submit_Shadow.Enabled = false;
+                Button_Clear.Enabled = false;
+                Button_Clear_Shadow.Enabled = false;
             }
         }
 
