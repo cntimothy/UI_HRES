@@ -49,13 +49,22 @@ namespace HRES.Pages.DataBaseManagement {
         protected global::FineUI.Panel Panel2;
         
         /// <summary>
-        /// SimpleForm1 控件。
+        /// Form2 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.SimpleForm SimpleForm1;
+        protected global::FineUI.Form Form2;
+        
+        /// <summary>
+        /// FormRow1 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.FormRow FormRow1;
         
         /// <summary>
         /// TextBox_NewDepart 控件。
@@ -76,12 +85,12 @@ namespace HRES.Pages.DataBaseManagement {
         protected global::FineUI.Button Button_Add;
         
         /// <summary>
-        /// Label_Departs 控件。
+        /// Grid1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Label Label_Departs;
+        protected global::FineUI.Grid Grid1;
     }
 }

@@ -97,6 +97,7 @@ namespace HRES.Pages.EvaluatedManagement
                 if (EvaluatedManagementCtrl.Delete(IDs, ref exception))
                 {
                     Alert.ShowInTop("删除成功！", MessageBoxIcon.Information);
+                    bindEvaluatedToGrid();
                 }
                 else
                 {

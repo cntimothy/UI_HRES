@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using Controls;
 using FineUI;
 using System.Text;
+using System.Data;
 
 namespace HRES.Pages.DataBaseManagement
 {
@@ -17,12 +18,36 @@ namespace HRES.Pages.DataBaseManagement
         {
             if (!IsPostBack)
             {
-                writeDeparts();
+                bindDepartsToGrid();
             }
         }
         #endregion
 
         #region Event
+        protected void Grid1_PageIndexChange(object sender, FineUI.GridPageEventArgs e)
+        {
+            Grid1.PageIndex = e.NewPageIndex;
+        }
+
+        protected void Grid1_RowCommand(object sender, FineUI.GridCommandEventArgs e)
+        {
+            string exception = "";
+            if (e.CommandName == "Delete")
+            {
+                object[] keys = Grid1.DataKeys[e.RowIndex];
+                string id = (string)keys[0];
+                if (DataBaseManagementCtrl.DeleteDepart(id, ref exception))
+                {
+                    Alert.ShowInTop("删除成功！", MessageBoxIcon.Information);
+                    bindDepartsToGrid();
+                }
+                else
+                {
+                    Alert.ShowInTop("删除失败！\n原因：" + exception, MessageBoxIcon.Error);
+                }
+            }
+        }
+
         protected void Button_Add_Click(object sender, EventArgs e)
         {
             string newDepart = TextBox_NewDepart.Text.Trim();
@@ -41,7 +66,6 @@ namespace HRES.Pages.DataBaseManagement
             if (DataBaseManagementCtrl.AddDepart(newDepart, ref exception))
             {
                 Alert.ShowInTop("设置成功！", MessageBoxIcon.Information);
-                writeDeparts();
             }
             else
             {
@@ -52,22 +76,18 @@ namespace HRES.Pages.DataBaseManagement
         #endregion
 
         #region Private Method
-        private void writeDeparts()
+        private void bindDepartsToGrid()
         {
             string exception = "";
-            List<string> departList = new List<string>();
-            StringBuilder sb = new StringBuilder();
-            if (DataBaseManagementCtrl.GetAllDepart(ref departList, ref exception))
+            DataTable table = new DataTable();
+            if (DataBaseManagementCtrl.GetAllDepart(ref table, ref exception))
             {
-                foreach (string item in departList)
-                {
-                    sb.Append(item + " ");
-                }
-                Label_Departs.Text = sb.ToString();
+                Grid1.DataSource = table;
+                Grid1.DataBind();
             }
             else
             {
-                Alert.ShowInTop("未能获取部门列表！\n原因：" + exception, MessageBoxIcon.Error);
+                Alert.ShowInTop("未能获取部门信息！/n原因：" + exception, MessageBoxIcon.Error);
             }
         }
         #endregion
