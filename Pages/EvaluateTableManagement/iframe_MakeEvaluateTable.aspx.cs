@@ -101,12 +101,15 @@ namespace HRES.Pages.EvaluateTableManagement
 
                 //Button_Close.OnClientClick = ActiveWindow.GetConfirmHidePostBackReference();
                 Button_Close.OnClientClick = ActiveWindow.GetConfirmHideRefreshReference();
+                Button_Close_Shadow.OnClientClick = ActiveWindow.GetConfirmHideRefreshReference();
 
                 DocStatus curStatus = (DocStatus)Enum.Parse(typeof(DocStatus), Request.QueryString["status"]);
                 if (curStatus == DocStatus.submitted || curStatus == DocStatus.passed)
                 {
                     Button_Save.Enabled = false;
                     Button_Submit.Enabled = false;
+                    Button_Save_Shadow.Enabled = false;
+                    Button_Submit_Shadow.Enabled = false;
                 }
 
                 loadEvaluateTable();

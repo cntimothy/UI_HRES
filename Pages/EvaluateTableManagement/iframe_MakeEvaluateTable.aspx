@@ -489,6 +489,22 @@
                             </x:TextArea>
                         </Items>
                     </x:SimpleForm>
+                    <x:Toolbar ID="Toolbar2" runat="server" CssStyle="width:99.7%">
+                        <Items>
+                            <x:Button ID="Button_Close_Shadow" runat="server" Text="关闭">
+                            </x:Button>
+                            <x:ToolbarSeparator ID="ToolbarSeparator3" runat="server">
+                            </x:ToolbarSeparator>
+                            <x:Button ID="Button_Save_Shadow" runat="server" Text="保存" OnClick="Button_Save_Click" ConfirmTitle="提示"
+                                ConfirmText="确定保存？">
+                            </x:Button>
+                            <x:ToolbarSeparator ID="ToolbarSeparator4" runat="server">
+                            </x:ToolbarSeparator>
+                            <x:Button ID="Button_Submit_Shadow" runat="server" Text="提交" OnClick="Button_Submit_Click"
+                                ConfirmTitle="提示" ConfirmText="确定提交？">
+                            </x:Button>
+                        </Items>
+                    </x:Toolbar>
                 </Items>
             </x:Panel>
         </Items>

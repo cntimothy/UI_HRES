@@ -96,6 +96,24 @@
                         <Items>
                         </Items>
                     </x:Panel>
+                    <x:Toolbar ID="Toolbar2" runat="server">
+                        <Items>
+                            <x:Button ID="Button_Close_Shadow" runat="server" Text="关闭">
+                            </x:Button>
+                            <x:ToolbarSeparator ID="ToolbarSeparator4" runat="server">
+                            </x:ToolbarSeparator>
+                            <x:Button ID="Button_Pass_Shadow" runat="server" Text="通过" OnClick="Button_Pass_Click" ConfirmTitle="提示" ConfirmText="确定通过？">
+                            </x:Button>
+                            <x:ToolbarSeparator ID="ToolbarSeparator5" runat="server">
+                            </x:ToolbarSeparator>
+                            <x:Button ID="Button_Reject_Shadow" runat="server" Text="退回" >
+                            </x:Button>
+                            <x:ToolbarSeparator ID="ToolbarSeparator6" runat="server">
+                            </x:ToolbarSeparator>
+                            <x:Button ID="Button_Export_Shadow" runat="server" Text="导出" OnClick="Button_Export_Click" EnableAjax="false">
+                            </x:Button>
+                        </Items>
+                    </x:Toolbar>
                 </Items>
             </x:Panel>
         </Items>

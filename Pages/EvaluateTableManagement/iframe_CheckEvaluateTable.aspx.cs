@@ -23,6 +23,8 @@ namespace HRES.Pages.EvaluateTableManagement
                 //Button_Close.OnClientClick = ActiveWindow.GetHideReference();
                 Button_Close.OnClientClick = ActiveWindow.GetHideRefreshReference();
                 Button_Reject.OnClientClick = Window1.GetShowReference("../Common/iframe_Comment.aspx?id=" + Request.QueryString["id"] + "&parent=checkevaluatetable", "审核意见");
+                Button_Close_Shadow.OnClientClick = ActiveWindow.GetHideRefreshReference();
+                Button_Reject_Shadow.OnClientClick = Window1.GetShowReference("../Common/iframe_Comment.aspx?id=" + Request.QueryString["id"] + "&parent=checkevaluatetable", "审核意见");
             }
         }
 
