@@ -871,7 +871,7 @@ namespace HRES
         protected string GetDocStatus(object status)
         {
             string returnValue = "";
-            switch ((DocStatus)Enum.Parse(typeof(DocStatus), (string)status))
+            switch ((DocStatus)Enum.Parse(typeof(DocStatus), status.ToString()))
             {
                 case DocStatus.unmake:
                     returnValue = "未制作";
@@ -903,7 +903,7 @@ namespace HRES
         protected string GetDocStatusForCheck(object status)
         {
             string returnValue = "";
-            switch ((DocStatus)Enum.Parse(typeof(DocStatus), (string)status))
+            switch ((DocStatus)Enum.Parse(typeof(DocStatus), status.ToString()))
             {
                 case DocStatus.unmake:
                 case DocStatus.saved:
@@ -933,7 +933,7 @@ namespace HRES
         protected string GetEvaluationStatus(object status)
         {
             string returnValue = "";
-            switch ((EvaluationStatus)Enum.Parse(typeof(EvaluationStatus), (string)status))
+            switch ((EvaluationStatus)Enum.Parse(typeof(EvaluationStatus), status.ToString()))
             {
                 case EvaluationStatus.uninitial:
                     returnValue = "未初始化";
@@ -959,7 +959,7 @@ namespace HRES
         protected string GetEvaluationStatueForEvaluated(object status)
         {
             string returnValue = "";
-            switch ((EvaluationStatusForEvaluated)Enum.Parse(typeof(EvaluationStatusForEvaluated), (string)status))
+            switch ((EvaluationStatusForEvaluated)Enum.Parse(typeof(EvaluationStatusForEvaluated), status.ToString()))
             { 
                 case EvaluationStatusForEvaluated.uninitial:
                     returnValue = "未初始化";
@@ -983,7 +983,7 @@ namespace HRES
         protected string GetEvaluationStatusForEvaluator(object status)
         {
             string returnValue = "";
-            switch ((EvaluationStatusForEvaluator)Enum.Parse(typeof(EvaluationStatusForEvaluator), (string)status))
+            switch ((EvaluationStatusForEvaluator)Enum.Parse(typeof(EvaluationStatusForEvaluator), status.ToString()))
             { 
                 case EvaluationStatusForEvaluator.unfinished:
                     returnValue = "未完成";
@@ -1003,10 +1003,10 @@ namespace HRES
         /// </summary>
         /// <param name="relation"></param>
         /// <returns></returns>
-        protected string GetRelation(object relation)
+        protected string GetRelation(object status)
         {
             string returnValue = "";
-            switch ((Relation)Enum.Parse(typeof(Relation), (string)relation))
+            switch ((Relation)Enum.Parse(typeof(Relation), status.ToString()))
             {
                 case Relation.leader:
                     returnValue = "领导";
