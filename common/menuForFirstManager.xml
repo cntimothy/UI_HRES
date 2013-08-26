@@ -23,9 +23,9 @@
   <TreeNode Text="考评管理" SingleClickExpand="true">
     <TreeNode Text="开始考评" NavigateUrl="~/Pages/EvaluationManagement/StartEvaluation.aspx" >
     </TreeNode>
-    <TreeNode Text="查询结果（按被考评人）" NavigateUrl="~/Pages/EvaluationManagement/EvaluationResultForIndividual.aspx" >
+    <TreeNode Text="查询结果（个人）" NavigateUrl="~/Pages/EvaluationManagement/EvaluationResultForIndividual.aspx" >
     </TreeNode>
-    <TreeNode Text="查询结果（按部门）" NavigateUrl="~/Pages/EvaluationManagement/EvaluationResultForDepart.aspx" >
+    <TreeNode Text="查询结果（部门）" NavigateUrl="~/Pages/EvaluationManagement/EvaluationResultForDepart.aspx" >
     </TreeNode>
     <TreeNode Text="短信平台" NavigateUrl="~/Pages/EvaluationManagement/MessagePlatform.aspx" >
     </TreeNode>
