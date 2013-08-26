@@ -109,6 +109,7 @@ namespace HRES.Pages.EvaluatorManagement
                 if (EvaluatorManagementCtrl.Delete(IDs, ref exception))
                 {
                     Alert.ShowInTop("删除成功！", MessageBoxIcon.Information);
+                    bindEvaluatorToGrid();
                 }
                 else
                 {
