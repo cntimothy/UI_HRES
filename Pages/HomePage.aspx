@@ -27,6 +27,12 @@
                                 <li class="list"><x:LinkButton ID="LoginOut" runat="server" Label="Label" Text="注销" ConfirmTitle="提示"
                                     ConfirmText="确认注销？" OnClick="LoginOut_Click">
                                 </x:LinkButton></li>
+                                <li class="list">&nbsp|&nbsp</li>
+                                <li class="list">
+                                    <x:HyperLink ID="HyperLink1" runat="server" Label="Label" NavigateUrl="../downloadfiles/template/《360考评考核系统》简易操作说明.htm" Target="_blank"
+                                        Text="帮助文档">
+                                    </x:HyperLink>
+                                </x:LinkButton></li>
                             </ul>
                         </div>
                     </x:ContentPanel>
