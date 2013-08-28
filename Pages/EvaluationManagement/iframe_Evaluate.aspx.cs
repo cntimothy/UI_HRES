@@ -248,12 +248,12 @@ namespace HRES.Pages.EvaluationManagement
                 DataTable table7 = new DataTable();
                 table7.Columns.Add("Title");
                 table7.Columns.Add("Quota");
-                foreach (Quota item in evaluateTable.Reject)
-                {
-                    table7.Rows.Add(item.Title, item.Content[0]);
-                }
+                table7.Rows.Add("严重违反规章制度", "累计旷工3天以上的；\n严重失职，营私舞弊，给本单位造成3000元以上经济损失或者其它严重后果的；\n同时与其他用人单位建立劳动关系，对完成本单位工作任务造成严重影响，或者经本单位提出，拒不改正的；\n违背职业道德，行贿、受贿价值超过3000元以上的；\n被依法追究刑事责任的；");
+                table7.Rows.Add(evaluateTable.Reject[0].Title, evaluateTable.Reject[0].Content[0]);
                 Grid7.DataSource = table7;
                 Grid7.DataBind();
+                System.Web.UI.WebControls.DropDownList ddl = Grid7.Rows[1].FindControl("DropDownList1") as System.Web.UI.WebControls.DropDownList;
+                ddl.Visible = false;
             }
         }
 
