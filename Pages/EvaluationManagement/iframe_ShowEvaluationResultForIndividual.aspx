@@ -17,6 +17,10 @@
                 <Items>
                     <x:Toolbar ID="Toolbar1" runat="server">
                         <Items>
+                            <x:Button ID="Button_Close" runat="server" Text="关闭">
+                            </x:Button>
+                            <x:ToolbarSeparator ID="ToolbarSeparator2" runat="server">
+                            </x:ToolbarSeparator>
                             <x:Label ID="Label1" runat="server" Label="Label" Text="请选择年份：">
                             </x:Label>
                             <x:DropDownList ID="DropDownList_Year" runat="server" Label="Label" AutoPostBack="true"

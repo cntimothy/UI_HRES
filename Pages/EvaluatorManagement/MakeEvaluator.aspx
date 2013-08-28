@@ -100,8 +100,8 @@
     </x:Panel>
     <x:Window ID="Window_MakeEvaluator" Title="弹出窗体" Popup="false" EnableIFrame="true"
         IFrameUrl="about:blank" EnableMaximize="true" Target="Top" EnableResize="true"
-        runat="server" OnClose="Window_MakeEvaluator_Close" IsModal="true" CssStyle="width:80%"
-        EnableConfirmOnClose="true" Height="600px" EnableClose="true" AutoHeight="true">
+        runat="server" IsModal="true" CssStyle="width:80%"
+        EnableConfirmOnClose="true" Height="600px" EnableClose="false" AutoHeight="true">
     </x:Window>
     </form>
 </body>

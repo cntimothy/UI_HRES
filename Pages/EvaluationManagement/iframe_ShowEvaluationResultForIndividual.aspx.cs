@@ -18,6 +18,7 @@ namespace HRES.Pages.EvaluationManagement
             checkSession();
             if (!IsPostBack)
             {
+                Button_Close.OnClientClick = ActiveWindow.GetHideReference();
                 bindYearToDropDownList();
                 bindEvaluationResultToGrid();
             }
