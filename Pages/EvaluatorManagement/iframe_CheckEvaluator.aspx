@@ -41,6 +41,12 @@
                             </x:Label>
                         </Items>
                     </x:Toolbar>
+                    <x:SimpleForm ID="SimpleForm1" runat="server" BodyPadding="5px" Title="SimpleForm" ShowBorder="false" ShowHeader="false" LabelWidth="150px">
+                        <Items>
+                            <x:Label ID="Label_Setted" runat="server" Label="已设置考评人名单" Text="">
+                            </x:Label>
+                        </Items>
+                    </x:SimpleForm>
                     <x:Grid ID="Grid1" runat="server" Title="Grid" ShowHeader="false" AllowPaging="true"
                         PageSize="20" Height="500px" OnPageIndexChange="Grid1_PageIndexChange" EnableRowNumber="true"
                         AutoPostBack="false" DataKeyNames="ID, Name, Sex, Company, Telephone, Relation"

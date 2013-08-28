@@ -10,6 +10,7 @@ using DataStructure;
 using System.Web.Script.Serialization;
 using System.Data;
 using AspNet = System.Web.UI.WebControls;
+using System.Text;
 
 namespace HRES.Pages.EvaluatorManagement
 {
@@ -24,6 +25,7 @@ namespace HRES.Pages.EvaluatorManagement
                 Button_Close.OnClientClick = ActiveWindow.GetConfirmHideRefreshReference();
                 Panel1.Title = Request.QueryString["name"] + "的考评人名单";
                 bindEvaluatorToGrid();
+                writeSettedNameLabel();         //显示已设置考评人名单
                 Button_Reject.OnClientClick = Window1.GetShowReference("../Common/iframe_Comment.aspx?id=" + Request.QueryString["id"] + "&parent=checkevaluator", "审核意见");
             }
         }
@@ -156,6 +158,24 @@ namespace HRES.Pages.EvaluatorManagement
             Grid1.SelectedRowIndexArray = nextSelectedRowIndexArray.ToArray();
         }
 
+        /// <summary>
+        /// 显示已设置的考评人名单
+        /// </summary>
+        private void writeSettedNameLabel()
+        {
+            string exception = "";
+            List<string> nameList = new List<string>();
+            string evaluatedID = Request.QueryString["id"];
+            if (EvaluatorManagementCtrl.GetSettedEvaluatorName(ref nameList, evaluatedID, ref exception))
+            {
+                StringBuilder sb = new StringBuilder();
+                foreach (string name in nameList)
+                {
+                    sb.Append(name + " ");
+                }
+                Label_Setted.Text = sb.ToString();
+            }
+        }
         #endregion
     }
 }

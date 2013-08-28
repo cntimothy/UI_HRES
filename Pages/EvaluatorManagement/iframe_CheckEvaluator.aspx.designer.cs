@@ -148,6 +148,24 @@ namespace HRES.Pages.EvaluatorManagement {
         protected global::FineUI.Label Label2;
         
         /// <summary>
+        /// SimpleForm1 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.SimpleForm SimpleForm1;
+        
+        /// <summary>
+        /// Label_Setted 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.Label Label_Setted;
+        
+        /// <summary>
         /// Grid1 控件。
         /// </summary>
         /// <remarks>
