@@ -24,6 +24,13 @@ namespace HRES.Pages.EvaluationManagement
         }
 
         #region Event
+        protected void Grid1_Sort(object sender, FineUI.GridSortEventArgs e)
+        {
+            Grid1.SortDirection = e.SortDirection;
+            Grid1.SortColumnIndex = e.ColumnIndex;
+            bindScoreToGrid();
+        }
+
         protected void Button_Search_Click(object sender, EventArgs e)
         {
             if (DropDownList_Depart.SelectedValue == "-1")
@@ -37,27 +44,12 @@ namespace HRES.Pages.EvaluationManagement
                 return;
             }
 
-            string exception = "";
-            string depart = DropDownList_Depart.SelectedValue;
-            int year = Convert.ToInt32(DropDownList_Year.SelectedValue);
-            DataTable table = new DataTable();
-            string startTime = "", stopTime = "", evaluationDate = "";
-            if (EvaluationManagementCtrl.GetEvaluationResultByDepartAndEvaluation(ref table, depart, year, ref startTime, ref stopTime, ref evaluationDate, ref exception))
-            {
-                Grid1.DataSource = table;
-                Grid1.DataBind();
-                Label_Period.Text = startTime + " ~ " + stopTime;
-                Grid1.Title = depart + "派遣员工考核汇总表";
-                Button_Export.Enabled = true;
-            }
+            bindScoreToGrid();
         }
 
         protected void Button_Export_Click(object sender, EventArgs e)
         {
             string exception = "";
-            //string evaluatedID = Request.QueryString["id"];
-            //string evaluatedName = Request.QueryString["name"];
-            //EvaluationResult evaluationResult;
             string depart = DropDownList_Depart.SelectedValue;
             int year = Convert.ToInt32(DropDownList_Year.SelectedValue);
             DataTable table = new DataTable();
@@ -105,6 +97,28 @@ namespace HRES.Pages.EvaluationManagement
             else
             {
                 Alert.ShowInTop("获取部门信息失败！\n原因：" + exception, MessageBoxIcon.Error);
+            }
+        }
+
+        private void bindScoreToGrid()
+        {
+            string exception = "";
+            string depart = DropDownList_Depart.SelectedValue;
+            int year = Convert.ToInt32(DropDownList_Year.SelectedValue);
+            DataTable table = new DataTable();
+            string startTime = "", stopTime = "", evaluationDate = "";
+            if (EvaluationManagementCtrl.GetEvaluationResultByDepartAndEvaluation(ref table, depart, year, ref startTime, ref stopTime, ref evaluationDate, ref exception))
+            {
+                string sortField = Grid1.SortField;
+                string sortDirection = Grid1.SortDirection;
+
+                DataView view1 = table.DefaultView;
+                view1.Sort = String.Format("{0} {1}", sortField, sortDirection);
+                Grid1.DataSource = table;
+                Grid1.DataBind();
+                Label_Period.Text = startTime + " ~ " + stopTime;
+                Grid1.Title = depart + "派遣员工考核汇总表";
+                Button_Export.Enabled = true;
             }
         }
         #endregion

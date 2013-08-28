@@ -31,7 +31,8 @@
                             </x:Button>
                             <x:ToolbarSeparator ID="ToolbarSeparator3" runat="server">
                             </x:ToolbarSeparator>
-                            <x:Button ID="Button_Export" runat="server" Text="导出" OnClick="Button_Export_Click" EnableAjax="false" Enabled="false">
+                            <x:Button ID="Button_Export" runat="server" Text="导出" OnClick="Button_Export_Click"
+                                EnableAjax="false" Enabled="false">
                             </x:Button>
                         </Items>
                     </x:Toolbar>
@@ -46,10 +47,12 @@
                             </x:FormRow>
                         </Rows>
                     </x:Form>
-                    <x:Grid ID="Grid1" runat="server" Title="Grid" EnableRowNumber="true" AutoHeight="true" Width="800px">
+                    <x:Grid ID="Grid1" runat="server" Title="Grid" EnableRowNumber="true" AutoHeight="true"
+                        Width="800px" AllowSorting="true" SortColumnIndex="1" SortDirection="ASC" OnSort="Grid1_Sort">
                         <Columns>
                             <x:BoundField Width="100px" DataField="Name" DataFormatString="{0}" HeaderText="姓名" />
-                            <x:BoundField Width="150px" DataField="Score" DataFormatString="{0}" HeaderText="考核得分" />
+                            <x:BoundField Width="150px" DataField="Score" SortField="Score" DataFormatString="{0}"
+                                HeaderText="考核得分" />
                             <x:BoundField Width="100px" DataField="Result" DataFormatString="{0}" HeaderText="考核结果" />
                             <x:BoundField Width="100px" DataField="EvaluatorNum" DataFormatString="{0}" HeaderText="考核人数" />
                             <x:BoundField Width="250px" DataField="Comment" DataFormatString="{0}" HeaderText="备注" />
