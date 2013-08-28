@@ -54,7 +54,11 @@
                                         Hidden="true" />
                                     <x:BoundField Width="100px" DataField="Company" DataFormatString="{0}" HeaderText="派遣公司"
                                         Hidden="true" />
-                                    <x:BoundField Width="100px" DataField="Status" DataFormatString="{0}" HeaderText="考核状态" />
+                                    <x:TemplateField SortField="Status" Width="50px" HeaderText="状态">
+                                        <ItemTemplate>
+                                            <asp:Label ID="Status" runat="server" Text='<%# GetEvaluationStatusForEvaluated(Eval("Status")) %>'></asp:Label>
+                                        </ItemTemplate>
+                                    </x:TemplateField>
                                     <x:WindowField TextAlign="Center" Width="80px" WindowID="Window1" Text="查看" ToolTip="查看考评结果"
                                         Title="操作" IFrameUrl="iframe_ShowEvaluationResultForIndividual.aspx" DataIFrameUrlFields="ID,Name,Status"
                                         DataIFrameUrlFormatString="iframe_ShowEvaluationResultForIndividual.aspx?id={0}&name={1}&status={2}" />

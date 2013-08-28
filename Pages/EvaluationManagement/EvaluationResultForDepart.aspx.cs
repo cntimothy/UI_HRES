@@ -120,6 +120,10 @@ namespace HRES.Pages.EvaluationManagement
                 Grid1.Title = depart + "派遣员工考核汇总表";
                 Button_Export.Enabled = true;
             }
+            else
+            {
+                Alert.ShowInTop("未能查询到考评结果！\n原因：" + exception, MessageBoxIcon.Error);
+            }
         }
         #endregion
     }
