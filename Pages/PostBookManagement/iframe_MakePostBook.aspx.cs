@@ -17,19 +17,30 @@ namespace HRES.Pages.PostBookManagement
             checkSession();
             if (!IsPostBack)
             {
+
                 Button_Close.OnClientClick = ActiveWindow.GetConfirmHideRefreshReference();
                 Button_Close_Shadow.OnClientClick = ActiveWindow.GetConfirmHideRefreshReference();
                 Button_Reject.OnClientClick = Window1.GetShowReference("../Common/iframe_Comment.aspx?id=" + Request.QueryString["id"] + "&parent=checkpostbook", "审核意见");
                 Button_Reject_Shadow.OnClientClick = Window1.GetShowReference("../Common/iframe_Comment.aspx?id=" + Request.QueryString["id"], "审核意见");
 
-                loadPostBook();     //载入岗位责任书
+                bindPostBookSubmittedNameIdDicToDropDownList();     //绑定已提交岗位责任书的被考评人姓名id字典到下拉列表
+                loadPostBook("");     //载入被考评人的岗位责任书
 
                 setToolbarVisible();    //根据用户身份，设置工具栏中按钮的可见性
                 setEnabled();           //根据岗位责任书的状态设置按钮的可用性
             }
+            //检测是否是模版下拉列表引发的postback
+            if (Page.Request.Params["__EVENTTARGET"] != null && Page.Request.Params["__EVENTTARGET"].ToString().Replace('$', '_') == DropDownList_Template.ClientID)
+            {
+                loadPostBook(DropDownList_Template.SelectedValue);
+            }
         }
 
         #region Event
+        protected void DropDownList_Template_SelectedChanged(object sender, EventArgs e)
+        {
+        }
+
         protected void Button_Save_Click(object sender, EventArgs e)
         {
             string exception = "";
@@ -187,10 +198,18 @@ namespace HRES.Pages.PostBookManagement
         /// <summary>
         /// 载入岗位责任书
         /// </summary>
-        private void loadPostBook()
+        private void loadPostBook(string id)
         {
             string exception = "";
-            string evaluatedID = Request.QueryString["id"];
+            string evaluatedID = "";
+            if (id == "" || id == "0")
+            {
+                evaluatedID = Request.QueryString["id"];
+            }
+            else
+            {
+                evaluatedID = id;
+            }
             string name = Request.QueryString["name"];
             Panel1.Title = name + "的岗位责任书";
             PostBook pb = new PostBook();
@@ -357,6 +376,8 @@ namespace HRES.Pages.PostBookManagement
                 Button_Save.Visible = false;
                 Button_Submit.Visible = false;
                 Button_Clear.Visible = false;
+                DropDownList_Template.Visible = false;
+
                 Button_Save_Shadow.Visible = false;
                 Button_Submit_Shadow.Visible = false;
                 Button_Clear_Shadow.Visible = false;
@@ -367,6 +388,7 @@ namespace HRES.Pages.PostBookManagement
                 ToolbarSeparator6.Visible = false;
                 ToolbarSeparator7.Visible = false;
                 ToolbarSeparator8.Visible = false;
+                ToolbarSeparator13.Visible = false;
             }
             else if (accessLevel == AccessLevel.secondManager)
             {
@@ -413,57 +435,21 @@ namespace HRES.Pages.PostBookManagement
             }
         }
 
-        //private void setEnabled()
-        //{
-        //    DocStatus status = (DocStatus)Enum.Parse(typeof(DocStatus), Request.QueryString["status"]);
-        //    if (status == DocStatus.submitted || status == DocStatus.passed)
-        //    {
-        //        Button_Submit.Enabled = false;
-        //        Button_Clear.Enabled = false;
-        //        Button_Save.Enabled = false;
-        //        Button_Submit_Shadow.Enabled = false;
-        //        Button_Clear_Shadow.Enabled = false;
-        //        Button_Save_Shadow.Enabled = false;
-
-
-        //        TextBox_LaborUnit.Enabled = false;
-        //        TextBox_LaborDepart.Enabled = false;
-        //        TextBox_PostName.Enabled = false;
-        //        TextArea_EduBg.Enabled = false;
-        //        TextArea_Certificate.Enabled = false;
-        //        TextArea_Experience.Enabled = false;
-        //        TextArea_Skill.Enabled = false;
-        //        TextArea_Personality.Enabled = false;
-        //        TextArea_PhyCond.Enabled = false;
-        //        TextArea_WorkOutline.Enabled = false;
-        //        TextArea_Power.Enabled = false;
-        //        TextArea_Response.Enabled = false;
-        //        TextBox_DirectLeader.Enabled = false;
-        //        TextBox_Subordinate.Enabled = false;
-        //        TextBox_Colleague.Enabled = false;
-        //        TextBox_Services.Enabled = false;
-        //        TextBox_Relations.Enabled = false;
-        //        TextArea_WorkEnter.Enabled = false;
-        //        TextArea_PostAssess.Enabled = false;
-        //        TextArea_Others.Enabled = false;
-
-        //        Radio_Employer.Enabled = false;
-        //        Radio_PostType.Enabled = false;
-
-        //        foreach (ControlBase item in Panel6.Items)
-        //        {
-        //            try
-        //            {
-        //                SimpleForm sf = item as SimpleForm;
-        //                item.Enabled = false;
-        //            }
-        //            catch (Exception)
-        //            {
-        //                continue;
-        //            }
-        //        }
-        //    }
-        //}
+        /// <summary>
+        /// 将岗位责任书已提交的被考评人姓名id字典绑定到下拉列表
+        /// </summary>
+        private void bindPostBookSubmittedNameIdDicToDropDownList()
+        {
+            string exception = "";
+            Dictionary<string, string> nameIdDic = new Dictionary<string, string>();
+            if (PostBookManagementCtrl.GetSubmittedNameIdDic(ref nameIdDic, ref exception))
+            {
+                foreach (string name in nameIdDic.Keys)
+                {
+                    DropDownList_Template.Items.Add(name, nameIdDic[name]);
+                }
+            }
+        }
         #endregion
     }
 }

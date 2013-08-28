@@ -34,6 +34,11 @@
                             <x:Button ID="Button_Clear" runat="server" Text="清空" OnClick="Button_Clear_Click"
                                 ConfirmTitle="提示" ConfirmText="确定清空？">
                             </x:Button>
+                            <x:ToolbarSeparator ID="ToolbarSeparator13" runat="server">
+                            </x:ToolbarSeparator>
+                            <x:DropDownList ID="DropDownList_Template" runat="server" Label="Label" OnSelectedIndexChanged="DropDownList_Template_SelectedChanged" AutoPostBack="true">
+                                <x:ListItem EnableSelect="true" Selected="true" Text="选择模版" Value="0" />
+                            </x:DropDownList>
                             <x:ToolbarFill ID="ToolbarFill1" runat="server">
                             </x:ToolbarFill>
                             <x:Label ID="Label1" runat="server" Label="Label" Text="审核意见:">

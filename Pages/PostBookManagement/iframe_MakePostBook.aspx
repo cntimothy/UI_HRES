@@ -41,12 +41,18 @@
                             </x:Button>
                             <x:ToolbarSeparator ID="ToolbarSeparator5" runat="server">
                             </x:ToolbarSeparator>
-                            <x:Button ID="Button_Reject" runat="server" Text="退回" >
+                            <x:Button ID="Button_Reject" runat="server" Text="退回">
                             </x:Button>
                             <x:ToolbarSeparator ID="ToolbarSeparator11" runat="server">
                             </x:ToolbarSeparator>
-                            <x:Button ID="Button_Export" runat="server" Text="导出" OnClick="Button_Export_Click" EnableAjax="false">
+                            <x:Button ID="Button_Export" runat="server" Text="导出" OnClick="Button_Export_Click"
+                                EnableAjax="false">
                             </x:Button>
+                            <x:ToolbarSeparator ID="ToolbarSeparator13" runat="server">
+                            </x:ToolbarSeparator>
+                            <x:DropDownList ID="DropDownList_Template" runat="server" Label="Label" OnSelectedIndexChanged="DropDownList_Template_SelectedChanged" AutoPostBack="true">
+                                <x:ListItem EnableSelect="true" Selected="true" Text="选择模版" Value="0" />
+                            </x:DropDownList>
                             <x:ToolbarFill ID="ToolbarFill1" runat="server">
                             </x:ToolbarFill>
                             <x:Label ID="Label1" runat="server" Label="" Text="审核意见：">
@@ -360,8 +366,8 @@
                             </x:Button>
                             <x:ToolbarSeparator ID="ToolbarSeparator6" runat="server">
                             </x:ToolbarSeparator>
-                            <x:Button ID="Button_Save_Shadow" runat="server" Text="保存" OnClick="Button_Save_Click" ConfirmText="确定保存？"
-                                ConfirmTitle="提示">
+                            <x:Button ID="Button_Save_Shadow" runat="server" Text="保存" OnClick="Button_Save_Click"
+                                ConfirmText="确定保存？" ConfirmTitle="提示">
                             </x:Button>
                             <x:ToolbarSeparator ID="ToolbarSeparator7" runat="server">
                             </x:ToolbarSeparator>
@@ -375,8 +381,8 @@
                             </x:Button>
                             <x:ToolbarSeparator ID="ToolbarSeparator9" runat="server">
                             </x:ToolbarSeparator>
-                            <x:Button ID="Button_Pass_Shadow" runat="server" Text="通过" OnClick="Button_Pass_Click" ConfirmText="确定通过？"
-                                ConfirmTitle="提示">
+                            <x:Button ID="Button_Pass_Shadow" runat="server" Text="通过" OnClick="Button_Pass_Click"
+                                ConfirmText="确定通过？" ConfirmTitle="提示">
                             </x:Button>
                             <x:ToolbarSeparator ID="ToolbarSeparator10" runat="server">
                             </x:ToolbarSeparator>
@@ -384,7 +390,8 @@
                             </x:Button>
                             <x:ToolbarSeparator ID="ToolbarSeparator12" runat="server">
                             </x:ToolbarSeparator>
-                            <x:Button ID="Button_Export_Shadow" runat="server" Text="导出" OnClick="Button_Export_Click" EnableAjax="false">
+                            <x:Button ID="Button_Export_Shadow" runat="server" Text="导出" OnClick="Button_Export_Click"
+                                EnableAjax="false">
                             </x:Button>
                             <x:ToolbarFill ID="ToolbarFill2" runat="server">
                             </x:ToolbarFill>

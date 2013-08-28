@@ -114,12 +114,21 @@ namespace HRES.Pages.EvaluateTableManagement
                     Button_Clear_Shadow.Enabled = false;
                 }
 
-                loadEvaluateTable();
+                loadEvaluateTable("");
+                bindEvaluateTableSubmittedNameIdDicToDropDownList();
+            }
+            if (Page.Request.Params["__EVENTTARGET"] != null && Page.Request.Params["__EVENTTARGET"].ToString().Replace('$', '_') == DropDownList_Template.ClientID)
+            {
+                loadEvaluateTable(DropDownList_Template.SelectedValue);
             }
         }
         #endregion
 
         #region Event
+        protected void DropDownList_Template_SelectedChanged(object sender, EventArgs e)
+        {
+        }
+
         protected void Window_ShowQuota_Close(object sender, WindowCloseEventArgs e)
         {
 
@@ -179,11 +188,35 @@ namespace HRES.Pages.EvaluateTableManagement
 
         #region Private Method
         /// <summary>
+        /// 将已提交考核表的被考评人姓名id字典绑定到下拉列表
+        /// </summary>
+        private void bindEvaluateTableSubmittedNameIdDicToDropDownList()
+        {
+            string exception = "";
+            Dictionary<string, string> nameIdDic = new Dictionary<string, string>();
+            if(EvaluateTableManagementCtrl.GetSubmittedNameIdDic(ref nameIdDic, ref exception))
+            {
+                foreach (string name in nameIdDic.Keys)
+                {
+                    DropDownList_Template.Items.Add(name, nameIdDic[name]);
+                }
+            }
+        }
+
+        /// <summary>
         /// 载入考核表
         /// </summary>
-        private void loadEvaluateTable()
+        private void loadEvaluateTable(string id)
         {
-            string evaluatedID = Request.QueryString["id"];
+            string evaluatedID = "";
+            if (id == "" || id == "0")
+            {
+                evaluatedID = Request.QueryString["id"];
+            }
+            else
+            {
+                evaluatedID = id;
+            }
             Panel1.Title = Request.QueryString["name"] + "的考核表";
             EvaluateTable evaluateTable = new EvaluateTable();
             string exception = "";

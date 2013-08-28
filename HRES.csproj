@@ -61,7 +61,9 @@
   <ItemGroup>
     <Content Include="common\menu.xml" />
     <Content Include="common\menuForEvaluator.xml" />
-    <Content Include="common\menuForFirstManager.xml" />
+    <Content Include="common\menuForFirstManager.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="common\menuForSecondManager.xml">
       <SubType>Designer</SubType>
     </Content>
