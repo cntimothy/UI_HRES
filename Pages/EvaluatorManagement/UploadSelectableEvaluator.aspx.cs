@@ -53,7 +53,7 @@ namespace HRES.Pages.EvaluatorManagement
             }
         }
 
-        protected void Submit_Click(object sender, EventArgs e)
+        protected void Button_Submit_Click(object sender, EventArgs e)
         {
             string exception = "";
             string fileName = Server.MapPath("../../upload/" + ViewState["filename"].ToString());

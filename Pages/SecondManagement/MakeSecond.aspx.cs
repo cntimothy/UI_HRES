@@ -24,7 +24,7 @@ namespace HRES.Pages.SecondManagement
             }
         }
 
-        protected void FileSelected(object sender, EventArgs e)
+        protected void FileUpload_ExcelFile_FileSelected(object sender, EventArgs e)
         {
             string fileName = FileUpload_ExcelFile.ShortFileName;
 
@@ -49,7 +49,7 @@ namespace HRES.Pages.SecondManagement
             FileUpload_ExcelFile.Reset();
         }
 
-        protected void Submit_Click(object sender, EventArgs e)
+        protected void Button_Submit_Click(object sender, EventArgs e)
         {
             string exception = "";
             string fileName = Server.MapPath("../../upload/" + ViewState["filename"].ToString());
