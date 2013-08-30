@@ -24,40 +24,66 @@ namespace HRES.Pages.EvaluatedManagement
             }
         }
 
-        protected void FileSelected(object sender, EventArgs e)
+        protected void FileUpload_ExcelFile_FileSelected(object sender, EventArgs e)
         {
-            if (ExcelFile.HasFile)
+            //if (ExcelFile.HasFile)
+            //{
+            //    string fileName = ExcelFile.ShortFileName;
+            //    if (fileName.EndsWith(".xls"))
+            //    {
+            //        FilePath.Text = fileName;
+            //        fileName = Server.MapPath("../../upload/" + fileName);
+            //        ExcelFile.SaveAs(fileName);
+            //        Submit.Enabled = true;
+            //        ExcelFile.Reset();
+            //    }
+            //    else
+            //    {
+            //        FilePath.Text = "不正确";
+            //        Submit.Enabled = false;
+            //        ExcelFile.Reset();
+            //        return;
+            //    }
+            //}
+            if (FileUpload_ExcelFile.HasFile)
             {
-                string fileName = ExcelFile.ShortFileName;
-                if (fileName.EndsWith(".xls"))
+                string fileName = FileUpload_ExcelFile.ShortFileName;
+
+                if (fileName != "被考评人信息.xls")
                 {
-                    FilePath.Text = fileName;
-                    fileName = Server.MapPath("../../upload/" + fileName);
-                    ExcelFile.SaveAs(fileName);
-                    Submit.Enabled = true;
-                }
-                else
-                {
-                    FilePath.Text = "不正确";
-                    Submit.Enabled = false;
+                    Button_Submit.Enabled = false;
+                    Label_FileName.Text = "";
+                    FileUpload_ExcelFile.Reset();
+                    Alert.Show("无效的文件！", MessageBoxIcon.Error);
                     return;
                 }
+
+                Label_FileName.Text = fileName;
+                fileName = DateTime.Now.Ticks.ToString() + "_" + fileName;
+                ViewState["filename"] = fileName;
+
+                FileUpload_ExcelFile.SaveAs(Server.MapPath("~/upload/" + fileName));
+
+
+                Button_Submit.Enabled = true;
+                // 清空文件上传组件
+                FileUpload_ExcelFile.Reset();
             }
         }
 
-        protected void Submit_Click(object sender, EventArgs e)
+        protected void Button_Submit_Click(object sender, EventArgs e)
         {
             string exception = "";
-            string fileName = Server.MapPath("../../upload/" + FilePath.Text);
+            string fileName = Server.MapPath("../../upload/" + ViewState["filename"].ToString());
             if (EvaluatedManagementCtrl.AddNewByExl(fileName, ref exception))
             {
-                ExcelFile.Reset();
+                FileUpload_ExcelFile.Reset();
                 Alert.ShowInTop("上传成功！", MessageBoxIcon.Information);
                 bindEvaluatedToGrid();
             }
             else
             {
-                ExcelFile.Reset();
+                FileUpload_ExcelFile.Reset();
                 Alert.ShowInTop("上传失败！\n失败原因：" + exception, MessageBoxIcon.Error);
             }
         }

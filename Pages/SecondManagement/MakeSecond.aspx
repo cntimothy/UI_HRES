@@ -14,18 +14,18 @@
         <Items>
             <x:Toolbar ID="Toolbar1" Position="Top" CssClass="mytoolbar" runat="server">
                 <Items>
-                    <x:FileUpload ID="ExcelFile" Label="Label" runat="server" ButtonText="选择Excel文件"
-                        ButtonOnly="true" AutoPostBack="true" OnFileSelected="FileSelected">
+                    <x:FileUpload ID="FileUpload_ExcelFile" Label="Label" runat="server" ButtonText="选择Excel文件"
+                        ButtonOnly="true" AutoPostBack="true" OnFileSelected="FileUpload_ExcelFile_FileSelected">
                     </x:FileUpload>
                     <x:ToolbarSeparator ID="ToolbarSeparator1" runat="server">
                     </x:ToolbarSeparator>
                     <x:Label ID="Label2" Text="您选择的文件：" Label="" runat="server">
                     </x:Label>
-                    <x:Label ID="FilePath" Text="" Label="" runat="server">
+                    <x:Label ID="Label_FileName" Text="" Label="" runat="server">
                     </x:Label>
                     <x:ToolbarSeparator ID="ToolbarSeparator2" runat="server">
                     </x:ToolbarSeparator>
-                    <x:Button ID="Submit" runat="server" OnClick="Submit_Click" Text="开始上传" Enabled="false">
+                    <x:Button ID="Button_Submit" runat="server" OnClick="Button_Submit_Click" Text="开始上传" Enabled="false">
                     </x:Button>
                     <x:ToolbarFill ID="ToolbarFill1" runat="server">
                     </x:ToolbarFill>
