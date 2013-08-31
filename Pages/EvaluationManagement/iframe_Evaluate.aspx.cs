@@ -61,8 +61,8 @@ namespace HRES.Pages.EvaluationManagement
 
             //计算关键指标的平均分
             tempWeight = Convert.ToInt32(ViewState["KeyWeight"].ToString());
-            tempSumScore = (int)(tempSumScore / (Grid1.Rows.Count + Grid2.Rows.Count + Grid3.Rows.Count) * tempWeight / 100);
-            sumScore += tempSumScore;
+            tempSumScore = (int)(tempSumScore / (Grid1.Rows.Count + Grid2.Rows.Count + Grid3.Rows.Count));
+            sumScore += tempSumScore * tempWeight / 100;
             scores.Add(tempSumScore.ToString());
             tempSumScore = 0;
 
@@ -75,8 +75,8 @@ namespace HRES.Pages.EvaluationManagement
 
             //计算岗位职责指标的平均分
             tempWeight = Convert.ToInt32(ViewState["QualifyWeight"].ToString());
-            tempSumScore = (int)(tempSumScore / (Grid4.Rows.Count) * tempWeight / 100);
-            sumScore += tempSumScore;
+            tempSumScore = (int)(tempSumScore / (Grid4.Rows.Count));
+            sumScore += tempSumScore * tempWeight / 100;
             scores.Add(tempSumScore.ToString());
             tempSumScore = 0;
 
@@ -89,8 +89,8 @@ namespace HRES.Pages.EvaluationManagement
 
             //计算岗位胜任能力指标的平均分
             tempWeight = Convert.ToInt32(ViewState["QualifyWeight"].ToString());
-            tempSumScore = (int)(tempSumScore / (Grid5.Rows.Count) * tempWeight / 100);
-            sumScore += tempSumScore;
+            tempSumScore = (int)(tempSumScore / (Grid5.Rows.Count));
+            sumScore += tempSumScore * tempWeight / 100;
             scores.Add(tempSumScore.ToString());
             tempSumScore = 0;
 
@@ -103,8 +103,8 @@ namespace HRES.Pages.EvaluationManagement
 
             //计算工作态度指标的平均分
             tempWeight = Convert.ToInt32(ViewState["AttitudeWeight"].ToString());
-            tempSumScore = (int)(tempSumScore / (Grid5.Rows.Count) * tempWeight / 100);
-            sumScore += tempSumScore;
+            tempSumScore = (int)(tempSumScore / (Grid5.Rows.Count));
+            sumScore += tempSumScore * tempWeight / 100;
             scores.Add(tempSumScore.ToString());
             tempSumScore = 0;
 
@@ -112,12 +112,15 @@ namespace HRES.Pages.EvaluationManagement
             {
                 GridRow gridRow = Grid7.Rows[0];
                 System.Web.UI.WebControls.DropDownList ddl = gridRow.FindControl("DropDownList1") as System.Web.UI.WebControls.DropDownList;
-                tempSumScore += Convert.ToInt32(ddl.SelectedValue);
+                tempSumScore = Convert.ToInt32(ddl.SelectedValue);
             }
 
             //计算否决指标的得分
             scores.Add(tempSumScore.ToString());
-            sumScore -= (int)tempSumScore;
+            if (tempSumScore == 100)
+            {
+                sumScore = 0;
+            }
 
             scores.Add(sumScore.ToString());
 
