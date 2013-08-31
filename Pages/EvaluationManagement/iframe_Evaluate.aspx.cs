@@ -130,7 +130,8 @@ namespace HRES.Pages.EvaluationManagement
                 string evaluatorID = Session["UserID"].ToString();
                 if (EvaluationManagementCtrl.UpdateScore(evaluatedID, evaluatorID, scores.ToArray(), ref exception))
                 {
-                    Alert.ShowInTop("提交成功！", MessageBoxIcon.Information);
+                    Alert.ShowInTop("提交成功！\n页面即将关闭", MessageBoxIcon.Information);
+                    PageContext.RegisterStartupScript(ActiveWindow.GetHideRefreshReference());
                 }
                 else
                 {
