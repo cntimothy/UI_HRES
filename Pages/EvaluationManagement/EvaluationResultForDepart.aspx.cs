@@ -76,10 +76,20 @@ namespace HRES.Pages.EvaluationManagement
         #region Private Method
         private void bindYearsToDropDownList()
         {
-            int year = DateTime.Now.Year;
-            for (int i = 2013; i <= year; i++)
+            string exception = "";
+            Dictionary<string, string> idYearDic = new Dictionary<string, string>();
+            string evaluatedID = Request.QueryString["id"];
+
+            if (EvaluationManagementCtrl.GetEvaluationYears(ref idYearDic, ref exception))
             {
-                DropDownList_Year.Items.Add(Convert.ToString(i), Convert.ToString(i));
+                foreach (string id in idYearDic.Keys)
+                {
+                    DropDownList_Year.Items.Add(idYearDic[id], id);
+                }
+            }
+            else
+            {
+                Alert.ShowInTop("获取年份信息失败！/n原因：" + exception, MessageBoxIcon.Error);
             }
         }
 

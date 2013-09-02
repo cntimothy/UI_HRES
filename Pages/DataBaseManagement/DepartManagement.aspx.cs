@@ -36,7 +36,7 @@ namespace HRES.Pages.DataBaseManagement
             if (e.CommandName == "Delete")
             {
                 object[] keys = Grid1.DataKeys[e.RowIndex];
-                string id = (string)keys[0];
+                string id = keys[0].ToString();
                 if (DataBaseManagementCtrl.DeleteDepart(id, ref exception))
                 {
                     Alert.ShowInTop("删除成功！", MessageBoxIcon.Information);
@@ -67,6 +67,7 @@ namespace HRES.Pages.DataBaseManagement
             if (DataBaseManagementCtrl.AddDepart(newDepart, ref exception))
             {
                 Alert.ShowInTop("设置成功！", MessageBoxIcon.Information);
+                bindDepartsToGrid();
             }
             else
             {
@@ -88,6 +89,8 @@ namespace HRES.Pages.DataBaseManagement
             }
             else
             {
+                Grid1.DataSource = table;
+                Grid1.DataBind();
                 Alert.ShowInTop("未能获取部门信息！/n原因：" + exception, MessageBoxIcon.Error);
             }
         }

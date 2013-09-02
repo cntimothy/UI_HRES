@@ -57,7 +57,8 @@ namespace HRES.Pages.EvaluatorManagement
         {
             string exception = "";
             string fileName = Server.MapPath("../../upload/" + ViewState["filename"].ToString());
-            if (EvaluatedManagementCtrl.AddNewByExl(fileName, ref exception))
+            string depart = (string)Session["Depart"];
+            if (EvaluatorManagementCtrl.UploadSelectable(fileName, depart, ref exception))
             {
                 FileUpload_ExcelFile.Reset();
                 Alert.ShowInTop("上传成功！", MessageBoxIcon.Information);

@@ -53,7 +53,7 @@ namespace HRES.Pages.SecondManagement
         {
             string exception = "";
             string fileName = Server.MapPath("../../upload/" + ViewState["filename"].ToString());
-            if (EvaluatedManagementCtrl.AddNewByExl(fileName, ref exception))
+            if (SecondManagementCtrl.AddNewByExl(fileName, ref exception))
             {
                 FileUpload_ExcelFile.Reset();
                 Alert.ShowInTop("上传成功！", MessageBoxIcon.Information);
