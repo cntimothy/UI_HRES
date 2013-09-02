@@ -194,7 +194,8 @@ namespace HRES.Pages.EvaluateTableManagement
         {
             string exception = "";
             Dictionary<string, string> nameIdDic = new Dictionary<string, string>();
-            if(EvaluateTableManagementCtrl.GetSubmittedNameIdDic(ref nameIdDic, ref exception))
+            string depart = (string)Session["Depart"];
+            if(EvaluateTableManagementCtrl.GetSubmittedNameIdDic(ref nameIdDic, depart, ref exception))
             {
                 foreach (string name in nameIdDic.Keys)
                 {
