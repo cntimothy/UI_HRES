@@ -53,7 +53,11 @@
                             <x:BoundField Width="100px" DataField="Name" DataFormatString="{0}" HeaderText="姓名" />
                             <x:BoundField Width="150px" DataField="Score" SortField="Score" DataFormatString="{0}"
                                 HeaderText="考核得分" />
-                            <x:BoundField Width="100px" DataField="Result" DataFormatString="{0}" HeaderText="考核结果" />
+                            <x:TemplateField SortField="Status" Width="50px" HeaderText="考核结果">
+                                <ItemTemplate>
+                                    <asp:Label ID="Status" runat="server" Text='<%# GetDepartEvaluationResult(Eval("Status")) %>'></asp:Label>
+                                </ItemTemplate>
+                            </x:TemplateField>
                             <x:BoundField Width="100px" DataField="EvaluatorNum" DataFormatString="{0}" HeaderText="考核人数" />
                             <x:BoundField Width="250px" DataField="Comment" DataFormatString="{0}" HeaderText="备注" />
                         </Columns>

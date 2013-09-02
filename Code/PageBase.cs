@@ -1160,6 +1160,35 @@ namespace HRES
             }
             return nextStatus;
         }
+
+        /// <summary>
+        /// 获取部门考核等级字面值
+        /// </summary>
+        /// <param name="status"></param>
+        /// <returns></returns>
+        protected string GetDepartEvaluationResult(object status)
+        {
+            string returnValue = "";
+            switch ((DepartEvaluationLevel)Enum.Parse(typeof(DepartEvaluationLevel), status.ToString()))
+            {
+                case DepartEvaluationLevel.good:
+                    returnValue = "优秀（9~10）";
+                    break;
+                case DepartEvaluationLevel.notbad:
+                    returnValue = "良好（7~8）";
+                    break;
+                case DepartEvaluationLevel.qualified:
+                    returnValue = "合格（4~6）";
+                    break;
+                case DepartEvaluationLevel.unqualified:
+                    returnValue = "不合格（0~3）";
+                    break;
+                default:
+                    returnValue = "未定义状态";
+                    break;
+            }
+            return returnValue;
+        }
         #endregion
     }
 
