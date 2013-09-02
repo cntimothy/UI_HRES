@@ -81,18 +81,18 @@ namespace HRES.Pages.EvaluatorManagement
                 }
             }
             bool is360;
-            if(idRelationDic.Values.Contains(Convert.ToString((int)Relation.leader)))
+            if(!idRelationDic.Values.Contains(Convert.ToString((int)Relation.leader)))
             {
                 Alert.ShowInTop("请至少选择一位领导！", MessageBoxIcon.Error);
                 return;
             }
-            if(idRelationDic.Values.Contains(Convert.ToString((int)Relation.colleague)))
+            if(!idRelationDic.Values.Contains(Convert.ToString((int)Relation.colleague)))
             {
                 Alert.ShowInTop("请至少选择一位同事！", MessageBoxIcon.Error);
                 return;
             }
             
-            if(idRelationDic.Values.Contains(Convert.ToString((int)Relation.services)))
+            if(!idRelationDic.Values.Contains(Convert.ToString((int)Relation.services)))
             {
                 Alert.ShowInTop("请至少选择一位服务对象！", MessageBoxIcon.Error);
                 return;
