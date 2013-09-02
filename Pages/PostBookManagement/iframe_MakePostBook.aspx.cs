@@ -442,7 +442,8 @@ namespace HRES.Pages.PostBookManagement
         {
             string exception = "";
             Dictionary<string, string> nameIdDic = new Dictionary<string, string>();
-            if (PostBookManagementCtrl.GetSubmittedNameIdDic(ref nameIdDic, ref exception))
+            string depart = (string)Session["Depart"];
+            if (PostBookManagementCtrl.GetSubmittedNameIdDic(ref nameIdDic, depart, ref exception))
             {
                 foreach (string name in nameIdDic.Keys)
                 {
