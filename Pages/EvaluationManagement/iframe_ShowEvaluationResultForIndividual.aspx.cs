@@ -110,7 +110,7 @@ namespace HRES.Pages.EvaluationManagement
             bf.DataField = "quota";
             bf.DataFormatString = "{0}";
             bf.HeaderText = "指标";
-            bf.Width = 150;
+            bf.Width = 200;
             Grid1.Columns.Add(bf);
 
             bf = new FineUI.BoundField();
@@ -320,7 +320,7 @@ namespace HRES.Pages.EvaluationManagement
             table.Rows.Add(row5);
 
             DataRow row6 = table.NewRow();
-            row6["quota"] = "考评者数量（50%）";
+            row6["quota"] = "考评者数量";
             row6["leader"] = evaluationResult.EvaluatorNum[0];
             row6["colleague"] = evaluationResult.EvaluatorNum[1];
             row6["services"] = evaluationResult.EvaluatorNum[2];
