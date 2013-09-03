@@ -58,13 +58,22 @@ namespace HRES.Pages.EvaluationManagement {
         protected global::FineUI.Toolbar Toolbar1;
         
         /// <summary>
-        /// Button_Close 控件。
+        /// ToolbarFill1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Button Button_Close;
+        protected global::FineUI.ToolbarFill ToolbarFill1;
+        
+        /// <summary>
+        /// Button_Submit 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.Button Button_Submit;
         
         /// <summary>
         /// ToolbarSeparator1 控件。
@@ -76,13 +85,13 @@ namespace HRES.Pages.EvaluationManagement {
         protected global::FineUI.ToolbarSeparator ToolbarSeparator1;
         
         /// <summary>
-        /// Button_Submit 控件。
+        /// Button_Close 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Button Button_Submit;
+        protected global::FineUI.Button Button_Close;
         
         /// <summary>
         /// Form2 控件。
@@ -319,13 +328,22 @@ namespace HRES.Pages.EvaluationManagement {
         protected global::FineUI.Toolbar Toolbar2;
         
         /// <summary>
-        /// Button_Close_Shadow 控件。
+        /// ToolbarFill2 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Button Button_Close_Shadow;
+        protected global::FineUI.ToolbarFill ToolbarFill2;
+        
+        /// <summary>
+        /// Button_Submit_Shadow 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.Button Button_Submit_Shadow;
         
         /// <summary>
         /// ToolbarSeparator2 控件。
@@ -337,12 +355,12 @@ namespace HRES.Pages.EvaluationManagement {
         protected global::FineUI.ToolbarSeparator ToolbarSeparator2;
         
         /// <summary>
-        /// Button_Submit_Shadow 控件。
+        /// Button_Close_Shadow 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Button Button_Submit_Shadow;
+        protected global::FineUI.Button Button_Close_Shadow;
     }
 }

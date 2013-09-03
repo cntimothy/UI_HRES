@@ -58,22 +58,31 @@ namespace HRES.Pages.EvaluateTableManagement {
         protected global::FineUI.Toolbar Toolbar1;
         
         /// <summary>
-        /// Button_Close 控件。
+        /// Label1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Button Button_Close;
+        protected global::FineUI.Label Label1;
         
         /// <summary>
-        /// ToolbarSeparator1 控件。
+        /// Label_Comment 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.ToolbarSeparator ToolbarSeparator1;
+        protected global::FineUI.Label Label_Comment;
+        
+        /// <summary>
+        /// ToolbarFill1 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.ToolbarFill ToolbarFill1;
         
         /// <summary>
         /// Button_Pass 控件。
@@ -121,31 +130,22 @@ namespace HRES.Pages.EvaluateTableManagement {
         protected global::FineUI.Button Button_Export;
         
         /// <summary>
-        /// ToolbarFill1 控件。
+        /// ToolbarSeparator1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.ToolbarFill ToolbarFill1;
+        protected global::FineUI.ToolbarSeparator ToolbarSeparator1;
         
         /// <summary>
-        /// Label1 控件。
+        /// Button_Close 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Label Label1;
-        
-        /// <summary>
-        /// Label_Comment 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::FineUI.Label Label_Comment;
+        protected global::FineUI.Button Button_Close;
         
         /// <summary>
         /// Form2 控件。
@@ -292,22 +292,13 @@ namespace HRES.Pages.EvaluateTableManagement {
         protected global::FineUI.Toolbar Toolbar2;
         
         /// <summary>
-        /// Button_Close_Shadow 控件。
+        /// ToolbarFill2 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Button Button_Close_Shadow;
-        
-        /// <summary>
-        /// ToolbarSeparator4 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::FineUI.ToolbarSeparator ToolbarSeparator4;
+        protected global::FineUI.ToolbarFill ToolbarFill2;
         
         /// <summary>
         /// Button_Pass_Shadow 控件。
@@ -353,6 +344,24 @@ namespace HRES.Pages.EvaluateTableManagement {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::FineUI.Button Button_Export_Shadow;
+        
+        /// <summary>
+        /// ToolbarSeparator4 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.ToolbarSeparator ToolbarSeparator4;
+        
+        /// <summary>
+        /// Button_Close_Shadow 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.Button Button_Close_Shadow;
         
         /// <summary>
         /// Window1 控件。

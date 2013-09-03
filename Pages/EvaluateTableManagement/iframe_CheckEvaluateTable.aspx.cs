@@ -255,7 +255,7 @@ namespace HRES.Pages.EvaluateTableManagement
             }
             else
             {
-                Alert.ShowInTop("查询失败！\n原因：" + exception, MessageBoxIcon.Error);
+                Alert.ShowInTop("未查寻到考核表！\n原因：" + exception, MessageBoxIcon.Error);
             }
         }
         #endregion

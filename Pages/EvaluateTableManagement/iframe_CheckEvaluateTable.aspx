@@ -17,47 +17,50 @@
                 <Items>
                     <x:Toolbar ID="Toolbar1" runat="server">
                         <Items>
-                            <x:Button ID="Button_Close" runat="server" Text="关闭">
-                            </x:Button>
-                            <x:ToolbarSeparator ID="ToolbarSeparator1" runat="server">
-                            </x:ToolbarSeparator>
-                            <x:Button ID="Button_Pass" runat="server" Text="通过" OnClick="Button_Pass_Click" ConfirmTitle="提示" ConfirmText="确定通过？">
+                            <x:Label ID="Label1" runat="server" Label="Label" Text="审核意见：">
+                            </x:Label>
+                            <x:Label ID="Label_Comment" runat="server" Label="Label" Text="">
+                            </x:Label>
+                            <x:ToolbarFill ID="ToolbarFill1" runat="server">
+                            </x:ToolbarFill>
+                            <x:Button ID="Button_Pass" runat="server" Text="通过" OnClick="Button_Pass_Click" ConfirmTitle="提示"
+                                ConfirmText="确定通过？">
                             </x:Button>
                             <x:ToolbarSeparator ID="ToolbarSeparator2" runat="server">
                             </x:ToolbarSeparator>
-                            <x:Button ID="Button_Reject" runat="server" Text="退回" >
+                            <x:Button ID="Button_Reject" runat="server" Text="退回">
                             </x:Button>
                             <x:ToolbarSeparator ID="ToolbarSeparator3" runat="server">
                             </x:ToolbarSeparator>
-                            <x:Button ID="Button_Export" runat="server" Text="导出" OnClick="Button_Export_Click" EnableAjax="false">
+                            <x:Button ID="Button_Export" runat="server" Text="导出" OnClick="Button_Export_Click"
+                                EnableAjax="false">
                             </x:Button>
-                            <x:ToolbarFill ID="ToolbarFill1" runat="server">
-                            </x:ToolbarFill>
-                            <x:Label ID="Label1" runat="server" Label="Label" Text="审核意见：">
-                            </x:Label>
-                            <x:Label ID="Label_Comment" runat="server" Label="Label" Text="Label">
-                            </x:Label>
+                            <x:ToolbarSeparator ID="ToolbarSeparator1" runat="server">
+                            </x:ToolbarSeparator>
+                            <x:Button ID="Button_Close" runat="server" Text="关闭">
+                            </x:Button>
                         </Items>
                     </x:Toolbar>
-                    <x:Form ID="Form2" runat="server" BodyPadding="5px" Title="Form" ShowBorder="false" ShowHeader="false">
+                    <x:Form ID="Form2" runat="server" BodyPadding="5px" Title="Form" ShowBorder="false"
+                        ShowHeader="false">
                         <Rows>
                             <x:FormRow ID="FormRow1" runat="server">
                                 <Items>
-                                    <x:Label ID="Label_EvaluatedName" runat="server" Label="被考核人姓名" Text="Label">
+                                    <x:Label ID="Label_EvaluatedName" runat="server" Label="被考核人姓名" Text="">
                                     </x:Label>
-                                    <x:Label ID="Label_PostName" runat="server" Label="岗位名称" Text="Label">
+                                    <x:Label ID="Label_PostName" runat="server" Label="岗位名称" Text="">
                                     </x:Label>
-                                    <x:Label ID="Label_LaborDep" runat="server" Label="用工部门" Text="Label">
+                                    <x:Label ID="Label_LaborDep" runat="server" Label="用工部门" Text="">
                                     </x:Label>
-                                    <x:Label ID="Label_LaborUnit" runat="server" Label="用工单位" Text="Label">
+                                    <x:Label ID="Label_LaborUnit" runat="server" Label="用工单位" Text="">
                                     </x:Label>
                                 </Items>
                             </x:FormRow>
                             <x:FormRow ID="FormRow2" runat="server">
-                            <Items>
-                                <x:Label ID="Label_Period" runat="server" Label="考评时间段" Text="Label">
-                                </x:Label>
-                            </Items>
+                                <Items>
+                                    <x:Label ID="Label_Period" runat="server" Label="考评时间段" Text="">
+                                    </x:Label>
+                                </Items>
                             </x:FormRow>
                         </Rows>
                     </x:Form>
@@ -65,7 +68,7 @@
                         Title="关键岗位职责指标">
                         <Items>
                         </Items>
-                    </x:Panel>                    
+                    </x:Panel>
                     <x:Panel ID="Panel4" runat="server" BodyPadding="5px" ShowBorder="true" ShowHeader="true"
                         Title="关键胜任能力指标">
                         <Items>
@@ -80,7 +83,7 @@
                         Title="岗位职责指标">
                         <Items>
                         </Items>
-                    </x:Panel>                    
+                    </x:Panel>
                     <x:Panel ID="Panel7" runat="server" BodyPadding="5px" ShowBorder="true" ShowHeader="true"
                         Title="胜任能力指标">
                         <Items>
@@ -98,19 +101,23 @@
                     </x:Panel>
                     <x:Toolbar ID="Toolbar2" runat="server">
                         <Items>
-                            <x:Button ID="Button_Close_Shadow" runat="server" Text="关闭">
-                            </x:Button>
-                            <x:ToolbarSeparator ID="ToolbarSeparator4" runat="server">
-                            </x:ToolbarSeparator>
-                            <x:Button ID="Button_Pass_Shadow" runat="server" Text="通过" OnClick="Button_Pass_Click" ConfirmTitle="提示" ConfirmText="确定通过？">
+                            <x:ToolbarFill ID="ToolbarFill2" runat="server">
+                            </x:ToolbarFill>
+                            <x:Button ID="Button_Pass_Shadow" runat="server" Text="通过" OnClick="Button_Pass_Click"
+                                ConfirmTitle="提示" ConfirmText="确定通过？">
                             </x:Button>
                             <x:ToolbarSeparator ID="ToolbarSeparator5" runat="server">
                             </x:ToolbarSeparator>
-                            <x:Button ID="Button_Reject_Shadow" runat="server" Text="退回" >
+                            <x:Button ID="Button_Reject_Shadow" runat="server" Text="退回">
                             </x:Button>
                             <x:ToolbarSeparator ID="ToolbarSeparator6" runat="server">
                             </x:ToolbarSeparator>
-                            <x:Button ID="Button_Export_Shadow" runat="server" Text="导出" OnClick="Button_Export_Click" EnableAjax="false">
+                            <x:Button ID="Button_Export_Shadow" runat="server" Text="导出" OnClick="Button_Export_Click"
+                                EnableAjax="false">
+                            </x:Button>
+                            <x:ToolbarSeparator ID="ToolbarSeparator4" runat="server">
+                            </x:ToolbarSeparator>
+                            <x:Button ID="Button_Close_Shadow" runat="server" Text="关闭">
                             </x:Button>
                         </Items>
                     </x:Toolbar>

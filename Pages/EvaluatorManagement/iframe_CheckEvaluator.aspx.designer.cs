@@ -58,22 +58,31 @@ namespace HRES.Pages.EvaluatorManagement {
         protected global::FineUI.Toolbar Toolbar1;
         
         /// <summary>
-        /// Button_Close 控件。
+        /// Label1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Button Button_Close;
+        protected global::FineUI.Label Label1;
         
         /// <summary>
-        /// ToolbarSeparator1 控件。
+        /// Label2 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.ToolbarSeparator ToolbarSeparator1;
+        protected global::FineUI.Label Label2;
+        
+        /// <summary>
+        /// ToolbarFill1 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.ToolbarFill ToolbarFill1;
         
         /// <summary>
         /// Button_Set 控件。
@@ -121,31 +130,22 @@ namespace HRES.Pages.EvaluatorManagement {
         protected global::FineUI.Button Button_Clear;
         
         /// <summary>
-        /// ToolbarFill1 控件。
+        /// ToolbarSeparator1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.ToolbarFill ToolbarFill1;
+        protected global::FineUI.ToolbarSeparator ToolbarSeparator1;
         
         /// <summary>
-        /// Label1 控件。
+        /// Button_Close 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Label Label1;
-        
-        /// <summary>
-        /// Label2 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::FineUI.Label Label2;
+        protected global::FineUI.Button Button_Close;
         
         /// <summary>
         /// SimpleForm1 控件。

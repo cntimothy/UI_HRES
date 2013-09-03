@@ -17,10 +17,6 @@
                 <Items>
                     <x:Toolbar ID="Toolbar1" runat="server">
                         <Items>
-                            <x:Button ID="Button_Close" runat="server" Text="关闭">
-                            </x:Button>
-                            <x:ToolbarSeparator ID="ToolbarSeparator2" runat="server">
-                            </x:ToolbarSeparator>
                             <x:Label ID="Label1" runat="server" Label="Label" Text="请选择年份：">
                             </x:Label>
                             <x:DropDownList ID="DropDownList_Year" runat="server" Label="Label" AutoPostBack="true"
@@ -33,6 +29,10 @@
                             <x:ToolbarSeparator ID="ToolbarSeparator3" runat="server">
                             </x:ToolbarSeparator>
                             <x:Button ID="Button_Export" runat="server" Text="导出" OnClick="Button_Export_Click" EnableAjax="false">
+                            </x:Button>
+                            <x:ToolbarFill ID="ToolbarFill1" runat="server">
+                            </x:ToolbarFill>
+                            <x:Button ID="Button_Close" runat="server" Text="关闭">
                             </x:Button>
                         </Items>
                     </x:Toolbar>

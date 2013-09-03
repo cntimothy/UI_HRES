@@ -109,7 +109,7 @@
     <x:Window ID="Window_CheckEvaluator" Title="弹出窗体" Popup="false" EnableIFrame="true"
         IFrameUrl="about:blank" EnableMaximize="true" Target="Top" EnableResize="true"
         runat="server" IsModal="true" CssStyle="width:80%"
-        EnableConfirmOnClose="true" Height="560px" EnableClose="false" AutoHeight="true">
+        EnableConfirmOnClose="true" Height="610px" EnableClose="false" AutoHeight="true">
     </x:Window>
     </form>
 </body>

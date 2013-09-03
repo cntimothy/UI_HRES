@@ -17,9 +17,16 @@
                 <Items>
                     <x:Toolbar ID="Toolbar1" runat="server" Position="top" CssStyle="width:100%">
                         <Items>
-                            <x:Button ID="Button_Close" runat="server" Text="关闭">
-                            </x:Button>
-                            <x:ToolbarSeparator ID="ToolbarSeparator1" runat="server">
+                            <x:Label ID="Label1" runat="server" Label="" Text="审核意见：">
+                            </x:Label>
+                            <x:Label ID="Label_Comment" runat="server" Label="审核意见" Text="">
+                            </x:Label>
+                            <x:ToolbarFill ID="ToolbarFill1" runat="server">
+                            </x:ToolbarFill>
+                            <x:DropDownList ID="DropDownList_Template" runat="server" Label="Label" OnSelectedIndexChanged="DropDownList_Template_SelectedChanged" AutoPostBack="true">
+                                <x:ListItem EnableSelect="true" Selected="true" Text="选择模版" Value="0" />
+                            </x:DropDownList>
+                            <x:ToolbarSeparator ID="ToolbarSeparator13" runat="server">
                             </x:ToolbarSeparator>
                             <x:Button ID="Button_Save" runat="server" Text="保存" OnClick="Button_Save_Click" ConfirmText="确定保存？"
                                 ConfirmTitle="提示">
@@ -48,17 +55,10 @@
                             <x:Button ID="Button_Export" runat="server" Text="导出" OnClick="Button_Export_Click"
                                 EnableAjax="false">
                             </x:Button>
-                            <x:ToolbarSeparator ID="ToolbarSeparator13" runat="server">
+                            <x:ToolbarSeparator ID="ToolbarSeparator1" runat="server">
                             </x:ToolbarSeparator>
-                            <x:DropDownList ID="DropDownList_Template" runat="server" Label="Label" OnSelectedIndexChanged="DropDownList_Template_SelectedChanged" AutoPostBack="true">
-                                <x:ListItem EnableSelect="true" Selected="true" Text="选择模版" Value="0" />
-                            </x:DropDownList>
-                            <x:ToolbarFill ID="ToolbarFill1" runat="server">
-                            </x:ToolbarFill>
-                            <x:Label ID="Label1" runat="server" Label="" Text="审核意见：">
-                            </x:Label>
-                            <x:Label ID="Label_Comment" runat="server" Label="审核意见" Text="">
-                            </x:Label>
+                            <x:Button ID="Button_Close" runat="server" Text="关闭">
+                            </x:Button>
                         </Items>
                     </x:Toolbar>
                     <x:SimpleForm ID="SimpleForm1" runat="server" BodyPadding="5px" Title="一、岗位概述" ShowBorder="false"
@@ -362,10 +362,8 @@
                     </x:Panel>
                     <x:Toolbar ID="Toolbar3" runat="server" Position="top" CssStyle="width:100%">
                         <Items>
-                            <x:Button ID="Button_Close_Shadow" runat="server" Text="关闭">
-                            </x:Button>
-                            <x:ToolbarSeparator ID="ToolbarSeparator6" runat="server">
-                            </x:ToolbarSeparator>
+                            <x:ToolbarFill ID="ToolbarFill2" runat="server">
+                            </x:ToolbarFill>
                             <x:Button ID="Button_Save_Shadow" runat="server" Text="保存" OnClick="Button_Save_Click"
                                 ConfirmText="确定保存？" ConfirmTitle="提示">
                             </x:Button>
@@ -393,12 +391,10 @@
                             <x:Button ID="Button_Export_Shadow" runat="server" Text="导出" OnClick="Button_Export_Click"
                                 EnableAjax="false">
                             </x:Button>
-                            <x:ToolbarFill ID="ToolbarFill2" runat="server">
-                            </x:ToolbarFill>
-                            <x:Label ID="Label2" runat="server" Label="" Text="审核意见：">
-                            </x:Label>
-                            <x:Label ID="Label3" runat="server" Label="审核意见" Text="">
-                            </x:Label>
+                            <x:ToolbarSeparator ID="ToolbarSeparator6" runat="server">
+                            </x:ToolbarSeparator>
+                            <x:Button ID="Button_Close_Shadow" runat="server" Text="关闭">
+                            </x:Button>
                         </Items>
                     </x:Toolbar>
                 </Items>

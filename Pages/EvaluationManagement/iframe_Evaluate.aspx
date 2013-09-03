@@ -24,12 +24,14 @@
                 <Items>
                     <x:Toolbar ID="Toolbar1" runat="server">
                         <Items>
-                            <x:Button ID="Button_Close" runat="server" Text="关闭">
+                            <x:ToolbarFill ID="ToolbarFill1" runat="server">
+                            </x:ToolbarFill>
+                            <x:Button ID="Button_Submit" runat="server" Text="提交" OnClick="Button_Submit_Click"
+                                ConfirmTitle="提示" ConfirmText="确认提交？提交后不可修改">
                             </x:Button>
                             <x:ToolbarSeparator ID="ToolbarSeparator1" runat="server">
                             </x:ToolbarSeparator>
-                            <x:Button ID="Button_Submit" runat="server" Text="提交" OnClick="Button_Submit_Click"
-                                ConfirmTitle="提示" ConfirmText="确认提交？提交后不可修改">
+                            <x:Button ID="Button_Close" runat="server" Text="关闭">
                             </x:Button>
                         </Items>
                     </x:Toolbar>
@@ -171,12 +173,14 @@
                     </x:Grid>
                     <x:Toolbar ID="Toolbar2" runat="server">
                         <Items>
-                            <x:Button ID="Button_Close_Shadow" runat="server" Text="关闭">
+                            <x:ToolbarFill ID="ToolbarFill2" runat="server">
+                            </x:ToolbarFill>
+                            <x:Button ID="Button_Submit_Shadow" runat="server" Text="提交" OnClick="Button_Submit_Click"
+                                ConfirmTitle="提示" ConfirmText="确认提交？提交后不可修改">
                             </x:Button>
                             <x:ToolbarSeparator ID="ToolbarSeparator2" runat="server">
                             </x:ToolbarSeparator>
-                            <x:Button ID="Button_Submit_Shadow" runat="server" Text="提交" OnClick="Button_Submit_Click"
-                                ConfirmTitle="提示" ConfirmText="确认提交？提交后不可修改">
+                            <x:Button ID="Button_Close_Shadow" runat="server" Text="关闭">
                             </x:Button>
                         </Items>
                     </x:Toolbar>
