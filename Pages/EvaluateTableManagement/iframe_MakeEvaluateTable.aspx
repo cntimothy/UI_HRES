@@ -77,10 +77,10 @@
                                 EnableCollapse="true">
                                 <Items>
                                     <x:TriggerBox ID="TriggerBox_KeyResponse_1" runat="server" Label="标题" TriggerIcon="Search"
-                                        EnableEdit="true">
+                                        EnableEdit="true" EmptyText="点击右边按钮选择">
                                     </x:TriggerBox>
                                     <x:TextArea ID="TextArea_KeyResponse_1" runat="server" Height="50px" Label="内容" Text=""
-                                        Enabled="false">
+                                         Readonly="true">
                                     </x:TextArea>
                                     <x:HiddenField ID="HiddenField_KeyResponse_1" runat="server">
                                     </x:HiddenField>
@@ -90,10 +90,10 @@
                                 EnableCollapse="true">
                                 <Items>
                                     <x:TriggerBox ID="TriggerBox_KeyResponse_2" runat="server" Label="标题" TriggerIcon="Search"
-                                        EnableEdit="true">
+                                        EnableEdit="true" EmptyText="点击右边按钮选择">
                                     </x:TriggerBox>
                                     <x:TextArea ID="TextArea_KeyResponse_2" runat="server" Height="50px" Label="内容" Text=""
-                                        Enabled="false">
+                                        Readonly="true">
                                     </x:TextArea>
                                     <x:HiddenField ID="HiddenField_KeyResponse_2" runat="server">
                                     </x:HiddenField>
@@ -103,10 +103,10 @@
                                 EnableCollapse="true">
                                 <Items>
                                     <x:TriggerBox ID="TriggerBox_KeyResponse_3" runat="server" Label="标题" TriggerIcon="Search"
-                                        EnableEdit="true">
+                                        EnableEdit="true" EmptyText="点击右边按钮选择">
                                     </x:TriggerBox>
                                     <x:TextArea ID="TextArea_KeyResponse_3" runat="server" Height="50px" Label="内容" Text=""
-                                        Enabled="false">
+                                        Readonly="true">
                                     </x:TextArea>
                                     <x:HiddenField ID="HiddenField_KeyResponse_3" runat="server">
                                     </x:HiddenField>
@@ -116,10 +116,10 @@
                                 EnableCollapse="true">
                                 <Items>
                                     <x:TriggerBox ID="TriggerBox_KeyResponse_4" runat="server" Label="标题" TriggerIcon="Search"
-                                        EnableEdit="true">
+                                        EnableEdit="true" EmptyText="点击右边按钮选择">
                                     </x:TriggerBox>
                                     <x:TextArea ID="TextArea_KeyResponse_4" runat="server" Height="50px" Label="内容" Text=""
-                                        Enabled="false">
+                                        Readonly="true">
                                     </x:TextArea>
                                     <x:HiddenField ID="HiddenField_KeyResponse_4" runat="server">
                                     </x:HiddenField>
@@ -129,10 +129,10 @@
                                 EnableCollapse="true">
                                 <Items>
                                     <x:TriggerBox ID="TriggerBox_KeyResponse_5" runat="server" Label="标题" TriggerIcon="Search"
-                                        EnableEdit="true">
+                                        EnableEdit="true" EmptyText="点击右边按钮选择">
                                     </x:TriggerBox>
                                     <x:TextArea ID="TextArea_KeyResponse_5" runat="server" Height="50px" Label="内容" Text=""
-                                        Enabled="false">
+                                        Readonly="true">
                                     </x:TextArea>
                                     <x:HiddenField ID="HiddenField_KeyResponse_5" runat="server">
                                     </x:HiddenField>
@@ -147,10 +147,10 @@
                                 EnableCollapse="true">
                                 <Items>
                                     <x:TriggerBox ID="TriggerBox_KeyQualify_1" runat="server" Label="标题" TriggerIcon="Search"
-                                        EnableEdit="true">
+                                        EnableEdit="true" EmptyText="点击右边按钮选择">
                                     </x:TriggerBox>
                                     <x:TextArea ID="TextArea_KeyQualify_1" runat="server" Height="50px" Label="内容" Text=""
-                                        Enabled="false">
+                                        Readonly="true">
                                     </x:TextArea>
                                     <x:HiddenField ID="HiddenField_KeyQualify_1" runat="server">
                                     </x:HiddenField>
@@ -160,10 +160,10 @@
                                 EnableCollapse="true">
                                 <Items>
                                     <x:TriggerBox ID="TriggerBox_KeyQualify_2" runat="server" Label="标题" TriggerIcon="Search"
-                                        EnableEdit="true">
+                                        EnableEdit="true" EmptyText="点击右边按钮选择">
                                     </x:TriggerBox>
                                     <x:TextArea ID="TextArea_KeyQualify_2" runat="server" Height="50px" Label="内容" Text=""
-                                        Enabled="false">
+                                        Readonly="true">
                                     </x:TextArea>
                                     <x:HiddenField ID="HiddenField_KeyQualify_2" runat="server">
                                     </x:HiddenField>
@@ -173,10 +173,10 @@
                                 EnableCollapse="true">
                                 <Items>
                                     <x:TriggerBox ID="TriggerBox_KeyQualify_3" runat="server" Label="标题" TriggerIcon="Search"
-                                        EnableEdit="true">
+                                        EnableEdit="true" EmptyText="点击右边按钮选择">
                                     </x:TriggerBox>
                                     <x:TextArea ID="TextArea_KeyQualify_3" runat="server" Height="50px" Label="内容" Text=""
-                                        Enabled="false">
+                                        Readonly="true">
                                     </x:TextArea>
                                     <x:HiddenField ID="HiddenField_KeyQualify_3" runat="server">
                                     </x:HiddenField>
@@ -186,10 +186,10 @@
                                 EnableCollapse="true">
                                 <Items>
                                     <x:TriggerBox ID="TriggerBox_KeyQualify_4" runat="server" Label="标题" TriggerIcon="Search"
-                                        EnableEdit="true">
+                                        EnableEdit="true" EmptyText="点击右边按钮选择">
                                     </x:TriggerBox>
                                     <x:TextArea ID="TextArea_KeyQualify_4" runat="server" Height="50px" Label="内容" Text=""
-                                        Enabled="false">
+                                        Readonly="true">
                                     </x:TextArea>
                                     <x:HiddenField ID="HiddenField_KeyQualify_4" runat="server">
                                     </x:HiddenField>
@@ -199,10 +199,10 @@
                                 EnableCollapse="true">
                                 <Items>
                                     <x:TriggerBox ID="TriggerBox_KeyQualify_5" runat="server" Label="标题" TriggerIcon="Search"
-                                        EnableEdit="true">
+                                        EnableEdit="true" EmptyText="点击右边按钮选择">
                                     </x:TriggerBox>
                                     <x:TextArea ID="TextArea_KeyQualify_5" runat="server" Height="50px" Label="内容" Text=""
-                                        Enabled="false">
+                                        Readonly="true">
                                     </x:TextArea>
                                     <x:HiddenField ID="HiddenField_KeyQualify_5" runat="server">
                                     </x:HiddenField>
@@ -217,10 +217,10 @@
                                 EnableCollapse="true">
                                 <Items>
                                     <x:TriggerBox ID="TriggerBox_KeyAttitude_1" runat="server" Label="标题" TriggerIcon="Search"
-                                        EnableEdit="true">
+                                        EnableEdit="true" EmptyText="点击右边按钮选择">
                                     </x:TriggerBox>
                                     <x:TextArea ID="TextArea_KeyAttitude_1" runat="server" Height="50px" Label="内容" Text=""
-                                        Enabled="false">
+                                        Readonly="true">
                                     </x:TextArea>
                                     <x:HiddenField ID="HiddenField_KeyAttitude_1" runat="server">
                                     </x:HiddenField>
@@ -230,10 +230,10 @@
                                 EnableCollapse="true">
                                 <Items>
                                     <x:TriggerBox ID="TriggerBox_KeyAttitude_2" runat="server" Label="标题" TriggerIcon="Search"
-                                        EnableEdit="true">
+                                        EnableEdit="true" EmptyText="点击右边按钮选择">
                                     </x:TriggerBox>
                                     <x:TextArea ID="TextArea_KeyAttitude_2" runat="server" Height="50px" Label="内容" Text=""
-                                        Enabled="false">
+                                        Readonly="true">
                                     </x:TextArea>
                                     <x:HiddenField ID="HiddenField_KeyAttitude_2" runat="server">
                                     </x:HiddenField>
@@ -243,10 +243,10 @@
                                 EnableCollapse="true">
                                 <Items>
                                     <x:TriggerBox ID="TriggerBox_KeyAttitude_3" runat="server" Label="标题" TriggerIcon="Search"
-                                        EnableEdit="true">
+                                        EnableEdit="true" EmptyText="点击右边按钮选择">
                                     </x:TriggerBox>
                                     <x:TextArea ID="TextArea_KeyAttitude_3" runat="server" Height="50px" Label="内容" Text=""
-                                        Enabled="false">
+                                        Readonly="true">
                                     </x:TextArea>
                                     <x:HiddenField ID="HiddenField_KeyAttitude_3" runat="server">
                                     </x:HiddenField>
@@ -256,10 +256,10 @@
                                 EnableCollapse="true">
                                 <Items>
                                     <x:TriggerBox ID="TriggerBox_KeyAttitude_4" runat="server" Label="标题" TriggerIcon="Search"
-                                        EnableEdit="true">
+                                        EnableEdit="true" EmptyText="点击右边按钮选择">
                                     </x:TriggerBox>
                                     <x:TextArea ID="TextArea_KeyAttitude_4" runat="server" Height="50px" Label="内容" Text=""
-                                        Enabled="false">
+                                        Readonly="true">
                                     </x:TextArea>
                                     <x:HiddenField ID="HiddenField_KeyAttitude_4" runat="server">
                                     </x:HiddenField>
@@ -269,10 +269,10 @@
                                 EnableCollapse="true">
                                 <Items>
                                     <x:TriggerBox ID="TriggerBox_KeyAttitude_5" runat="server" Label="标题" TriggerIcon="Search"
-                                        EnableEdit="true">
+                                        EnableEdit="true" EmptyText="点击右边按钮选择">
                                     </x:TriggerBox>
                                     <x:TextArea ID="TextArea_KeyAttitude_5" runat="server" Height="50px" Label="内容" Text=""
-                                        Enabled="false">
+                                        Readonly="true">
                                     </x:TextArea>
                                     <x:HiddenField ID="HiddenField_KeyAttitude_5" runat="server">
                                     </x:HiddenField>
@@ -287,10 +287,10 @@
                                 EnableCollapse="true">
                                 <Items>
                                     <x:TriggerBox ID="TriggerBox_Response_1" runat="server" Label="标题" TriggerIcon="Search"
-                                        EnableEdit="true">
+                                        EnableEdit="true" EmptyText="点击右边按钮选择">
                                     </x:TriggerBox>
                                     <x:TextArea ID="TextArea_Response_1" runat="server" Height="50px" Label="内容" Text=""
-                                        Enabled="false">
+                                        Readonly="true">
                                     </x:TextArea>
                                     <x:HiddenField ID="HiddenField_Response_1" runat="server">
                                     </x:HiddenField>
@@ -300,10 +300,10 @@
                                 EnableCollapse="true">
                                 <Items>
                                     <x:TriggerBox ID="TriggerBox_Response_2" runat="server" Label="标题" TriggerIcon="Search"
-                                        EnableEdit="true">
+                                        EnableEdit="true" EmptyText="点击右边按钮选择">
                                     </x:TriggerBox>
                                     <x:TextArea ID="TextArea_Response_2" runat="server" Height="50px" Label="内容" Text=""
-                                        Enabled="false">
+                                        Readonly="true">
                                     </x:TextArea>
                                     <x:HiddenField ID="HiddenField_Response_2" runat="server">
                                     </x:HiddenField>
@@ -313,10 +313,10 @@
                                 EnableCollapse="true">
                                 <Items>
                                     <x:TriggerBox ID="TriggerBox_Response_3" runat="server" Label="标题" TriggerIcon="Search"
-                                        EnableEdit="true">
+                                        EnableEdit="true" EmptyText="点击右边按钮选择">
                                     </x:TriggerBox>
                                     <x:TextArea ID="TextArea_Response_3" runat="server" Height="50px" Label="内容" Text=""
-                                        Enabled="false">
+                                        Readonly="true">
                                     </x:TextArea>
                                     <x:HiddenField ID="HiddenField_Response_3" runat="server">
                                     </x:HiddenField>
@@ -326,10 +326,10 @@
                                 EnableCollapse="true">
                                 <Items>
                                     <x:TriggerBox ID="TriggerBox_Response_4" runat="server" Label="标题" TriggerIcon="Search"
-                                        EnableEdit="true">
+                                        EnableEdit="true" EmptyText="点击右边按钮选择">
                                     </x:TriggerBox>
                                     <x:TextArea ID="TextArea_Response_4" runat="server" Height="50px" Label="内容" Text=""
-                                        Enabled="false">
+                                        Readonly="true">
                                     </x:TextArea>
                                     <x:HiddenField ID="HiddenField_Response_4" runat="server">
                                     </x:HiddenField>
@@ -339,10 +339,10 @@
                                 EnableCollapse="true">
                                 <Items>
                                     <x:TriggerBox ID="TriggerBox_Response_5" runat="server" Label="标题" TriggerIcon="Search"
-                                        EnableEdit="true">
+                                        EnableEdit="true" EmptyText="点击右边按钮选择">
                                     </x:TriggerBox>
                                     <x:TextArea ID="TextArea_Response_5" runat="server" Height="50px" Label="内容" Text=""
-                                        Enabled="false">
+                                        Readonly="true">
                                     </x:TextArea>
                                     <x:HiddenField ID="HiddenField_Response_5" runat="server">
                                     </x:HiddenField>
@@ -357,10 +357,10 @@
                                 EnableCollapse="true">
                                 <Items>
                                     <x:TriggerBox ID="TriggerBox_Qualify_1" runat="server" Label="标题" TriggerIcon="Search"
-                                        EnableEdit="true">
+                                        EnableEdit="true" EmptyText="点击右边按钮选择">
                                     </x:TriggerBox>
                                     <x:TextArea ID="TextArea_Qualify_1" runat="server" Height="50px" Label="内容" Text=""
-                                        Enabled="false">
+                                        Readonly="true">
                                     </x:TextArea>
                                     <x:HiddenField ID="HiddenField_Qualify_1" runat="server">
                                     </x:HiddenField>
@@ -370,10 +370,10 @@
                                 EnableCollapse="true">
                                 <Items>
                                     <x:TriggerBox ID="TriggerBox_Qualify_2" runat="server" Label="标题" TriggerIcon="Search"
-                                        EnableEdit="true">
+                                        EnableEdit="true" EmptyText="点击右边按钮选择">
                                     </x:TriggerBox>
                                     <x:TextArea ID="TextArea_Qualify_2" runat="server" Height="50px" Label="内容" Text=""
-                                        Enabled="false">
+                                        Readonly="true">
                                     </x:TextArea>
                                     <x:HiddenField ID="HiddenField_Qualify_2" runat="server">
                                     </x:HiddenField>
@@ -383,10 +383,10 @@
                                 EnableCollapse="true">
                                 <Items>
                                     <x:TriggerBox ID="TriggerBox_Qualify_3" runat="server" Label="标题" TriggerIcon="Search"
-                                        EnableEdit="true">
+                                        EnableEdit="true" EmptyText="点击右边按钮选择">
                                     </x:TriggerBox>
                                     <x:TextArea ID="TextArea_Qualify_3" runat="server" Height="50px" Label="内容" Text=""
-                                        Enabled="false">
+                                        Readonly="true">
                                     </x:TextArea>
                                     <x:HiddenField ID="HiddenField_Qualify_3" runat="server">
                                     </x:HiddenField>
@@ -396,10 +396,10 @@
                                 EnableCollapse="true">
                                 <Items>
                                     <x:TriggerBox ID="TriggerBox_Qualify_4" runat="server" Label="标题" TriggerIcon="Search"
-                                        EnableEdit="true">
+                                        EnableEdit="true" EmptyText="点击右边按钮选择">
                                     </x:TriggerBox>
                                     <x:TextArea ID="TextArea_Qualify_4" runat="server" Height="50px" Label="内容" Text=""
-                                        Enabled="false">
+                                        Readonly="true">
                                     </x:TextArea>
                                     <x:HiddenField ID="HiddenField_Qualify_4" runat="server">
                                     </x:HiddenField>
@@ -409,10 +409,10 @@
                                 EnableCollapse="true">
                                 <Items>
                                     <x:TriggerBox ID="TriggerBox_Qualify_5" runat="server" Label="标题" TriggerIcon="Search"
-                                        EnableEdit="true">
+                                        EnableEdit="true" EmptyText="点击右边按钮选择">
                                     </x:TriggerBox>
                                     <x:TextArea ID="TextArea_Qualify_5" runat="server" Height="50px" Label="内容" Text=""
-                                        Enabled="false">
+                                        Readonly="true">
                                     </x:TextArea>
                                     <x:HiddenField ID="HiddenField_Qualify_5" runat="server">
                                     </x:HiddenField>
@@ -427,10 +427,10 @@
                                 EnableCollapse="true">
                                 <Items>
                                     <x:TriggerBox ID="TriggerBox_Attitude_1" runat="server" Label="标题" TriggerIcon="Search"
-                                        EnableEdit="true">
+                                        EnableEdit="true" EmptyText="点击右边按钮选择">
                                     </x:TriggerBox>
                                     <x:TextArea ID="TextArea_Attitude_1" runat="server" Height="50px" Label="内容" Text=""
-                                        Enabled="false">
+                                        Readonly="true">
                                     </x:TextArea>
                                     <x:HiddenField ID="HiddenField_Attitude_1" runat="server">
                                     </x:HiddenField>
@@ -440,10 +440,10 @@
                                 EnableCollapse="true">
                                 <Items>
                                     <x:TriggerBox ID="TriggerBox_Attitude_2" runat="server" Label="标题" TriggerIcon="Search"
-                                        EnableEdit="true">
+                                        EnableEdit="true" EmptyText="点击右边按钮选择">
                                     </x:TriggerBox>
                                     <x:TextArea ID="TextArea_Attitude_2" runat="server" Height="50px" Label="内容" Text=""
-                                        Enabled="false">
+                                        Readonly="true">
                                     </x:TextArea>
                                     <x:HiddenField ID="HiddenField_Attitude_2" runat="server">
                                     </x:HiddenField>
@@ -453,10 +453,10 @@
                                 EnableCollapse="true">
                                 <Items>
                                     <x:TriggerBox ID="TriggerBox_Attitude_3" runat="server" Label="标题" TriggerIcon="Search"
-                                        EnableEdit="true">
+                                        EnableEdit="true" EmptyText="点击右边按钮选择">
                                     </x:TriggerBox>
                                     <x:TextArea ID="TextArea_Attitude_3" runat="server" Height="50px" Label="内容" Text=""
-                                        Enabled="false">
+                                        Readonly="true">
                                     </x:TextArea>
                                     <x:HiddenField ID="HiddenField_Attitude_3" runat="server">
                                     </x:HiddenField>
@@ -466,10 +466,10 @@
                                 EnableCollapse="true">
                                 <Items>
                                     <x:TriggerBox ID="TriggerBox_Attitude_4" runat="server" Label="标题" TriggerIcon="Search"
-                                        EnableEdit="true">
+                                        EnableEdit="true" EmptyText="点击右边按钮选择">
                                     </x:TriggerBox>
                                     <x:TextArea ID="TextArea_Attitude_4" runat="server" Height="50px" Label="内容" Text=""
-                                        Enabled="false">
+                                        Readonly="true">
                                     </x:TextArea>
                                     <x:HiddenField ID="HiddenField_Attitude_4" runat="server">
                                     </x:HiddenField>
@@ -479,10 +479,10 @@
                                 EnableCollapse="true">
                                 <Items>
                                     <x:TriggerBox ID="TriggerBox_Attitude_5" runat="server" Label="标题" TriggerIcon="Search"
-                                        EnableEdit="true">
+                                        EnableEdit="true" EmptyText="点击右边按钮选择">
                                     </x:TriggerBox>
                                     <x:TextArea ID="TextArea_Attitude_5" runat="server" Height="50px" Label="内容" Text=""
-                                        Enabled="false">
+                                        Readonly="true">
                                     </x:TextArea>
                                     <x:HiddenField ID="HiddenField_Attitude_5" runat="server">
                                     </x:HiddenField>
