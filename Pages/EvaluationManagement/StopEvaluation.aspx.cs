@@ -91,6 +91,12 @@ namespace HRES.Pages.EvaluationManagement
                 Grid1.DataSource = table;
                 Grid1.DataBind();
             }
+            else
+            {
+                table.Clear();
+                Grid1.DataSource = table;
+                Grid1.DataBind();
+            }
         }
         private void SetSimpleForm(object[] keys)
         {

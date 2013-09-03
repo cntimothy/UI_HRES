@@ -112,6 +112,8 @@ namespace HRES.Pages.EvaluateTableManagement
                     Button_Save_Shadow.Enabled = false;
                     Button_Submit_Shadow.Enabled = false;
                     Button_Clear_Shadow.Enabled = false;
+
+                    DropDownList_Template.Enabled = false;
                 }
 
                 loadEvaluateTable("");

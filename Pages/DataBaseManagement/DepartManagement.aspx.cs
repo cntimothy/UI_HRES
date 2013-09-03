@@ -89,9 +89,10 @@ namespace HRES.Pages.DataBaseManagement
             }
             else
             {
+                table.Clear();
                 Grid1.DataSource = table;
                 Grid1.DataBind();
-                Alert.ShowInTop("未能获取部门信息！/n原因：" + exception, MessageBoxIcon.Error);
+                //Alert.ShowInTop("未能获取部门信息！/n原因：" + exception, MessageBoxIcon.Error);
             }
         }
         #endregion

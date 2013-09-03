@@ -69,6 +69,12 @@ namespace HRES.Pages.QuotaManagement
                 Grid1.DataSource = table;
                 Grid1.DataBind();
             }
+            else
+            {
+                table.Clear();
+                Grid1.DataSource = table;
+                Grid1.DataBind();
+            }
         }
         #endregion
     }

@@ -17,7 +17,7 @@
                     </x:Button>
                 </Items>
             </x:Toolbar>
-            <x:Grid ID="Grid1" runat="server" Title="Grid" AllowPaging="true" PageSize="20" Width="380px" AutoHeight="true"
+            <x:Grid ID="Grid1" runat="server" Title="人事处管理员信息" AllowPaging="true" PageSize="20" Width="380px" Height="500px"
                 OnRowCommand="Grid1_RowCommand" DataKeyNames="ID" OnPageIndexChange="Grid1_PageIndexChange"
                 EnableRowNumber="true">
                 <Columns>

@@ -71,12 +71,24 @@ namespace HRES.Pages.EvaluationManagement
                     Grid1.DataSource = table;
                     Grid1.DataBind();
                 }
+                else
+                {
+                    table.Clear();
+                    Grid1.DataSource = table;
+                    Grid1.DataBind();
+                }
             }
             else
             {
                 string depart = DropDownList1.SelectedValue;
                 if (EvaluationManagementCtrl.GetAllByDepart(ref table, depart, ref exception))
                 {
+                    Grid1.DataSource = table;
+                    Grid1.DataBind();
+                }
+                else
+                {
+                    table.Clear();
                     Grid1.DataSource = table;
                     Grid1.DataBind();
                 }
@@ -110,10 +122,10 @@ namespace HRES.Pages.EvaluationManagement
                     DropDownList1.Items.Add(item, item);
                 }
             }
-            else
-            {
-                Alert.ShowInTop("获取部门信息失败！\n原因：" + exception, MessageBoxIcon.Error);
-            }
+            //else
+            //{
+            //    Alert.ShowInTop("获取部门信息失败！\n原因：" + exception, MessageBoxIcon.Error);
+            //}
         }
         #endregion
     }

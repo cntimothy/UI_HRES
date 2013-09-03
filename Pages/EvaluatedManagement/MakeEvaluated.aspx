@@ -26,7 +26,8 @@
                     </x:Label>
                     <x:ToolbarSeparator ID="ToolbarSeparator2" runat="server">
                     </x:ToolbarSeparator>
-                    <x:Button ID="Button_Submit" runat="server" OnClick="Button_Submit_Click" Text="开始上传" Enabled="false">
+                    <x:Button ID="Button_Submit" runat="server" OnClick="Button_Submit_Click" Text="开始上传"
+                        Enabled="false">
                     </x:Button>
                     <x:ToolbarSeparator ID="ToolbarSeparator3" runat="server">
                     </x:ToolbarSeparator>
@@ -45,6 +46,7 @@
                 <Items>
                     <x:DropDownList runat="server" ID="DropDownList_Depart" AutoPostBack="true" OnSelectedIndexChanged="DropDownList_Depart_SelectedChanged"
                         Label="请选择部门">
+                        <x:ListItem Selected="true" EnableSelect="true" Text="所有部门" Value="0" />
                     </x:DropDownList>
                 </Items>
             </x:SimpleForm>

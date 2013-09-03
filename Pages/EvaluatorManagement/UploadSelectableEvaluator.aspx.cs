@@ -137,7 +137,6 @@ namespace HRES.Pages.EvaluatorManagement
         #endregion
 
         #region Private Method
-
         private void bindEvaluatorToGrid()
         {
             string exception = "";
@@ -145,6 +144,12 @@ namespace HRES.Pages.EvaluatorManagement
             DataTable table = new DataTable();
             if (EvaluatorManagementCtrl.GetSelectableEvaluatorByDepart(ref table, depart, ref exception))
             {
+                Grid1.DataSource = table;
+                Grid1.DataBind();
+            }
+            else
+            {
+                table.Clear();
                 Grid1.DataSource = table;
                 Grid1.DataBind();
             }

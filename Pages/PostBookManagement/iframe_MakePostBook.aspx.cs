@@ -432,6 +432,7 @@ namespace HRES.Pages.PostBookManagement
                 Button_Submit_Shadow.Enabled = false;
                 Button_Clear.Enabled = false;
                 Button_Clear_Shadow.Enabled = false;
+                DropDownList_Template.Enabled = false;
             }
         }
 

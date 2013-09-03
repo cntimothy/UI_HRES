@@ -42,6 +42,7 @@
                         <Items>
                             <x:DropDownList runat="server" ID="DropDownList_Depart" AutoPostBack="true" OnSelectedIndexChanged="DropDownList_Depart_SelectedChanged"
                                 Label="请选择部门">
+                                <x:ListItem EnableSelect="true" Selected="true" Text="所有部门" Value="0" />
                             </x:DropDownList>
                         </Items>
                     </x:SimpleForm>

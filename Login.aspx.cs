@@ -39,7 +39,7 @@ namespace HRES
             }
             else
             {
-                ErrorMessage.Text = exception + "\n请输入正确的用户名密码并选择正确的身份！";
+                ErrorMessage.Text = "请输入正确的用户名、密码并选择正确的身份！";
                 ErrorMessage.Visible = true;
             }
         }

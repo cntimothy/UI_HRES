@@ -63,13 +63,19 @@ namespace HRES.Pages.PostBookManagement
             string exception = "";
             string depart = (string)Session["Depart"];
             DataTable table = new DataTable();
-            if(PostBookManagementCtrl.GetAllByDepart(ref table, depart, ref exception))
+            if (PostBookManagementCtrl.GetAllByDepart(ref table, depart, ref exception))
             {
                 string sortField = Grid1.SortField;
                 string sortDirection = Grid1.SortDirection;
                 DataView dv = table.DefaultView;
                 dv.Sort = String.Format("{0} {1}", sortField, sortDirection);
                 Grid1.DataSource = dv;
+                Grid1.DataBind();
+            }
+            else
+            {
+                table.Clear();
+                Grid1.DataSource = table;
                 Grid1.DataBind();
             }
         }

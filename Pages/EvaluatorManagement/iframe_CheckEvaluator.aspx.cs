@@ -83,6 +83,12 @@ namespace HRES.Pages.EvaluatorManagement
                 Grid1.DataSource = table.DefaultView;
                 Grid1.DataBind();
             }
+            else
+            {
+                table.Clear();
+                Grid1.DataSource = table;
+                Grid1.DataBind();
+            }
         }
 
         private List<string> GetSelectedRowIndexArrayFromHiddenField()
@@ -118,9 +124,6 @@ namespace HRES.Pages.EvaluatorManagement
             for (int i = startPageIndex, count = Math.Min(startPageIndex + Grid1.PageSize, Grid1.RecordCount); i < count; i++)
             {
                 string id = Grid1.DataKeys[i][0].ToString();
-                //GridRow row = Grid1.Rows[i];
-                //AspNet.RadioButtonList relationCtrl = (AspNet.RadioButtonList)row.FindControl("Relation");
-                //string relation = relationCtrl.SelectedValue;
                 if (selectedRows.Contains(i - startPageIndex))
                 {
                     if (!ids.Contains(id))

@@ -47,15 +47,15 @@
                             </x:FormRow>
                         </Rows>
                     </x:Form>
-                    <x:Grid ID="Grid1" runat="server" Title="Grid" EnableRowNumber="true" AutoHeight="true"
+                    <x:Grid ID="Grid1" runat="server" Title="派遣员工考核汇总表" EnableRowNumber="true" AutoHeight="true"
                         Width="800px" AllowSorting="true" SortColumnIndex="1" SortDirection="ASC" OnSort="Grid1_Sort">
                         <Columns>
                             <x:BoundField Width="100px" DataField="Name" DataFormatString="{0}" HeaderText="姓名" />
                             <x:BoundField Width="150px" DataField="Score" SortField="Score" DataFormatString="{0}"
                                 HeaderText="考核得分" />
-                            <x:TemplateField SortField="Status" Width="50px" HeaderText="考核结果">
+                            <x:TemplateField SortField="Result" Width="150px" HeaderText="考核结果">
                                 <ItemTemplate>
-                                    <asp:Label ID="Status" runat="server" Text='<%# GetDepartEvaluationResult(Eval("Status")) %>'></asp:Label>
+                                    <asp:Label ID="Status" runat="server" Text='<%# GetDepartEvaluationResult(Eval("Result")) %>'></asp:Label>
                                 </ItemTemplate>
                             </x:TemplateField>
                             <x:BoundField Width="100px" DataField="EvaluatorNum" DataFormatString="{0}" HeaderText="考核人数" />

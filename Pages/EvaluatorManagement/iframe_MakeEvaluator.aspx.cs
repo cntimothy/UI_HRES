@@ -134,6 +134,12 @@ namespace HRES.Pages.EvaluatorManagement
                 Grid1.DataSource = table;
                 Grid1.DataBind();
             }
+            else
+            {
+                table.Clear();
+                Grid1.DataSource = table;
+                Grid1.DataBind();
+            }
         }
 
         /// <summary>

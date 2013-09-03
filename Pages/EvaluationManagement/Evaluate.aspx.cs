@@ -58,7 +58,10 @@ namespace HRES.Pages.EvaluationManagement
             }
             else
             {
-                Alert.ShowInTop("获取被考评人信息失败！\n原因：" + exception, MessageBoxIcon.Error);
+                //Alert.ShowInTop("获取被考评人信息失败！\n原因：" + exception, MessageBoxIcon.Error);
+                table.Clear();
+                Grid1.DataSource = table;
+                Grid1.DataBind();
             }
         }
         #endregion

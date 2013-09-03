@@ -87,10 +87,10 @@ namespace HRES.Pages.EvaluationManagement
                     DropDownList_Year.Items.Add(idYearDic[id], id);
                 }
             }
-            else
-            {
-                Alert.ShowInTop("获取年份信息失败！/n原因：" + exception, MessageBoxIcon.Error);
-            }
+            //else
+            //{
+            //    Alert.ShowInTop("获取年份信息失败！/n原因：" + exception, MessageBoxIcon.Error);
+            //}
         }
 
         private void bindDepartsToDropDownList()
@@ -104,16 +104,17 @@ namespace HRES.Pages.EvaluationManagement
                     DropDownList_Depart.Items.Add(depart, depart);
                 }
             }
-            else
-            {
-                Alert.ShowInTop("获取部门信息失败！\n原因：" + exception, MessageBoxIcon.Error);
-            }
+            //else
+            //{
+            //    Alert.ShowInTop("获取部门信息失败！\n原因：" + exception, MessageBoxIcon.Error);
+            //}
         }
 
         private void bindScoreToGrid()
         {
             string exception = "";
             string depart = DropDownList_Depart.SelectedValue;
+            Grid1.Title = depart + "派遣员工考核汇总表";
             int year = Convert.ToInt32(DropDownList_Year.SelectedValue);
             DataTable table = new DataTable();
             string startTime = "", stopTime = "", evaluationDate = "";
@@ -122,18 +123,23 @@ namespace HRES.Pages.EvaluationManagement
                 string sortField = Grid1.SortField;
                 string sortDirection = Grid1.SortDirection;
 
-                DataView view1 = table.DefaultView;
-                view1.Sort = String.Format("{0} {1}", sortField, sortDirection);
-                Grid1.DataSource = table;
+                DataView view = table.DefaultView;
+                view.Sort = String.Format("{0} {1}", sortField, sortDirection);
+                Grid1.DataSource = view;
                 Grid1.DataBind();
                 Label_Period.Text = startTime + " ~ " + stopTime;
-                Grid1.Title = depart + "派遣员工考核汇总表";
                 Button_Export.Enabled = true;
             }
             else
             {
-                Alert.ShowInTop("未能查询到考评结果！\n原因：" + exception, MessageBoxIcon.Error);
+                table.Clear();
+                Grid1.DataSource = table;
+                Grid1.DataBind();
             }
+            //else
+            //{
+            //    Alert.ShowInTop("未能查询到考评结果！\n原因：" + exception, MessageBoxIcon.Error);
+            //}
         }
         #endregion
     }

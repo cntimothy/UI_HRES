@@ -157,9 +157,10 @@ namespace HRES.Pages.EvaluatedManagement
             string exception = "";
             if (CommonCtrl.GetDeparts(ref departs, ref exception))
             {
-                departs.Insert(0, "所有部门");
-                DropDownList_Depart.DataSource = departs;
-                DropDownList_Depart.DataBind();
+                foreach (string depart in departs)
+                {
+                    DropDownList_Depart.Items.Add(depart, depart);
+                }
             }
         }
 
@@ -167,15 +168,17 @@ namespace HRES.Pages.EvaluatedManagement
         {
             string exception = "";
             DataTable table = new DataTable();
-            if (DropDownList_Depart.SelectedValue == "所有部门")
+            if (DropDownList_Depart.SelectedValue == "0")
             {
                 if (EvaluatedManagementCtrl.GetAll(ref table, ref exception))
                 {
+                    //Alert.ShowInTop("未查询到被考评人信息！\n原因：" + exception, MessageBoxIcon.Error);
                     Grid1.DataSource = table;
                     Grid1.DataBind();
                 }
                 else
                 {
+                    table.Clear();
                     Grid1.DataSource = table;
                     Grid1.DataBind();
                 }
@@ -185,11 +188,13 @@ namespace HRES.Pages.EvaluatedManagement
                 string depart = DropDownList_Depart.SelectedValue;
                 if (EvaluatedManagementCtrl.GetAllByDepart(ref table, depart, ref exception))
                 {
+                    //Alert.ShowInTop("未查询到被考评人信息！\n原因：" + exception, MessageBoxIcon.Error);
                     Grid1.DataSource = table;
                     Grid1.DataBind();
                 }
                 else
                 {
+                    table.Clear();
                     Grid1.DataSource = table;
                     Grid1.DataBind();
                 }

@@ -89,10 +89,10 @@ namespace HRES.Pages.EvaluateTableManagement
                     DropDownList_Depart.Items.Add(depart, depart);
                 }
             }
-            else
-            {
-                Alert.ShowInTop("获取部门信息失败！/n原因：" + exception, MessageBoxIcon.Error);
-            }
+            //else
+            //{
+            //    Alert.ShowInTop("获取部门信息失败！/n原因：" + exception, MessageBoxIcon.Error);
+            //}
         }
 
         private void bindEvaluatedToGrid()
@@ -103,6 +103,7 @@ namespace HRES.Pages.EvaluateTableManagement
             {
                 if (EvaluateTableManagementCtrl.GetAll(ref table, ref exception))
                 {
+                    //Alert.ShowInTop("获取被考评人信息失败！/n原因：" + exception, MessageBoxIcon.Error);
                     string sortField = Grid1.SortField;
                     string sortDirection = Grid1.SortDirection;
                     DataView dv = table.DefaultView;
@@ -112,7 +113,9 @@ namespace HRES.Pages.EvaluateTableManagement
                 }
                 else
                 {
-                    Alert.ShowInTop("获取被考评人信息失败！/n原因：" + exception, MessageBoxIcon.Error);
+                    table.Clear();
+                    Grid1.DataSource = table;
+                    Grid1.DataBind();
                 }
             }
             else
@@ -120,6 +123,7 @@ namespace HRES.Pages.EvaluateTableManagement
                 string depart = DropDownList_Depart.SelectedValue;
                 if (EvaluateTableManagementCtrl.GetAllByDepart(ref table, depart, ref exception))
                 {
+                    //Alert.ShowInTop("获取被考评人信息失败！/n原因：" + exception, MessageBoxIcon.Error);
                     string sortField = "Status";
                     string sortDirection = "ASC";
                     DataView dv = table.DefaultView;
@@ -129,7 +133,9 @@ namespace HRES.Pages.EvaluateTableManagement
                 }
                 else
                 {
-                    Alert.ShowInTop("获取被考评人信息失败！/n原因：" + exception, MessageBoxIcon.Error);
+                    table.Clear();
+                    Grid1.DataSource = table;
+                    Grid1.DataBind();
                 }
             }
         }

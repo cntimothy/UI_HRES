@@ -123,9 +123,10 @@ namespace HRES.Pages.SecondManagement
             string exception = "";
             if (CommonCtrl.GetDeparts(ref departs, ref exception))
             {
-                departs.Insert(0, "所有部门");
-                DropDownList_Depart.DataSource = departs;
-                DropDownList_Depart.DataBind();
+                foreach (string depart in departs)
+                {
+                    DropDownList_Depart.Items.Add(depart, depart);
+                }
             }
         }
 
@@ -133,10 +134,16 @@ namespace HRES.Pages.SecondManagement
         {
             string exception = "";
             DataTable table = new DataTable();
-            if (DropDownList_Depart.SelectedValue == "所有部门")
+            if (DropDownList_Depart.SelectedValue == "0")
             {
                 if (SecondManagementCtrl.GetAll(ref table, ref exception))
                 {
+                    Grid1.DataSource = table;
+                    Grid1.DataBind();
+                }
+                else
+                {
+                    table.Clear();
                     Grid1.DataSource = table;
                     Grid1.DataBind();
                 }
@@ -146,6 +153,12 @@ namespace HRES.Pages.SecondManagement
                 string depart = DropDownList_Depart.SelectedValue;
                 if (SecondManagementCtrl.GetAllByDepart(ref table, depart, ref exception))
                 {
+                    Grid1.DataSource = table;
+                    Grid1.DataBind();
+                }
+                else
+                {
+                    table.Clear();
                     Grid1.DataSource = table;
                     Grid1.DataBind();
                 }

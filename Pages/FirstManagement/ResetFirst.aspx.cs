@@ -56,14 +56,20 @@ namespace HRES.Pages.FirstManagement
         {
             string exception = "";
             List<string> IDs = new List<string>();
+            DataTable table = new DataTable();
             if (FirstManagementCtrl.GetAll(ref IDs, ref exception))
             {
-                DataTable table = new DataTable();
                 table.Columns.Add("ID");
                 foreach (string id in IDs)
                 {
                     table.Rows.Add(id);
                 }
+                Grid1.DataSource = table;
+                Grid1.DataBind();
+            }
+            else
+            {
+                table.Clear();
                 Grid1.DataSource = table;
                 Grid1.DataBind();
             }

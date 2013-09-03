@@ -73,7 +73,10 @@ namespace HRES.Pages.EvaluationManagement
                 }
                 else
                 {
-                    Alert.ShowInTop("查询被考评人信息失败！\n原因：" + exception, MessageBoxIcon.Error);
+                    table.Clear();
+                    Grid1.DataSource = table;
+                    Grid1.DataBind();
+                    //Alert.ShowInTop("查询被考评人信息失败！\n原因：" + exception, MessageBoxIcon.Error);
                 }
             }
             else
@@ -85,7 +88,10 @@ namespace HRES.Pages.EvaluationManagement
                 }
                 else
                 {
-                    Alert.ShowInTop("查询被考评人信息失败！\n原因：" + exception, MessageBoxIcon.Error);
+                    table.Clear();
+                    Grid1.DataSource = table;
+                    Grid1.DataBind();
+                    //Alert.ShowInTop("查询被考评人信息失败！\n原因：" + exception, MessageBoxIcon.Error);
                 }
             }
         }
