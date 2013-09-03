@@ -220,12 +220,12 @@ namespace HRES.Pages.EvaluationManagement {
         protected global::FineUI.SimpleForm SimpleForm1;
         
         /// <summary>
-        /// RadioButtonList_EvaluationLevel 控件。
+        /// Label_EvaluationLevel 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.RadioButtonList RadioButtonList_EvaluationLevel;
+        protected global::FineUI.Label Label_EvaluationLevel;
     }
 }

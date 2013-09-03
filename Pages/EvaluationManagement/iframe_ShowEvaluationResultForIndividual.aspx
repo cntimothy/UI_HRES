@@ -66,12 +66,8 @@
                     <x:SimpleForm ID="SimpleForm1" runat="server" BodyPadding="5px" Title="SimpleForm"
                         ShowBorder="false" ShowHeader="false">
                         <Items>
-                            <x:RadioButtonList ID="RadioButtonList_EvaluationLevel" runat="server" ColumnVertical="false" Enabled="false" Label="考评结果">
-                                <x:RadioItem Text="优秀（9~10）" Value="0" />
-                                <x:RadioItem Text="良好（7~8）" Value="1" />
-                                <x:RadioItem Text="合格（4~6）" Value="2" />
-                                <x:RadioItem Text="不合格（0~3）" Value="3" />
-                            </x:RadioButtonList>
+                            <x:Label ID="Label_EvaluationLevel" runat="server" Label="考评结果" Text="">
+                            </x:Label>
                         </Items>
                     </x:SimpleForm>
                 </Items>

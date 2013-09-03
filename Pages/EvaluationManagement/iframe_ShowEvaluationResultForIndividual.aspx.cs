@@ -222,7 +222,24 @@ namespace HRES.Pages.EvaluationManagement
             Grid1.DataSource = table;
             Grid1.DataBind();
 
-            RadioButtonList_EvaluationLevel.SelectedValue = Convert.ToString((int)evaluationResult.EvaluationLevel);
+            switch (evaluationResult.EvaluationLevel)
+            {
+                case DepartEvaluationLevel.good:
+                    Label_EvaluationLevel.Text = "优(91～100)";
+                    break;
+                case DepartEvaluationLevel.notbad:
+                    Label_EvaluationLevel.Text = "良(71～90)";
+                    break;
+                case DepartEvaluationLevel.qualified:
+                    Label_EvaluationLevel.Text = "中(41～70)";
+                    break;
+                case DepartEvaluationLevel.unqualified:
+                    Label_EvaluationLevel.Text = "差(0～40)";
+                    break;
+                default:
+                    Label_EvaluationLevel.Text = "未定义状态";
+                    break;
+            }
         }
 
         private void gen270Grid(EvaluationResult evaluationResult)
@@ -330,7 +347,24 @@ namespace HRES.Pages.EvaluationManagement
             Grid1.DataSource = table;
             Grid1.DataBind();
 
-            RadioButtonList_EvaluationLevel.SelectedValue = Convert.ToString((int)evaluationResult.EvaluationLevel);
+            switch (evaluationResult.EvaluationLevel)
+            {
+                case DepartEvaluationLevel.good:
+                    Label_EvaluationLevel.Text = "优(91～100)";
+                    break;
+                case DepartEvaluationLevel.notbad:
+                    Label_EvaluationLevel.Text = "良(71～90)";
+                    break;
+                case DepartEvaluationLevel.qualified:
+                    Label_EvaluationLevel.Text = "中(41～70)";
+                    break;
+                case DepartEvaluationLevel.unqualified:
+                    Label_EvaluationLevel.Text = "差(0～40)";
+                    break;
+                default:
+                    Label_EvaluationLevel.Text = "未定义状态";
+                    break;
+            }
         }
         #endregion
     }
