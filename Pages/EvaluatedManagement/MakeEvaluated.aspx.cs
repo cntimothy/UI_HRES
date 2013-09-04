@@ -201,6 +201,10 @@ namespace HRES.Pages.EvaluatedManagement
             }
         }
 
+        /// <summary>
+        ///设置详细个人信息
+        /// </summary>
+        /// <param name="keys"></param>
         private void SetDetail(object[] keys)
         {
             Label_ID.Text = (string)keys[0];

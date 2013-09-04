@@ -121,139 +121,112 @@ namespace HRES.Pages.EvaluateTableManagement {
         protected global::FineUI.SimpleForm SimpleForm1;
         
         /// <summary>
-        /// LabID 控件。
+        /// Label_ID 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Label LabID;
+        protected global::FineUI.Label Label_ID;
         
         /// <summary>
-        /// LabDate 控件。
+        /// Label_Name 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Label LabDate;
+        protected global::FineUI.Label Label_Name;
         
         /// <summary>
-        /// LabName 控件。
+        /// Label_Sex 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Label LabName;
+        protected global::FineUI.Label Label_Sex;
         
         /// <summary>
-        /// LabSex 控件。
+        /// Label_Company 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Label LabSex;
+        protected global::FineUI.Label Label_Company;
         
         /// <summary>
-        /// LabDepart 控件。
+        /// Label_Depart 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Label LabDepart;
+        protected global::FineUI.Label Label_Depart;
         
         /// <summary>
-        /// LabJob 控件。
+        /// Label_LaborDepart 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Label LabJob;
+        protected global::FineUI.Label Label_LaborDepart;
         
         /// <summary>
-        /// LabIDNo 控件。
+        /// Label_PostName 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Label LabIDNo;
+        protected global::FineUI.Label Label_PostName;
         
         /// <summary>
-        /// LabBirthday 控件。
+        /// Label_PostType 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Label LabBirthday;
+        protected global::FineUI.Label Label_PostType;
         
         /// <summary>
-        /// LabFund 控件。
+        /// Label_Fund 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Label LabFund;
+        protected global::FineUI.Label Label_Fund;
         
         /// <summary>
-        /// LabCharacter 控件。
+        /// Label_Character 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Label LabCharacter;
+        protected global::FineUI.Label Label_Character;
         
         /// <summary>
-        /// LabCompany 控件。
+        /// Label_StartTime 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Label LabCompany;
+        protected global::FineUI.Label Label_StartTime;
         
         /// <summary>
-        /// LabStartTime 控件。
+        /// Label_StopTime 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Label LabStartTime;
-        
-        /// <summary>
-        /// LabStopTime 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::FineUI.Label LabStopTime;
-        
-        /// <summary>
-        /// LabStatus 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::FineUI.Label LabStatus;
-        
-        /// <summary>
-        /// LabComment 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::FineUI.Label LabComment;
+        protected global::FineUI.Label Label_StopTime;
         
         /// <summary>
         /// Window_CheckEvaluateTable 控件。

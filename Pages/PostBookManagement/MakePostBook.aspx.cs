@@ -39,8 +39,8 @@ namespace HRES.Pages.PostBookManagement
 
         protected void Grid1_RowClick(object sender, FineUI.GridRowClickEventArgs e)
         {
-            object[] keys = Grid1.DataKeys[e.RowIndex];         
-            setSimpleForm(keys);
+            object[] keys = Grid1.DataKeys[e.RowIndex];
+            SetDetail(keys);
         }
 
         protected void Window_MakePostBook_Close(object sender, FineUI.WindowCloseEventArgs e)
@@ -80,23 +80,24 @@ namespace HRES.Pages.PostBookManagement
             }
         }
 
-        private void setSimpleForm(object[] keys)
+        /// <summary>
+        ///设置详细个人信息
+        /// </summary>
+        /// <param name="keys"></param>
+        private void SetDetail(object[] keys)
         {
-            LabID.Text = (string)keys[0];
-            LabDate.Text = (string)keys[1];
-            LabName.Text = (string)keys[2];
-            LabSex.Text = (string)keys[3];
-            LabDepart.Text = (string)keys[4];
-            LabJob.Text = (string)keys[5];
-            LabIDNo.Text = (string)keys[6];
-            LabBirthday.Text = (string)keys[7];
-            LabFund.Text = (string)keys[8];
-            LabCharacter.Text = (string)keys[9];
-            LabCompany.Text = (string)keys[10];
-            LabStartTime.Text = (string)keys[11];
-            LabStopTime.Text = (string)keys[12];
-            LabStatus.Text = GetDocStatus(keys[13]);
-            LabComment.Text = (string)keys[14];
+            Label_ID.Text = (string)keys[0];
+            Label_Name.Text = (string)keys[1];
+            Label_Sex.Text = (string)keys[2];
+            Label_Company.Text = (string)keys[3];
+            Label_Depart.Text = (string)keys[4];
+            Label_LaborDepart.Text = (string)keys[5];
+            Label_PostName.Text = (string)keys[6];
+            Label_PostType.Text = (string)keys[7];
+            Label_Fund.Text = (string)keys[8];
+            Label_Character.Text = (string)keys[9];
+            Label_StartTime.Text = (string)keys[10];
+            Label_StopTime.Text = (string)keys[11];
         }
         #endregion
     }

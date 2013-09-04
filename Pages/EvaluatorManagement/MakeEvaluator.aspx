@@ -24,26 +24,24 @@
                     <x:Grid ID="Grid1" runat="server" Title="被考评人名单" Width="730px" PageSize="20" ShowBorder="true"
                         ShowHeader="true" Height="500px" AllowPaging="true" OnPageIndexChange="Grid1_PageIndexChange"
                         EnableRowClickEvent="true" EnableRowClick="true" OnRowClick="Grid1_RowClick"
-                        EnableRowNumber="True" AutoPostBack="true" DataKeyNames="ID, Date, Name, Sex, Depart, Job, IDNo, Birthday, Fund, Character, Company, StartTime, StopTime, Status, Comment"
-                        AllowSorting="true" SortColumnIndex="13" SortDirection="DESC" OnSort="Grid1_Sort">
+                        EnableRowNumber="True" AutoPostBack="true" DataKeyNames="ID, Name, Sex, Company, Depart, LaborDepart, PostName, PostType, Fund, Character, StartTime, StopTime, Status, Comment"
+                        AllowSorting="true" SortColumnIndex="12" SortDirection="DESC" OnSort="Grid1_Sort">
                         <Columns>
-                            <x:BoundField Width="100px" DataField="ID" DataFormatString="{0}" HeaderText="用户名"
-                                Hidden="true" />
-                            <x:BoundField Width="100px" DataField="Date" DataFormatString="{0}" HeaderText="入职时间"
-                                Hidden="true" />
+                            <x:BoundField Width="100px" DataField="ID" DataFormatString="{0}" HeaderText="用户名" />
                             <x:BoundField Width="100px" DataField="Name" DataFormatString="{0}" HeaderText="姓名" />
-                            <x:BoundField Width="40px" DataField="Sex" DataFormatString="{0}" HeaderText="性别" />
-                            <x:BoundField Width="80px" DataField="Depart" DataFormatString="{0}" HeaderText="工作单位" />
-                            <x:BoundField Width="100px" DataField="Job" DataFormatString="{0}" HeaderText="岗位（职务）" />
-                            <x:BoundField Width="100px" DataField="IDNo" DataFormatString="{0}" HeaderText="身份证号"
+                            <x:BoundField Width="100px" DataField="Sex" DataFormatString="{0}" HeaderText="性别" />
+                            <x:BoundField Width="100px" DataField="Company" DataFormatString="{0}" HeaderText="用人单位"
                                 Hidden="true" />
-                            <x:BoundField Width="100px" DataField="Birthday" DataFormatString="{0}" HeaderText="出生年月"
+                            <x:BoundField Width="100px" DataField="Depart" DataFormatString="{0}" HeaderText="工作单位" />
+                            <x:BoundField Width="100px" DataField="LaborDepart" DataFormatString="{0}" HeaderText="用工部门"
+                                Hidden="true" />
+                            <x:BoundField Width="100px" DataField="PostName" DataFormatString="{0}" HeaderText="岗位名称"
+                                Hidden="true" />
+                            <x:BoundField Width="100px" DataField="PostType" DataFormatString="{0}" HeaderText="岗位类别"
                                 Hidden="true" />
                             <x:BoundField Width="100px" DataField="Fund" DataFormatString="{0}" HeaderText="经费来源"
                                 Hidden="true" />
                             <x:BoundField Width="100px" DataField="Character" DataFormatString="{0}" HeaderText="派遣性质"
-                                Hidden="true" />
-                            <x:BoundField Width="100px" DataField="Company" DataFormatString="{0}" HeaderText="派遣公司"
                                 Hidden="true" />
                             <x:BoundField Width="100px" DataField="StartTime" DataFormatString="{0}" HeaderText="考评开始时间"
                                 Hidden="true" />
@@ -54,43 +52,38 @@
                                     <asp:Label ID="Status" runat="server" Text='<%# GetDocStatus(Eval("Status")) %>'></asp:Label>
                                 </ItemTemplate>
                             </x:TemplateField>
-                            <x:BoundField ExpandUnusedSpace="true" Width="200px" DataField="Comment" DataFormatString="{0}" HeaderText="审核意见" />
+                            <x:BoundField ExpandUnusedSpace="true" Width="200px" DataField="Comment" DataFormatString="{0}"
+                                HeaderText="审核意见" />
                             <x:WindowField TextAlign="Center" Width="80px" WindowID="Window_MakeEvaluator" Text="制作"
                                 ToolTip="制作考评人名单" Title="制作" IFrameUrl="iframe_MakeEvaluator.aspx" DataIFrameUrlFields="ID,Name,Status,Comment"
                                 DataIFrameUrlFormatString="iframe_MakeEvaluator.aspx?id={0}&name={1}&status={2}&Comment={3}" />
                         </Columns>
                     </x:Grid>
-                    <x:SimpleForm ID="SimpleForm1" runat="server" BodyPadding="5px" Title="详细信息" Width="300px">
+                    <x:SimpleForm ID="SimpleForm1" runat="server" BodyPadding="5px" Title="详细信息" Width="300px" LabelWidth="100px">
                         <Items>
-                            <x:Label runat="server" ID="LabID" Label="用户名" Text="">
+                            <x:Label runat="server" ID="Label_ID" Label="用户名" Text="">
                             </x:Label>
-                            <x:Label runat="server" ID="LabDate" Label="入职时间" Text="">
+                            <x:Label runat="server" ID="Label_Name" Label="姓名" Text="">
                             </x:Label>
-                            <x:Label runat="server" ID="LabName" Label="姓名" Text="">
+                            <x:Label runat="server" ID="Label_Sex" Label="性别" Text="">
                             </x:Label>
-                            <x:Label runat="server" ID="LabSex" Label="性别" Text="">
+                            <x:Label runat="server" ID="Label_Company" Label="用人单位" Text="">
                             </x:Label>
-                            <x:Label runat="server" ID="LabDepart" Label="工作单位" Text="">
+                            <x:Label runat="server" ID="Label_Depart" Label="用工单位" Text="">
                             </x:Label>
-                            <x:Label runat="server" ID="LabJob" Label="岗位（职务）" Text="">
+                            <x:Label runat="server" ID="Label_LaborDepart" Label="用工部门" Text="">
                             </x:Label>
-                            <x:Label runat="server" ID="LabIDNo" Label="身份证号" Text="">
+                            <x:Label runat="server" ID="Label_PostName" Label="岗位名称" Text="">
                             </x:Label>
-                            <x:Label runat="server" ID="LabBirthday" Label="出生年月" Text="">
+                            <x:Label runat="server" ID="Label_PostType" Label="岗位类别" Text="">
                             </x:Label>
-                            <x:Label runat="server" ID="LabFund" Label="经费来源" Text="">
+                            <x:Label runat="server" ID="Label_Fund" Label="经费来源" Text="">
                             </x:Label>
-                            <x:Label runat="server" ID="LabCharacter" Label="派遣性质" Text="">
+                            <x:Label runat="server" ID="Label_Character" Label="派遣性质" Text="">
                             </x:Label>
-                            <x:Label runat="server" ID="LabCompany" Label="派遣公司" Text="">
+                            <x:Label runat="server" ID="Label_StartTime" Label="考评开始时间" Text="">
                             </x:Label>
-                            <x:Label runat="server" ID="LabStartTime" Label="考评开始时间" Text="">
-                            </x:Label>
-                            <x:Label runat="server" ID="LabStopTime" Label="考评结束时间" Text="">
-                            </x:Label>
-                            <x:Label runat="server" ID="LabStatus" Label="状态" Text="">
-                            </x:Label>
-                            <x:Label runat="server" ID="LabComment" Label="审核意见" Text="">
+                            <x:Label runat="server" ID="Label_StopTime" Label="考评结束时间" Text="">
                             </x:Label>
                         </Items>
                     </x:SimpleForm>
@@ -100,8 +93,8 @@
     </x:Panel>
     <x:Window ID="Window_MakeEvaluator" Title="弹出窗体" Popup="false" EnableIFrame="true"
         IFrameUrl="about:blank" EnableMaximize="true" Target="Top" EnableResize="true"
-        runat="server" IsModal="true" CssStyle="width:80%"
-        EnableConfirmOnClose="true" Height="610px" EnableClose="false" AutoHeight="true">
+        runat="server" IsModal="true" CssStyle="width:80%" EnableConfirmOnClose="true"
+        Height="610px" EnableClose="false" AutoHeight="true">
     </x:Window>
     </form>
 </body>
