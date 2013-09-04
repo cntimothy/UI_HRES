@@ -27,8 +27,6 @@
     </TreeNode>
     <TreeNode Text="查询结果（部门）" NavigateUrl="~/Pages/EvaluationManagement/EvaluationResultForDepart.aspx" >
     </TreeNode>
-    <TreeNode Text="短信平台" NavigateUrl="~/Pages/EvaluationManagement/MessagePlatform.aspx" >
-    </TreeNode>
   </TreeNode>
   <TreeNode Text="指标库管理" SingleClickExpand="true">
     <TreeNode Text="指标库维护" NavigateUrl="~/Pages/QuotaManagement/QuotaManagement.aspx" >
@@ -40,6 +38,12 @@
   </TreeNode>
   <TreeNode Text="系统管理" SingleClickExpand="true">
     <TreeNode Text="系统初始化" NavigateUrl="~/Pages/SystemManagement/SystemInit.aspx" >
+    </TreeNode>
+  </TreeNode>
+  <TreeNode Text="短信平台" SingleClickExpand="true">
+    <TreeNode Text="给考评人发送短信" NavigateUrl="~/Pages/MessagePlatformManagement/SendMessageToEvaluator.aspx" >
+    </TreeNode>
+    <TreeNode Text="给系级管理员发送短信" NavigateUrl="~/Pages/MessagePlatformManagement/SendMessageToSecond.aspx" >
     </TreeNode>
   </TreeNode>
 </Tree>

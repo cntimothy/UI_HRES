@@ -4,23 +4,21 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Data;
+using System.Web.Script.Serialization;
 using FineUI;
 using Controls;
-using DataStructure;
-using System.Web.Script.Serialization;
+using System.Data;
 
-namespace HRES.Pages.EvaluationManagement
+namespace HRES.Pages.MessagePlatformManagement
 {
-    public partial class MessagePlatform : PageBase
+    public partial class SendMessageToSecond : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             checkSession();
             if (!IsPostBack)
             {
-                bindDepartListToDropDownList();
-                bindEvaluatorsToGrid();
+                bindSecondsToGrid();
             }
         }
 
@@ -37,7 +35,7 @@ namespace HRES.Pages.EvaluationManagement
 
         protected void Button_Refresh_Click(object sender, EventArgs e)
         {
-            bindEvaluatorsToGrid();
+            bindSecondsToGrid();
         }
 
         protected void Button_Send_Click(object sender, EventArgs e)
@@ -57,7 +55,7 @@ namespace HRES.Pages.EvaluationManagement
                 Alert.ShowInTop("短信内容不能为空且不能长于70！");
                 return;
             }
-            if (EvaluationManagementCtrl.SendMessage(ids, message, ref exception))
+            if (MessagePlatformManagementCtrl.SendMessageToEvaluators(ids, message, ref exception))
             {
                 Alert.ShowInTop("发送成功！", MessageBoxIcon.Information);
             }
@@ -69,56 +67,25 @@ namespace HRES.Pages.EvaluationManagement
 
         protected void DropDownList1_SelectedChanged(object sender, EventArgs e)
         {
-            bindEvaluatorsToGrid();
+            bindSecondsToGrid();
         }
         #endregion
 
         #region Private Method
-        private void bindEvaluatorsToGrid()
+        private void bindSecondsToGrid()
         {
             DataTable table = new DataTable();
             string exception = "";
-            if (DropDownList1.SelectedValue == "所有部门")
+            if (MessagePlatformManagementCtrl.GetSeconds(ref table, ref exception))
             {
-                if (EvaluationManagementCtrl.GetEvaluators(ref table, ref exception))
-                {
-                    Grid1.DataSource = table;
-                    Grid1.DataBind();
-                }
-                else
-                {
-                    Alert.ShowInTop("获取考评人信息失败！\n原因：" + exception, MessageBoxIcon.Error);
-                }
+                Grid1.DataSource = table;
+                Grid1.DataBind();
             }
             else
             {
-                string depart = DropDownList1.SelectedValue;
-                if(EvaluationManagementCtrl.GetEvaluatorsByDepart(ref table, depart, ref exception))
-                {
-                    Grid1.DataSource = table;
-                    Grid1.DataBind();
-                }
-                else
-                {
-                    Alert.ShowInTop("获取考评人信息失败！\n原因：" + exception, MessageBoxIcon.Error);
-                }
-            }
-        }
-
-        private void bindDepartListToDropDownList()
-        {
-            string exception = "";
-            List<string> departs = new List<string>();
-            if (CommonCtrl.GetDeparts(ref departs, ref exception))
-            {
-                foreach (string item in departs)
-                {
-                    DropDownList1.Items.Add(item, item);
-                }
-            }
-            else
-            {
-                Alert.ShowInTop("获取部门信息失败！\n原因：" + exception, MessageBoxIcon.Error);
+                table.Clear();
+                Grid1.DataSource = table;
+                Grid1.DataBind();
             }
         }
 

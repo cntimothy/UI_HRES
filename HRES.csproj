@@ -1905,7 +1905,7 @@
     <Content Include="Pages\EvaluationManagement\EvaluationResultForIndividual.aspx" />
     <Content Include="Pages\EvaluationManagement\iframe_Evaluate.aspx" />
     <Content Include="Pages\EvaluationManagement\iframe_ShowEvaluationResultForIndividual.aspx" />
-    <Content Include="Pages\EvaluationManagement\MessagePlatform.aspx" />
+    <Content Include="Pages\MessagePlatformManagement\SendMessageToEvaluator.aspx" />
     <Content Include="Pages\EvaluationManagement\StartEvaluation.aspx" />
     <Content Include="Pages\EvaluationManagement\StopEvaluation.aspx" />
     <Content Include="Pages\EvaluatorManagement\CheckEvaluator.aspx" />
@@ -1916,6 +1916,7 @@
     <Content Include="Pages\FirstManagement\ResetFirst.aspx" />
     <Content Include="Pages\HomePage.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="Pages\MessagePlatformManagement\SendMessageToSecond.aspx" />
     <Content Include="Pages\PostBookManagement\iframe_MakePostBook.aspx" />
     <Content Include="Pages\QuotaManagement\iframe_NewQuota.aspx" />
     <Content Include="Pages\SecondManagement\MakeSecond.aspx" />
@@ -2071,12 +2072,12 @@
     <Compile Include="Pages\EvaluationManagement\iframe_ShowEvaluationResultForIndividual.aspx.designer.cs">
       <DependentUpon>iframe_ShowEvaluationResultForIndividual.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\EvaluationManagement\MessagePlatform.aspx.cs">
-      <DependentUpon>MessagePlatform.aspx</DependentUpon>
+    <Compile Include="Pages\MessagePlatformManagement\SendMessageToEvaluator.aspx.cs">
+      <DependentUpon>SendMessageToEvaluator.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\EvaluationManagement\MessagePlatform.aspx.designer.cs">
-      <DependentUpon>MessagePlatform.aspx</DependentUpon>
+    <Compile Include="Pages\MessagePlatformManagement\SendMessageToEvaluator.aspx.designer.cs">
+      <DependentUpon>SendMessageToEvaluator.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\EvaluationManagement\StartEvaluation.aspx.cs">
       <DependentUpon>StartEvaluation.aspx</DependentUpon>
@@ -2147,6 +2148,13 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MessagePlatformManagement\SendMessageToSecond.aspx.cs">
+      <DependentUpon>SendMessageToSecond.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\MessagePlatformManagement\SendMessageToSecond.aspx.designer.cs">
+      <DependentUpon>SendMessageToSecond.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\PostBookManagement\iframe_MakePostBook.aspx.cs">
       <DependentUpon>iframe_MakePostBook.aspx</DependentUpon>

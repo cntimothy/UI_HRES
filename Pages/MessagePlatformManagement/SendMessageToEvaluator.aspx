@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MessagePlatform.aspx.cs"
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SendMessageToEvaluator.aspx.cs"
     Inherits="HRES.Pages.EvaluationManagement.MessagePlatform" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
