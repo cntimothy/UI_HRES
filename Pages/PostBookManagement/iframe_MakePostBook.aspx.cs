@@ -123,7 +123,6 @@ namespace HRES.Pages.PostBookManagement
 
         protected void Button_Clear_Click(object sender, EventArgs e)
         {
-            TextBox_LaborUnit.Text = "";
             TextBox_LaborDepart.Text = "";
             TextBox_PostName.Text = "";
             TextArea_EduBg.Text = "";
@@ -224,9 +223,11 @@ namespace HRES.Pages.PostBookManagement
             string name = Request.QueryString["name"];
             Panel1.Title = name + "的岗位责任书";
             PostBook pb = new PostBook();
+            Label_LaborUnit.Text = Request.QueryString["depart"];
+            Radio_PostType.SelectedValue = Request.QueryString["posttype"];
+            Radio_Employer.SelectedValue = Request.QueryString["company"];
             if (PostBookManagementCtrl.GetPostBook(ref pb, evaluatedID, ref exception))
             {
-
                 foreach (string[] content in pb.WorkContentRequest)
                 {
                     if (content.Length != 4)
@@ -237,11 +238,8 @@ namespace HRES.Pages.PostBookManagement
                 string evaluatedName = Request.QueryString["name"];
                 Label_Comment.Text = pb.Comment;
 
-                Radio_Employer.SelectedValue = pb.Employer;
-                TextBox_LaborUnit.Text = pb.LaborUnit;
                 TextBox_LaborDepart.Text = pb.LaborDepart;
                 TextBox_PostName.Text = pb.PostName;
-                Radio_PostType.SelectedValue = pb.PostType;
                 TextArea_EduBg.Text = pb.EduBg;
                 TextArea_Certificate.Text = pb.Certificate;
                 TextArea_Experience.Text = pb.Experience;
@@ -261,6 +259,11 @@ namespace HRES.Pages.PostBookManagement
                 TextArea_Others.Text = pb.Others;
 
                 addWorkContentRequest(pb.WorkContentRequest);
+            }
+            else
+            {
+                TextBox_LaborDepart.Text = Request.QueryString["labordepart"];
+                TextBox_PostName.Text = Request.QueryString["postname"];
             }
         }
 
@@ -295,7 +298,7 @@ namespace HRES.Pages.PostBookManagement
             PostBook pb = new PostBook();
             pb.EvaluatedID = Request.QueryString["id"];
             pb.Employer = Radio_Employer.SelectedValue;
-            pb.LaborUnit = TextBox_LaborUnit.Text;
+            pb.LaborUnit = Label_LaborUnit.Text;
             pb.LaborDepart = TextBox_LaborDepart.Text;
             pb.PostName = TextBox_PostName.Text;
             pb.PostType = Radio_PostType.SelectedValue;
@@ -351,8 +354,7 @@ namespace HRES.Pages.PostBookManagement
         /// <returns></returns>
         private bool checkNull()
         {
-            if (TextBox_LaborUnit.Text != "" &&
-                TextBox_LaborDepart.Text != "" &&
+            if (TextBox_LaborDepart.Text != "" &&
                 TextBox_PostName.Text != "" &&
                 TextArea_EduBg.Text != "" &&
                 TextArea_Certificate.Text != "" &&
@@ -476,7 +478,6 @@ namespace HRES.Pages.PostBookManagement
             AccessLevel accessLevel = (AccessLevel)Enum.Parse(typeof(AccessLevel), Session["AccessLevel"].ToString());
             if (accessLevel == AccessLevel.firstManager)    //人事处管理员不能修改
             {
-                TextBox_LaborUnit.Readonly = true;
                 TextBox_LaborDepart.Readonly = true;
                 TextBox_PostName.Readonly = true;
                 TextArea_EduBg.Readonly = true;
@@ -502,7 +503,6 @@ namespace HRES.Pages.PostBookManagement
                 DocStatus curStatus = (DocStatus)Enum.Parse(typeof(DocStatus), Request.QueryString["status"]);
                 if (curStatus == DocStatus.modified || curStatus == DocStatus.passed || curStatus == DocStatus.submitted) //对于系级管理员，如果当前状态为已修改、已提交、已通过则不能修改
                 {
-                    TextBox_LaborUnit.Readonly = true;
                     TextBox_LaborDepart.Readonly = true;
                     TextBox_PostName.Readonly = true;
                     TextArea_EduBg.Readonly = true;

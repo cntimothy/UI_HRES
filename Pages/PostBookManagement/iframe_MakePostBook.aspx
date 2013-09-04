@@ -65,18 +65,18 @@
                         CssStyle="width:100%">
                         <Items>
                             <x:RadioButtonList ID="Radio_Employer" runat="server" ColumnNumber="1" Label="1.用人单位"
-                                ColumnVertical="true">
+                                ColumnVertical="true" Enabled="false">
                                 <x:RadioItem Text="上海市东凌国际人才有限公司" Value="上海市东凌国际人才有限公司" Selected="true" />
                                 <x:RadioItem Text="上海黄渡同济人力资源有限公司" Value="上海黄渡同济人力资源有限公司" />
                             </x:RadioButtonList>
-                            <x:TextBox ID="TextBox_LaborUnit" runat="server" Label="2.用工单位" Text="" Width="300px">
-                            </x:TextBox>
+                            <x:Label ID="Label_LaborUnit" runat="server" Label="2.用工单位" Text="" Width="300px">
+                            </x:Label>
                             <x:TextBox ID="TextBox_LaborDepart" runat="server" Label="3.用工部门" Text="" Width="300px">
                             </x:TextBox>
                             <x:TextBox ID="TextBox_PostName" runat="server" Label="4.岗位名称" Text="" Width="300px">
                             </x:TextBox>
                             <x:RadioButtonList ID="Radio_PostType" runat="server" ColumnVertical="false" Label="5.岗位类别"
-                                Width="300px">
+                                Width="300px" Enabled="false">
                                 <x:RadioItem Text="管理" Value="管理" Selected="true" />
                                 <x:RadioItem Text="教辅" Value="教辅" />
                                 <x:RadioItem Text="思政" Value="思政" />
