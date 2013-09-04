@@ -56,7 +56,7 @@
                             <x:BoundField Width="100px" DataField="ID" DataFormatString="{0}" HeaderText="用户名" />
                             <x:BoundField Width="100px" DataField="Name" DataFormatString="{0}" HeaderText="姓名" />
                             <x:BoundField Width="100px" DataField="Sex" DataFormatString="{0}" HeaderText="性别" />
-                            <x:BoundField Width="100px" DataField="Company" DataFormatString="{0}" HeaderText="工作单位" />
+                            <x:BoundField Width="100px" DataField="Company" DataFormatString="{0}" HeaderText="用工单位" />
                             <x:BoundField Width="150px" DataField="Telephone" DataFormatString="{0}" HeaderText="联系电话" />
                             <x:TemplateField Width="150px" HeaderText="关系">
                                 <ItemTemplate>

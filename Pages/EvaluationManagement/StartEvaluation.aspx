@@ -46,7 +46,7 @@
                                 Hidden="true" />
                             <x:BoundField Width="50px" DataField="Name" DataFormatString="{0}" HeaderText="姓名" />
                             <x:BoundField Width="40px" DataField="Sex" DataFormatString="{0}" HeaderText="性别" />
-                            <x:BoundField Width="80px" DataField="Depart" DataFormatString="{0}" HeaderText="工作单位" />
+                            <x:BoundField Width="80px" DataField="Depart" DataFormatString="{0}" HeaderText="用工单位" />
                             <x:BoundField Width="100px" DataField="Job" DataFormatString="{0}" HeaderText="岗位（职务）" />
                             <x:BoundField Width="100px" DataField="IDNo" DataFormatString="{0}" HeaderText="身份证号"
                                 Hidden="true" />
@@ -80,7 +80,7 @@
                             </x:Label>
                             <x:Label runat="server" ID="LabSex" Label="性别" Text="">
                             </x:Label>
-                            <x:Label runat="server" ID="LabDepart" Label="工作单位" Text="">
+                            <x:Label runat="server" ID="LabDepart" Label="用工单位" Text="">
                             </x:Label>
                             <x:Label runat="server" ID="LabJob" Label="岗位（职务）" Text="">
                             </x:Label>

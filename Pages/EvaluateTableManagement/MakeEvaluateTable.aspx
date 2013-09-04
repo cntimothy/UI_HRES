@@ -32,7 +32,7 @@
                             <x:BoundField Width="100px" DataField="Sex" DataFormatString="{0}" HeaderText="性别" />
                             <x:BoundField Width="100px" DataField="Company" DataFormatString="{0}" HeaderText="用人单位"
                                 Hidden="true" />
-                            <x:BoundField Width="100px" DataField="Depart" DataFormatString="{0}" HeaderText="工作单位" />
+                            <x:BoundField Width="100px" DataField="Depart" DataFormatString="{0}" HeaderText="用工单位" />
                             <x:BoundField Width="100px" DataField="LaborDepart" DataFormatString="{0}" HeaderText="用工部门"
                                 Hidden="true" />
                             <x:BoundField Width="100px" DataField="PostName" DataFormatString="{0}" HeaderText="岗位名称"
@@ -56,7 +56,7 @@
                                 HeaderText="审核意见" />
                             <x:WindowField TextAlign="Center" Width="80px" WindowID="Window_MakeEvaluateTable"
                                 Text="制作" ToolTip="制作考核表" Title="制作" IFrameUrl="iframe_MakeEvaluateTable.aspx"
-                                DataIFrameUrlFields="ID,Name,Status,StartTime,StopTime" DataIFrameUrlFormatString="iframe_MakeEvaluateTable.aspx?id={0}&name={1}&status={2}&starttime={3}&stoptime={4}" />
+                                DataIFrameUrlFields="ID,Name,Status,StartTime,StopTime,PostName,LaborDepart,Depart" DataIFrameUrlFormatString="iframe_MakeEvaluateTable.aspx?id={0}&name={1}&status={2}&starttime={3}&stoptime={4}&postname={5}&labordepart={6}&depart={7}" />
                         </Columns>
                     </x:Grid>
                     <x:SimpleForm ID="SimpleForm1" runat="server" BodyPadding="5px" Title="详细信息" Width="300px"

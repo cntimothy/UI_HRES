@@ -48,7 +48,7 @@
                                     <x:BoundField Width="100px" DataField="Name" DataFormatString="{0}" HeaderText="姓名" />
                                     <x:BoundField Width="100px" DataField="Sex" DataFormatString="{0}" HeaderText="性别" />
                                     <x:BoundField Width="100px" ExpandUnusedSpace="true" DataField="Company" DataFormatString="{0}"
-                                        HeaderText="工作单位" />
+                                        HeaderText="用工单位" />
                                     <x:BoundField Width="100px" DataField="Telephone" DataFormatString="{0}" HeaderText="联系电话" />
                                 </Columns>
                             </x:Grid>

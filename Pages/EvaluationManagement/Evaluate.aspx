@@ -31,7 +31,7 @@
                                     <x:BoundField Width="100px" DataField="Name" DataFormatString="{0}" HeaderText="姓名" />
                                     <x:BoundField Width="80px" DataField="Sex" DataFormatString="{0}" HeaderText="性别" />
                                     <x:BoundField Width="200px" ExpandUnusedSpace="true" DataField="Depart" DataFormatString="{0}"
-                                        HeaderText="工作单位" />
+                                        HeaderText="用工单位" />
                                     <x:TemplateField Width="80px" HeaderText="关系">
                                         <ItemTemplate>
                                             <asp:Label ID="Relation" runat="server" Text='<%# GetRelation(Eval("Relation")) %>'></asp:Label>

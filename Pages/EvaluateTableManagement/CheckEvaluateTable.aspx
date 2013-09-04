@@ -39,7 +39,7 @@
                             <x:BoundField Width="100px" DataField="Name" DataFormatString="{0}" HeaderText="姓名" />
                             <x:BoundField Width="100px" DataField="Sex" DataFormatString="{0}" HeaderText="性别" />
                             <x:BoundField Width="100px" DataField="Company" DataFormatString="{0}" HeaderText="用人单位" Hidden="true"/>
-                            <x:BoundField Width="100px" DataField="Depart" DataFormatString="{0}" HeaderText="工作单位" />
+                            <x:BoundField Width="100px" DataField="Depart" DataFormatString="{0}" HeaderText="用工单位" />
                             <x:BoundField Width="100px" DataField="LaborDepart" DataFormatString="{0}" HeaderText="用工部门" Hidden="true"/>
                             <x:BoundField Width="100px" DataField="PostName" DataFormatString="{0}" HeaderText="岗位名称" Hidden="true"/>
                             <x:BoundField Width="100px" DataField="PostType" DataFormatString="{0}" HeaderText="岗位类别" Hidden="true"/>
