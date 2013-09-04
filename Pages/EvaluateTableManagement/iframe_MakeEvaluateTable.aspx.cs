@@ -174,6 +174,12 @@ namespace HRES.Pages.EvaluateTableManagement
                 Alert.ShowInTop("考核表中每项指标至少填写两项！", MessageBoxIcon.Error);
                 return;
             }
+
+            if (!checkRepetition(evaluateTable))
+            {
+                Alert.ShowInTop("考核表中不允许有重复项！请检查", MessageBoxIcon.Error);
+                return;
+            }
             string evaluatedID = Request.QueryString["id"];
             string exception = "";
             if (EvaluateTableManagementCtrl.UpdateEvaluateTable(evaluatedID, evaluateTable, nextStatus, ref exception))
@@ -574,6 +580,83 @@ namespace HRES.Pages.EvaluateTableManagement
 
             TextArea_Reject1.Text = "累计旷工3天以上的；\n严重失职，营私舞弊，给本单位造成3000元以上经济损失或者其它严重后果的；\n同时与其他用人单位建立劳动关系，对完成本单位工作任务造成严重影响，或者经本单位提出，拒不改正的；\n违背职业道德，行贿、受贿价值超过3000元以上的；\n被依法追究刑事责任的；";
             TextArea_Reject2.Text = "";
+        }
+
+        /// <summary>
+        /// 检查是否有重复项，无返回true，否则返回false
+        /// </summary>
+        /// <param name="evaluateTable"></param>
+        /// <returns></returns>
+        private bool checkRepetition(EvaluateTable evaluateTable)
+        {
+            List<string> titleList = new List<string>();
+            foreach (Quota quota in evaluateTable.KeyResponse)  //检查关键岗位职责指标
+            {
+                if (titleList.Contains(quota.Title))
+                {
+                    return false;
+                }
+                else
+                {
+                    titleList.Add(quota.Title);
+                }
+            }
+            foreach (Quota quota in evaluateTable.KeyQualify)   //检查关键岗位胜任能力指标
+            {
+                if (titleList.Contains(quota.Title))
+                {
+                    return false;
+                }
+                else
+                {
+                    titleList.Add(quota.Title);
+                }
+            }
+            foreach (Quota quota in evaluateTable.KeyAttitude)  //检查关键岗位工作态度指标
+            {
+                if (titleList.Contains(quota.Title))
+                {
+                    return false;
+                }
+                else
+                {
+                    titleList.Add(quota.Title);
+                }
+            }
+            foreach (Quota quota in evaluateTable.Response)     //检查岗位职责指标
+            {
+                if (titleList.Contains(quota.Title))
+                {
+                    return false;
+                }
+                else
+                {
+                    titleList.Add(quota.Title);
+                }
+            }
+            foreach (Quota quota in evaluateTable.Qualify)      //检查岗位胜任能力指标
+            {
+                if (titleList.Contains(quota.Title))
+                {
+                    return false;
+                }
+                else
+                {
+                    titleList.Add(quota.Title);
+                }
+            }
+            foreach (Quota quota in evaluateTable.Attitude)     //检查工作态度指标
+            {
+                if (titleList.Contains(quota.Title))
+                {
+                    return false;
+                }
+                else
+                {
+                    titleList.Add(quota.Title);
+                }
+            }
+            return true;
         }
         #endregion
     }
