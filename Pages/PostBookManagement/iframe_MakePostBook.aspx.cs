@@ -17,9 +17,19 @@ namespace HRES.Pages.PostBookManagement
             checkSession();
             if (!IsPostBack)
             {
-
-                Button_Close.OnClientClick = ActiveWindow.GetConfirmHideRefreshReference();
-                Button_Close_Shadow.OnClientClick = ActiveWindow.GetConfirmHideRefreshReference();
+                //根据权限等级设置关闭按钮的动作。如果是系级管理员则需要确认
+                AccessLevel accessLevel = (AccessLevel)Enum.Parse(typeof(AccessLevel), Session["AccessLevel"].ToString());
+                if (accessLevel == AccessLevel.firstManager)
+                {
+                    Button_Close.OnClientClick = ActiveWindow.GetHideRefreshReference();
+                    Button_Close_Shadow.OnClientClick = ActiveWindow.GetHideRefreshReference();
+                }
+                else
+                {
+                    Button_Close.OnClientClick = ActiveWindow.GetConfirmHideRefreshReference();
+                    Button_Close_Shadow.OnClientClick = ActiveWindow.GetConfirmHideRefreshReference();
+                }
+                
                 Button_Reject.OnClientClick = Window1.GetShowReference("../Common/iframe_Comment.aspx?id=" + Request.QueryString["id"] + "&parent=checkpostbook", "审核意见");
                 Button_Reject_Shadow.OnClientClick = Window1.GetShowReference("../Common/iframe_Comment.aspx?id=" + Request.QueryString["id"], "审核意见");
 
@@ -28,6 +38,7 @@ namespace HRES.Pages.PostBookManagement
 
                 setToolbarVisible();    //根据用户身份，设置工具栏中按钮的可见性
                 setEnabled();           //根据岗位责任书的状态设置按钮的可用性
+                setReadonly();          //如果是人事处管理员，则所有textarea为只读
             }
             //检测是否是模版下拉列表引发的postback
             if (Page.Request.Params["__EVENTTARGET"] != null && Page.Request.Params["__EVENTTARGET"].ToString().Replace('$', '_') == DropDownList_Template.ClientID)
@@ -334,6 +345,10 @@ namespace HRES.Pages.PostBookManagement
             return pb;
         }
 
+        /// <summary>
+        /// 检测是否有未填写项
+        /// </summary>
+        /// <returns></returns>
         private bool checkNull()
         {
             if (TextBox_LaborUnit.Text != "" &&
@@ -449,6 +464,64 @@ namespace HRES.Pages.PostBookManagement
                 foreach (string name in nameIdDic.Keys)
                 {
                     DropDownList_Template.Items.Add(name, nameIdDic[name]);
+                }
+            }
+        }
+
+        /// <summary>
+        /// 根据权限等级设置textarea是否为只读(人事处管理员只读)
+        /// </summary>
+        private void setReadonly()
+        {
+            AccessLevel accessLevel = (AccessLevel)Enum.Parse(typeof(AccessLevel), Session["AccessLevel"].ToString());
+            if (accessLevel == AccessLevel.firstManager)    //人事处管理员不能修改
+            {
+                TextBox_LaborUnit.Readonly = true;
+                TextBox_LaborDepart.Readonly = true;
+                TextBox_PostName.Readonly = true;
+                TextArea_EduBg.Readonly = true;
+                TextArea_Certificate.Readonly = true;
+                TextArea_Experience.Readonly = true;
+                TextArea_Skill.Readonly = true;
+                TextArea_Personality.Readonly = true;
+                TextArea_PhyCond.Readonly = true;
+                TextArea_WorkOutline.Readonly = true;
+                TextArea_Power.Readonly = true;
+                TextArea_Response.Readonly = true;
+                TextBox_DirectLeader.Readonly = true;
+                TextBox_Subordinate.Readonly = true;
+                TextBox_Colleague.Readonly = true;
+                TextBox_Services.Readonly = true;
+                TextBox_Relations.Readonly = true;
+                TextArea_WorkEnter.Readonly = true;
+                TextArea_PostAssess.Readonly = true;
+                TextArea_Others.Readonly = true;
+            }
+            else
+            {
+                DocStatus curStatus = (DocStatus)Enum.Parse(typeof(DocStatus), Request.QueryString["status"]);
+                if (curStatus == DocStatus.modified || curStatus == DocStatus.passed || curStatus == DocStatus.submitted) //对于系级管理员，如果当前状态为已修改、已提交、已通过则不能修改
+                {
+                    TextBox_LaborUnit.Readonly = true;
+                    TextBox_LaborDepart.Readonly = true;
+                    TextBox_PostName.Readonly = true;
+                    TextArea_EduBg.Readonly = true;
+                    TextArea_Certificate.Readonly = true;
+                    TextArea_Experience.Readonly = true;
+                    TextArea_Skill.Readonly = true;
+                    TextArea_Personality.Readonly = true;
+                    TextArea_PhyCond.Readonly = true;
+                    TextArea_WorkOutline.Readonly = true;
+                    TextArea_Power.Readonly = true;
+                    TextArea_Response.Readonly = true;
+                    TextBox_DirectLeader.Readonly = true;
+                    TextBox_Subordinate.Readonly = true;
+                    TextBox_Colleague.Readonly = true;
+                    TextBox_Services.Readonly = true;
+                    TextBox_Relations.Readonly = true;
+                    TextArea_WorkEnter.Readonly = true;
+                    TextArea_PostAssess.Readonly = true;
+                    TextArea_Others.Readonly = true;
                 }
             }
         }

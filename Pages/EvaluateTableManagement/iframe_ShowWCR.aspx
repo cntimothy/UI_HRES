@@ -38,7 +38,7 @@
                                 </Items>
                             </x:Panel>
                             <x:TextArea ID="TextArea1" runat="server" Height="50px" Label="Label" Text="" CssStyle="width:98%"
-                                AutoGrowHeight="true" Enabled="false">
+                                AutoGrowHeight="true" ReadOnly="true">
                             </x:TextArea>
                         </Items>
                     </x:Panel>

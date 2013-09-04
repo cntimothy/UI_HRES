@@ -43,13 +43,13 @@
                             </x:Panel>
                             <x:SimpleForm ID="SimpleForm1" runat="server" BodyPadding="5px" Title="SimpleForm" ShowHeader="false">
                                 <Items>
-                                    <x:TextArea ID="TextArea1" runat="server" Height="50px" Label="优" Text="" Enabled="false">
+                                    <x:TextArea ID="TextArea1" runat="server" Height="50px" Label="优" Text="" ReadOnly="true">
                                     </x:TextArea>
-                                    <x:TextArea ID="TextArea2" runat="server" Height="50px" Label="良" Text="" Enabled="false">
+                                    <x:TextArea ID="TextArea2" runat="server" Height="50px" Label="良" Text="" ReadOnly="true">
                                     </x:TextArea>
-                                    <x:TextArea ID="TextArea3" runat="server" Height="50px" Label="中" Text="" Enabled="false">
+                                    <x:TextArea ID="TextArea3" runat="server" Height="50px" Label="中" Text="" ReadOnly="true">
                                     </x:TextArea>
-                                    <x:TextArea ID="TextArea4" runat="server" Height="50px" Label="差" Text="" Enabled="false">
+                                    <x:TextArea ID="TextArea4" runat="server" Height="50px" Label="差" Text="" ReadOnly="true">
                                     </x:TextArea>
                                 </Items>
                             </x:SimpleForm>

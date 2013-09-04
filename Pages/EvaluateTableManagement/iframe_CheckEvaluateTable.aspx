@@ -46,19 +46,19 @@
                         <Rows>
                             <x:FormRow ID="FormRow1" runat="server">
                                 <Items>
-                                    <x:Label ID="Label_EvaluatedName" runat="server" Label="被考核人姓名" Text="">
+                                    <x:Label ID="Label_EvaluatedName" runat="server" Label="被考核人姓名" Text="" Readonly="true">
                                     </x:Label>
-                                    <x:Label ID="Label_PostName" runat="server" Label="岗位名称" Text="">
+                                    <x:Label ID="Label_PostName" runat="server" Label="岗位名称" Text="" Readonly="true">
                                     </x:Label>
-                                    <x:Label ID="Label_LaborDep" runat="server" Label="用工部门" Text="">
+                                    <x:Label ID="Label_LaborDep" runat="server" Label="用工部门" Text="" Readonly="true">
                                     </x:Label>
-                                    <x:Label ID="Label_LaborUnit" runat="server" Label="用工单位" Text="">
+                                    <x:Label ID="Label_LaborUnit" runat="server" Label="用工单位" Text="" Readonly="true">
                                     </x:Label>
                                 </Items>
                             </x:FormRow>
                             <x:FormRow ID="FormRow2" runat="server">
                                 <Items>
-                                    <x:Label ID="Label_Period" runat="server" Label="考评时间段" Text="">
+                                    <x:Label ID="Label_Period" runat="server" Label="考评时间段" Text="" Readonly="true">
                                     </x:Label>
                                 </Items>
                             </x:FormRow>

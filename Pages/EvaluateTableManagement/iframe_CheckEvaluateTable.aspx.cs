@@ -104,11 +104,13 @@ namespace HRES.Pages.EvaluateTableManagement
                     tb.ID = "TextBox_KeyResponse_" + count;
                     tb.Label = "标题";
                     tb.Text = item.Title;
+                    tb.Readonly = true;
                     sf.Items.Add(tb);
                     FineUI.TextArea ta = new FineUI.TextArea();
                     ta.ID = "TextArea_KeyResponse_" + count;
                     ta.Label = "内容";
                     ta.Text = item.Content[0];
+                    ta.Readonly = true;
                     sf.Items.Add(ta);
                     Panel3.Items.Add(sf);
                     count++;
@@ -126,6 +128,7 @@ namespace HRES.Pages.EvaluateTableManagement
                     tb.ID = "TextBox_KeyQualify_" + count;
                     tb.Label = "标题";
                     tb.Text = item.Title;
+                    tb.Readonly = true;
                     sf.Items.Add(tb);
                     FineUI.TextArea ta = new FineUI.TextArea();
                     ta.ID = "TextArea_KeyQualify_" + count;
@@ -134,6 +137,7 @@ namespace HRES.Pages.EvaluateTableManagement
                         + "良：" + item.Content[1]
                         + "中：" + item.Content[2]
                         + "差：" + item.Content[3];
+                    ta.Readonly = true;
                     sf.Items.Add(ta);
                     Panel4.Items.Add(sf);
                     count++;
@@ -151,6 +155,7 @@ namespace HRES.Pages.EvaluateTableManagement
                     tb.ID = "TextBox_KeyAttitude_" + count;
                     tb.Label = "标题";
                     tb.Text = item.Title;
+                    tb.Readonly = true;
                     sf.Items.Add(tb);
                     FineUI.TextArea ta = new FineUI.TextArea();
                     ta.ID = "TextArea_KeyAttitude_" + count;
@@ -159,6 +164,7 @@ namespace HRES.Pages.EvaluateTableManagement
                         + "良：" + item.Content[1]
                         + "中：" + item.Content[2]
                         + "差：" + item.Content[3];
+                    ta.Readonly = true;
                     sf.Items.Add(ta);
                     Panel5.Items.Add(sf);
                     count++;
@@ -176,11 +182,13 @@ namespace HRES.Pages.EvaluateTableManagement
                     tb.ID = "TextBox_Response_" + count;
                     tb.Label = "标题";
                     tb.Text = item.Title;
+                    tb.Readonly = true;
                     sf.Items.Add(tb);
                     FineUI.TextArea ta = new FineUI.TextArea();
                     ta.ID = "TextArea_Response_" + count;
                     ta.Label = "内容";
                     ta.Text = item.Content[0];
+                    ta.Readonly = true;
                     sf.Items.Add(ta);
                     Panel6.Items.Add(sf);
                     count++;
@@ -198,6 +206,7 @@ namespace HRES.Pages.EvaluateTableManagement
                     tb.ID = "TextBox_Qualify_" + count;
                     tb.Label = "标题";
                     tb.Text = item.Title;
+                    tb.Readonly = true;
                     sf.Items.Add(tb);
                     FineUI.TextArea ta = new FineUI.TextArea();
                     ta.ID = "TextArea_Qualify_" + count;
@@ -206,6 +215,7 @@ namespace HRES.Pages.EvaluateTableManagement
                         + "良：" + item.Content[1]
                         + "中：" + item.Content[2]
                         + "差：" + item.Content[3];
+                    ta.Readonly = true;
                     sf.Items.Add(ta);
                     Panel7.Items.Add(sf);
                     count++;
@@ -223,6 +233,7 @@ namespace HRES.Pages.EvaluateTableManagement
                     tb.ID = "TextBox_Attitude_" + count;
                     tb.Label = "标题";
                     tb.Text = item.Title;
+                    tb.Readonly = true;
                     sf.Items.Add(tb);
                     FineUI.TextArea ta = new FineUI.TextArea();
                     ta.ID = "TextArea_Attitude_" + count;
@@ -231,6 +242,7 @@ namespace HRES.Pages.EvaluateTableManagement
                         + "良：" + item.Content[1]
                         + "中：" + item.Content[2]
                         + "差：" + item.Content[3];
+                    ta.Readonly = true;
                     sf.Items.Add(ta);
                     Panel8.Items.Add(sf);
                     count++;
@@ -247,6 +259,8 @@ namespace HRES.Pages.EvaluateTableManagement
                 TextArea ta2 = new TextArea();
                 ta2.Label = "其他";
                 ta2.Text = evaluateTable.Reject[0].Content[0];
+                ta1.Readonly = true;
+                ta2.Readonly = true;
                 sf__reject.Items.Add(ta1);
                 sf__reject.Items.Add(ta2);
                 Panel9.Items.Add(sf__reject);
