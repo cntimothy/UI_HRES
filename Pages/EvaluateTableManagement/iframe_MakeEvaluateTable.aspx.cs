@@ -630,71 +630,71 @@ namespace HRES.Pages.EvaluateTableManagement
         /// <returns></returns>
         private bool checkRepetition(EvaluateTable evaluateTable)
         {
-            List<string[]> contentList = new List<string[]>();
+            List<string> contentList = new List<string>();
             foreach (Quota quota in evaluateTable.KeyResponse)  //检查关键岗位职责指标
             {
-                if (contentList.Contains(quota.Content))
+                if (contentList.Contains(quota.Content[0]))
                 {
                     return false;
                 }
                 else
                 {
-                    contentList.Add(quota.Content);
+                    contentList.Add(quota.Content[0]);
                 }
             }
             foreach (Quota quota in evaluateTable.KeyQualify)   //检查关键岗位胜任能力指标
             {
-                if (contentList.Contains(quota.Content))
+                if (contentList.Contains(quota.Content[0]))
                 {
                     return false;
                 }
                 else
                 {
-                    contentList.Add(quota.Content);
+                    contentList.Add(quota.Content[0]);
                 }
             }
             foreach (Quota quota in evaluateTable.KeyAttitude)  //检查关键岗位工作态度指标
             {
-                if (contentList.Contains(quota.Content))
+                if (contentList.Contains(quota.Content[0]))
                 {
                     return false;
                 }
                 else
                 {
-                    contentList.Add(quota.Content);
+                    contentList.Add(quota.Content[0]);
                 }
             }
             foreach (Quota quota in evaluateTable.Response)     //检查岗位职责指标
             {
-                if (contentList.Contains(quota.Content))
+                if (contentList.Contains(quota.Content[0]))
                 {
                     return false;
                 }
                 else
                 {
-                    contentList.Add(quota.Content);
+                    contentList.Add(quota.Content[0]);
                 }
             }
             foreach (Quota quota in evaluateTable.Qualify)      //检查岗位胜任能力指标
             {
-                if (contentList.Contains(quota.Content))
+                if (contentList.Contains(quota.Content[0]))
                 {
                     return false;
                 }
                 else
                 {
-                    contentList.Add(quota.Content);
+                    contentList.Add(quota.Content[0]);
                 }
             }
             foreach (Quota quota in evaluateTable.Attitude)     //检查工作态度指标
             {
-                if (contentList.Contains(quota.Content))
+                if (contentList.Contains(quota.Content[0]))
                 {
                     return false;
                 }
                 else
                 {
-                    contentList.Add(quota.Content);
+                    contentList.Add(quota.Content[0]);
                 }
             }
             return true;
