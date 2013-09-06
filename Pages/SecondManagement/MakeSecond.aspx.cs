@@ -114,6 +114,11 @@ namespace HRES.Pages.SecondManagement
             string path = Server.MapPath(@"..\..\downloadfiles\template\系级管理员信息模版.zip");
             Response.TransmitFile(path);
         }
+
+        protected void Button_Refresh_Click(object sender, EventArgs e)
+        {
+            bindSecondToGrid();
+        }
         #endregion
 
         #region Private Method

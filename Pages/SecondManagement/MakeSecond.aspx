@@ -27,6 +27,10 @@
                     </x:ToolbarSeparator>
                     <x:Button ID="Button_Submit" runat="server" OnClick="Button_Submit_Click" Text="开始上传" Enabled="false">
                     </x:Button>
+                    <x:ToolbarSeparator ID="ToolbarSeparator3" runat="server">
+                    </x:ToolbarSeparator>
+                    <x:Button ID="Button_Refresh" runat="server" Text="刷新" OnClick="Button_Refresh_Click">
+                    </x:Button>
                     <x:ToolbarFill ID="ToolbarFill1" runat="server">
                     </x:ToolbarFill>
                     <x:Button ID="Button_DownloadTemplate" runat="server" Text="下载模板" OnClick="Button_DownloadTemplate_Click"
