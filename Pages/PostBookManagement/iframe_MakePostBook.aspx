@@ -75,7 +75,7 @@
                                 <x:RadioItem Text="上海市东凌国际人才有限公司" Value="上海市东凌国际人才有限公司" Selected="true" />
                                 <x:RadioItem Text="上海黄渡同济人力资源有限公司" Value="上海黄渡同济人力资源有限公司" />
                             </x:RadioButtonList>
-                            <x:Label ID="Label_LaborUnit" runat="server" Label="2.用工单位" Text="" Width="300px">
+                            <x:Label ID="Label_Depart" runat="server" Label="2.用工单位" Text="" Width="300px">
                             </x:Label>
                             <x:TextBox ID="TextBox_LaborDepart" runat="server" Label="3.用工部门" Text="" Width="300px">
                             </x:TextBox>

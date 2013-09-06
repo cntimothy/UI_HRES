@@ -263,7 +263,7 @@ namespace HRES.Pages.PostBookManagement
             string name = Request.QueryString["name"];
             Panel1.Title = name + "的岗位责任书";
             PostBook pb = new PostBook();
-            Label_LaborUnit.Text = Request.QueryString["depart"];
+            Label_Depart.Text = Request.QueryString["depart"];
             Radio_PostType.SelectedValue = Request.QueryString["posttype"];
             Radio_Employer.SelectedValue = Request.QueryString["company"];
             if (PostBookManagementCtrl.GetPostBook(ref pb, evaluatedID, ref exception))
@@ -338,7 +338,7 @@ namespace HRES.Pages.PostBookManagement
             PostBook pb = new PostBook();
             pb.EvaluatedID = Request.QueryString["id"];
             pb.Employer = Radio_Employer.SelectedValue;
-            pb.LaborUnit = Label_LaborUnit.Text;
+            pb.LaborUnit = Label_Depart.Text;
             pb.LaborDepart = TextBox_LaborDepart.Text;
             pb.PostName = TextBox_PostName.Text;
             pb.PostType = Radio_PostType.SelectedValue;
