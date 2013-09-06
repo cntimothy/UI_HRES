@@ -44,7 +44,7 @@
                             </x:Button>
                             <x:ToolbarSeparator ID="ToolbarSeparator7" runat="server">
                             </x:ToolbarSeparator>
-                            <x:Button ID="Button_Export" runat="server" Text="导出" OnClick="Button_Export_Click"
+                            <x:Button ID="Button_Export" runat="server" Text="导出PDF" OnClick="Button_Export_Click"
                                 EnableAjax="false" Enabled="false">
                             </x:Button>
                             <x:ToolbarSeparator ID="ToolbarSeparator1" runat="server">
@@ -528,7 +528,7 @@
                             </x:Button>
                             <x:ToolbarSeparator ID="ToolbarSeparator8" runat="server">
                             </x:ToolbarSeparator>
-                            <x:Button ID="Button_Export_Shadow" runat="server" Text="导出" OnClick="Button_Export_Click" EnableAjax="false"
+                            <x:Button ID="Button_Export_Shadow" runat="server" Text="导出PDF" OnClick="Button_Export_Click" EnableAjax="false"
                                 Enabled="false">
                             </x:Button>
                         </Items>
