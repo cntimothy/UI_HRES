@@ -163,7 +163,7 @@
                             <x:BoundField Width="600px" DataField="Quota" DataFormatString="{0}" HeaderText="内容" />
                             <x:TemplateField Width="60px" HeaderText="得分">
                                 <ItemTemplate>
-                                    <asp:DropDownList runat="server" ID="DropDownList1">
+                                    <asp:DropDownList runat="server" ID="DropDownList_Reject" OnSelectedIndexChanged="DropDownList_Reject_SelectedChanged" AutoPostBack="true">
                                         <asp:ListItem Text="0" Value="0"></asp:ListItem>
                                         <asp:ListItem Text="-100" Value="-100"></asp:ListItem>
                                     </asp:DropDownList>

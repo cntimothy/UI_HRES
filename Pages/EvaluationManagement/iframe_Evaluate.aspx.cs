@@ -111,7 +111,7 @@ namespace HRES.Pages.EvaluationManagement
             if (Grid7.Rows.Count != 0)
             {
                 GridRow gridRow = Grid7.Rows[0];
-                System.Web.UI.WebControls.DropDownList ddl = gridRow.FindControl("DropDownList1") as System.Web.UI.WebControls.DropDownList;
+                System.Web.UI.WebControls.DropDownList ddl = gridRow.FindControl("DropDownList_Reject") as System.Web.UI.WebControls.DropDownList;
                 tempSumScore = Convert.ToInt32(ddl.SelectedValue);
             }
 
@@ -143,10 +143,20 @@ namespace HRES.Pages.EvaluationManagement
             }
             else
             {
-                Alert.ShowInTop("请输入正确的分数！",  MessageBoxIcon.Error);
+                Alert.ShowInTop("请输入正确的分数！", MessageBoxIcon.Error);
             }
         }
 
+        protected void DropDownList_Reject_SelectedChanged(object sender, EventArgs e)
+        {
+            GridRow gridRow = Grid7.Rows[0];
+            System.Web.UI.WebControls.DropDownList ddl = gridRow.FindControl("DropDownList_Reject") as System.Web.UI.WebControls.DropDownList;
+            if (ddl.SelectedValue == "-100")
+            {
+                Button_Submit.ConfirmText = "确认否决指标分数为-100？\n提交后不可修改";
+                Button_Submit_Shadow.ConfirmText = "确认否决指标分数为-100？\n提交后不可修改";
+            }
+        }
         #endregion
 
         #region Private Method
@@ -256,7 +266,7 @@ namespace HRES.Pages.EvaluationManagement
                 table7.Rows.Add(evaluateTable.Reject[0].Title, evaluateTable.Reject[0].Content[0]);
                 Grid7.DataSource = table7;
                 Grid7.DataBind();
-                System.Web.UI.WebControls.DropDownList ddl = Grid7.Rows[1].FindControl("DropDownList1") as System.Web.UI.WebControls.DropDownList;
+                System.Web.UI.WebControls.DropDownList ddl = Grid7.Rows[1].FindControl("DropDownList_Reject") as System.Web.UI.WebControls.DropDownList;
                 ddl.Visible = false;
             }
         }
