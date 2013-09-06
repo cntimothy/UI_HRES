@@ -196,6 +196,10 @@ namespace HRES.Pages.PostBookManagement
                     string path = Server.MapPath("..\\..\\downloadfiles\\" + filename);
                     Response.TransmitFile(path);
                 }
+                else
+                {
+                    Alert.ShowInTop("导出失败！\n原因：" + exception, MessageBoxIcon.Error);
+                }
             }
             else
             {
@@ -223,6 +227,14 @@ namespace HRES.Pages.PostBookManagement
                         string path = Server.MapPath("..\\..\\downloadfiles\\" + targetName);
                         Response.TransmitFile(path);
                     }
+                    else
+                    {
+                        Alert.ShowInTop("导出失败！\n原因：" + exception, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    Alert.ShowInTop("导出失败！\n原因：" + exception, MessageBoxIcon.Error);
                 }
             }
             else

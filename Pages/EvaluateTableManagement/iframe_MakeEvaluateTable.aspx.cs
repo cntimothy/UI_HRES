@@ -218,10 +218,14 @@ namespace HRES.Pages.EvaluateTableManagement
                         string path = Server.MapPath("..\\..\\downloadfiles\\" + targetName);
                         Response.TransmitFile(path);
                     }
-                    else 
+                    else
                     {
-                        Alert.ShowInTop(exception);
+                        Alert.ShowInTop("导出失败！\n原因：" + exception, MessageBoxIcon.Error);
                     }
+                }
+                else
+                {
+                    Alert.ShowInTop("导出失败！\n原因：" + exception, MessageBoxIcon.Error);
                 }
             }
             else
