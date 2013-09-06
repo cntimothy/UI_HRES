@@ -179,7 +179,7 @@ namespace HRES.Pages.PostBookManagement
             }
         }
 
-        protected void Button_Export_Click(object sender, EventArgs e)
+        protected void Button_ExportExcel_Click(object sender, EventArgs e)
         {
             string exception = "";
             string evaluatedID = Request.QueryString["id"];
@@ -195,6 +195,34 @@ namespace HRES.Pages.PostBookManagement
                     Response.AddHeader("content-disposition", "attachment;filename=" + Server.UrlEncode(filename));
                     string path = Server.MapPath("..\\..\\downloadfiles\\" + filename);
                     Response.TransmitFile(path);
+                }
+            }
+            else
+            {
+                Alert.ShowInTop("导出失败！\n原因：" + exception, MessageBoxIcon.Error);
+            }
+        }
+
+        protected void Button_ExportPDF_Click(object sender, EventArgs e)
+        {
+            string exception = "";
+            string evaluatedID = Request.QueryString["id"];
+            string evaluatedName = Request.QueryString["name"];
+            PostBook postBook = new PostBook();
+            if (PostBookManagementCtrl.GetPostBook(ref postBook, evaluatedID, ref exception))
+            {
+                string sourceName = "";
+                if (ExportManagementCtrl.ExportPostBook(ref sourceName, evaluatedName, postBook, ref exception))
+                {
+                    string targetName = "";
+                    if (ExportManagementCtrl.ConvertWordToPDF(ref targetName, sourceName, ref exception))
+                    {
+                        Response.ClearContent();
+                        Response.ContentType = "application/pdf";
+                        Response.AddHeader("content-disposition", "attachment;filename=" + Server.UrlEncode(targetName));
+                        string path = Server.MapPath("..\\..\\downloadfiles\\" + targetName);
+                        Response.TransmitFile(path);
+                    }
                 }
             }
             else
@@ -388,16 +416,18 @@ namespace HRES.Pages.PostBookManagement
         private void setToolbarVisible()
         {
             AccessLevel accessLevel = (AccessLevel)Enum.Parse(typeof(AccessLevel), Session["AccessLevel"].ToString());
-            if (accessLevel == AccessLevel.firstManager)
+            if (accessLevel == AccessLevel.firstManager)    //对人事处管理员，保存、提交、清空、导出PDF按钮不可见
             {
                 Button_Save.Visible = false;
                 Button_Submit.Visible = false;
                 Button_Clear.Visible = false;
                 DropDownList_Template.Visible = false;
+                Button_ExportPDF.Visible = false;
 
                 Button_Save_Shadow.Visible = false;
                 Button_Submit_Shadow.Visible = false;
                 Button_Clear_Shadow.Visible = false;
+                Button_ExportPDF_Shadow.Visible = false;
 
                 ToolbarSeparator1.Visible = false;
                 ToolbarSeparator2.Visible = false;
@@ -406,15 +436,17 @@ namespace HRES.Pages.PostBookManagement
                 ToolbarSeparator7.Visible = false;
                 ToolbarSeparator8.Visible = false;
                 ToolbarSeparator13.Visible = false;
+                ToolbarSeparator14.Visible = false;
+                ToolbarSeparator15.Visible = false;
             }
-            else if (accessLevel == AccessLevel.secondManager)
+            else if (accessLevel == AccessLevel.secondManager)  //对系级管理员，退回、通过、导出Excel按钮不可见
             {
                 Button_Reject.Visible = false;
                 Button_Pass.Visible = false;
-                Button_Export.Visible = false;
+                Button_ExportExcel.Visible = false;
                 Button_Reject_Shadow.Visible = false;
                 Button_Pass_Shadow.Visible = false;
-                Button_Export_Shadow.Visible = false;
+                Button_ExportExcel_Shadow.Visible = false;
 
                 ToolbarSeparator4.Visible = false;
                 ToolbarSeparator5.Visible = false;
@@ -450,6 +482,11 @@ namespace HRES.Pages.PostBookManagement
                 Button_Clear.Enabled = false;
                 Button_Clear_Shadow.Enabled = false;
                 DropDownList_Template.Enabled = false;
+            }
+            if (curStatus == DocStatus.passed)  //只有当文档状态为通过时，导出pdf按钮才可用
+            {
+                Button_ExportPDF.Enabled = true;
+                Button_ExportPDF_Shadow.Enabled = true;
             }
         }
 

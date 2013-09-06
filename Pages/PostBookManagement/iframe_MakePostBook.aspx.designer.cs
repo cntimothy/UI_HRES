@@ -193,13 +193,31 @@ namespace HRES.Pages.PostBookManagement {
         protected global::FineUI.ToolbarSeparator ToolbarSeparator11;
         
         /// <summary>
-        /// Button_Export 控件。
+        /// Button_ExportExcel 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Button Button_Export;
+        protected global::FineUI.Button Button_ExportExcel;
+        
+        /// <summary>
+        /// ToolbarSeparator14 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.ToolbarSeparator ToolbarSeparator14;
+        
+        /// <summary>
+        /// Button_ExportPDF 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.Button Button_ExportPDF;
         
         /// <summary>
         /// ToolbarSeparator1 控件。
@@ -1093,13 +1111,31 @@ namespace HRES.Pages.PostBookManagement {
         protected global::FineUI.ToolbarSeparator ToolbarSeparator12;
         
         /// <summary>
-        /// Button_Export_Shadow 控件。
+        /// Button_ExportExcel_Shadow 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Button Button_Export_Shadow;
+        protected global::FineUI.Button Button_ExportExcel_Shadow;
+        
+        /// <summary>
+        /// ToolbarSeparator15 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.ToolbarSeparator ToolbarSeparator15;
+        
+        /// <summary>
+        /// Button_ExportPDF_Shadow 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.Button Button_ExportPDF_Shadow;
         
         /// <summary>
         /// ToolbarSeparator6 控件。

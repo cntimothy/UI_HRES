@@ -23,7 +23,8 @@
                             </x:Label>
                             <x:ToolbarFill ID="ToolbarFill1" runat="server">
                             </x:ToolbarFill>
-                            <x:DropDownList ID="DropDownList_Template" runat="server" Label="Label" OnSelectedIndexChanged="DropDownList_Template_SelectedChanged" AutoPostBack="true">
+                            <x:DropDownList ID="DropDownList_Template" runat="server" Label="Label" OnSelectedIndexChanged="DropDownList_Template_SelectedChanged"
+                                AutoPostBack="true">
                                 <x:ListItem EnableSelect="true" Selected="true" Text="选择模版" Value="0" />
                             </x:DropDownList>
                             <x:ToolbarSeparator ID="ToolbarSeparator13" runat="server">
@@ -40,6 +41,11 @@
                             </x:ToolbarSeparator>
                             <x:Button ID="Button_Clear" runat="server" Text="清空" OnClick="Button_Clear_Click"
                                 ConfirmTitle="提示" ConfirmText="确定清空？">
+                            </x:Button>
+                            <x:ToolbarSeparator ID="ToolbarSeparator7" runat="server">
+                            </x:ToolbarSeparator>
+                            <x:Button ID="Button_Export" runat="server" Text="导出" OnClick="Button_Export_Click"
+                                EnableAjax="false" Enabled="false">
                             </x:Button>
                             <x:ToolbarSeparator ID="ToolbarSeparator1" runat="server">
                             </x:ToolbarSeparator>
@@ -80,7 +86,7 @@
                                         EnableEdit="true" EmptyText="点击右边按钮选择">
                                     </x:TriggerBox>
                                     <x:TextArea ID="TextArea_KeyResponse_1" runat="server" Height="50px" Label="内容" Text=""
-                                         Readonly="true">
+                                        Readonly="true">
                                     </x:TextArea>
                                     <x:HiddenField ID="HiddenField_KeyResponse_1" runat="server">
                                     </x:HiddenField>
@@ -513,12 +519,17 @@
                             </x:Button>
                             <x:ToolbarSeparator ID="ToolbarSeparator6" runat="server">
                             </x:ToolbarSeparator>
-                            <x:Button ID="Button_Clear_Shadow" runat="server" Text="清空" OnClick="Button_Clear_Click" ConfirmTitle="提示"
-                                ConfirmText="确定清空？">
+                            <x:Button ID="Button_Clear_Shadow" runat="server" Text="清空" OnClick="Button_Clear_Click"
+                                ConfirmTitle="提示" ConfirmText="确定清空？">
                             </x:Button>
                             <x:ToolbarSeparator ID="ToolbarSeparator3" runat="server">
                             </x:ToolbarSeparator>
                             <x:Button ID="Button_Close_Shadow" runat="server" Text="关闭">
+                            </x:Button>
+                            <x:ToolbarSeparator ID="ToolbarSeparator8" runat="server">
+                            </x:ToolbarSeparator>
+                            <x:Button ID="Button_Export_Shadow" runat="server" Text="导出" OnClick="Button_Export_Click" EnableAjax="false"
+                                Enabled="false">
                             </x:Button>
                         </Items>
                     </x:Toolbar>

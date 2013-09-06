@@ -23,7 +23,8 @@
                             </x:Label>
                             <x:ToolbarFill ID="ToolbarFill1" runat="server">
                             </x:ToolbarFill>
-                            <x:DropDownList ID="DropDownList_Template" runat="server" Label="Label" OnSelectedIndexChanged="DropDownList_Template_SelectedChanged" AutoPostBack="true">
+                            <x:DropDownList ID="DropDownList_Template" runat="server" Label="Label" OnSelectedIndexChanged="DropDownList_Template_SelectedChanged"
+                                AutoPostBack="true">
                                 <x:ListItem EnableSelect="true" Selected="true" Text="选择模版" Value="0" />
                             </x:DropDownList>
                             <x:ToolbarSeparator ID="ToolbarSeparator13" runat="server">
@@ -52,8 +53,13 @@
                             </x:Button>
                             <x:ToolbarSeparator ID="ToolbarSeparator11" runat="server">
                             </x:ToolbarSeparator>
-                            <x:Button ID="Button_Export" runat="server" Text="导出" OnClick="Button_Export_Click"
+                            <x:Button ID="Button_ExportExcel" runat="server" Text="导出Excel" OnClick="Button_ExportExcel_Click"
                                 EnableAjax="false">
+                            </x:Button>
+                            <x:ToolbarSeparator ID="ToolbarSeparator14" runat="server">
+                            </x:ToolbarSeparator>
+                            <x:Button ID="Button_ExportPDF" runat="server" Text="导出PDF" OnClick="Button_ExportPDF_Click"
+                                EnableAjax="false" Enabled="false">
                             </x:Button>
                             <x:ToolbarSeparator ID="ToolbarSeparator1" runat="server">
                             </x:ToolbarSeparator>
@@ -388,8 +394,13 @@
                             </x:Button>
                             <x:ToolbarSeparator ID="ToolbarSeparator12" runat="server">
                             </x:ToolbarSeparator>
-                            <x:Button ID="Button_Export_Shadow" runat="server" Text="导出" OnClick="Button_Export_Click"
+                            <x:Button ID="Button_ExportExcel_Shadow" runat="server" Text="导出Excel" OnClick="Button_ExportExcel_Click"
                                 EnableAjax="false">
+                            </x:Button>
+                            <x:ToolbarSeparator ID="ToolbarSeparator15" runat="server">
+                            </x:ToolbarSeparator>
+                            <x:Button ID="Button_ExportPDF_Shadow" runat="server" Text="导出PDF" OnClick="Button_ExportPDF_Click"
+                                EnableAjax="false" Enabled="false">
                             </x:Button>
                             <x:ToolbarSeparator ID="ToolbarSeparator6" runat="server">
                             </x:ToolbarSeparator>

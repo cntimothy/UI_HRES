@@ -148,6 +148,24 @@ namespace HRES.Pages.EvaluateTableManagement {
         protected global::FineUI.Button Button_Clear;
         
         /// <summary>
+        /// ToolbarSeparator7 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.ToolbarSeparator ToolbarSeparator7;
+        
+        /// <summary>
+        /// Button_Export 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.Button Button_Export;
+        
+        /// <summary>
         /// ToolbarSeparator1 控件。
         /// </summary>
         /// <remarks>
@@ -1478,6 +1496,24 @@ namespace HRES.Pages.EvaluateTableManagement {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::FineUI.Button Button_Close_Shadow;
+        
+        /// <summary>
+        /// ToolbarSeparator8 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.ToolbarSeparator ToolbarSeparator8;
+        
+        /// <summary>
+        /// Button_Export_Shadow 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.Button Button_Export_Shadow;
         
         /// <summary>
         /// Window_ShowQuota 控件。

@@ -104,7 +104,7 @@ namespace HRES.Pages.EvaluateTableManagement
                 Button_Close_Shadow.OnClientClick = ActiveWindow.GetConfirmHideRefreshReference();
 
                 DocStatus curStatus = (DocStatus)Enum.Parse(typeof(DocStatus), Request.QueryString["status"]);
-                if (curStatus == DocStatus.submitted || curStatus == DocStatus.passed)
+                if (curStatus == DocStatus.submitted || curStatus == DocStatus.passed)  //当文档状态为已提交或者已通过时，保存、提交、清空按钮不可用
                 {
                     Button_Save.Enabled = false;
                     Button_Submit.Enabled = false;
@@ -114,6 +114,12 @@ namespace HRES.Pages.EvaluateTableManagement
                     Button_Clear_Shadow.Enabled = false;
 
                     DropDownList_Template.Enabled = false;
+                }
+
+                if (curStatus == DocStatus.passed)      //只有当文档状态为已通过时，导出按钮才可用
+                {
+                    Button_Export.Enabled = true;
+                    Button_Export_Shadow.Enabled = true;
                 }
 
                 loadEvaluateTable("");
@@ -190,6 +196,33 @@ namespace HRES.Pages.EvaluateTableManagement
             else
             {
                 Alert.ShowInTop("提交失败！\n原因：" + exception, MessageBoxIcon.Error);
+            }
+        }
+
+        protected void Button_Export_Click(object sender, EventArgs e)
+        { 
+            string exception = "";
+            string evaluatedID = Request.QueryString["id"];
+            EvaluateTable evaluateTable = new EvaluateTable();
+            if (EvaluateTableManagementCtrl.GetEvaluateTable(evaluatedID, ref evaluateTable, ref exception))
+            {
+                string sourceName = "";
+                if (ExportManagementCtrl.ExportEvaluateTable(ref sourceName, evaluateTable, ref exception))
+                {
+                    string targetName = "";
+                    if (ExportManagementCtrl.ConvertExcelToPDF(ref targetName, sourceName, ref exception))
+                    {
+                        Response.ClearContent();
+                        Response.ContentType = "application/pdf";
+                        Response.AddHeader("content-disposition", "attachment;filename=" + Server.UrlEncode(targetName));
+                        string path = Server.MapPath("..\\..\\downloadfiles\\" + targetName);
+                        Response.TransmitFile(path);
+                    }
+                }
+            }
+            else
+            {
+                Alert.ShowInTop("导出失败！\n原因：" + exception, MessageBoxIcon.Error);
             }
         }
         #endregion

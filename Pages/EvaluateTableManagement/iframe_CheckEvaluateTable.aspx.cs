@@ -67,7 +67,7 @@ namespace HRES.Pages.EvaluateTableManagement
                     Response.AddHeader("content-disposition", "attachment;filename=" + Server.UrlEncode(filename));
                     string path = Server.MapPath("..\\..\\downloadfiles\\" + filename);
                     Response.TransmitFile(path);
-                }
+                } 
             }
             else
             {
