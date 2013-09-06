@@ -60,7 +60,7 @@ namespace HRES.Pages.EvaluateTableManagement
 
         protected void Button_Submit_Click(object sender, EventArgs e)
         {
-            string title = DropDownList1.SelectedValue;
+            string title = DropDownList2.SelectedValue;
             string quota = "优：" + TextArea1.Text + " 良：" + TextArea2.Text + " 中：" + TextArea3.Text + " 差：" + TextArea4.Text;
             string hiddenMessage = title + "&" + TextArea1.Text + "^" + TextArea2.Text + "^" + TextArea3.Text + "^" + TextArea4.Text;
             PageContext.RegisterStartupScript(ActiveWindow.GetWriteBackValueReference(title, quota, hiddenMessage) + ActiveWindow.GetHideReference());

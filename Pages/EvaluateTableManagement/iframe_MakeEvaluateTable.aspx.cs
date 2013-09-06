@@ -218,6 +218,10 @@ namespace HRES.Pages.EvaluateTableManagement
                         string path = Server.MapPath("..\\..\\downloadfiles\\" + targetName);
                         Response.TransmitFile(path);
                     }
+                    else 
+                    {
+                        Alert.ShowInTop(exception);
+                    }
                 }
             }
             else
@@ -622,71 +626,71 @@ namespace HRES.Pages.EvaluateTableManagement
         /// <returns></returns>
         private bool checkRepetition(EvaluateTable evaluateTable)
         {
-            List<string> titleList = new List<string>();
+            List<string[]> contentList = new List<string[]>();
             foreach (Quota quota in evaluateTable.KeyResponse)  //检查关键岗位职责指标
             {
-                if (titleList.Contains(quota.Title))
+                if (contentList.Contains(quota.Content))
                 {
                     return false;
                 }
                 else
                 {
-                    titleList.Add(quota.Title);
+                    contentList.Add(quota.Content);
                 }
             }
             foreach (Quota quota in evaluateTable.KeyQualify)   //检查关键岗位胜任能力指标
             {
-                if (titleList.Contains(quota.Title))
+                if (contentList.Contains(quota.Content))
                 {
                     return false;
                 }
                 else
                 {
-                    titleList.Add(quota.Title);
+                    contentList.Add(quota.Content);
                 }
             }
             foreach (Quota quota in evaluateTable.KeyAttitude)  //检查关键岗位工作态度指标
             {
-                if (titleList.Contains(quota.Title))
+                if (contentList.Contains(quota.Content))
                 {
                     return false;
                 }
                 else
                 {
-                    titleList.Add(quota.Title);
+                    contentList.Add(quota.Content);
                 }
             }
             foreach (Quota quota in evaluateTable.Response)     //检查岗位职责指标
             {
-                if (titleList.Contains(quota.Title))
+                if (contentList.Contains(quota.Content))
                 {
                     return false;
                 }
                 else
                 {
-                    titleList.Add(quota.Title);
+                    contentList.Add(quota.Content);
                 }
             }
             foreach (Quota quota in evaluateTable.Qualify)      //检查岗位胜任能力指标
             {
-                if (titleList.Contains(quota.Title))
+                if (contentList.Contains(quota.Content))
                 {
                     return false;
                 }
                 else
                 {
-                    titleList.Add(quota.Title);
+                    contentList.Add(quota.Content);
                 }
             }
             foreach (Quota quota in evaluateTable.Attitude)     //检查工作态度指标
             {
-                if (titleList.Contains(quota.Title))
+                if (contentList.Contains(quota.Content))
                 {
                     return false;
                 }
                 else
                 {
-                    titleList.Add(quota.Title);
+                    contentList.Add(quota.Content);
                 }
             }
             return true;
