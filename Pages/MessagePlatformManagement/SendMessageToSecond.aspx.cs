@@ -55,7 +55,7 @@ namespace HRES.Pages.MessagePlatformManagement
                 Alert.ShowInTop("短信内容不能为空且不能长于70！");
                 return;
             }
-            if (MessagePlatformManagementCtrl.SendMessageToEvaluators(ids, message, ref exception))
+            if (MessagePlatformManagementCtrl.SendMessageToSeconds(ids, message, ref exception))
             {
                 Alert.ShowInTop("发送成功！", MessageBoxIcon.Information);
             }
