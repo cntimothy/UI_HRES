@@ -34,100 +34,100 @@ namespace HRES.Pages.EvaluationManagement
         #region Event
         protected void Button_Submit_Click(object sender, EventArgs e)
         {
-            List<string> scores = new List<string>();
-            int sumScore = 0;
-            int tempSumScore = 0;
-            int tempWeight = 0;
-            for (int i = 0; i < Grid1.Rows.Count; i++)
-            {
-                GridRow row = Grid1.Rows[i];
-                System.Web.UI.WebControls.TextBox tb = row.FindControl("TextBox_Score1") as System.Web.UI.WebControls.TextBox;
-                tempSumScore += Convert.ToInt32(tb.Text.Trim());
-            }
-
-            for (int i = 0; i < Grid2.Rows.Count; i++)
-            {
-                GridRow row = Grid2.Rows[i];
-                System.Web.UI.WebControls.TextBox tb = row.FindControl("TextBox_Score2") as System.Web.UI.WebControls.TextBox;
-                tempSumScore += Convert.ToInt32(tb.Text.Trim());
-            }
-
-            for (int i = 0; i < Grid3.Rows.Count; i++)
-            {
-                GridRow row = Grid3.Rows[i];
-                System.Web.UI.WebControls.TextBox tb = row.FindControl("TextBox_Score3") as System.Web.UI.WebControls.TextBox;
-                tempSumScore += Convert.ToInt32(tb.Text.Trim());
-            }
-
-            //计算关键指标的平均分
-            tempWeight = Convert.ToInt32(ViewState["KeyWeight"].ToString());
-            tempSumScore = (int)(tempSumScore / (Grid1.Rows.Count + Grid2.Rows.Count + Grid3.Rows.Count));
-            sumScore += tempSumScore * tempWeight / 100;
-            scores.Add(tempSumScore.ToString());
-            tempSumScore = 0;
-
-            for (int i = 0; i < Grid4.Rows.Count; i++)
-            {
-                GridRow row = Grid4.Rows[i];
-                System.Web.UI.WebControls.TextBox tb = row.FindControl("TextBox_Score4") as System.Web.UI.WebControls.TextBox;
-                tempSumScore += Convert.ToInt32(tb.Text.Trim());
-            }
-
-            //计算岗位职责指标的平均分
-            tempWeight = Convert.ToInt32(ViewState["QualifyWeight"].ToString());
-            tempSumScore = (int)(tempSumScore / (Grid4.Rows.Count));
-            sumScore += tempSumScore * tempWeight / 100;
-            scores.Add(tempSumScore.ToString());
-            tempSumScore = 0;
-
-            for (int i = 0; i < Grid5.Rows.Count; i++)
-            {
-                GridRow row = Grid5.Rows[i];
-                System.Web.UI.WebControls.TextBox tb = row.FindControl("TextBox_Score5") as System.Web.UI.WebControls.TextBox;
-                tempSumScore += Convert.ToInt32(tb.Text.Trim());
-            }
-
-            //计算岗位胜任能力指标的平均分
-            tempWeight = Convert.ToInt32(ViewState["QualifyWeight"].ToString());
-            tempSumScore = (int)(tempSumScore / (Grid5.Rows.Count));
-            sumScore += tempSumScore * tempWeight / 100;
-            scores.Add(tempSumScore.ToString());
-            tempSumScore = 0;
-
-            for (int i = 0; i < Grid6.Rows.Count; i++)
-            {
-                GridRow row = Grid6.Rows[i];
-                System.Web.UI.WebControls.TextBox tb = row.FindControl("TextBox_Score6") as System.Web.UI.WebControls.TextBox;
-                tempSumScore += Convert.ToInt32(tb.Text.Trim());
-            }
-
-            //计算工作态度指标的平均分
-            tempWeight = Convert.ToInt32(ViewState["AttitudeWeight"].ToString());
-            tempSumScore = (int)(tempSumScore / (Grid5.Rows.Count));
-            sumScore += tempSumScore * tempWeight / 100;
-            scores.Add(tempSumScore.ToString());
-            tempSumScore = 0;
-
-            if (Grid7.Rows.Count != 0)
-            {
-                GridRow gridRow = Grid7.Rows[0];
-                System.Web.UI.WebControls.DropDownList ddl = gridRow.FindControl("DropDownList_Reject") as System.Web.UI.WebControls.DropDownList;
-                tempSumScore = Convert.ToInt32(ddl.SelectedValue);
-            }
-
-            //计算否决指标的得分
-            scores.Add(tempSumScore.ToString());
-            if (tempSumScore == 100)
-            {
-                sumScore = 0;
-            }
-
-            scores.Add(sumScore.ToString());
-
-            string[] scoreArray = scores.ToArray();
-
             if (CheckScores()) //检查分数是否合格
             {
+                List<string> scores = new List<string>();
+                int sumScore = 0;
+                int tempSumScore = 0;
+                int tempWeight = 0;
+                for (int i = 0; i < Grid1.Rows.Count; i++)
+                {
+                    GridRow row = Grid1.Rows[i];
+                    System.Web.UI.WebControls.TextBox tb = row.FindControl("TextBox_Score1") as System.Web.UI.WebControls.TextBox;
+                    tempSumScore += Convert.ToInt32(tb.Text.Trim());
+                }
+
+                for (int i = 0; i < Grid2.Rows.Count; i++)
+                {
+                    GridRow row = Grid2.Rows[i];
+                    System.Web.UI.WebControls.TextBox tb = row.FindControl("TextBox_Score2") as System.Web.UI.WebControls.TextBox;
+                    tempSumScore += Convert.ToInt32(tb.Text.Trim());
+                }
+
+                for (int i = 0; i < Grid3.Rows.Count; i++)
+                {
+                    GridRow row = Grid3.Rows[i];
+                    System.Web.UI.WebControls.TextBox tb = row.FindControl("TextBox_Score3") as System.Web.UI.WebControls.TextBox;
+                    tempSumScore += Convert.ToInt32(tb.Text.Trim());
+                }
+
+                //计算关键指标的平均分
+                tempWeight = Convert.ToInt32(ViewState["KeyWeight"].ToString());
+                tempSumScore = (int)(tempSumScore / (Grid1.Rows.Count + Grid2.Rows.Count + Grid3.Rows.Count));
+                sumScore += tempSumScore * tempWeight / 100;
+                scores.Add(tempSumScore.ToString());
+                tempSumScore = 0;
+
+                for (int i = 0; i < Grid4.Rows.Count; i++)
+                {
+                    GridRow row = Grid4.Rows[i];
+                    System.Web.UI.WebControls.TextBox tb = row.FindControl("TextBox_Score4") as System.Web.UI.WebControls.TextBox;
+                    tempSumScore += Convert.ToInt32(tb.Text.Trim());
+                }
+
+                //计算岗位职责指标的平均分
+                tempWeight = Convert.ToInt32(ViewState["QualifyWeight"].ToString());
+                tempSumScore = (int)(tempSumScore / (Grid4.Rows.Count));
+                sumScore += tempSumScore * tempWeight / 100;
+                scores.Add(tempSumScore.ToString());
+                tempSumScore = 0;
+
+                for (int i = 0; i < Grid5.Rows.Count; i++)
+                {
+                    GridRow row = Grid5.Rows[i];
+                    System.Web.UI.WebControls.TextBox tb = row.FindControl("TextBox_Score5") as System.Web.UI.WebControls.TextBox;
+                    tempSumScore += Convert.ToInt32(tb.Text.Trim());
+                }
+
+                //计算岗位胜任能力指标的平均分
+                tempWeight = Convert.ToInt32(ViewState["QualifyWeight"].ToString());
+                tempSumScore = (int)(tempSumScore / (Grid5.Rows.Count));
+                sumScore += tempSumScore * tempWeight / 100;
+                scores.Add(tempSumScore.ToString());
+                tempSumScore = 0;
+
+                for (int i = 0; i < Grid6.Rows.Count; i++)
+                {
+                    GridRow row = Grid6.Rows[i];
+                    System.Web.UI.WebControls.TextBox tb = row.FindControl("TextBox_Score6") as System.Web.UI.WebControls.TextBox;
+                    tempSumScore += Convert.ToInt32(tb.Text.Trim());
+                }
+
+                //计算工作态度指标的平均分
+                tempWeight = Convert.ToInt32(ViewState["AttitudeWeight"].ToString());
+                tempSumScore = (int)(tempSumScore / (Grid5.Rows.Count));
+                sumScore += tempSumScore * tempWeight / 100;
+                scores.Add(tempSumScore.ToString());
+                tempSumScore = 0;
+
+                if (Grid7.Rows.Count != 0)
+                {
+                    GridRow gridRow = Grid7.Rows[0];
+                    System.Web.UI.WebControls.DropDownList ddl = gridRow.FindControl("DropDownList_Reject") as System.Web.UI.WebControls.DropDownList;
+                    tempSumScore = Convert.ToInt32(ddl.SelectedValue);
+                }
+
+                //计算否决指标的得分
+                scores.Add(tempSumScore.ToString());
+                if (tempSumScore == 100)
+                {
+                    sumScore = 0;
+                }
+
+                scores.Add(sumScore.ToString());
+
+                string[] scoreArray = scores.ToArray();
+
                 string exception = "";
                 string evaluatedID = Request.QueryString["id"];
                 string evaluatorID = Session["UserID"].ToString();

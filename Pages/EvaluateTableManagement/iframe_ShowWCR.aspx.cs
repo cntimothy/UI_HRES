@@ -34,7 +34,7 @@ namespace HRES.Pages.EvaluateTableManagement
         {
             string title = DropDownList1.SelectedValue;
             string quota = TextArea1.Text;
-            PageContext.RegisterStartupScript(ActiveWindow.GetWriteBackValueReference(title, quota, quota) + ActiveWindow.GetHideReference());
+            PageContext.RegisterStartupScript(ActiveWindow.GetWriteBackValueReference(title, quota, title + "&" + quota) + ActiveWindow.GetHideReference());
         }
         #endregion
 

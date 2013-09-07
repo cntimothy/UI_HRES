@@ -244,12 +244,16 @@ namespace HRES.Pages.EvaluateTableManagement
             string exception = "";
             Dictionary<string, string> nameIdDic = new Dictionary<string, string>();
             string depart = (string)Session["Depart"];
-            if(EvaluateTableManagementCtrl.GetSubmittedNameIdDic(ref nameIdDic, depart, ref exception))
+            if (EvaluateTableManagementCtrl.GetSubmittedNameIdDic(ref nameIdDic, depart, ref exception))
             {
                 foreach (string name in nameIdDic.Keys)
                 {
                     DropDownList_Template.Items.Add(name, nameIdDic[name]);
                 }
+            }
+            else
+            {
+                Alert.ShowInTop(exception);
             }
         }
 
@@ -289,7 +293,7 @@ namespace HRES.Pages.EvaluateTableManagement
                     FineUI.HiddenField hf = sf.Items[2] as FineUI.HiddenField;
                     tb.Text = evaluateTable.KeyResponse[i].Title;
                     ta.Text = evaluateTable.KeyResponse[i].Content[0];
-                    hf.Text = evaluateTable.KeyResponse[i].Content[0];
+                    hf.Text = evaluateTable.KeyResponse[i].Title + "&" + evaluateTable.KeyResponse[i].Content[0];
                 }
 
                 for (int i = 0; i < evaluateTable.KeyQualify.Count; i++)
@@ -341,7 +345,7 @@ namespace HRES.Pages.EvaluateTableManagement
                     FineUI.HiddenField hf = sf.Items[2] as FineUI.HiddenField;
                     tb.Text = evaluateTable.Response[i].Title;
                     ta.Text = evaluateTable.Response[i].Content[0];
-                    hf.Text = evaluateTable.Response[i].Content[0];
+                    hf.Text = evaluateTable.Response[i].Title + "&" + evaluateTable.Response[i].Content[0];
                 }
 
                 for (int i = 0; i < evaluateTable.Qualify.Count; i++)
@@ -420,7 +424,9 @@ namespace HRES.Pages.EvaluateTableManagement
                     break;
                 }
                 FineUI.HiddenField hf = sf.Items[2] as FineUI.HiddenField;
-                evaluateTable.KeyResponse.Add(new Quota(tb.Text.Trim(), new string[] { hf.Text.Trim() }));
+                string title = hf.Text.Split('&')[0].Trim();
+                string[] content = new string[]{hf.Text.Split('&')[1]};
+                evaluateTable.KeyResponse.Add(new Quota(title, content));
             }
 
             foreach (ControlBase item in Panel4.Items)
@@ -461,7 +467,9 @@ namespace HRES.Pages.EvaluateTableManagement
                 }
                 TextArea ta = sf.Items[1] as TextArea;
                 FineUI.HiddenField hf = sf.Items[2] as FineUI.HiddenField;
-                evaluateTable.Response.Add(new Quota(tb.Text.Trim(), new string[] { hf.Text.Trim() }));
+                string title = hf.Text.Split('&')[0].Trim();
+                string[] content = new string[] { hf.Text.Split('&')[1] };
+                evaluateTable.Response.Add(new Quota(title, content));
             }
 
             foreach (ControlBase item in Panel7.Items)
@@ -644,7 +652,7 @@ namespace HRES.Pages.EvaluateTableManagement
             }
             foreach (Quota quota in evaluateTable.KeyQualify)   //检查关键岗位胜任能力指标
             {
-                if (contentList.Contains(quota.Content[0]))
+                if (contentList.Contains(quota.Content[0] + quota.Content[1] + quota.Content[2] + quota.Content[3]))
                 {
                     return false;
                 }
@@ -655,7 +663,7 @@ namespace HRES.Pages.EvaluateTableManagement
             }
             foreach (Quota quota in evaluateTable.KeyAttitude)  //检查关键岗位工作态度指标
             {
-                if (contentList.Contains(quota.Content[0]))
+                if (contentList.Contains(quota.Content[0] + quota.Content[1] + quota.Content[2] + quota.Content[3]))
                 {
                     return false;
                 }
@@ -677,7 +685,7 @@ namespace HRES.Pages.EvaluateTableManagement
             }
             foreach (Quota quota in evaluateTable.Qualify)      //检查岗位胜任能力指标
             {
-                if (contentList.Contains(quota.Content[0]))
+                if (contentList.Contains(quota.Content[0] + quota.Content[1] + quota.Content[2] + quota.Content[3]))
                 {
                     return false;
                 }
@@ -688,7 +696,7 @@ namespace HRES.Pages.EvaluateTableManagement
             }
             foreach (Quota quota in evaluateTable.Attitude)     //检查工作态度指标
             {
-                if (contentList.Contains(quota.Content[0]))
+                if (contentList.Contains(quota.Content[0] + quota.Content[1] + quota.Content[2] + quota.Content[3]))
                 {
                     return false;
                 }
