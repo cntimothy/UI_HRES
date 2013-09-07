@@ -53,7 +53,7 @@
                             </x:Button>
                             <x:ToolbarSeparator ID="ToolbarSeparator11" runat="server">
                             </x:ToolbarSeparator>
-                            <x:Button ID="Button_ExportExcel" runat="server" Text="导出Excel" OnClick="Button_ExportExcel_Click"
+                            <x:Button ID="Button_ExportExcel" runat="server" Text="导出Word" OnClick="Button_ExportExcel_Click"
                                 EnableAjax="false">
                             </x:Button>
                             <x:ToolbarSeparator ID="ToolbarSeparator14" runat="server">
