@@ -62,39 +62,52 @@ namespace HRES.Pages.EvaluatorManagement
             }
             Dictionary<string, string> dic = (new JavaScriptSerializer()).Deserialize<Dictionary<string, string>>(hfSelectedIDS.Text.Trim());
             Dictionary<string, string> idRelationDic = new Dictionary<string, string>();
+            int leaderNum=0;
+            int colleagueNum = 0;
+            int subordinateNum = 0;
+            int servicesNum = 0;
             foreach (string key in dic.Keys)
             {
                 switch (dic[key])
                 { 
                     case "领导":
                         idRelationDic.Add(key, Convert.ToString((int)Relation.leader));
+                        leaderNum++;
                         break;
                     case "同事":
                         idRelationDic.Add(key, Convert.ToString((int)Relation.colleague));
+                        colleagueNum++;
                         break;
                     case "下属":
                         idRelationDic.Add(key, Convert.ToString((int)Relation.subordinate));
+                        subordinateNum++;
                         break;
                     case "服务对象":
                         idRelationDic.Add(key, Convert.ToString((int)Relation.services));
+                        servicesNum++;
                         break;
                 }
             }
             bool is360;
-            if(!idRelationDic.Values.Contains(Convert.ToString((int)Relation.leader)))
+            if (leaderNum<4)
             {
-                Alert.ShowInTop("请至少选择一位领导！", MessageBoxIcon.Error);
+                Alert.ShowInTop("请至少选择4位领导！", MessageBoxIcon.Error);
                 return;
             }
-            if(!idRelationDic.Values.Contains(Convert.ToString((int)Relation.colleague)))
+            if (colleagueNum<4)
             {
-                Alert.ShowInTop("请至少选择一位同事！", MessageBoxIcon.Error);
+                Alert.ShowInTop("请至少选择4位同事！", MessageBoxIcon.Error);
                 return;
             }
-            
-            if(!idRelationDic.Values.Contains(Convert.ToString((int)Relation.services)))
+
+            if (servicesNum<4)
             {
-                Alert.ShowInTop("请至少选择一位服务对象！", MessageBoxIcon.Error);
+                Alert.ShowInTop("请至少选择4位服务对象！", MessageBoxIcon.Error);
+                return;
+            }
+            if (idRelationDic.Count < 25)
+            {
+                Alert.ShowInTop("请至少选择25位考评人！", MessageBoxIcon.Error);
                 return;
             }
             if (idRelationDic.Values.Contains(Convert.ToString((int)Relation.subordinate)))
@@ -150,12 +163,11 @@ namespace HRES.Pages.EvaluatorManagement
             string evaluated = Request.QueryString["id"];
             string exception = "";
             DataTable table = new DataTable();
+            int num = 0;
             if (EvaluatorManagementCtrl.GetEvaluator(ref table, evaluated, ref exception))
             {
-                foreach (DataRow row in table.Rows)
-                {
-                    Label_Submitted.Text += (row["Name"].ToString() + "，");
-                }
+                Grid2.DataSource = table;
+                Grid2.DataBind();
             }
         }
 

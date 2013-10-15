@@ -61,8 +61,19 @@ namespace HRES.Pages.EvaluateTableManagement
         protected void Button_Submit_Click(object sender, EventArgs e)
         {
             string title = DropDownList2.SelectedValue;
+            if (title == "请选择")
+            {
+                Alert.Show("请先选择指标!");
+                return;
+            }
             string quota = "优：" + TextArea1.Text + " 良：" + TextArea2.Text + " 中：" + TextArea3.Text + " 差：" + TextArea4.Text;
             string hiddenMessage = title + "&" + TextArea1.Text + "^" + TextArea2.Text + "^" + TextArea3.Text + "^" + TextArea4.Text;
+
+            //去掉换行符
+            title = title.Replace("\n", "").Replace("\r", "");
+            quota = quota.Replace("\n", "").Replace("\r", "");
+            hiddenMessage = hiddenMessage.Replace("\n", "").Replace("\r", "");
+
             PageContext.RegisterStartupScript(ActiveWindow.GetWriteBackValueReference(title, quota, hiddenMessage) + ActiveWindow.GetHideReference());
         }
         #endregion
@@ -76,7 +87,7 @@ namespace HRES.Pages.EvaluateTableManagement
             {
                 foreach (string item in level1s)
                 {
-                    DropDownList1.Items.Add(item, item);
+                    DropDownList1.Items.Add(item.Replace("\n", "").Replace("\r", ""), item.Replace("\n", "").Replace("\r", ""));
                 }
             }
             else
@@ -94,7 +105,7 @@ namespace HRES.Pages.EvaluateTableManagement
             {
                 foreach (string item in level2s)
                 {
-                    DropDownList2.Items.Add(item, item);
+                    DropDownList2.Items.Add(item.Replace("\n", "").Replace("\r", ""), item.Replace("\n", "").Replace("\r", ""));
                 }
             }
             else

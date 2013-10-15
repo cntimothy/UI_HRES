@@ -32,7 +32,7 @@
                                     <x:HyperLink ID="HyperLink1" runat="server" Label="Label" NavigateUrl="../downloadfiles/template/《360考评考核系统》简易操作说明.htm" Target="_blank"
                                         Text="帮助文档">
                                     </x:HyperLink>
-                                </x:LinkButton></li>
+                                </li>
                             </ul>
                         </div>
                     </x:ContentPanel>
@@ -53,7 +53,7 @@
             <x:Region ID="mainRegion" ShowHeader="false" Layout="Fit" Margins="0 0 0 0" Position="Center"
                 runat="server">
                 <Items>
-                    <x:TabStrip ID="mainTabStrip" EnableTabCloseMenu="true" ShowBorder="false" runat="server">
+                    <x:TabStrip ID="mainTabStrip" EnableTabCloseMenu="true" ShowBorder="false" runat="server" >
                         <Tabs>
                             <x:Tab ID="Tab1" Title="首页" Layout="Fit" Icon="House" runat="server">
                                 <Toolbars>
@@ -66,7 +66,7 @@
                                 </Toolbars>
                                 <Items>
                                     <x:ContentPanel ID="ContentPanel2" ShowBorder="false" BodyPadding="10px" ShowHeader="false"
-                                        AutoScroll="true" CssClass="intro" runat="server">
+                                        AutoScroll="true" CssClass="intro" runat="server" >
                                         <p>
                                             欢迎使用</p>
                                     </x:ContentPanel>

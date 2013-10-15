@@ -23,81 +23,9 @@ namespace HRES.Pages.EvaluateTableManagement
                     Alert.ShowInTop("被考评人岗位责任书尚未通过审核！\n窗口即将关闭", MessageBoxIcon.Error);
                     PageContext.RegisterStartupScript(ActiveWindow.GetHideReference());
                 }
-
-                //TriggerBox_KeyResponse_1.OnClientTriggerClick = Window_ShowQuota.GetSaveStateReference(TriggerBox_KeyResponse_1.ClientID, TextArea_KeyResponse_1.ClientID, HiddenField_KeyResponse_1.ClientID)
-                //+ Window_ShowQuota.GetShowReference("iframe_ShowQuota.aspx");
-
-                //关键岗位职责指标
-                TriggerBox_KeyResponse_1.OnClientTriggerClick = Window_ShowQuota.GetSaveStateReference(TriggerBox_KeyResponse_1.ClientID, TextArea_KeyResponse_1.ClientID, HiddenField_KeyResponse_1.ClientID)
-                    + Window_ShowQuota.GetShowReference("iframe_ShowWCR.aspx?id=" + Request.QueryString["id"]);
-                TriggerBox_KeyResponse_2.OnClientTriggerClick = Window_ShowQuota.GetSaveStateReference(TriggerBox_KeyResponse_2.ClientID, TextArea_KeyResponse_2.ClientID, HiddenField_KeyResponse_2.ClientID)
-                    + Window_ShowQuota.GetShowReference("iframe_ShowWCR.aspx?id=" + Request.QueryString["id"]);
-                TriggerBox_KeyResponse_3.OnClientTriggerClick = Window_ShowQuota.GetSaveStateReference(TriggerBox_KeyResponse_3.ClientID, TextArea_KeyResponse_3.ClientID, HiddenField_KeyResponse_3.ClientID)
-                    + Window_ShowQuota.GetShowReference("iframe_ShowWCR.aspx?id=" + Request.QueryString["id"]);
-                TriggerBox_KeyResponse_4.OnClientTriggerClick = Window_ShowQuota.GetSaveStateReference(TriggerBox_KeyResponse_4.ClientID, TextArea_KeyResponse_4.ClientID, HiddenField_KeyResponse_4.ClientID)
-                    + Window_ShowQuota.GetShowReference("iframe_ShowWCR.aspx?id=" + Request.QueryString["id"]);
-                TriggerBox_KeyResponse_5.OnClientTriggerClick = Window_ShowQuota.GetSaveStateReference(TriggerBox_KeyResponse_5.ClientID, TextArea_KeyResponse_5.ClientID, HiddenField_KeyResponse_5.ClientID)
-                    + Window_ShowQuota.GetShowReference("iframe_ShowWCR.aspx?id=" + Request.QueryString["id"]);
-
-                //岗位职责指标
-                TriggerBox_Response_1.OnClientTriggerClick = Window_ShowQuota.GetSaveStateReference(TriggerBox_Response_1.ClientID, TextArea_Response_1.ClientID, HiddenField_Response_1.ClientID)
-                    + Window_ShowQuota.GetShowReference("iframe_ShowWCR.aspx?id=" + Request.QueryString["id"]);
-                TriggerBox_Response_2.OnClientTriggerClick = Window_ShowQuota.GetSaveStateReference(TriggerBox_Response_2.ClientID, TextArea_Response_2.ClientID, HiddenField_Response_2.ClientID)
-                    + Window_ShowQuota.GetShowReference("iframe_ShowWCR.aspx?id=" + Request.QueryString["id"]);
-                TriggerBox_Response_3.OnClientTriggerClick = Window_ShowQuota.GetSaveStateReference(TriggerBox_Response_3.ClientID, TextArea_Response_3.ClientID, HiddenField_Response_3.ClientID)
-                    + Window_ShowQuota.GetShowReference("iframe_ShowWCR.aspx?id=" + Request.QueryString["id"]);
-                TriggerBox_Response_4.OnClientTriggerClick = Window_ShowQuota.GetSaveStateReference(TriggerBox_Response_4.ClientID, TextArea_Response_4.ClientID, HiddenField_Response_4.ClientID)
-                    + Window_ShowQuota.GetShowReference("iframe_ShowWCR.aspx?id=" + Request.QueryString["id"]);
-                TriggerBox_Response_5.OnClientTriggerClick = Window_ShowQuota.GetSaveStateReference(TriggerBox_Response_5.ClientID, TextArea_Response_5.ClientID, HiddenField_Response_5.ClientID)
-                    + Window_ShowQuota.GetShowReference("iframe_ShowWCR.aspx?id=" + Request.QueryString["id"]);
-
-                //关键岗位胜任能力指标
-                TriggerBox_KeyQualify_1.OnClientTriggerClick = Window_ShowQuota.GetSaveStateReference(TriggerBox_KeyQualify_1.ClientID, TextArea_KeyQualify_1.ClientID, HiddenField_KeyQualify_1.ClientID)
-                + Window_ShowQuota.GetShowReference("iframe_ShowQuota.aspx");
-                TriggerBox_KeyQualify_2.OnClientTriggerClick = Window_ShowQuota.GetSaveStateReference(TriggerBox_KeyQualify_2.ClientID, TextArea_KeyQualify_2.ClientID, HiddenField_KeyQualify_2.ClientID)
-                + Window_ShowQuota.GetShowReference("iframe_ShowQuota.aspx");
-                TriggerBox_KeyQualify_3.OnClientTriggerClick = Window_ShowQuota.GetSaveStateReference(TriggerBox_KeyQualify_3.ClientID, TextArea_KeyQualify_3.ClientID, HiddenField_KeyQualify_3.ClientID)
-                + Window_ShowQuota.GetShowReference("iframe_ShowQuota.aspx");
-                TriggerBox_KeyQualify_4.OnClientTriggerClick = Window_ShowQuota.GetSaveStateReference(TriggerBox_KeyQualify_4.ClientID, TextArea_KeyQualify_4.ClientID, HiddenField_KeyQualify_4.ClientID)
-                + Window_ShowQuota.GetShowReference("iframe_ShowQuota.aspx");
-                TriggerBox_KeyQualify_5.OnClientTriggerClick = Window_ShowQuota.GetSaveStateReference(TriggerBox_KeyQualify_5.ClientID, TextArea_KeyQualify_5.ClientID, HiddenField_KeyQualify_5.ClientID)
-                + Window_ShowQuota.GetShowReference("iframe_ShowQuota.aspx");
-
-                //关键岗位态度指标
-                TriggerBox_KeyAttitude_1.OnClientTriggerClick = Window_ShowQuota.GetSaveStateReference(TriggerBox_KeyAttitude_1.ClientID, TextArea_KeyAttitude_1.ClientID, HiddenField_KeyAttitude_1.ClientID)
-                + Window_ShowQuota.GetShowReference("iframe_ShowQuota.aspx");
-                TriggerBox_KeyAttitude_2.OnClientTriggerClick = Window_ShowQuota.GetSaveStateReference(TriggerBox_KeyAttitude_2.ClientID, TextArea_KeyAttitude_2.ClientID, HiddenField_KeyAttitude_2.ClientID)
-                + Window_ShowQuota.GetShowReference("iframe_ShowQuota.aspx");
-                TriggerBox_KeyAttitude_3.OnClientTriggerClick = Window_ShowQuota.GetSaveStateReference(TriggerBox_KeyAttitude_3.ClientID, TextArea_KeyAttitude_3.ClientID, HiddenField_KeyAttitude_3.ClientID)
-                + Window_ShowQuota.GetShowReference("iframe_ShowQuota.aspx");
-                TriggerBox_KeyAttitude_4.OnClientTriggerClick = Window_ShowQuota.GetSaveStateReference(TriggerBox_KeyAttitude_4.ClientID, TextArea_KeyAttitude_4.ClientID, HiddenField_KeyAttitude_4.ClientID)
-                + Window_ShowQuota.GetShowReference("iframe_ShowQuota.aspx");
-                TriggerBox_KeyAttitude_5.OnClientTriggerClick = Window_ShowQuota.GetSaveStateReference(TriggerBox_KeyAttitude_5.ClientID, TextArea_KeyAttitude_5.ClientID, HiddenField_KeyAttitude_5.ClientID)
-                + Window_ShowQuota.GetShowReference("iframe_ShowQuota.aspx");
-
-                //岗位胜任能力指标
-                TriggerBox_Qualify_1.OnClientTriggerClick = Window_ShowQuota.GetSaveStateReference(TriggerBox_Qualify_1.ClientID, TextArea_Qualify_1.ClientID, HiddenField_Qualify_1.ClientID)
-                + Window_ShowQuota.GetShowReference("iframe_ShowQuota.aspx");
-                TriggerBox_Qualify_2.OnClientTriggerClick = Window_ShowQuota.GetSaveStateReference(TriggerBox_Qualify_2.ClientID, TextArea_Qualify_2.ClientID, HiddenField_Qualify_2.ClientID)
-                + Window_ShowQuota.GetShowReference("iframe_ShowQuota.aspx");
-                TriggerBox_Qualify_3.OnClientTriggerClick = Window_ShowQuota.GetSaveStateReference(TriggerBox_Qualify_3.ClientID, TextArea_Qualify_3.ClientID, HiddenField_Qualify_3.ClientID)
-                + Window_ShowQuota.GetShowReference("iframe_ShowQuota.aspx");
-                TriggerBox_Qualify_4.OnClientTriggerClick = Window_ShowQuota.GetSaveStateReference(TriggerBox_Qualify_4.ClientID, TextArea_Qualify_4.ClientID, HiddenField_Qualify_4.ClientID)
-                + Window_ShowQuota.GetShowReference("iframe_ShowQuota.aspx");
-                TriggerBox_Qualify_5.OnClientTriggerClick = Window_ShowQuota.GetSaveStateReference(TriggerBox_Qualify_5.ClientID, TextArea_Qualify_5.ClientID, HiddenField_Qualify_5.ClientID)
-                + Window_ShowQuota.GetShowReference("iframe_ShowQuota.aspx");
-
-                //工作态度指标
-                TriggerBox_Attitude_1.OnClientTriggerClick = Window_ShowQuota.GetSaveStateReference(TriggerBox_Attitude_1.ClientID, TextArea_Attitude_1.ClientID, HiddenField_Attitude_1.ClientID)
-                + Window_ShowQuota.GetShowReference("iframe_ShowQuota.aspx");
-                TriggerBox_Attitude_2.OnClientTriggerClick = Window_ShowQuota.GetSaveStateReference(TriggerBox_Attitude_2.ClientID, TextArea_Attitude_2.ClientID, HiddenField_Attitude_2.ClientID)
-                + Window_ShowQuota.GetShowReference("iframe_ShowQuota.aspx");
-                TriggerBox_Attitude_3.OnClientTriggerClick = Window_ShowQuota.GetSaveStateReference(TriggerBox_Attitude_3.ClientID, TextArea_Attitude_3.ClientID, HiddenField_Attitude_3.ClientID)
-                + Window_ShowQuota.GetShowReference("iframe_ShowQuota.aspx");
-                TriggerBox_Attitude_4.OnClientTriggerClick = Window_ShowQuota.GetSaveStateReference(TriggerBox_Attitude_4.ClientID, TextArea_Attitude_4.ClientID, HiddenField_Attitude_4.ClientID)
-                + Window_ShowQuota.GetShowReference("iframe_ShowQuota.aspx");
-                TriggerBox_Attitude_5.OnClientTriggerClick = Window_ShowQuota.GetSaveStateReference(TriggerBox_Attitude_5.ClientID, TextArea_Attitude_5.ClientID, HiddenField_Attitude_5.ClientID)
-                + Window_ShowQuota.GetShowReference("iframe_ShowQuota.aspx");
+                
+                //设置触发器框事件
+                setTriggerBoxEvent();
 
                 //Button_Close.OnClientClick = ActiveWindow.GetConfirmHidePostBackReference();
                 Button_Close.OnClientClick = ActiveWindow.GetConfirmHideRefreshReference();
@@ -237,6 +165,88 @@ namespace HRES.Pages.EvaluateTableManagement
 
         #region Private Method
         /// <summary>
+        /// 设置触发器框按钮事件
+        /// </summary>
+        private void setTriggerBoxEvent()
+        {
+            //关键岗位职责指标
+
+
+            //TriggerBox_KeyResponse_1.OnClientTriggerClick = syncSelectedWCR() +  Window_ShowQuota.GetSaveStateReference(TriggerBox_KeyResponse_1.ClientID, TextArea_KeyResponse_1.ClientID, HiddenField_KeyResponse_1.ClientID)
+            //    + Window_ShowQuota.GetShowReference("iframe_ShowWCR.aspx?id=" + Request.QueryString["id"]);
+
+            TriggerBox_KeyResponse_1.OnClientTriggerClick = Window_ShowQuota.GetSaveStateReference(TriggerBox_KeyResponse_1.ClientID, TextArea_KeyResponse_1.ClientID, HiddenField_KeyResponse_1.ClientID)
+                + Window_ShowQuota.GetShowReference("iframe_ShowWCR.aspx?id=" + Request.QueryString["id"]);
+            TriggerBox_KeyResponse_2.OnClientTriggerClick = Window_ShowQuota.GetSaveStateReference(TriggerBox_KeyResponse_2.ClientID, TextArea_KeyResponse_2.ClientID, HiddenField_KeyResponse_2.ClientID)
+                + Window_ShowQuota.GetShowReference("iframe_ShowWCR.aspx?id=" + Request.QueryString["id"]);
+            TriggerBox_KeyResponse_3.OnClientTriggerClick = Window_ShowQuota.GetSaveStateReference(TriggerBox_KeyResponse_3.ClientID, TextArea_KeyResponse_3.ClientID, HiddenField_KeyResponse_3.ClientID)
+                + Window_ShowQuota.GetShowReference("iframe_ShowWCR.aspx?id=" + Request.QueryString["id"]);
+            TriggerBox_KeyResponse_4.OnClientTriggerClick = Window_ShowQuota.GetSaveStateReference(TriggerBox_KeyResponse_4.ClientID, TextArea_KeyResponse_4.ClientID, HiddenField_KeyResponse_4.ClientID)
+                + Window_ShowQuota.GetShowReference("iframe_ShowWCR.aspx?id=" + Request.QueryString["id"]);
+            TriggerBox_KeyResponse_5.OnClientTriggerClick = Window_ShowQuota.GetSaveStateReference(TriggerBox_KeyResponse_5.ClientID, TextArea_KeyResponse_5.ClientID, HiddenField_KeyResponse_5.ClientID)
+                + Window_ShowQuota.GetShowReference("iframe_ShowWCR.aspx?id=" + Request.QueryString["id"]);
+
+            //岗位职责指标
+            TriggerBox_Response_1.OnClientTriggerClick = Window_ShowQuota.GetSaveStateReference(TriggerBox_Response_1.ClientID, TextArea_Response_1.ClientID, HiddenField_Response_1.ClientID)
+                + Window_ShowQuota.GetShowReference("iframe_ShowWCR.aspx?id=" + Request.QueryString["id"]);
+            TriggerBox_Response_2.OnClientTriggerClick = Window_ShowQuota.GetSaveStateReference(TriggerBox_Response_2.ClientID, TextArea_Response_2.ClientID, HiddenField_Response_2.ClientID)
+                + Window_ShowQuota.GetShowReference("iframe_ShowWCR.aspx?id=" + Request.QueryString["id"]);
+            TriggerBox_Response_3.OnClientTriggerClick = Window_ShowQuota.GetSaveStateReference(TriggerBox_Response_3.ClientID, TextArea_Response_3.ClientID, HiddenField_Response_3.ClientID)
+                + Window_ShowQuota.GetShowReference("iframe_ShowWCR.aspx?id=" + Request.QueryString["id"]);
+            TriggerBox_Response_4.OnClientTriggerClick = Window_ShowQuota.GetSaveStateReference(TriggerBox_Response_4.ClientID, TextArea_Response_4.ClientID, HiddenField_Response_4.ClientID)
+                + Window_ShowQuota.GetShowReference("iframe_ShowWCR.aspx?id=" + Request.QueryString["id"]);
+            TriggerBox_Response_5.OnClientTriggerClick = Window_ShowQuota.GetSaveStateReference(TriggerBox_Response_5.ClientID, TextArea_Response_5.ClientID, HiddenField_Response_5.ClientID)
+                + Window_ShowQuota.GetShowReference("iframe_ShowWCR.aspx?id=" + Request.QueryString["id"]);
+
+            //关键岗位胜任能力指标
+            TriggerBox_KeyQualify_1.OnClientTriggerClick = Window_ShowQuota.GetSaveStateReference(TriggerBox_KeyQualify_1.ClientID, TextArea_KeyQualify_1.ClientID, HiddenField_KeyQualify_1.ClientID)
+            + Window_ShowQuota.GetShowReference("iframe_ShowQuota.aspx");
+            TriggerBox_KeyQualify_2.OnClientTriggerClick = Window_ShowQuota.GetSaveStateReference(TriggerBox_KeyQualify_2.ClientID, TextArea_KeyQualify_2.ClientID, HiddenField_KeyQualify_2.ClientID)
+            + Window_ShowQuota.GetShowReference("iframe_ShowQuota.aspx");
+            TriggerBox_KeyQualify_3.OnClientTriggerClick = Window_ShowQuota.GetSaveStateReference(TriggerBox_KeyQualify_3.ClientID, TextArea_KeyQualify_3.ClientID, HiddenField_KeyQualify_3.ClientID)
+            + Window_ShowQuota.GetShowReference("iframe_ShowQuota.aspx");
+            TriggerBox_KeyQualify_4.OnClientTriggerClick = Window_ShowQuota.GetSaveStateReference(TriggerBox_KeyQualify_4.ClientID, TextArea_KeyQualify_4.ClientID, HiddenField_KeyQualify_4.ClientID)
+            + Window_ShowQuota.GetShowReference("iframe_ShowQuota.aspx");
+            TriggerBox_KeyQualify_5.OnClientTriggerClick = Window_ShowQuota.GetSaveStateReference(TriggerBox_KeyQualify_5.ClientID, TextArea_KeyQualify_5.ClientID, HiddenField_KeyQualify_5.ClientID)
+            + Window_ShowQuota.GetShowReference("iframe_ShowQuota.aspx");
+
+            //关键岗位态度指标
+            TriggerBox_KeyAttitude_1.OnClientTriggerClick = Window_ShowQuota.GetSaveStateReference(TriggerBox_KeyAttitude_1.ClientID, TextArea_KeyAttitude_1.ClientID, HiddenField_KeyAttitude_1.ClientID)
+            + Window_ShowQuota.GetShowReference("iframe_ShowQuota.aspx");
+            TriggerBox_KeyAttitude_2.OnClientTriggerClick = Window_ShowQuota.GetSaveStateReference(TriggerBox_KeyAttitude_2.ClientID, TextArea_KeyAttitude_2.ClientID, HiddenField_KeyAttitude_2.ClientID)
+            + Window_ShowQuota.GetShowReference("iframe_ShowQuota.aspx");
+            TriggerBox_KeyAttitude_3.OnClientTriggerClick = Window_ShowQuota.GetSaveStateReference(TriggerBox_KeyAttitude_3.ClientID, TextArea_KeyAttitude_3.ClientID, HiddenField_KeyAttitude_3.ClientID)
+            + Window_ShowQuota.GetShowReference("iframe_ShowQuota.aspx");
+            TriggerBox_KeyAttitude_4.OnClientTriggerClick = Window_ShowQuota.GetSaveStateReference(TriggerBox_KeyAttitude_4.ClientID, TextArea_KeyAttitude_4.ClientID, HiddenField_KeyAttitude_4.ClientID)
+            + Window_ShowQuota.GetShowReference("iframe_ShowQuota.aspx");
+            TriggerBox_KeyAttitude_5.OnClientTriggerClick = Window_ShowQuota.GetSaveStateReference(TriggerBox_KeyAttitude_5.ClientID, TextArea_KeyAttitude_5.ClientID, HiddenField_KeyAttitude_5.ClientID)
+            + Window_ShowQuota.GetShowReference("iframe_ShowQuota.aspx");
+
+            //岗位胜任能力指标
+            TriggerBox_Qualify_1.OnClientTriggerClick = Window_ShowQuota.GetSaveStateReference(TriggerBox_Qualify_1.ClientID, TextArea_Qualify_1.ClientID, HiddenField_Qualify_1.ClientID)
+            + Window_ShowQuota.GetShowReference("iframe_ShowQuota.aspx");
+            TriggerBox_Qualify_2.OnClientTriggerClick = Window_ShowQuota.GetSaveStateReference(TriggerBox_Qualify_2.ClientID, TextArea_Qualify_2.ClientID, HiddenField_Qualify_2.ClientID)
+            + Window_ShowQuota.GetShowReference("iframe_ShowQuota.aspx");
+            TriggerBox_Qualify_3.OnClientTriggerClick = Window_ShowQuota.GetSaveStateReference(TriggerBox_Qualify_3.ClientID, TextArea_Qualify_3.ClientID, HiddenField_Qualify_3.ClientID)
+            + Window_ShowQuota.GetShowReference("iframe_ShowQuota.aspx");
+            TriggerBox_Qualify_4.OnClientTriggerClick = Window_ShowQuota.GetSaveStateReference(TriggerBox_Qualify_4.ClientID, TextArea_Qualify_4.ClientID, HiddenField_Qualify_4.ClientID)
+            + Window_ShowQuota.GetShowReference("iframe_ShowQuota.aspx");
+            TriggerBox_Qualify_5.OnClientTriggerClick = Window_ShowQuota.GetSaveStateReference(TriggerBox_Qualify_5.ClientID, TextArea_Qualify_5.ClientID, HiddenField_Qualify_5.ClientID)
+            + Window_ShowQuota.GetShowReference("iframe_ShowQuota.aspx");
+
+            //工作态度指标
+            TriggerBox_Attitude_1.OnClientTriggerClick = Window_ShowQuota.GetSaveStateReference(TriggerBox_Attitude_1.ClientID, TextArea_Attitude_1.ClientID, HiddenField_Attitude_1.ClientID)
+            + Window_ShowQuota.GetShowReference("iframe_ShowQuota.aspx");
+            TriggerBox_Attitude_2.OnClientTriggerClick = Window_ShowQuota.GetSaveStateReference(TriggerBox_Attitude_2.ClientID, TextArea_Attitude_2.ClientID, HiddenField_Attitude_2.ClientID)
+            + Window_ShowQuota.GetShowReference("iframe_ShowQuota.aspx");
+            TriggerBox_Attitude_3.OnClientTriggerClick = Window_ShowQuota.GetSaveStateReference(TriggerBox_Attitude_3.ClientID, TextArea_Attitude_3.ClientID, HiddenField_Attitude_3.ClientID)
+            + Window_ShowQuota.GetShowReference("iframe_ShowQuota.aspx");
+            TriggerBox_Attitude_4.OnClientTriggerClick = Window_ShowQuota.GetSaveStateReference(TriggerBox_Attitude_4.ClientID, TextArea_Attitude_4.ClientID, HiddenField_Attitude_4.ClientID)
+            + Window_ShowQuota.GetShowReference("iframe_ShowQuota.aspx");
+            TriggerBox_Attitude_5.OnClientTriggerClick = Window_ShowQuota.GetSaveStateReference(TriggerBox_Attitude_5.ClientID, TextArea_Attitude_5.ClientID, HiddenField_Attitude_5.ClientID)
+            + Window_ShowQuota.GetShowReference("iframe_ShowQuota.aspx");
+        }
+        /// <summary>
         /// 将已提交考核表的被考评人姓名id字典绑定到下拉列表
         /// </summary>
         private void bindEvaluateTableSubmittedNameIdDicToDropDownList()
@@ -251,10 +261,10 @@ namespace HRES.Pages.EvaluateTableManagement
                     DropDownList_Template.Items.Add(name, nameIdDic[name]);
                 }
             }
-            else
-            {
-                Alert.ShowInTop(exception);
-            }
+            //else
+            //{
+            //    Alert.ShowInTop(exception);
+            //}
         }
 
         /// <summary>
@@ -530,7 +540,9 @@ namespace HRES.Pages.EvaluateTableManagement
         /// <returns></returns>
         private bool checkEvaluateTableNull(EvaluateTable et)
         {
-            if (et.EvaluatedName == "" || et.PostName == "" || et.LaborDep == "" || et.LaborUnit == "" || et.StartTime == "" || et.StopTime == "")
+            //if (et.EvaluatedName == "" || et.PostName == "" || et.LaborDep == "" || et.LaborUnit == "" || et.StartTime == "" || et.StopTime == "")
+            //    return false;
+            if (et.EvaluatedName == "" || et.PostName == "" || et.LaborDep == "" || et.LaborUnit == "" )
                 return false;
             else
                 return true;
@@ -706,6 +718,17 @@ namespace HRES.Pages.EvaluateTableManagement
                 }
             }
             return true;
+        }
+
+        /// <summary>
+        /// 同步已选择的工作内容与要求到hiddenfield
+        /// </summary>
+        /// <returns></returns>
+        private string syncSelectedWCR()
+        {
+            string returnStr = "";
+            returnStr = Window_ShowQuota.GetShowReference("iframe_ShowQuota.aspx");
+            return returnStr;
         }
         #endregion
     }

@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="iframe_MakeEvaluateTable.aspx.cs"
-    Inherits="HRES.Pages.EvaluateTableManagement.iframe_MakeEvaluateTable" %>
+    ValidateRequest="false" Inherits="HRES.Pages.EvaluateTableManagement.iframe_MakeEvaluateTable" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -499,7 +499,8 @@
                     <x:SimpleForm ID="SimpleForm31" runat="server" BodyPadding="5px" Title="否决指标" ShowBorder="true"
                         ShowHeader="true">
                         <Items>
-                            <x:TextArea ID="TextArea_Reject1" runat="server" Height="50px" Label="严重违反规章制度" Text="">
+                            <x:TextArea ID="TextArea_Reject1" runat="server" Height="50px" Label="严重违反规章制度" Text=""
+                                Readonly="true">
                             </x:TextArea>
                             <x:TextArea ID="TextArea_Reject2" runat="server" Height="50px" Label="其他" Text="">
                             </x:TextArea>
@@ -528,8 +529,8 @@
                             </x:Button>
                             <x:ToolbarSeparator ID="ToolbarSeparator8" runat="server">
                             </x:ToolbarSeparator>
-                            <x:Button ID="Button_Export_Shadow" runat="server" Text="导出PDF" OnClick="Button_Export_Click" EnableAjax="false"
-                                Enabled="false">
+                            <x:Button ID="Button_Export_Shadow" runat="server" Text="导出PDF" OnClick="Button_Export_Click"
+                                EnableAjax="false" Enabled="false">
                             </x:Button>
                         </Items>
                     </x:Toolbar>
@@ -542,6 +543,8 @@
         OnClose="Window_ShowQuota_Close" IsModal="True" Width="650px" Height="450px"
         EnableConfirmOnClose="true">
     </x:Window>
+    <x:HiddenField ID="hfSelectedWCR" runat="server">
+    </x:HiddenField>
     </form>
 </body>
 </html>

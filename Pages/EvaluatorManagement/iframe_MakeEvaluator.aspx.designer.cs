@@ -40,15 +40,6 @@ namespace HRES.Pages.EvaluatorManagement {
         protected global::FineUI.Panel Panel1;
         
         /// <summary>
-        /// Panel2 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::FineUI.Panel Panel2;
-        
-        /// <summary>
         /// Toolbar1 控件。
         /// </summary>
         /// <remarks>
@@ -130,22 +121,31 @@ namespace HRES.Pages.EvaluatorManagement {
         protected global::FineUI.Button Button_Close;
         
         /// <summary>
-        /// SimpleForm1 控件。
+        /// Panel2 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.SimpleForm SimpleForm1;
+        protected global::FineUI.Panel Panel2;
         
         /// <summary>
-        /// Label_Submitted 控件。
+        /// Grid2 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Label Label_Submitted;
+        protected global::FineUI.Grid Grid2;
+        
+        /// <summary>
+        /// LabelRelation 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelRelation;
         
         /// <summary>
         /// Grid1 控件。

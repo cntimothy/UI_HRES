@@ -1,6 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Tree>
   <TreeNode Text="系级管理员管理" SingleClickExpand="true">
+    <TreeNode Text="部门管理" NavigateUrl="~/Pages/DataBaseManagement/DepartManagement.aspx" >
+    </TreeNode>
     <TreeNode Text="制作系级管理员名单" NavigateUrl="~/Pages/SecondManagement/MakeSecond.aspx">
     </TreeNode>
   </TreeNode>

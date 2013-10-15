@@ -13,8 +13,6 @@
     </TreeNode>
   </TreeNode>
   <TreeNode Text="数据库管理" SingleClickExpand="true">
-    <TreeNode Text="部门管理" NavigateUrl="~/Pages/DataBaseManagement/DepartManagement.aspx" >
-    </TreeNode>
     <TreeNode Text="清空数据" NavigateUrl="~/Pages/DataBaseManagement/ClearData.aspx" >
     </TreeNode>
   </TreeNode>

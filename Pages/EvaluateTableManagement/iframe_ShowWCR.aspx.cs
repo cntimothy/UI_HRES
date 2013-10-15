@@ -33,7 +33,17 @@ namespace HRES.Pages.EvaluateTableManagement
         protected void Button_Submit_Click(object sender, EventArgs e)
         {
             string title = DropDownList1.SelectedValue;
+            if (title == "请选择")
+            {
+                Alert.Show("请先选择指标!");
+                return;
+            }
             string quota = TextArea1.Text;
+
+            //去掉换行符
+            title = title.Replace("\n", "").Replace("\r","");
+            quota = quota.Replace("\n", "").Replace("\r", "");
+
             PageContext.RegisterStartupScript(ActiveWindow.GetWriteBackValueReference(title, quota, title + "&" + quota) + ActiveWindow.GetHideReference());
         }
         #endregion
@@ -49,8 +59,8 @@ namespace HRES.Pages.EvaluateTableManagement
             {
                 foreach(string[] item in WCR)
                 {
-                    DropDownList1.Items.Add(item[0], item[0]);
-                    dic.Add(item[0], item[1]);
+                    DropDownList1.Items.Add(item[0].Replace("\n", "").Replace("\r", ""), item[0].Replace("\n", "").Replace("\r", ""));
+                    dic.Add(item[0].Replace("\n", "").Replace("\r", ""), item[1].Replace("\n", "").Replace("\r", ""));
                 }
                 ViewState["WCRDic"] = (new JavaScriptSerializer()).Serialize(dic);
             }
