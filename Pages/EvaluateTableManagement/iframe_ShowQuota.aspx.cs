@@ -26,7 +26,6 @@ namespace HRES.Pages.EvaluateTableManagement
         protected void DropDownList1_SelectedChange(object sender, EventArgs e)
         {
             DropDownList2.Items.Clear();
-            TextArea1.Text = "";
             bindLevel2ToDropDownList();
             TextArea1.Text = "";
             string level1 = DropDownList1.SelectedValue;
@@ -99,13 +98,29 @@ namespace HRES.Pages.EvaluateTableManagement
         private void bindLevel2ToDropDownList()
         {
             string level1 = DropDownList1.SelectedValue;
+            string selectedQuotaStr = Server.UrlDecode(Request.QueryString["selected"]);
+            //Alert.Show(selectedQuotaStr);
+            List<string> selectedQuota = new List<string>();
+            if (selectedQuotaStr != "")
+            {
+                foreach (string item in selectedQuotaStr.Split('$'))
+                {
+                    if (item != "")
+                    {
+                        selectedQuota.Add(item);
+                    }
+                }
+            }
             string exception = "";
             List<string> level2s = new List<string>();
             if (EvaluateTableManagementCtrl.GetLevel2(ref level2s, level1, ref exception))
             {
                 foreach (string item in level2s)
                 {
-                    DropDownList2.Items.Add(item.Replace("\n", "").Replace("\r", ""), item.Replace("\n", "").Replace("\r", ""));
+                    if (!selectedQuota.Contains(item))
+                    {
+                        DropDownList2.Items.Add(item.Replace("\n", "").Replace("\r", ""), item.Replace("\n", "").Replace("\r", ""));
+                    }
                 }
             }
             else

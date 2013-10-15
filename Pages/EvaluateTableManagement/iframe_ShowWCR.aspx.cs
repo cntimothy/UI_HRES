@@ -52,6 +52,19 @@ namespace HRES.Pages.EvaluateTableManagement
         private void bindWorkContentToDropDownList()
         {
             string exception = "";
+            string selectedWCRStr = Server.UrlDecode(Request.QueryString["selected"]);
+            //Alert.Show(selectedWCRStr);
+            List<string> selectedWCR = new List<string>();
+            if (selectedWCRStr != "")
+            {
+                foreach (string item in selectedWCRStr.Split('$'))
+                {
+                    if (item != "")
+                    {
+                        selectedWCR.Add(item);
+                    }
+                }
+            }
             string evaluatedID = Request.QueryString["id"];
             List<string[]> WCR = new List<string[]>();
             Dictionary<string, string> dic = new Dictionary<string,string>();
@@ -59,8 +72,11 @@ namespace HRES.Pages.EvaluateTableManagement
             {
                 foreach(string[] item in WCR)
                 {
-                    DropDownList1.Items.Add(item[0].Replace("\n", "").Replace("\r", ""), item[0].Replace("\n", "").Replace("\r", ""));
-                    dic.Add(item[0].Replace("\n", "").Replace("\r", ""), item[1].Replace("\n", "").Replace("\r", ""));
+                    if (!selectedWCR.Contains(item[0].Replace("\n", "").Replace("\r", "")))
+                    {
+                        DropDownList1.Items.Add(item[0].Replace("\n", "").Replace("\r", ""), item[0].Replace("\n", "").Replace("\r", ""));
+                        dic.Add(item[0].Replace("\n", "").Replace("\r", ""), item[1].Replace("\n", "").Replace("\r", ""));
+                    }
                 }
                 ViewState["WCRDic"] = (new JavaScriptSerializer()).Serialize(dic);
             }
