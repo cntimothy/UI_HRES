@@ -62,11 +62,15 @@
                             <x:BoundField Width="100px" DataField="ID" DataFormatString="{0}" HeaderText="用户名" />
                             <x:BoundField Width="100px" DataField="Name" DataFormatString="{0}" HeaderText="姓名" />
                             <x:BoundField Width="100px" DataField="Sex" DataFormatString="{0}" HeaderText="性别" />
-                            <x:BoundField Width="100px" DataField="Company" DataFormatString="{0}" HeaderText="用人单位" Hidden="true"/>
+                            <x:BoundField Width="100px" DataField="Company" DataFormatString="{0}" HeaderText="用人单位"
+                                Hidden="true" />
                             <x:BoundField Width="100px" DataField="Depart" DataFormatString="{0}" HeaderText="用工单位" />
-                            <x:BoundField Width="100px" DataField="LaborDepart" DataFormatString="{0}" HeaderText="用工部门" Hidden="true"/>
-                            <x:BoundField Width="100px" DataField="PostName" DataFormatString="{0}" HeaderText="岗位名称" Hidden="true"/>
-                            <x:BoundField Width="100px" DataField="PostType" DataFormatString="{0}" HeaderText="岗位类别" Hidden="true"/>
+                            <x:BoundField Width="100px" DataField="LaborDepart" DataFormatString="{0}" HeaderText="用工部门"
+                                Hidden="true" />
+                            <x:BoundField Width="100px" DataField="PostName" DataFormatString="{0}" HeaderText="岗位名称"
+                                Hidden="true" />
+                            <x:BoundField Width="100px" DataField="PostType" DataFormatString="{0}" HeaderText="岗位类别"
+                                Hidden="true" />
                             <x:BoundField Width="100px" DataField="Fund" DataFormatString="{0}" HeaderText="经费来源"
                                 Hidden="true" />
                             <x:BoundField Width="100px" DataField="Character" DataFormatString="{0}" HeaderText="派遣性质"
@@ -75,8 +79,11 @@
                                 Hidden="true" />
                             <x:BoundField Width="100px" DataField="StopTime" DataFormatString="{0}" HeaderText="考评结束时间"
                                 Hidden="true" />
-                            <x:LinkButtonField HeaderText="&nbsp;" Width="100px" ConfirmText="确定删除？" ConfirmTarget="Top"
-                                CommandName="Delete" Text="删除" />
+                            <x:WindowField TextAlign="Center" HeaderText="&nbsp" Width="80px" WindowID="Window_Edit" ToolTip="编辑"
+                                DataIFrameUrlFields="Id" DataIFrameUrlFormatString="iframe_EditEvaluated.aspx?id={0}" Text="编辑"
+                                Title="编辑" IFrameUrl="iframe_EditEvaluated.aspx" />
+                            <x:LinkButtonField TextAlign="Center" HeaderText="&nbsp;" Width="80px" ConfirmText="确定删除？"
+                                ConfirmTarget="Top" CommandName="Delete" Text="删除" />
                         </Columns>
                     </x:Grid>
                     <x:SimpleForm ID="SimpleForm1" runat="server" Width="300px" LabelAlign="Left" LabelWidth="100px"
@@ -112,6 +119,10 @@
             </x:Panel>
         </Items>
     </x:Panel>
+    <x:Window ID="Window_Edit" Title="编辑被考评人信息" Popup="false" EnableIFrame="true" IFrameUrl="about:blank"
+        EnableMaximize="true" Target="Top" EnableResize="true" runat="server" EnableClose="false"
+        IsModal="true" Width="500px" Height="500px">
+    </x:Window>
     </form>
 </body>
 </html>

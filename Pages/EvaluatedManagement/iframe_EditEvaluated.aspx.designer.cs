@@ -10,7 +10,7 @@
 namespace HRES.Pages.EvaluatedManagement {
     
     
-    public partial class MakeEvaluated {
+    public partial class iframe_EditEvaluated {
         
         /// <summary>
         /// form1 控件。
@@ -49,13 +49,13 @@ namespace HRES.Pages.EvaluatedManagement {
         protected global::FineUI.Toolbar Toolbar1;
         
         /// <summary>
-        /// FileUpload_ExcelFile 控件。
+        /// Button_Refresh 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.FileUpload FileUpload_ExcelFile;
+        protected global::FineUI.Button Button_Refresh;
         
         /// <summary>
         /// ToolbarSeparator1 控件。
@@ -67,58 +67,13 @@ namespace HRES.Pages.EvaluatedManagement {
         protected global::FineUI.ToolbarSeparator ToolbarSeparator1;
         
         /// <summary>
-        /// Label1 控件。
+        /// Button_Update 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Label Label1;
-        
-        /// <summary>
-        /// Label_FileName 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::FineUI.Label Label_FileName;
-        
-        /// <summary>
-        /// ToolbarSeparator2 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::FineUI.ToolbarSeparator ToolbarSeparator2;
-        
-        /// <summary>
-        /// Button_Submit 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::FineUI.Button Button_Submit;
-        
-        /// <summary>
-        /// ToolbarSeparator3 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::FineUI.ToolbarSeparator ToolbarSeparator3;
-        
-        /// <summary>
-        /// DeleteAll 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::FineUI.Button DeleteAll;
+        protected global::FineUI.Button Button_Update;
         
         /// <summary>
         /// ToolbarFill1 控件。
@@ -130,49 +85,13 @@ namespace HRES.Pages.EvaluatedManagement {
         protected global::FineUI.ToolbarFill ToolbarFill1;
         
         /// <summary>
-        /// Button_DownloadTemplate 控件。
+        /// Button_Close 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Button Button_DownloadTemplate;
-        
-        /// <summary>
-        /// SimpleForm2 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::FineUI.SimpleForm SimpleForm2;
-        
-        /// <summary>
-        /// DropDownList_Depart 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::FineUI.DropDownList DropDownList_Depart;
-        
-        /// <summary>
-        /// Panel3 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::FineUI.Panel Panel3;
-        
-        /// <summary>
-        /// Grid1 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::FineUI.Grid Grid1;
+        protected global::FineUI.Button Button_Close;
         
         /// <summary>
         /// SimpleForm1 控件。
@@ -193,111 +112,102 @@ namespace HRES.Pages.EvaluatedManagement {
         protected global::FineUI.Label Label_ID;
         
         /// <summary>
-        /// Label_Name 控件。
+        /// TextBox_Name 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Label Label_Name;
+        protected global::FineUI.TextBox TextBox_Name;
         
         /// <summary>
-        /// Label_Sex 控件。
+        /// DropDownList_Sex 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Label Label_Sex;
+        protected global::FineUI.DropDownList DropDownList_Sex;
         
         /// <summary>
-        /// Label_Company 控件。
+        /// DropDownList_Company 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Label Label_Company;
+        protected global::FineUI.DropDownList DropDownList_Company;
         
         /// <summary>
-        /// Label_Depart 控件。
+        /// DropDownList_Depart 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Label Label_Depart;
+        protected global::FineUI.DropDownList DropDownList_Depart;
         
         /// <summary>
-        /// Label_LaborDepart 控件。
+        /// TextBox_LaborDepart 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Label Label_LaborDepart;
+        protected global::FineUI.TextBox TextBox_LaborDepart;
         
         /// <summary>
-        /// Label_PostName 控件。
+        /// TextBox_PostName 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Label Label_PostName;
+        protected global::FineUI.TextBox TextBox_PostName;
         
         /// <summary>
-        /// Label_PostType 控件。
+        /// DropDownList_PostType 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Label Label_PostType;
+        protected global::FineUI.DropDownList DropDownList_PostType;
         
         /// <summary>
-        /// Label_Fund 控件。
+        /// TextBox_Fund 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Label Label_Fund;
+        protected global::FineUI.TextBox TextBox_Fund;
         
         /// <summary>
-        /// Label_Character 控件。
+        /// TextBox_Character 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Label Label_Character;
+        protected global::FineUI.TextBox TextBox_Character;
         
         /// <summary>
-        /// Label_StartTime 控件。
+        /// TextBox_StartTime 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Label Label_StartTime;
+        protected global::FineUI.TextBox TextBox_StartTime;
         
         /// <summary>
-        /// Label_StopTime 控件。
+        /// TextBox_StopTime 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Label Label_StopTime;
-        
-        /// <summary>
-        /// Window_Edit 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::FineUI.Window Window_Edit;
+        protected global::FineUI.TextBox TextBox_StopTime;
     }
 }
