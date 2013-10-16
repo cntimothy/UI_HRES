@@ -18,7 +18,7 @@ namespace HRES.Pages.EvaluatedManagement
             if (!IsPostBack)
             {
                 //绑定关闭按钮事件
-                Button_Close.OnClientClick = ActiveWindow.GetConfirmHideRefreshReference();
+                Button_Close.OnClientClick = ActiveWindow.GetConfirmHideReference();
                 ViewState["id"] = Request.QueryString["id"];
                 bindDepartToDropDownList();
                 loadEvaluated();
@@ -37,9 +37,40 @@ namespace HRES.Pages.EvaluatedManagement
             loadEvaluated();
         }
 
+        /// <summary>
+        /// 更新按钮事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void Button_Update_Click(object sender, EventArgs e)
-        { 
-            
+        {
+            string id = ViewState["id"].ToString();
+            //构造被考评人信息
+            Evaluated evaluated = new Evaluated();
+            evaluated.Id = id;
+            evaluated.Name = TextBox_Name.Text.Trim();
+            evaluated.Sex = DropDownList_Sex.SelectedValue;
+            evaluated.Company = DropDownList_Company.SelectedValue;
+            evaluated.Depart = DropDownList_Depart.SelectedValue;
+            evaluated.LaborDepart = TextBox_LaborDepart.Text.Trim();
+            evaluated.PostName = TextBox_PostName.Text.Trim();
+            evaluated.PostType = DropDownList_PostType.SelectedValue;
+            evaluated.Fund = TextBox_Fund.Text.Trim();
+            evaluated.Character = TextBox_Character.Text.Trim();
+            evaluated.StartTime = TextBox_StartTime.Text.Trim();
+            evaluated.StopTime = TextBox_StopTime.Text.Trim();
+
+            string exception = "";
+            if (EvaluatedManagementCtrl.UpdateEvaluatedById(evaluated, id, ref exception))
+            {
+                Alert.ShowInTop("更新成功！\n窗口即将关闭", MessageBoxIcon.Information);
+                PageContext.RegisterStartupScript(ActiveWindow.GetHideRefreshReference());
+            }
+            else
+            {
+                Alert.ShowInTop("更新失败！\n原因：" + exception, MessageBoxIcon.Error);
+                return;
+            }
         }
         #endregion
 

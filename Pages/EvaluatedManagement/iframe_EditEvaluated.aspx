@@ -18,7 +18,7 @@
                     </x:Button>
                     <x:ToolbarSeparator ID="ToolbarSeparator1" runat="server">
                     </x:ToolbarSeparator>
-                    <x:Button ID="Button_Update" runat="server" Text="更新">
+                    <x:Button ID="Button_Update" runat="server" Text="更新" ConfirmText="确定更新？" OnClick="Button_Update_Click">
                     </x:Button>
                     <x:ToolbarFill ID="ToolbarFill1" runat="server">
                     </x:ToolbarFill>
