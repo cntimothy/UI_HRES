@@ -79,8 +79,10 @@
                             </x:Label>
                             <x:TextBox ID="TextBox_LaborDepart" runat="server" Label="3.用工部门" Text="" Width="300px">
                             </x:TextBox>
-                            <x:TextBox ID="TextBox_PostName" runat="server" Label="4.岗位名称" Text="" Width="300px">
-                            </x:TextBox>
+                            <%--<x:TextBox ID="TextBox_PostName" runat="server" Label="4.岗位名称" Text="" Width="300px">
+                            </x:TextBox>--%>
+                            <x:Label ID="Label_PostName" runat="server" Label="4.岗位名称" Text="" Width="300px">
+                            </x:Label>
                             <x:RadioButtonList ID="Radio_PostType" runat="server" ColumnVertical="false" Label="5.岗位类别"
                                 Width="300px" Enabled="false">
                                 <x:RadioItem Text="管理" Value="管理" Selected="true" />

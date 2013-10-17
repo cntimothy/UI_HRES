@@ -124,7 +124,7 @@ namespace HRES.Pages.PostBookManagement
         protected void Button_Clear_Click(object sender, EventArgs e)
         {
             TextBox_LaborDepart.Text = "";
-            TextBox_PostName.Text = "";
+            Label_PostName.Text = "";
             TextArea_EduBg.Text = "";
             TextArea_Certificate.Text = "";
             TextArea_Experience.Text = "";
@@ -279,7 +279,7 @@ namespace HRES.Pages.PostBookManagement
                 Label_Comment.Text = pb.Comment;
 
                 TextBox_LaborDepart.Text = pb.LaborDepart;
-                TextBox_PostName.Text = pb.PostName;
+                Label_PostName.Text = pb.PostName;
                 TextArea_EduBg.Text = pb.EduBg;
                 TextArea_Certificate.Text = pb.Certificate;
                 TextArea_Experience.Text = pb.Experience;
@@ -303,7 +303,7 @@ namespace HRES.Pages.PostBookManagement
             else
             {
                 TextBox_LaborDepart.Text = Request.QueryString["labordepart"];
-                TextBox_PostName.Text = Request.QueryString["postname"];
+                Label_PostName.Text = Request.QueryString["postname"];
             }
         }
 
@@ -340,7 +340,7 @@ namespace HRES.Pages.PostBookManagement
             pb.Employer = Radio_Employer.SelectedValue;
             pb.LaborUnit = Label_Depart.Text;
             pb.LaborDepart = TextBox_LaborDepart.Text;
-            pb.PostName = TextBox_PostName.Text;
+            pb.PostName = Label_PostName.Text;
             pb.PostType = Radio_PostType.SelectedValue;
             pb.EduBg = TextArea_EduBg.Text;
             pb.Certificate = TextArea_Certificate.Text;
@@ -395,7 +395,7 @@ namespace HRES.Pages.PostBookManagement
         private bool checkNull()
         {
             if (TextBox_LaborDepart.Text != "" &&
-                TextBox_PostName.Text != "" &&
+                Label_PostName.Text != "" &&
                 TextArea_EduBg.Text != "" &&
                 TextArea_Certificate.Text != "" &&
                 TextArea_Experience.Text != "" &&
@@ -528,7 +528,7 @@ namespace HRES.Pages.PostBookManagement
             if (accessLevel == AccessLevel.firstManager)    //人事处管理员不能修改
             {
                 TextBox_LaborDepart.Readonly = true;
-                TextBox_PostName.Readonly = true;
+                Label_PostName.Readonly = true;
                 TextArea_EduBg.Readonly = true;
                 TextArea_Certificate.Readonly = true;
                 TextArea_Experience.Readonly = true;
@@ -553,7 +553,7 @@ namespace HRES.Pages.PostBookManagement
                 if (curStatus == DocStatus.modified || curStatus == DocStatus.passed || curStatus == DocStatus.submitted) //对于系级管理员，如果当前状态为已修改、已提交、已通过则不能修改
                 {
                     TextBox_LaborDepart.Readonly = true;
-                    TextBox_PostName.Readonly = true;
+                    Label_PostName.Readonly = true;
                     TextArea_EduBg.Readonly = true;
                     TextArea_Certificate.Readonly = true;
                     TextArea_Experience.Readonly = true;
