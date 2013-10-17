@@ -20,6 +20,16 @@
                         OnSelectedIndexChanged="DropDownList_Depart_SelectedChanged">
                         <x:ListItem Selected="true" EnableSelect="true" Text="所有部门" Value="0" />
                     </x:DropDownList>
+                    <x:ToolbarSeparator ID="ToolbarSeparator2" runat="server">
+                    </x:ToolbarSeparator>
+                    <x:DropDownList ID="DropDownList_DocStatus" runat="server" Label="" AutoPostBack="true" OnSelectedIndexChanged="DropDownList_DocStatus_SelectedChanged">
+                        <x:ListItem EnableSelect="true" Selected="true" Text="所有状态" Value="-1" />
+                        <x:ListItem EnableSelect="true" Selected="true" Text="未制作" Value="0" />
+                        <x:ListItem EnableSelect="true" Selected="true" Text="已提交" Value="2" />
+                        <x:ListItem EnableSelect="true" Selected="true" Text="已退回" Value="3" />
+                        <x:ListItem EnableSelect="true" Selected="true" Text="已修改" Value="4" />
+                        <x:ListItem EnableSelect="true" Selected="true" Text="已通过" Value="5" />
+                    </x:DropDownList>
                     <x:ToolbarSeparator ID="ToolbarSeparator1" runat="server">
                     </x:ToolbarSeparator>
                     <x:Button ID="Refresh" runat="server" Text="刷新" OnClick="Refresh_Click">
@@ -64,7 +74,7 @@
                             <x:BoundField ExpandUnusedSpace="true" Width="200px" DataField="Comment" DataFormatString="{0}"
                                 HeaderText="审核意见" />
                             <x:WindowField ColumnID="WindowField_Check" ID="test" TextAlign="Center" Width="80px"
-                                WindowID="Window_MakePostBook" Text="审核" ToolTip="审核岗位责任书" Title="审核" IFrameUrl="iframe_MakePostBook.aspx"
+                                WindowID="Window_CheckPostBook" Text="审核" ToolTip="审核岗位责任书" Title="审核" IFrameUrl="iframe_MakePostBook.aspx"
                                 DataIFrameUrlFields="ID,Name,Status,Depart,LaborDepart,PostName,PostType,Company" DataIFrameUrlFormatString="iframe_MakePostBook.aspx?id={0}&name={1}&status={2}&depart={3}&labordepart={4}&postname={5}&posttype={6}&company={7}" />
                         </Columns>
                     </x:Grid>
@@ -100,9 +110,9 @@
             </x:Panel>
         </Items>
     </x:Panel>
-    <x:Window ID="Window_MakePostBook" Title="弹出窗体" Popup="false" EnableIFrame="true"
+    <x:Window ID="Window_CheckPostBook" Title="弹出窗体" Popup="false" EnableIFrame="true"
         IFrameUrl="about:blank" EnableMaximize="true" Target="Top" EnableResize="true"
-        runat="server" OnClose="Window_MakePostBook_Close" IsModal="true" CssStyle="width:80%"
+        runat="server" OnClose="Window_CheckPostBook_Close" IsModal="true" CssStyle="width:80%"
         EnableConfirmOnClose="true" Height="550px" EnableClose="false">
     </x:Window>
     </form>

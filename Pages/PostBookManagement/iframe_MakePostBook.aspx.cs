@@ -21,13 +21,13 @@ namespace HRES.Pages.PostBookManagement
                 AccessLevel accessLevel = (AccessLevel)Enum.Parse(typeof(AccessLevel), Session["AccessLevel"].ToString());
                 if (accessLevel == AccessLevel.firstManager)
                 {
-                    Button_Close.OnClientClick = ActiveWindow.GetHideRefreshReference();
-                    Button_Close_Shadow.OnClientClick = ActiveWindow.GetHideRefreshReference();
+                    Button_Close.OnClientClick = ActiveWindow.GetHidePostBackReference();
+                    Button_Close_Shadow.OnClientClick = ActiveWindow.GetHidePostBackReference();
                 }
                 else
                 {
-                    Button_Close.OnClientClick = ActiveWindow.GetConfirmHideRefreshReference();
-                    Button_Close_Shadow.OnClientClick = ActiveWindow.GetConfirmHideRefreshReference();
+                    Button_Close.OnClientClick = ActiveWindow.GetConfirmHidePostBackReference();
+                    Button_Close_Shadow.OnClientClick = ActiveWindow.GetConfirmHidePostBackReference();
                 }
                 
                 Button_Reject.OnClientClick = Window1.GetShowReference("../Common/iframe_Comment.aspx?id=" + Request.QueryString["id"] + "&parent=checkpostbook", "审核意见");
@@ -113,7 +113,7 @@ namespace HRES.Pages.PostBookManagement
             if (PostBookManagementCtrl.UpdatePostBook(pb, ref exception))
             {
                 Alert.ShowInTop("提交成功！\n窗口即将关闭", MessageBoxIcon.Information);
-                PageContext.RegisterStartupScript(ActiveWindow.GetHideRefreshReference());
+                PageContext.RegisterStartupScript(ActiveWindow.GetHidePostBackReference());
             }
             else
             {
@@ -171,7 +171,7 @@ namespace HRES.Pages.PostBookManagement
             if (PostBookManagementCtrl.SetPass(evaluatedID, ref exception))
             {
                 Alert.ShowInTop("设置成功！\n窗口即将关闭", MessageBoxIcon.Information);
-                PageContext.RegisterStartupScript(ActiveWindow.GetHideRefreshReference());
+                PageContext.RegisterStartupScript(ActiveWindow.GetHidePostBackReference());
             }
             else
             {

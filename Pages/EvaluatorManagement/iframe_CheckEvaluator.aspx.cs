@@ -21,8 +21,7 @@ namespace HRES.Pages.EvaluatorManagement
             checkSession();
             if (!IsPostBack)
             {
-                //Button_Close.OnClientClick = ActiveWindow.GetConfirmHidePostBackReference();
-                Button_Close.OnClientClick = ActiveWindow.GetConfirmHideRefreshReference();
+                Button_Close.OnClientClick = ActiveWindow.GetConfirmHidePostBackReference();
                 Panel1.Title = Request.QueryString["name"] + "的考评人名单";
                 BindEvaluatorToGrid();
                 BindSettedEvaluatorToGrid();         //显示已设置考评人名单
@@ -34,26 +33,6 @@ namespace HRES.Pages.EvaluatorManagement
        
         protected void Button_Set_Click(object sender, EventArgs e)
         {
-            //SyncSelectedRowIndexArrayToHiddenField();
-            //string exception = "";
-            //string evaluatedID = Request.QueryString["id"];
-            //if (hfSelectedIDS.Text == "[]")
-            //{
-            //    Alert.ShowInTop("请至少选择一项！", MessageBoxIcon.Warning);
-            //    return;
-            //}
-            //List<string> evaluators = (new JavaScriptSerializer()).Deserialize<List<string>>(hfSelectedIDS.Text.Trim());
-            //if (EvaluatorManagementCtrl.SetEvaluator(evaluatedID, evaluators, ref exception))
-            //{
-            //    Alert.ShowInTop("设置成功！\n窗口即将关闭", MessageBoxIcon.Information);
-            //    hfSelectedIDS.Text = "";
-            //    PageContext.RegisterStartupScript(ActiveWindow.GetHideRefreshReference());
-            //}
-            //else
-            //{
-            //    Alert.ShowInTop("设置失败！\n原因：" + exception, MessageBoxIcon.Error);
-            //    return;
-            //}
             string exception = "";
             string evaluatedID = Request.QueryString["id"];
             if (EvaluatorManagementCtrl.RandomGeneEvaluator(evaluatedID, ref exception))

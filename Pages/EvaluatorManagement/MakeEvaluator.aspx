@@ -26,6 +26,17 @@
                 <Items>
                     <x:Button ID="Refresh" runat="server" Text="刷新" OnClick="Refresh_Click">
                     </x:Button>
+                    <x:ToolbarSeparator ID="ToolbarSeparator1" runat="server">
+                    </x:ToolbarSeparator>
+                    <x:DropDownList ID="DropDownList_DocStatus" runat="server" Label="" AutoPostBack="true" OnSelectedIndexChanged="DropDownList_DocStatus_SelectedChanged">
+                        <x:ListItem EnableSelect="true" Selected="true" Text="所有状态" Value="-1" />
+                        <x:ListItem EnableSelect="true" Selected="true" Text="未制作" Value="0" />
+                        <x:ListItem EnableSelect="true" Selected="true" Text="已保存" Value="1" />
+                        <x:ListItem EnableSelect="true" Selected="true" Text="已提交" Value="2" />
+                        <x:ListItem EnableSelect="true" Selected="true" Text="已退回" Value="3" />
+                        <x:ListItem EnableSelect="true" Selected="true" Text="已修改" Value="4" />
+                        <x:ListItem EnableSelect="true" Selected="true" Text="已通过" Value="5" />
+                    </x:DropDownList>
                 </Items>
             </x:Toolbar>
             <x:Panel ID="Panel2" runat="server" BodyPadding="5px" ShowBorder="false" ShowHeader="false"
@@ -110,7 +121,7 @@
     <x:Window ID="Window_MakeEvaluator" Title="弹出窗体" Popup="false" EnableIFrame="true"
         IFrameUrl="about:blank" EnableMaximize="true" Target="Top" EnableResize="true"
         runat="server" IsModal="true" CssStyle="width:80%" EnableConfirmOnClose="true"
-        Height="610px" EnableClose="false" AutoHeight="true">
+        Height="610px" EnableClose="false" AutoHeight="true" OnClose="WIndow_MakeEvaluator_Close">
     </x:Window>
     </form>
 </body>

@@ -15,6 +15,17 @@
                 <Items>
                     <x:Button ID="Refresh" runat="server" Text="刷新" OnClick="Refresh_Click">
                     </x:Button>
+                    <x:ToolbarSeparator ID="ToolbarSeparator1" runat="server">
+                    </x:ToolbarSeparator>
+                    <x:DropDownList ID="DropDownList_DocStatus" runat="server" Label="" AutoPostBack="true" OnSelectedIndexChanged="DropDownList_DocStatus_SelectedChanged">
+                        <x:ListItem EnableSelect="true" Selected="true" Text="所有状态" Value="-1" />
+                        <x:ListItem EnableSelect="true" Selected="true" Text="未制作" Value="0" />
+                        <x:ListItem EnableSelect="true" Selected="true" Text="已保存" Value="1" />
+                        <x:ListItem EnableSelect="true" Selected="true" Text="已提交" Value="2" />
+                        <x:ListItem EnableSelect="true" Selected="true" Text="已退回" Value="3" />
+                        <x:ListItem EnableSelect="true" Selected="true" Text="已修改" Value="4" />
+                        <x:ListItem EnableSelect="true" Selected="true" Text="已通过" Value="5" />
+                    </x:DropDownList>
                 </Items>
             </x:Toolbar>
             <x:Panel ID="Panel2" runat="server" BodyPadding="5px" ShowBorder="false" ShowHeader="false"
@@ -58,7 +69,8 @@
                                 DataIFrameUrlFormatString="iframe_MakePostBook.aspx?id={0}&name={1}&status={2}&depart={3}&labordepart={4}&postname={5}&posttype={6}&company={7}" />
                         </Columns>
                     </x:Grid>
-                    <x:SimpleForm ID="SimpleForm1" runat="server" BodyPadding="5px" Title="详细信息" Width="300px" LabelWidth="100px">
+                    <x:SimpleForm ID="SimpleForm1" runat="server" BodyPadding="5px" Title="详细信息" Width="300px"
+                        LabelWidth="100px">
                         <Items>
                             <x:Label runat="server" ID="Label_ID" Label="用户名" Text="">
                             </x:Label>

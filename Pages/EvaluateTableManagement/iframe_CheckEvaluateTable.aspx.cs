@@ -20,10 +20,9 @@ namespace HRES.Pages.EvaluateTableManagement
             checkSession();
             if (!IsPostBack)
             {
-                //Button_Close.OnClientClick = ActiveWindow.GetHideReference();
-                Button_Close.OnClientClick = ActiveWindow.GetHideRefreshReference();
+                Button_Close.OnClientClick = ActiveWindow.GetHidePostBackReference();
                 Button_Reject.OnClientClick = Window1.GetShowReference("../Common/iframe_Comment.aspx?id=" + Request.QueryString["id"] + "&parent=checkevaluatetable", "审核意见");
-                Button_Close_Shadow.OnClientClick = ActiveWindow.GetHideRefreshReference();
+                Button_Close_Shadow.OnClientClick = ActiveWindow.GetHidePostBackReference();
                 Button_Reject_Shadow.OnClientClick = Window1.GetShowReference("../Common/iframe_Comment.aspx?id=" + Request.QueryString["id"] + "&parent=checkevaluatetable", "审核意见");
             }
         }
@@ -44,7 +43,7 @@ namespace HRES.Pages.EvaluateTableManagement
             if (EvaluateTableManagementCtrl.SetPass(evaluatedID, ref exception))
             {
                 Alert.ShowInTop("设置成功！\n窗口即将关闭", MessageBoxIcon.Information);
-                PageContext.RegisterStartupScript(ActiveWindow.GetHideRefreshReference());
+                PageContext.RegisterStartupScript(ActiveWindow.GetHidePostBackReference());
             }
             else
             {

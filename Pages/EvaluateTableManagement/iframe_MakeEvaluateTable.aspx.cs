@@ -26,8 +26,8 @@ namespace HRES.Pages.EvaluateTableManagement
                     PageContext.RegisterStartupScript(ActiveWindow.GetHideReference());
                 }
 
-                Button_Close.OnClientClick = ActiveWindow.GetConfirmHideRefreshReference();
-                Button_Close_Shadow.OnClientClick = ActiveWindow.GetConfirmHideRefreshReference();
+                Button_Close.OnClientClick = ActiveWindow.GetConfirmHidePostBackReference();
+                Button_Close_Shadow.OnClientClick = ActiveWindow.GetConfirmHidePostBackReference();
 
                 DocStatus curStatus = (DocStatus)Enum.Parse(typeof(DocStatus), Request.QueryString["status"]);
                 if (curStatus == DocStatus.submitted || curStatus == DocStatus.passed)  //当文档状态为已提交或者已通过时，保存、提交、清空按钮不可用
@@ -340,7 +340,7 @@ namespace HRES.Pages.EvaluateTableManagement
             if (EvaluateTableManagementCtrl.UpdateEvaluateTable(evaluatedID, evaluateTable, nextStatus, ref exception))
             {
                 Alert.ShowInTop("提交成功！\n窗口即将关闭", MessageBoxIcon.Information);
-                PageContext.RegisterStartupScript(ActiveWindow.GetHideRefreshReference());
+                PageContext.RegisterStartupScript(ActiveWindow.GetHidePostBackReference());
             }
             else
             {

@@ -75,6 +75,16 @@ namespace HRES.Pages.EvaluateTableManagement
             Grid1.SortColumnIndex = e.ColumnIndex;
             bindEvaluatedToGrid();
         }
+
+        /// <summary>
+        /// 状态下拉列表事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void DropDownList_DocStatus_SelectedChanged(object sender, EventArgs e)
+        {
+            bindEvaluatedToGrid();
+        }
         #endregion
 
         #region Private Method
@@ -103,7 +113,7 @@ namespace HRES.Pages.EvaluateTableManagement
             {
                 if (EvaluateTableManagementCtrl.GetAll(ref table, ref exception))
                 {
-                    //Alert.ShowInTop("获取被考评人信息失败！/n原因：" + exception, MessageBoxIcon.Error);
+                    table = dataTableFilter(table);
                     string sortField = Grid1.SortField;
                     string sortDirection = Grid1.SortDirection;
                     DataView dv = table.DefaultView;
@@ -123,7 +133,7 @@ namespace HRES.Pages.EvaluateTableManagement
                 string depart = DropDownList_Depart.SelectedValue;
                 if (EvaluateTableManagementCtrl.GetAllByDepart(ref table, depart, ref exception))
                 {
-                    //Alert.ShowInTop("获取被考评人信息失败！/n原因：" + exception, MessageBoxIcon.Error);
+                    table = dataTableFilter(table);
                     string sortField = "Status";
                     string sortDirection = "ASC";
                     DataView dv = table.DefaultView;
@@ -158,6 +168,58 @@ namespace HRES.Pages.EvaluateTableManagement
             Label_Character.Text = (string)keys[9];
             Label_StartTime.Text = (string)keys[10];
             Label_StopTime.Text = (string)keys[11];
+        }
+
+        /// <summary>
+        ///根据所选状态筛选DataTable
+        /// </summary>
+        /// <param name="source"></param>
+        /// <returns></returns>
+        private DataTable dataTableFilter(DataTable source)
+        {
+            string DocStatusStr = DropDownList_DocStatus.SelectedValue;
+            if (DocStatusStr == "-1")       //所有状态
+            {
+                return source;
+            }
+
+            DataTable resultTable = new DataTable();
+            resultTable.Columns.Add("ID");
+            resultTable.Columns.Add("Name");
+            resultTable.Columns.Add("Sex");
+            resultTable.Columns.Add("Company");
+            resultTable.Columns.Add("Depart");
+            resultTable.Columns.Add("LaborDepart");
+            resultTable.Columns.Add("PostName");
+            resultTable.Columns.Add("PostType");
+            resultTable.Columns.Add("Fund");
+            resultTable.Columns.Add("Character");
+            resultTable.Columns.Add("StartTime");
+            resultTable.Columns.Add("StopTime");
+            resultTable.Columns.Add("Status");
+            resultTable.Columns.Add("Comment");
+
+            if (DocStatusStr == "0") //对人事处管理员来说，未制作状态包含未制作和已保存两种状态
+            {
+                foreach (DataRow row in source.Rows)
+                {
+                    if (row["Status"].ToString() == DocStatusStr || row["Status"].ToString() == "1")
+                    {
+                        resultTable.Rows.Add(row.ItemArray);
+                    }
+                }
+            }
+            else
+            {
+                foreach (DataRow row in source.Rows)
+                {
+                    if (row["Status"].ToString() == DocStatusStr)
+                    {
+                        resultTable.Rows.Add(row.ItemArray);
+                    }
+                }
+            }
+            return resultTable;
         }
         #endregion
     }

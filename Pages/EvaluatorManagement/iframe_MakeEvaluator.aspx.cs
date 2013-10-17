@@ -22,8 +22,7 @@ namespace HRES.Pages.EvaluatorManagement
             checkSession();
             if (!IsPostBack)
             {
-                //Button_Close.OnClientClick = ActiveWindow.GetConfirmHidePostBackReference();
-                Button_Close.OnClientClick = ActiveWindow.GetConfirmHideRefreshReference();
+                Button_Close.OnClientClick = ActiveWindow.GetConfirmHidePostBackReference();
                 Panel1.Title = Request.QueryString["name"] + "的考评人名单";
                 bindEvaluatorToGrid();
                 SetSubmitted();         //将已提交的名单显示在页面上
@@ -121,7 +120,7 @@ namespace HRES.Pages.EvaluatorManagement
             if (EvaluatorManagementCtrl.SubmitEvaluator(evaluatedID, idRelationDic, is360, ref exception))
             {
                 Alert.ShowInTop("提交成功！\n窗口即将关闭", MessageBoxIcon.Information);
-                PageContext.RegisterStartupScript(ActiveWindow.GetConfirmHideRefreshReference());
+                PageContext.RegisterStartupScript(ActiveWindow.GetConfirmHidePostBackReference());
             }
             else
             {

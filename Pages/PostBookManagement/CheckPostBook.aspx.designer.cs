@@ -67,6 +67,24 @@ namespace HRES.Pages.PostBookManagement {
         protected global::FineUI.DropDownList DropDownList_Depart;
         
         /// <summary>
+        /// ToolbarSeparator2 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.ToolbarSeparator ToolbarSeparator2;
+        
+        /// <summary>
+        /// DropDownList_DocStatus 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.DropDownList DropDownList_DocStatus;
+        
+        /// <summary>
         /// ToolbarSeparator1 控件。
         /// </summary>
         /// <remarks>
@@ -238,12 +256,12 @@ namespace HRES.Pages.PostBookManagement {
         protected global::FineUI.Label Label_StopTime;
         
         /// <summary>
-        /// Window_MakePostBook 控件。
+        /// Window_CheckPostBook 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Window Window_MakePostBook;
+        protected global::FineUI.Window Window_CheckPostBook;
     }
 }
