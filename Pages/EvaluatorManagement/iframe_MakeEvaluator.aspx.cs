@@ -22,10 +22,18 @@ namespace HRES.Pages.EvaluatorManagement
             checkSession();
             if (!IsPostBack)
             {
+                if (!isEvaluateTablePassed())
+                {
+                    Alert.ShowInTop("被考评人考核表尚未通过考核，不能制定考评人名单！\n窗口即将关闭", MessageBoxIcon.Warning);
+                    PageContext.RegisterStartupScript(ActiveWindow.GetHideReference());
+                }
+
                 Button_Close.OnClientClick = ActiveWindow.GetConfirmHidePostBackReference();
                 Panel1.Title = Request.QueryString["name"] + "的考评人名单";
-                bindEvaluatorToGrid();
+
+                bindEvaluatorToGrid();  //绑定被考评信息到Grid
                 SetSubmitted();         //将已提交的名单显示在页面上
+
                 Label_Comment.Text = Request.QueryString["Comment"];
                 DocStatus status = (DocStatus)Enum.Parse(typeof(DocStatus), Request.QueryString["status"]);
                 Panel1.Title = Request.QueryString["name"] + "的考评人名单";
@@ -136,6 +144,9 @@ namespace HRES.Pages.EvaluatorManagement
         #endregion
 
         #region Private Method
+        /// <summary>
+        /// 绑定被考评信息到Grid
+        /// </summary>
         private void bindEvaluatorToGrid()
         {
             DataTable table = new DataTable();
@@ -162,7 +173,7 @@ namespace HRES.Pages.EvaluatorManagement
             string evaluated = Request.QueryString["id"];
             string exception = "";
             DataTable table = new DataTable();
-            int num = 0;
+            //int num = 0;
             if (EvaluatorManagementCtrl.GetEvaluator(ref table, evaluated, ref exception))
             {
                 Grid2.DataSource = table;
@@ -170,6 +181,10 @@ namespace HRES.Pages.EvaluatorManagement
             }
         }
 
+        /// <summary>
+        /// 用于保持跨页选中
+        /// </summary>
+        /// <returns></returns>
         private Dictionary<string, string> GetSelectedRowIndexArrayFromHiddenField()
         {
             Dictionary<string, string> dic = new Dictionary<string, string>();
@@ -190,6 +205,9 @@ namespace HRES.Pages.EvaluatorManagement
             return dic;
         }
 
+        /// <summary>
+        /// 用于保持跨页选中
+        /// </summary>
         private void SyncSelectedRowIndexArrayToHiddenField()
         {
             Dictionary<string, string> dic = GetSelectedRowIndexArrayFromHiddenField();
@@ -225,6 +243,9 @@ namespace HRES.Pages.EvaluatorManagement
             hfSelectedIDS.Text = (new JavaScriptSerializer()).Serialize(dic);
         }
 
+        /// <summary>
+        /// 用于保持跨页选中
+        /// </summary>
         private void UpdateSelectedRowIndexArray()
         {
             Dictionary<string, string> dic = GetSelectedRowIndexArrayFromHiddenField();
@@ -242,6 +263,22 @@ namespace HRES.Pages.EvaluatorManagement
             Grid1.SelectedRowIndexArray = nextSelectedRowIndexArray.ToArray();
         }
 
+        /// <summary>
+        /// 查询指定被考评人的考核表是否已通过审核，已通过则返回true，否则返回false
+        /// </summary>
+        /// <returns></returns>
+        private bool isEvaluateTablePassed()
+        {
+            bool returnValue = true;
+            string exception = "";
+            string id = Request.QueryString["id"];
+            if (!EvaluatorManagementCtrl.IsEvaluateTablePasswd(id, ref exception))
+            {
+                returnValue = false;
+            }
+            
+            return returnValue;
+        }
         #endregion
     }
 }
