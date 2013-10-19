@@ -24,7 +24,6 @@
                         <x:ListItem EnableSelect="true" Text="未开始" Value="1" />
                         <x:ListItem EnableSelect="true" Text="已开始" Value="2" />
                         <x:ListItem EnableSelect="true" Text="已结束" Value="3" />
-                        <x:ListItem EnableSelect="true" Text="未定义状态" Value="4" />
                     </x:DropDownList>
                     <x:ToolbarSeparator ID="ToolbarSeparator1" runat="server">
                     </x:ToolbarSeparator>
@@ -71,7 +70,7 @@
                                 Hidden="true" />
                             <x:BoundField Width="100px" DataField="StopTime" DataFormatString="{0}" HeaderText="考评结束时间"
                                 Hidden="true" />
-                            <x:BoundField Width="200px" DataField="Summary" DataFormatString="{0}" HeaderText="考评完成情况" />
+                            <x:BoundField Width="100px" DataField="Summary" DataFormatString="{0}" HeaderText="考评完成情况" />
                             <x:TemplateField Width="100px" HeaderText="状态">
                                 <ItemTemplate>
                                     <asp:Label ID="Status" runat="server" Text='<%# GetEvaluationStatusForEvaluated(Eval("Status")) %>'></asp:Label>

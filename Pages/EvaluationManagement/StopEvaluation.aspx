@@ -16,6 +16,15 @@
                 <Items>
                     <x:Button ID="Button_Refresh" runat="server" Text="刷新" OnClick="Button_Refresh_Click">
                     </x:Button>
+                    <x:ToolbarSeparator ID="ToolbarSeparator1" runat="server">
+                    </x:ToolbarSeparator>
+                    <x:DropDownList ID="DropDownList_EvaluationStatus" runat="server" Label="Label" AutoPostBack="true" OnSelectedIndexChanged="DropDownList_EvaluationStatus_SelectedChanged">
+                        <x:ListItem EnableSelect="true" Text="所有状态" Value="-1" />
+                        <x:ListItem EnableSelect="true" Text="未初始化" Value="0" />
+                        <x:ListItem EnableSelect="true" Text="未开始" Value="1" />
+                        <x:ListItem EnableSelect="true" Text="已开始" Value="2" />
+                        <x:ListItem EnableSelect="true" Text="已结束" Value="3" />
+                    </x:DropDownList>
                 </Items>
             </x:Toolbar>
             <x:Panel ID="Panel2" runat="server" BodyPadding="5px" ShowBorder="false" ShowHeader="false"
@@ -24,12 +33,12 @@
                     <x:Grid ID="Grid1" runat="server" Title="被考评人名单" Width="730px" PageSize="20" ShowBorder="true"
                         ShowHeader="true" Height="500px" AllowPaging="true" OnPageIndexChange="Grid1_PageIndexChange"
                         EnableRowClickEvent="true" EnableRowClick="true" OnRowClick="Grid1_RowClick"
-                        OnRowCommand="Grid1_RowCommand" EnableRowNumber="True" AutoPostBack="true" DataKeyNames="ID, Name, Sex, Company, Depart, LaborDepart, PostName, PostType, Fund, Character, StartTime, StopTime, Status, Comment"
+                        OnRowCommand="Grid1_RowCommand" EnableRowNumber="True" AutoPostBack="true" DataKeyNames="ID, Name, Sex, Company, Depart, LaborDepart, PostName, PostType, Fund, Character, StartTime, StopTime, Status, Comment, Finished, Unfinished"
                         OnPreRowDataBound="Grid1_PreRowDataBound">
                         <Columns>
-                            <x:BoundField Width="100px" DataField="ID" DataFormatString="{0}" HeaderText="用户名" />
-                            <x:BoundField Width="100px" DataField="Name" DataFormatString="{0}" HeaderText="姓名" />
-                            <x:BoundField Width="100px" DataField="Sex" DataFormatString="{0}" HeaderText="性别" />
+                            <x:BoundField Width="80px" DataField="ID" DataFormatString="{0}" HeaderText="用户名" />
+                            <x:BoundField Width="80px" DataField="Name" DataFormatString="{0}" HeaderText="姓名" />
+                            <x:BoundField Width="50px" DataField="Sex" DataFormatString="{0}" HeaderText="性别" />
                             <x:BoundField Width="100px" DataField="Company" DataFormatString="{0}" HeaderText="用人单位"
                                 Hidden="true" />
                             <x:BoundField Width="100px" DataField="Depart" DataFormatString="{0}" HeaderText="用工单位" />
@@ -55,6 +64,10 @@
                             </x:TemplateField>
                             <x:LinkButtonField ColumnID="LinkButtonField_Operation" HeaderText="操作" Width="100px"
                                 ConfirmText="确定结束所选人员的考评？" ConfirmTarget="Top" CommandName="Stop" Text="结束考评" />
+                            <x:BoundField Width="100px" DataField="Finished" DataFormatString="{0}" HeaderText=""
+                                Hidden="true" />
+                            <x:BoundField Width="100px" DataField="UnFinished" DataFormatString="{0}" HeaderText=""
+                                Hidden="true" />
                         </Columns>
                     </x:Grid>
                     <x:SimpleForm ID="SimpleForm1" runat="server" BodyPadding="5px" Title="详细信息" Width="300px"
@@ -83,6 +96,10 @@
                             <x:Label runat="server" ID="Label_StartTime" Label="考评开始时间" Text="">
                             </x:Label>
                             <x:Label runat="server" ID="Label_StopTime" Label="考评结束时间" Text="">
+                            </x:Label>
+                            <x:Label runat="server" ID="Label_Finished" Label="已完成考评" Text="">
+                            </x:Label>
+                            <x:Label runat="server" ID="Label_Unfinished" Label="未完成考评" Text="">
                             </x:Label>
                         </Items>
                     </x:SimpleForm>

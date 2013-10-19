@@ -58,6 +58,11 @@ namespace HRES.Pages.EvaluationManagement
             bindEvaluatedToGrid();
         }
 
+        /// <summary>
+        /// 考评状态下拉列表事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void DropDownList_EvaluationStatus_SelectedChanged(object sender, EventArgs e)
         {
             bindEvaluatedToGrid();

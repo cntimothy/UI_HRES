@@ -78,9 +78,22 @@ namespace HRES.Pages.EvaluationManagement
                 bindEvaluatedToGrid();
             }
         }
+
+        /// <summary>
+        /// 考评状态下拉列表事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void DropDownList_EvaluationStatus_SelectedChanged(object sender, EventArgs e)
+        {
+            bindEvaluatedToGrid();
+        }
         #endregion
 
         #region Private Method
+        /// <summary>
+        /// 绑定被考评人信息到Grid
+        /// </summary>
         private void bindEvaluatedToGrid()
         {
             string exception = "";
@@ -88,6 +101,7 @@ namespace HRES.Pages.EvaluationManagement
             string depart = Session["Depart"].ToString();
             if (EvaluationManagementCtrl.GetAllByDepart(ref table, depart, ref exception))
             {
+                table = dataTableFilter(table);
                 Grid1.DataSource = table;
                 Grid1.DataBind();
             }
@@ -117,6 +131,49 @@ namespace HRES.Pages.EvaluationManagement
             Label_Character.Text = (string)keys[9];
             Label_StartTime.Text = (string)keys[10];
             Label_StopTime.Text = (string)keys[11];
+            Label_Finished.Text = (string)keys[14];
+            Label_Unfinished.Text = (string)keys[15];
+
+        }
+
+        /// <summary>
+        ///根据所选状态筛选DataTable
+        /// </summary>
+        /// <param name="source"></param>
+        /// <returns></returns>
+        private DataTable dataTableFilter(DataTable source)
+        {
+            string DocStatusStr = DropDownList_EvaluationStatus.SelectedValue;
+            if (DocStatusStr == "-1")       //所有状态
+            {
+                return source;
+            }
+
+            DataTable resultTable = new DataTable();
+            resultTable.Columns.Add("ID");
+            resultTable.Columns.Add("Name");
+            resultTable.Columns.Add("Sex");
+            resultTable.Columns.Add("Company");
+            resultTable.Columns.Add("Depart");
+            resultTable.Columns.Add("LaborDepart");
+            resultTable.Columns.Add("PostName");
+            resultTable.Columns.Add("PostType");
+            resultTable.Columns.Add("Fund");
+            resultTable.Columns.Add("Character");
+            resultTable.Columns.Add("StartTime");
+            resultTable.Columns.Add("StopTime");
+            resultTable.Columns.Add("Summary");
+            resultTable.Columns.Add("Status");
+            resultTable.Columns.Add("Finished");
+            resultTable.Columns.Add("Unfinished");
+            foreach (DataRow row in source.Rows)
+            {
+                if (row["Status"].ToString() == DocStatusStr)
+                {
+                    resultTable.Rows.Add(row.ItemArray);
+                }
+            }
+            return resultTable;
         }
         #endregion
     }
