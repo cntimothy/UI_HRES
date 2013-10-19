@@ -16,6 +16,16 @@
                 <Items>
                     <x:Button ID="Button_Refresh" runat="server" Text="刷新" OnClick="Button_Refresh_Click">
                     </x:Button>
+                    <x:ToolbarSeparator ID="ToolbarSeparator2" runat="server">
+                    </x:ToolbarSeparator>
+                    <x:DropDownList ID="DropDownList_EvaluationStatus" runat="server" Label="Label" AutoPostBack="true" OnSelectedIndexChanged="DropDownList_EvaluationStatus_SelectedChanged">
+                        <x:ListItem EnableSelect="true" Text="所有状态" Value="-1" />
+                        <x:ListItem EnableSelect="true" Text="未初始化" Value="0" />
+                        <x:ListItem EnableSelect="true" Text="未开始" Value="1" />
+                        <x:ListItem EnableSelect="true" Text="已开始" Value="2" />
+                        <x:ListItem EnableSelect="true" Text="已结束" Value="3" />
+                        <x:ListItem EnableSelect="true" Text="未定义状态" Value="4" />
+                    </x:DropDownList>
                     <x:ToolbarSeparator ID="ToolbarSeparator1" runat="server">
                     </x:ToolbarSeparator>
                     <x:Button ID="Button_Start" runat="server" Text="开始考评" OnClick="Button_Start_Click"
@@ -40,8 +50,7 @@
                         EnableRowClickEvent="true" EnableRowClick="true" OnRowClick="Grid1_RowClick"
                         EnableRowNumber="True" AutoPostBack="true" DataKeyNames="ID, Date, Name, Sex, Depart, Job, IDNo, Birthday, Fund, Character, Company, StartTime, StopTime, Status, Comment, Status">
                         <Columns>
-                            <x:BoundField Width="100px" DataField="ID" DataFormatString="{0}" HeaderText="用户名"
-                                Hidden="true" />
+                            <x:BoundField Width="100px" DataField="ID" DataFormatString="{0}" HeaderText="用户名" />
                             <x:BoundField Width="100px" DataField="Date" DataFormatString="{0}" HeaderText="入职时间"
                                 Hidden="true" />
                             <x:BoundField Width="50px" DataField="Name" DataFormatString="{0}" HeaderText="姓名" />

@@ -57,9 +57,17 @@ namespace HRES.Pages.EvaluationManagement
         {
             bindEvaluatedToGrid();
         }
+
+        protected void DropDownList_EvaluationStatus_SelectedChanged(object sender, EventArgs e)
+        {
+            bindEvaluatedToGrid();
+        }
         #endregion
 
         #region Private Method
+        /// <summary>
+        /// 绑定被考评人信息到Grid
+        /// </summary>
         private void bindEvaluatedToGrid()
         {
             string exception = "";
@@ -68,6 +76,7 @@ namespace HRES.Pages.EvaluationManagement
             {
                 if (EvaluationManagementCtrl.GetAll(ref table, ref exception))
                 {
+                    table = dataTableFilter(table);
                     Grid1.DataSource = table;
                     Grid1.DataBind();
                 }
@@ -83,6 +92,7 @@ namespace HRES.Pages.EvaluationManagement
                 string depart = DropDownList1.SelectedValue;
                 if (EvaluationManagementCtrl.GetAllByDepart(ref table, depart, ref exception))
                 {
+                    table = dataTableFilter(table);
                     Grid1.DataSource = table;
                     Grid1.DataBind();
                 }
@@ -94,6 +104,11 @@ namespace HRES.Pages.EvaluationManagement
                 }
             }
         }
+
+        /// <summary>
+        /// 设置详细信息
+        /// </summary>
+        /// <param name="keys"></param>
         private void SetSimpleForm(object[] keys)
         {
             LabID.Text = (string)keys[0];
@@ -111,6 +126,9 @@ namespace HRES.Pages.EvaluationManagement
             LabStopTime.Text = (string)keys[12];
         }
 
+        /// <summary>
+        /// 绑定部门到下拉列表
+        /// </summary>
         private void bindDepartsToDropDownList()
         {
             string exception = "";
@@ -126,6 +144,44 @@ namespace HRES.Pages.EvaluationManagement
             //{
             //    Alert.ShowInTop("获取部门信息失败！\n原因：" + exception, MessageBoxIcon.Error);
             //}
+        }
+
+        /// <summary>
+        ///根据所选状态筛选DataTable
+        /// </summary>
+        /// <param name="source"></param>
+        /// <returns></returns>
+        private DataTable dataTableFilter(DataTable source)
+        {
+            string DocStatusStr = DropDownList_EvaluationStatus.SelectedValue;
+            if (DocStatusStr == "-1")       //所有状态
+            {
+                return source;
+            }
+
+            DataTable resultTable = new DataTable();
+            resultTable.Columns.Add("ID");
+            resultTable.Columns.Add("Name");
+            resultTable.Columns.Add("Sex");
+            resultTable.Columns.Add("Company");
+            resultTable.Columns.Add("Depart");
+            resultTable.Columns.Add("LaborDepart");
+            resultTable.Columns.Add("PostName");
+            resultTable.Columns.Add("PostType");
+            resultTable.Columns.Add("Fund");
+            resultTable.Columns.Add("Character");
+            resultTable.Columns.Add("StartTime");
+            resultTable.Columns.Add("StopTime");
+            resultTable.Columns.Add("Summary");
+            resultTable.Columns.Add("Status");
+            foreach (DataRow row in source.Rows)
+            {
+                if (row["Status"].ToString() == DocStatusStr)
+                {
+                    resultTable.Rows.Add(row.ItemArray);
+                }
+            }
+            return resultTable;
         }
         #endregion
     }
