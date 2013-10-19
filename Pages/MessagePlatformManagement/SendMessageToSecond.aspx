@@ -47,7 +47,7 @@
                                     <x:Label ID="Label2" runat="server" Label="Label" Text="请输入信息内容">
                                     </x:Label>
                                     <x:TextArea ID="TextArea_Message" runat="server" Height="100px" Label="Label" Text=""
-                                        ShowRedStar="true" Required="true" Width="350px" EmptyText="最多70字">
+                                        ShowRedStar="true" Required="true" Width="350px">
                                     </x:TextArea>
                                 </Items>
                             </x:Panel>
