@@ -33,7 +33,7 @@
                                 PageSize="20" Height="500px" OnPageIndexChange="Grid1_PageIndexChange" EnableRowNumber="true"
                                 AutoPostBack="false" DataKeyNames="ID,Depart,Telephone" EnableMultiSelect="true"
                                 ClearSelectedRowsAfterPaging="false" EnableCheckBoxSelect="true" CheckBoxSelectOnly="true"
-                                Width="680px">
+                                Width="500px">
                                 <Columns>
                                     <x:BoundField Width="100px" DataField="ID" DataFormatString="{0}" HeaderText="用户名" />
                                     <x:BoundField Width="100px" ExpandUnusedSpace="true" DataField="Company" DataFormatString="{0}"

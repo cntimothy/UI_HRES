@@ -20,7 +20,7 @@ namespace HRES.Pages.EvaluationManagement
             if (!IsPostBack)
             {
                 bindDepartListToDropDownList();
-                bindEvaluatorsToGrid();
+                bindEvaluatorsToGrid(); //绑定考评人信息到Grid
             }
         }
 
@@ -66,9 +66,17 @@ namespace HRES.Pages.EvaluationManagement
         {
             bindEvaluatorsToGrid();
         }
+
+        protected void DropDownList_Status_SelectedChanged(object sender, EventArgs e)
+        {
+            bindEvaluatorsToGrid();
+        }
         #endregion
 
         #region Private Method
+        /// <summary>
+        /// 绑定考评人信息到Grid
+        /// </summary>
         private void bindEvaluatorsToGrid()
         {
             DataTable table = new DataTable();
@@ -77,6 +85,7 @@ namespace HRES.Pages.EvaluationManagement
             {
                 if (MessagePlatformManagementCtrl.GetEvaluators(ref table, ref exception))
                 {
+                    table = dataTableFilter(table);
                     Grid1.DataSource = table;
                     Grid1.DataBind();
                 }
@@ -93,6 +102,7 @@ namespace HRES.Pages.EvaluationManagement
                 string depart = DropDownList1.SelectedValue;
                 if(MessagePlatformManagementCtrl.GetEvaluatorsByDepart(ref table, depart, ref exception))
                 {
+                    table = dataTableFilter(table);
                     Grid1.DataSource = table;
                     Grid1.DataBind();
                 }
@@ -106,6 +116,9 @@ namespace HRES.Pages.EvaluationManagement
             }
         }
 
+        /// <summary>
+        /// 绑定部门到下拉列表
+        /// </summary>
         private void bindDepartListToDropDownList()
         {
             string exception = "";
@@ -123,6 +136,10 @@ namespace HRES.Pages.EvaluationManagement
             }
         }
 
+        /// <summary>
+        /// 用于保持跨页选中
+        /// </summary>
+        /// <returns></returns>
         private List<string> GetSelectedRowIndexArrayFromHiddenField()
         {
             List<string> ids = new List<string>();
@@ -143,6 +160,10 @@ namespace HRES.Pages.EvaluationManagement
             return ids;
         }
 
+        /// <summary>
+        /// 用于保持跨页选中
+        /// </summary>
+        /// <returns></returns>
         private void SyncSelectedRowIndexArrayToHiddenField()
         {
             List<string> ids = GetSelectedRowIndexArrayFromHiddenField();
@@ -175,6 +196,10 @@ namespace HRES.Pages.EvaluationManagement
             hfSelectedIDS.Text = (new JavaScriptSerializer()).Serialize(ids);
         }
 
+        /// <summary>
+        /// 用于保持跨页选中
+        /// </summary>
+        /// <returns></returns>
         private void UpdateSelectedRowIndexArray()
         {
             List<string> ids = GetSelectedRowIndexArrayFromHiddenField();
@@ -192,6 +217,39 @@ namespace HRES.Pages.EvaluationManagement
             Grid1.SelectedRowIndexArray = nextSelectedRowIndexArray.ToArray();
         }
 
+        /// <summary>
+        ///根据所选状态筛选DataTable
+        /// </summary>
+        /// <param name="source"></param>
+        /// <returns></returns>
+        private DataTable dataTableFilter(DataTable source)
+        {
+            string DocStatusStr = DropDownList_Status.SelectedValue;
+            if (DocStatusStr == "-1")       //所有状态
+            {
+                return source;
+            }
+
+            DataTable resultTable = new DataTable();
+            resultTable.Columns.Add("ID");
+            resultTable.Columns.Add("Name");
+            resultTable.Columns.Add("Sex");
+            resultTable.Columns.Add("Depart");
+            resultTable.Columns.Add("Company");
+            resultTable.Columns.Add("Telephone");
+            resultTable.Columns.Add("Status");
+            resultTable.Columns.Add("Finished");
+            resultTable.Columns.Add("Unfinished");
+
+            foreach (DataRow row in source.Rows)
+            {
+                if (row["Status"].ToString() == DocStatusStr)
+                {
+                    resultTable.Rows.Add(row.ItemArray);
+                }
+            }
+            return resultTable;
+        }
         #endregion
     }
 }

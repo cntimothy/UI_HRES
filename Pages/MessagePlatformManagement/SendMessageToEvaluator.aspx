@@ -19,6 +19,13 @@
                         <Items>
                             <x:Button ID="Button_Refresh" runat="server" Text="刷新" OnClick="Button_Refresh_Click">
                             </x:Button>
+                            <x:ToolbarSeparator ID="ToolbarSeparator2" runat="server">
+                            </x:ToolbarSeparator>
+                            <x:DropDownList ID="DropDownList_Status" runat="server" Label="Label" AutoPostBack="true" OnSelectedIndexChanged="DropDownList_Status_SelectedChanged">
+                            <x:ListItem EnableSelect="true" Text="所有状态" Value="-1" />
+                            <x:ListItem EnableSelect="true" Text="未完成" Value="0" />
+                            <x:ListItem EnableSelect="true" Text="已完成" Value="1" />
+                            </x:DropDownList>
                             <x:ToolbarSeparator ID="ToolbarSeparator1" runat="server">
                             </x:ToolbarSeparator>
                             <x:Button ID="Button_Send" runat="server" Text="发送" OnClick="Button_Send_Click" ConfirmTitle="提示"
@@ -44,11 +51,17 @@
                                 ClearSelectedRowsAfterPaging="false" EnableCheckBoxSelect="true" CheckBoxSelectOnly="true"
                                 Width="680px">
                                 <Columns>
-                                    <x:BoundField Width="100px" DataField="ID" DataFormatString="{0}" HeaderText="用户名" />
-                                    <x:BoundField Width="100px" DataField="Name" DataFormatString="{0}" HeaderText="姓名" />
-                                    <x:BoundField Width="100px" DataField="Sex" DataFormatString="{0}" HeaderText="性别" />
-                                    <x:BoundField Width="100px" ExpandUnusedSpace="true" DataField="Company" DataFormatString="{0}"
+                                    <x:BoundField Width="80px" DataField="ID" DataFormatString="{0}" HeaderText="用户名" />
+                                    <x:BoundField Width="80px" DataField="Name" DataFormatString="{0}" HeaderText="姓名" />
+                                    <x:BoundField Width="50px" DataField="Sex" DataFormatString="{0}" HeaderText="性别" />
+                                    <x:BoundField Width="100px" DataField="Company" DataFormatString="{0}"
                                         HeaderText="用工单位" />
+                                    <x:BoundField Width="100px" DataField="Status" DataFormatString="{0}"
+                                        HeaderText="状态" Hidden="true"/>
+                                    <x:BoundField Width="100px" DataField="Finished" DataFormatString="{0}"
+                                        HeaderText="已完成" />
+                                    <x:BoundField Width="100px" DataField="Unfinished" DataFormatString="{0}"
+                                        HeaderText="未完成" />
                                     <x:BoundField Width="100px" DataField="Telephone" DataFormatString="{0}" HeaderText="联系电话" />
                                 </Columns>
                             </x:Grid>
