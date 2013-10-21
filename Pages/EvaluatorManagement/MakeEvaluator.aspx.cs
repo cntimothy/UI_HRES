@@ -143,7 +143,11 @@ namespace HRES.Pages.EvaluatorManagement
             {
                 if (row["Status"].ToString() == DocStatusStr)
                 {
-                    resultTable.Rows.Add(row.ItemArray);
+                    resultTable.Rows.Add(row["ID"].ToString(), row["Name"].ToString(), row["Sex"].ToString(),
+                                        row["Company"].ToString(), row["Depart"].ToString(), row["LaborDepart"].ToString(),
+                                        row["PostName"].ToString(), row["PostType"].ToString(), row["Fund"].ToString(),
+                                        row["Character"].ToString(), row["StartTime"].ToString(), row["StopTime"].ToString(),
+                                        row["Status"].ToString(), row["Comment"].ToString());
                 }
             }
             return resultTable;

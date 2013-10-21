@@ -980,6 +980,11 @@ namespace HRES
             return returnValue;
         }
 
+        /// <summary>
+        /// 获取针对考评人的考评状态字面值
+        /// </summary>
+        /// <param name="status"></param>
+        /// <returns></returns>
         protected string GetEvaluationStatusForEvaluator(object status)
         {
             string returnValue = "";
@@ -1019,6 +1024,29 @@ namespace HRES
                     break;
                 case Relation.services:
                     returnValue = "服务对象";
+                    break;
+            }
+            return returnValue;
+        }
+
+        /// <summary>
+        /// 获取针对短信平台的考评状态字面值
+        /// </summary>
+        /// <param name="status"></param>
+        /// <returns></returns>
+        protected string GetEvaluationStatusForMessagePlatform(object status)
+        {
+            string returnValue = "";
+            switch (Convert.ToInt32(status))
+            {
+                case 0:
+                    returnValue = "未完成";
+                    break;
+                case 1:
+                    returnValue = "已完成";
+                    break;
+                default:
+                    returnValue = "未定义状态";
                     break;
             }
             return returnValue;

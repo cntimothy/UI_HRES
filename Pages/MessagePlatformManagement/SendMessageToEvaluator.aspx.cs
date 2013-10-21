@@ -234,7 +234,6 @@ namespace HRES.Pages.EvaluationManagement
             resultTable.Columns.Add("ID");
             resultTable.Columns.Add("Name");
             resultTable.Columns.Add("Sex");
-            resultTable.Columns.Add("Depart");
             resultTable.Columns.Add("Company");
             resultTable.Columns.Add("Telephone");
             resultTable.Columns.Add("Status");
@@ -245,7 +244,10 @@ namespace HRES.Pages.EvaluationManagement
             {
                 if (row["Status"].ToString() == DocStatusStr)
                 {
-                    resultTable.Rows.Add(row.ItemArray);
+                    //resultTable.Rows.Add(row.ItemArray);
+                    resultTable.Rows.Add(row["ID"].ToString(), row["Name"].ToString(), row["Sex"].ToString(),
+                                        row["Company"].ToString(), row["Telephone"].ToString(),
+                                        row["Status"].ToString(), row["Finished"].ToString(), row["Unfinished"].ToString());
                 }
             }
             return resultTable;
