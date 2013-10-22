@@ -63,6 +63,44 @@ namespace HRES.Pages.EvaluateTableManagement
         {
             bindEvaluatedToGrid();
         }
+
+        /// <summary>
+        /// 设置表格中状态的颜色
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void Grid1_PreRowDataBound(object sender, FineUI.GridPreRowEventArgs e)
+        {
+            DataRowView row = e.DataItem as DataRowView;
+            string strStatus = row["Status"].ToString();
+            DocStatus status = (DocStatus)Enum.Parse(typeof(DocStatus), strStatus);
+
+            //设置颜色
+            System.Web.UI.WebControls.Label labelStatus = Grid1.Rows[e.RowIndex].FindControl("Status") as System.Web.UI.WebControls.Label;
+            switch (status)
+            {
+                case DocStatus.unmake:
+                    labelStatus.ForeColor = System.Drawing.Color.FromName("#8600FF");
+                    break;
+                case DocStatus.saved:
+                    labelStatus.ForeColor = System.Drawing.Color.FromName("#009100");
+                    break;
+                case DocStatus.submitted:
+                    labelStatus.ForeColor = System.Drawing.Color.FromName("#007979");
+                    break;
+                case DocStatus.rejected:
+                    labelStatus.ForeColor = System.Drawing.Color.FromName("#0000C6");
+                    break;
+                case DocStatus.modified:
+                    labelStatus.ForeColor = System.Drawing.Color.FromName("#73BF00");
+                    break;
+                case DocStatus.passed:
+                    labelStatus.ForeColor = System.Drawing.Color.FromName("#408080");
+                    break;
+                default:
+                    break;
+            }
+        }
         #endregion
 
         #region Private Method

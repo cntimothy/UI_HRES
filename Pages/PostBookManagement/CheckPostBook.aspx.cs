@@ -48,12 +48,18 @@ namespace HRES.Pages.PostBookManagement
             bindEvaluatedToGrid();
         }
 
+        /// <summary>
+        /// 设置表格中按钮的可用性和状态的颜色
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void Grid1_PreRowDataBound(object sender, FineUI.GridPreRowEventArgs e)
         {
             WindowField windowField_Check = Grid1.FindColumn("WindowField_Check") as WindowField;
             DataRowView row = e.DataItem as DataRowView;
             string strStatus = row["Status"].ToString();
             DocStatus status = (DocStatus)Enum.Parse(typeof(DocStatus), strStatus);
+            //设置可用性
             if (status == DocStatus.unmake || status == DocStatus.saved)
             {
                 windowField_Check.Enabled = false;
@@ -61,6 +67,31 @@ namespace HRES.Pages.PostBookManagement
             else
             {
                 windowField_Check.Enabled = true;
+            }
+            //设置颜色
+            System.Web.UI.WebControls.Label labelStatus = Grid1.Rows[e.RowIndex].FindControl("Status") as System.Web.UI.WebControls.Label;
+            switch (status)
+            {
+                case DocStatus.unmake:
+                    labelStatus.ForeColor = System.Drawing.Color.FromName("#8600FF");
+                    break;
+                case DocStatus.saved:
+                    labelStatus.ForeColor = System.Drawing.Color.FromName("#009100");
+                    break;
+                case DocStatus.submitted:
+                    labelStatus.ForeColor = System.Drawing.Color.FromName("#007979");
+                    break;
+                case DocStatus.rejected:
+                    labelStatus.ForeColor = System.Drawing.Color.FromName("#0000C6");
+                    break;
+                case DocStatus.modified:
+                    labelStatus.ForeColor = System.Drawing.Color.FromName("#73BF00");
+                    break;
+                case DocStatus.passed:
+                    labelStatus.ForeColor = System.Drawing.Color.FromName("#408080");
+                    break;
+                default:
+                    break;
             }
         }
 
