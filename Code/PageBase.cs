@@ -859,7 +859,7 @@ namespace HRES
                 Session["UserName"] = null;
                 Session["AccessLevel"] = null;
                 Session["Depart"] = null;
-                PageContext.Redirect(System.AppDomain.CurrentDomain.BaseDirectory.ToString() + "Login.aspx", "_top");
+                PageContext.Redirect(System.AppDomain.CurrentDomain.BaseDirectory.ToString().Replace(@"\", @"\\") + "Login.aspx", "_top");
             }
         }
 

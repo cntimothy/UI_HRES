@@ -62,9 +62,9 @@
                         </x:Grid>
                         <x:Grid ID="Grid1" runat="server" Title="备选考评人名单" ShowHeader="true" AllowPaging="true"
                             PageSize="20" Height="500px" OnPageIndexChange="Grid1_PageIndexChange" EnableRowNumber="true"
-                            AutoPostBack="false" DataKeyNames="ID, Name, Sex, Company, Telephone, Relation"
+                            DataKeyNames="ID, Name, Sex, Company, Telephone, Relation"
                             EnableMultiSelect="true" ClearSelectedRowsAfterPaging="false" EnableCheckBoxSelect="true"
-                            CheckBoxSelectOnly="true" ColumnWidth="70%">
+                            CheckBoxSelectOnly="true" ColumnWidth="70%" >
                             <Columns>
                                 <x:BoundField Width="80px" DataField="ID" DataFormatString="{0}" HeaderText="用户名" />
                                 <x:BoundField Width="80px" DataField="Name" DataFormatString="{0}" HeaderText="姓名" />

@@ -376,7 +376,7 @@
                                 EnableCollapse="true">
                                 <Items>
                                     <x:TriggerBox ID="TriggerBox_Qualify_2" runat="server" Label="标题" TriggerIcon="Search"
-                                        EnableEdit="true" EmptyText="点击右边按钮选择" OnTriggerClick="TriggerBox_Qualify_1_Click">
+                                        EnableEdit="true" EmptyText="点击右边按钮选择" OnTriggerClick="TriggerBox_Qualify_2_Click">
                                     </x:TriggerBox>
                                     <x:TextArea ID="TextArea_Qualify_2" runat="server" Height="50px" Label="内容" Text=""
                                         Readonly="true">
@@ -389,7 +389,7 @@
                                 EnableCollapse="true">
                                 <Items>
                                     <x:TriggerBox ID="TriggerBox_Qualify_3" runat="server" Label="标题" TriggerIcon="Search"
-                                        EnableEdit="true" EmptyText="点击右边按钮选择" OnTriggerClick="TriggerBox_Qualify_1_Click">
+                                        EnableEdit="true" EmptyText="点击右边按钮选择" OnTriggerClick="TriggerBox_Qualify_3_Click">
                                     </x:TriggerBox>
                                     <x:TextArea ID="TextArea_Qualify_3" runat="server" Height="50px" Label="内容" Text=""
                                         Readonly="true">
@@ -402,7 +402,7 @@
                                 EnableCollapse="true">
                                 <Items>
                                     <x:TriggerBox ID="TriggerBox_Qualify_4" runat="server" Label="标题" TriggerIcon="Search"
-                                        EnableEdit="true" EmptyText="点击右边按钮选择" OnTriggerClick="TriggerBox_Qualify_1_Click">
+                                        EnableEdit="true" EmptyText="点击右边按钮选择" OnTriggerClick="TriggerBox_Qualify_4_Click">
                                     </x:TriggerBox>
                                     <x:TextArea ID="TextArea_Qualify_4" runat="server" Height="50px" Label="内容" Text=""
                                         Readonly="true">
@@ -415,7 +415,7 @@
                                 EnableCollapse="true">
                                 <Items>
                                     <x:TriggerBox ID="TriggerBox_Qualify_5" runat="server" Label="标题" TriggerIcon="Search"
-                                        EnableEdit="true" EmptyText="点击右边按钮选择" OnTriggerClick="TriggerBox_Qualify_1_Click">
+                                        EnableEdit="true" EmptyText="点击右边按钮选择" OnTriggerClick="TriggerBox_Qualify_5_Click">
                                     </x:TriggerBox>
                                     <x:TextArea ID="TextArea_Qualify_5" runat="server" Height="50px" Label="内容" Text=""
                                         Readonly="true">

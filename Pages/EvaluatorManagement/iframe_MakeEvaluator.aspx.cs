@@ -54,6 +54,7 @@ namespace HRES.Pages.EvaluatorManagement
             Grid1.PageIndex = e.NewPageIndex;
 
             UpdateSelectedRowIndexArray();
+            //Grid1.UpdateTemplateFields();
 
         }
 
@@ -140,6 +141,11 @@ namespace HRES.Pages.EvaluatorManagement
         protected void Button_Clear_Click(object sender, EventArgs e)
         {
             bindEvaluatorToGrid();
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Grid1.UpdateTemplateFields();
         }
         #endregion
 
@@ -261,6 +267,13 @@ namespace HRES.Pages.EvaluatorManagement
                 }
             }
             Grid1.SelectedRowIndexArray = nextSelectedRowIndexArray.ToArray();
+            //foreach (int i in Grid1.SelectedRowIndexArray)
+            //{
+            //    GridRow row = Grid1.Rows[i];
+            //    AspNet.RadioButtonList relationCtrl = (AspNet.RadioButtonList)row.FindControl("RadioButtonList_Relation");
+            //    relationCtrl.SelectedValue = dic[Grid1.DataKeys[i][0].ToString()];
+            //}
+            //Grid1.UpdateTemplateFields();
         }
 
         /// <summary>
