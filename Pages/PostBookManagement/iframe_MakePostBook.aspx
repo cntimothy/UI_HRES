@@ -355,7 +355,7 @@
                     <x:Panel ID="Panel11" runat="server" BodyPadding="5px" ShowBorder="false" ShowHeader="true"
                         Title="三、岗位考核">
                         <Items>
-                            <x:TextArea ID="TextArea_PostAssess" runat="server" Height="50px" Label="Label" Text=""
+                            <x:TextArea ID="TextArea_PostAssess" runat="server" Height="50px" Label="Label" Text="按同济大学派遣员工考核文件的规定执行。"
                                 CssStyle="width:97%" AutoGrowHeight="true">
                             </x:TextArea>
                         </Items>
@@ -363,7 +363,7 @@
                     <x:Panel ID="Panel12" runat="server" BodyPadding="5px" ShowBorder="false" ShowHeader="true"
                         Title="四、其他约定">
                         <Items>
-                            <x:TextArea ID="TextArea_Others" runat="server" Height="50px" Label="Label" Text=""
+                            <x:TextArea ID="TextArea_Others" runat="server" Height="50px" Label="Label" Text="本岗位责任书自双方签字盖章且经人才中心审核盖章后生效，与劳动合同具有相同效力，双方均应遵照执行。\n自本岗位责任书生效之日起，双方之前就受聘人员岗位达成的约定、协议或岗位责任书与本岗位责任书不一致的，以本岗位责任书为准。\n本岗位责任书一式四份，人才中心持两份，个人及个人所在部门各持一份。"
                                 CssStyle="width:97%" AutoGrowHeight="true">
                             </x:TextArea>
                         </Items>

@@ -394,8 +394,8 @@ namespace HRES.Pages.PostBookManagement
         /// <returns></returns>
         private bool checkNull()
         {
-            if (TextBox_LaborDepart.Text != "" &&
-                Label_PostName.Text != "" &&
+            //用工部门不检查
+            if (Label_PostName.Text != "" &&
                 TextArea_EduBg.Text != "" &&
                 TextArea_Certificate.Text != "" &&
                 TextArea_Experience.Text != "" &&
