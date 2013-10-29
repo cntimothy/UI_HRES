@@ -10,6 +10,7 @@ using DataStructure;
 using System.Data;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
+using System.IO;
 
 namespace HRES.Pages.EvaluatorManagement
 {
@@ -131,7 +132,12 @@ namespace HRES.Pages.EvaluatorManagement
             Response.ContentType = "application/x-zip-compressed";
             Response.AddHeader("content-disposition", "attachment;filename=" + Server.UrlEncode("考评人信息模板.zip"));
             string path = Server.MapPath(@"..\..\downloadfiles\template\考评人信息模板.zip");
-            Response.TransmitFile(path);
+            FileInfo fi = new FileInfo(path);
+            Response.AddHeader("Content_Length", fi.Length.ToString());
+            //Response.TransmitFile(path);
+            Response.Filter.Close();
+            Response.WriteFile(fi.FullName);
+            Response.End();
         }
 
         #endregion

@@ -8,6 +8,7 @@ using FineUI;
 using DataStructure;
 using Controls;
 using System.Data;
+using System.IO;
 
 namespace HRES.Pages.EvaluatedManagement
 {
@@ -26,25 +27,6 @@ namespace HRES.Pages.EvaluatedManagement
 
         protected void FileUpload_ExcelFile_FileSelected(object sender, EventArgs e)
         {
-            //if (ExcelFile.HasFile)
-            //{
-            //    string fileName = ExcelFile.ShortFileName;
-            //    if (fileName.EndsWith(".xls"))
-            //    {
-            //        FilePath.Text = fileName;
-            //        fileName = Server.MapPath("../../upload/" + fileName);
-            //        ExcelFile.SaveAs(fileName);
-            //        Submit.Enabled = true;
-            //        ExcelFile.Reset();
-            //    }
-            //    else
-            //    {
-            //        FilePath.Text = "不正确";
-            //        Submit.Enabled = false;
-            //        ExcelFile.Reset();
-            //        return;
-            //    }
-            //}
             if (FileUpload_ExcelFile.HasFile)
             {
                 string fileName = FileUpload_ExcelFile.ShortFileName;
@@ -145,7 +127,12 @@ namespace HRES.Pages.EvaluatedManagement
             Response.ContentType = "application/x-zip-compressed";
             Response.AddHeader("content-disposition", "attachment;filename=" + Server.UrlEncode("被考评人信息模板.zip"));
             string path = Server.MapPath(@"..\..\downloadfiles\template\被考评人信息模板.zip");
-            Response.TransmitFile(path);
+            FileInfo fi = new FileInfo(path);
+            Response.AddHeader("Content_Length", fi.Length.ToString());
+            //Response.TransmitFile(path);
+            Response.Filter.Close();
+            Response.WriteFile(fi.FullName);
+            Response.End();
         }
 
         #endregion

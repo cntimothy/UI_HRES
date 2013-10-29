@@ -8,6 +8,7 @@ using Controls;
 using DataStructure;
 using FineUI;
 using System.Data;
+using System.IO;
 
 namespace HRES.Pages.SecondManagement
 {
@@ -108,11 +109,17 @@ namespace HRES.Pages.SecondManagement
 
         protected void Button_DownloadTemplate_Click(object sender, EventArgs e)
         {
-            Response.ClearContent();
+            Response.Clear();
             Response.ContentType = "application/x-zip-compressed";
             Response.AddHeader("content-disposition", "attachment;filename=" + Server.UrlEncode("系级管理员信息模版.zip"));
+            
             string path = Server.MapPath(@"..\..\downloadfiles\template\系级管理员信息模版.zip");
-            Response.TransmitFile(path);
+            FileInfo fi = new FileInfo(path);
+            Response.AddHeader("Content_Length", fi.Length.ToString());
+            //Response.TransmitFile(path);
+            Response.Filter.Close();
+            Response.WriteFile(fi.FullName);
+            Response.End();
         }
 
         protected void Button_Refresh_Click(object sender, EventArgs e)

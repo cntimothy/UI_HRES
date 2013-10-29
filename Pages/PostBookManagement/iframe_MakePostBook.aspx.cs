@@ -86,9 +86,9 @@ namespace HRES.Pages.PostBookManagement
                 Alert.ShowInTop("请填写至少6项工作内容与要求！");
                 return;
             }
-            foreach (string[] item in pb.WorkContentRequest)        //检查是否存在工作内容与要求中填写了标题却没填其他项
+            foreach (string[] item in pb.WorkContentRequest)        //检查是否存在工作内容与要求中填写了标题却没填其他项（考核要点不检查）
             {
-                if (!CheckNull(item))
+                if (item[0] == "" || item[1] == "" || item[2] =="")
                 {
                     Alert.ShowInTop("工作内容与要求中尚有未填写项！");
                     return;
