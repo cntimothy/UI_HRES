@@ -56,7 +56,7 @@
                                 Hidden="true" />
                             <x:BoundField Width="100px" DataField="StopTime" DataFormatString="{0}" HeaderText="考评结束时间"
                                 Hidden="true" />
-                            <x:BoundField Width="100px" DataField="Summary" DataFormatString="{0}" HeaderText="考评完成情况" />
+                            <x:BoundField Width="100px" ExpandUnusedSpace="true" DataField="Summary" DataFormatString="{0}" HeaderText="考评完成情况" />
                             <x:TemplateField Width="100px" HeaderText="状态">
                                 <ItemTemplate>
                                     <asp:Label ID="Status" runat="server" Text='<%# GetEvaluationStatusForEvaluated(Eval("Status")) %>'></asp:Label>
