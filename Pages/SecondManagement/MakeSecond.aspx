@@ -51,10 +51,11 @@
                         </Items>
                     </x:SimpleForm>
                     <x:Grid ID="Grid1" Title="名单" PageSize="20" ShowBorder="true" ShowHeader="true" Height="500px"
-                        AllowPaging="true" runat="server" EnableCheckBoxSelect="false" Width="550" DataKeyNames="ID,Depart,Telephone"
+                        AllowPaging="true" runat="server" EnableCheckBoxSelect="false" Width="550" DataKeyNames="ID,Name,Depart,Telephone"
                         OnPageIndexChange="Grid1_PageIndexChange" EnableRowNumber="True" OnRowCommand="Grid1_RowCommand" BodyPadding="0px">
                         <Columns>
                             <x:BoundField Width="120px" DataField="ID" DataFormatString="{0}" HeaderText="用户名" />
+                            <x:BoundField Width="120px" DataField="Name" DataFormatString="{0}" HeaderText="姓名" />
                             <x:BoundField Width="140px" DataField="Depart" DataFormatString="{0}" HeaderText="部门" />
                             <x:BoundField Width="200px" DataField="Telephone" DataFormatString="{0}" HeaderText="联系电话" />
                             <x:LinkButtonField HeaderText="&nbsp;" Width="100px" ConfirmText="确定删除？" ConfirmTarget="Top"

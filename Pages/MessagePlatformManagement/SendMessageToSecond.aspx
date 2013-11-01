@@ -36,6 +36,7 @@
                                 Width="500px">
                                 <Columns>
                                     <x:BoundField Width="100px" DataField="ID" DataFormatString="{0}" HeaderText="用户名" />
+                                    <x:BoundField Width="100px" DataField="Name" DataFormatString="{0}" HeaderText="用户名" />
                                     <x:BoundField Width="100px" ExpandUnusedSpace="true" DataField="Company" DataFormatString="{0}"
                                         HeaderText="单位" />
                                     <x:BoundField Width="100px" DataField="Telephone" DataFormatString="{0}" HeaderText="联系电话" />
