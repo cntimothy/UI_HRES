@@ -37,6 +37,7 @@
                                 </asp:DropDownList>
                             </span></li>
                             <li><span>
+                                <asp:Label ID="Message" runat="server" Visible="True" Text="一般情况下用户名为工号，密码为手机后六位"></asp:Label>
                                 <asp:Label ID="ErrorMessage" runat="server" Visible="False" ForeColor="Red"></asp:Label>
                             </span></li>
                         </ul>

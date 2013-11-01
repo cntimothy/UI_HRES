@@ -26,6 +26,7 @@ namespace HRES
             {
                 ErrorMessage.Text = "用户名密码不能为空！";
                 ErrorMessage.Visible = true;
+                Message.Visible = false;
                 return;
             }
             LoginType loginType = (LoginType)Convert.ToInt32(LoginType.SelectedValue);
@@ -41,6 +42,7 @@ namespace HRES
             {
                 ErrorMessage.Text = "请输入正确的用户名、密码并选择正确的身份！";
                 ErrorMessage.Visible = true;
+                Message.Visible = false;
             }
         }
     }
