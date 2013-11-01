@@ -53,7 +53,7 @@
                                 Width="680px">
                                 <Columns>
                                     <x:BoundField Width="80px" DataField="ID" DataFormatString="{0}" HeaderText="用户名" />
-                                    <x:BoundField Width="80px" DataField="Name" DataFormatString="{0}" HeaderText="姓名" />
+                                    <%--<x:BoundField Width="80px" DataField="Name" DataFormatString="{0}" HeaderText="姓名" />--%>
                                     <x:BoundField Width="50px" DataField="Sex" DataFormatString="{0}" HeaderText="性别" />
                                     <x:BoundField Width="100px" DataField="Company" DataFormatString="{0}" HeaderText="用工单位" />
                                     <x:BoundField Width="100px" DataField="Status" DataFormatString="{0}"
