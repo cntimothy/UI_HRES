@@ -33,7 +33,7 @@
                     <x:Grid ID="Grid1" runat="server" Title="被考评人名单" Width="730px" PageSize="20" ShowBorder="true"
                         ShowHeader="true" Height="500px" AllowPaging="true" OnPageIndexChange="Grid1_PageIndexChange"
                         EnableRowClickEvent="true" EnableRowClick="true" OnRowClick="Grid1_RowClick"
-                        OnRowCommand="Grid1_RowCommand" EnableRowNumber="True" AutoPostBack="true" DataKeyNames="ID, Name, Sex, Company, Depart, LaborDepart, PostName, PostType, Fund, Character, StartTime, StopTime, Status, Comment, Finished, Unfinished"
+                        OnRowCommand="Grid1_RowCommand" EnableRowNumber="True" AutoPostBack="true" DataKeyNames="ID, Name, Sex, Company, Depart, LaborDepart, PostName, PostType, Fund, Character, StartTime, StopTime, Status, Comment, Summary, Finished, Unfinished"
                         OnPreRowDataBound="Grid1_PreRowDataBound">
                         <Columns>
                             <x:BoundField Width="80px" DataField="ID" DataFormatString="{0}" HeaderText="用户名" />
@@ -100,6 +100,8 @@
                             <x:Label runat="server" ID="Label_Finished" Label="已完成考评" Text="">
                             </x:Label>
                             <x:Label runat="server" ID="Label_Unfinished" Label="未完成考评" Text="">
+                            </x:Label>
+                            <x:Label runat="server" ID="Label_Summary" Label="考评完成情况" Text="">
                             </x:Label>
                         </Items>
                     </x:SimpleForm>

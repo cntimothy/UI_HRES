@@ -131,8 +131,8 @@ namespace HRES.Pages.EvaluationManagement
             Label_Character.Text = (string)keys[9];
             Label_StartTime.Text = (string)keys[10];
             Label_StopTime.Text = (string)keys[11];
-            Label_Finished.Text = (string)keys[14];
-            Label_Unfinished.Text = (string)keys[15];
+            Label_Finished.Text = (string)keys[15];
+            Label_Unfinished.Text = (string)keys[16];
 
         }
 
