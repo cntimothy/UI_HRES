@@ -75,7 +75,7 @@ namespace HRES.Pages.EvaluateTableManagement
                     if (!selectedWCR.Contains(item[0].Replace("\n", "").Replace("\r", "")))
                     {
                         DropDownList1.Items.Add(item[0].Replace("\n", "").Replace("\r", ""), item[0].Replace("\n", "").Replace("\r", ""));
-                        dic.Add(item[0].Replace("\n", "").Replace("\r", ""), item[1].Replace("\n", "").Replace("\r", ""));
+                        dic.Add(item[0].Replace("\n", "").Replace("\r", ""), item[1].Replace("\n", "").Replace("\r", "") + item[2].Replace("\n", "").Replace("\r", ""));
                     }
                 }
                 ViewState["WCRDic"] = (new JavaScriptSerializer()).Serialize(dic);
